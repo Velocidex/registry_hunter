@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 	"sort"
+	"strings"
 
 	"github.com/Velocidex/registry_hunter/converters"
 	"github.com/alecthomas/kingpin"
@@ -46,7 +47,7 @@ func doConvert() error {
 			return err
 		}
 
-		err = rules_converter.ParseYaml(string(data))
+		err = rules_converter.ParseYaml(string(data), strings.Join(batch_files, "\n"))
 		if err != nil {
 			return err
 		}

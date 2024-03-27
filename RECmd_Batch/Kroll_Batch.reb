@@ -2,6 +2,56 @@ Description: Kroll RECmd Batch File
 Author: Andrew Rathbun
 Version: 1.22
 Id: ecc582d5-a1b1-4256-ae64-ca2263b8f971
+Preamble:
+  - |
+    LET FetchKeyValues(OSPath) = to_dict(item={
+      SELECT Name AS _key, Data.value AS _value
+      FROM glob(globs="*", accessor="registry", root=OSPath)
+    })
+
+  - |
+    LET GetDateFrom128Bit(x) = parse_binary(accessor="data",
+      filename=x, profile='''
+      [["X", 0, [
+         ["year", 0, "uint16"],
+         ["month", 2, "uint16"],
+         ["day", 6, "uint16"],
+         ["hour", 8, "uint16"],
+         ["minute", 10, "uint16"],
+         ["seconds", 12, "uint16"],
+         ["Date", 0, "Value", {
+            value: "x=>format(format='%04d-%02d-%02dT%02d:%02d:%02d', args=[x.year, x.month, x.day, x.hour, x.minute, x.seconds])"
+          }]
+      ]]]
+      ''', struct="X").Date
+
+  - |
+    LET FormatMAC(x) = parse_binary(accessor="data",
+      filename=x, profile='''
+      [["X", 0, [
+        ["x0", 0, "uint8"],
+        ["x1", 1, "uint8"],
+        ["x2", 2, "uint8"],
+        ["x3", 3, "uint8"],
+        ["x4", 4, "uint8"],
+        ["x5", 5, "uint8"],
+        ["mac", 0, Value, {"value": "x=>format(format='%02x:%02x:%02x:%02x:%02x:%02x', args=[x.x0, x.x1, x.x2, x.x3, x.x4, x.x5])"}]
+      ]]]
+      ''', struct="X").mac
+  - |
+    LET ExtractValueFromComment(x) = parse_string_with_regex(
+      string=x.Metadata.Comment, regex=format(format="%v [=-] ([^,]+)", args=x.Data)).g1
+
+  - |
+    -- Map from binary integer to a winfiletime - handle both binary encoding and integers
+    LET FILETIME(t) = if(condition=format(format="%T", args=[t,]) =~ "\\[\\]uint8",
+       then=timestamp(winfiletime=parse_binary(accessor="data", filename=t, struct="uint64") || 0),
+       else=timestamp(winfiletime=t || 0))
+
+  - |
+    LET GetRawValue(OSPath) = stat(filename=OSPath, accessor="raw_registry").Data.value
+
+
 Keys:
 #
 # Kroll_Batch README: https://github.com/EricZimmerman/RECmd/blob/master/BatchExamples/Kroll_Batch.md
@@ -65,6 +115,8 @@ Keys:
         ValueName: AutoAdminLogon
         Recursive: false
         Comment: "Displays whether the system will automatically login a user as Admin, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
+
     -
         Description: WinLogon
         HiveType: SOFTWARE
@@ -214,6 +266,7 @@ Keys:
         ValueName: NtfsEncryptPagingFile
         Recursive: false
         Comment: "Virtual Memory Pagefile Encryption, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.tenforums.com/tutorials/77782-enable-disable-virtual-memory-pagefile-encryption-windows-10-a.html
 
@@ -225,6 +278,7 @@ Keys:
         ValueName: DisableDeleteNotification
         Recursive: false
         Comment: "TRIM, 0 = Enabled, 1 = Disabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.howtogeek.com/257196/how-to-check-if-trim-is-enabled-for-your-ssd-and-enable-it-if-it-isnt/
 
@@ -236,6 +290,7 @@ Keys:
         ValueName: NtfsDisableCompression
         Recursive: false
         Comment: "NTFS File Compression, 0 = Enabled, 1 = Disabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://thegeekpage.com/enable-disable-ntfs-compression-windows-improve-performance/
 # https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-behavior
@@ -248,6 +303,7 @@ Keys:
         ValueName: NtfsDisableEncryption
         Recursive: false
         Comment: "NTFS File Encryption, 0 = Enabled, 1 = Disabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.tenforums.com/tutorials/97782-enable-disable-ntfs-file-encryption-windows.html
 # https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-behavior
@@ -260,6 +316,7 @@ Keys:
         ValueName: NtfsDisableLastAccessUpdate
         Recursive: false
         Comment: "NTFS LastAccess Timestamp, 2147483650 = Enabled, 1 = Disabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://dfir.ru/2018/12/08/the-last-access-updates-are-almost-back/
 # https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-behavior
@@ -272,6 +329,7 @@ Keys:
         ValueName: LongPathsEnabled
         Recursive: false
         Comment: "NTFS Long Paths, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.howtogeek.com/266621/how-to-make-windows-10-accept-file-paths-over-260-characters/
 
@@ -283,6 +341,7 @@ Keys:
         ValueName: EnablePrefetcher
         Recursive: false
         Comment: "0 = Disabled, 1 = Application Prefetching Enabled, 2 = Boot Prefetching Enabled, 3 = Application and Boot Prefetching Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
 # https://youtu.be/f4RAtR_3zcs
@@ -299,6 +358,7 @@ Keys:
         ValueName: ClearPageFileAtShutdown
         Recursive: false
         Comment: "0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://tweaks.com/windows/37350/clear-pagefile-111n-shutdown/
 # https://www.majorgeeks.com/content/page/clear_page_file.html
@@ -311,6 +371,8 @@ Keys:
         KeyPath: ControlSet00*\Control\TimeZoneInformation
         Recursive: false
         Comment: "Displays the current Time Zone configuration for this system"
+        Filter: x=>true
+        Details: x=>FetchKeyValues(OSPath=x.OSPath)
 
 # TimeZoneInfo plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.TimeZoneInformation
 
@@ -323,6 +385,25 @@ Keys:
         KeyPath: Microsoft\Windows NT\CurrentVersion\NetworkList
         Recursive: false
         Comment: "Displays list of network connections"
+        Filter: x=>true
+        Details: |
+          x=>dict(
+             Profiles={
+               SELECT ProfileName, Description, Managed,
+                      Category, CategoryType, GetDateFrom128Bit(x= DateCreated) AS DateCreated,
+                      GetDateFrom128Bit(x=DateLastConnected) AS DateLastConnected
+               FROM read_reg_key(root=x.OSPath, globs="Profiles/*")
+            },
+             Signatures={
+               SELECT Key.OSPath[-2:] AS Key,
+                      FormatMAC(x=DefaultGatewayMac) AS DefaultGatewayMac,
+                      DnsSuffix, ProfileGuid,
+                      FirstNetwork
+               FROM read_reg_key(root=x.OSPath,
+                    globs="/Signatures/*/*")
+            }
+          )
+
 
 # KnownNetworks plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.KnownNetworks
 # https://www.forensafe.com/blogs/wirelessnetworks.html
@@ -331,9 +412,13 @@ Keys:
         Description: Device Classes
         HiveType: SYSTEM
         Category: System Info
-        KeyPath: ControlSet*\Control\DeviceClasses
+        KeyPath: ControlSet*\Control\DeviceClasses\*\##*
         Recursive: false
         Comment: "Displays a list of PnP devices (Plug and Play) that were connected to this system"
+        Filter: x=>true
+        Details: |
+          x=>parse_string_with_regex(string=x.OSPath.Basename,
+               regex="##\\?#(?P<Type>[^#]+)#(?P<Name>[^#]+)#(?P<serialNumber>[^#]+)#(?P<Class>.+)")
 
 # DeviceClasses plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.DeviceClasses
 # https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-device-specific-registry-settings
@@ -605,9 +690,15 @@ Keys:
         Description: Network Adapters
         HiveType: SYSTEM
         Category: System Info
-        KeyPath: ControlSet*\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}
+        KeyPath: ControlSet*\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\00*
         Recursive: false
         Comment: "Displays list of network adapters connected to this system"
+        Filter: x=>true
+        Details: |
+          x=>FetchKeyValues(OSPath=x.OSPath) + dict(
+            InstallTimeStamp=GetDateFrom128Bit(x=GetValue(OSPath=x.OSPath + "InstallTimeStamp")),
+            NetworkInterfaceInstallTimestamp=FILETIME(t=GetValue(OSPath=x.OSPath + "NetworkInterfaceInstallTimestamp"))
+          )
 
 # NetworkAdapters plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.NetworkAdapters
 
@@ -619,6 +710,7 @@ Keys:
         ValueName: AddressType
         Recursive: false
         Comment: ""
+
     -
         Description: Network Configuration (IPv4)
         HiveType: SYSTEM
@@ -627,6 +719,7 @@ Keys:
         ValueName: DhcpConnForceBroadcastFlag
         Recursive: false
         Comment: "DHCP Broadcast, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://support.microsoft.com/en-us/topic/windows-vista-can-t-get-an-ip-address-from-certain-routers-or-dhcp-servers-ee61b030-e749-878b-9725-247d8bd95c5e
 
@@ -751,6 +844,7 @@ Keys:
         ValueName: EnableDHCP
         Recursive: false
         Comment: "DHCP status, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/desktop/mscs/enabledhcp
 
@@ -762,6 +856,7 @@ Keys:
         ValueName: EnableMulticast
         Recursive: false
         Comment: "Multicast status, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.microsoftpressstore.com/articles/article.aspx?p=2217263&seqNum=8
 
@@ -902,6 +997,7 @@ Keys:
         ValueName: DhcpConnForceBroadcastFlag
         Recursive: false
         Comment: "DHCP Broadcast, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://support.microsoft.com/en-us/topic/windows-vista-can-t-get-an-ip-address-from-certain-routers-or-dhcp-servers-ee61b030-e749-878b-9725-247d8bd95c5e
 
@@ -1025,6 +1121,7 @@ Keys:
         ValueName: EnableDHCP
         Recursive: false
         Comment: "DHCP status, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/desktop/mscs/enabledhcp
 
@@ -1036,6 +1133,7 @@ Keys:
         ValueName: EnableMulticast
         Recursive: false
         Comment: "Multicast status, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.microsoftpressstore.com/articles/article.aspx?p=2217263&seqNum=8
 
@@ -1166,6 +1264,7 @@ Keys:
         ValueName: EnableActivityFeed
         Recursive: false
         Comment: "Windows 10 Activity Timeline status, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.majorgeeks.com/content/page/how_to_disable_or_enable_timeline_in_windows_10.html
 
@@ -1177,6 +1276,7 @@ Keys:
         ValueName: value
         Recursive: false
         Comment: "Windows 10 Activity Timeline status, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # The above location is where this value exists on my personal machine. Adding it in case the other one doesn't get a hit.
 
@@ -1188,6 +1288,7 @@ Keys:
         ValueName: EnableClipboardHistory
         Recursive: False
         Comment: "Displays the status of Clipboard History, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # The above location is where this value exists on my personal machine. Adding it in case the other one doesn't get a hit.
 
@@ -1199,6 +1300,7 @@ Keys:
         ValueName: AllowCrossDeviceClipboard
         Recursive: False
         Comment: "Displays the status of Clipboard Sync Across Devices, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.tenforums.com/tutorials/110048-enable-disable-clipboard-sync-across-devices-windows-10-a.html
 
@@ -1210,6 +1312,7 @@ Keys:
         ValueName: value
         Recursive: False
         Comment: "Displays the status of Clipboard Sync Across Devices, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # The above location is where this value exists on my personal machine. Adding it in case the other one doesn't get a hit.
 
@@ -1223,6 +1326,7 @@ Keys:
         ValueName: PollingInterval
         Recursive: False
         Comment: "Displays the updating interval for the SUM DB. Default is 24 hours. 60000 = 60 seconds, for example"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://youtu.be/p4XI8-ldE5o?t=627
 
@@ -1242,9 +1346,15 @@ Keys:
         Description: MAC Addresses
         HiveType: SYSTEM
         Category: System Info
-        KeyPath: ControlSet00*\Control\NetworkSetup2
+        KeyPath: ControlSet00*\Control\NetworkSetup2\Interfaces\*\Kernel
         Recursive: False
-        Comment: "Displays MAC Addresses related to this system"
+        Comment: "Displays MAC Addresses related to this system. This key normally gets Permission Denied when using the API - use Raw Hives to access"
+        Filter: x=>true
+        Details: |
+          x=>FetchKeyValues(OSPath=x.OSPath) + dict(
+             PermanentAddress=FormatMAC(x=GetValue(OSPath=x.OSPath + "PermanentAddress") || ""),
+             CurrentAddress=FormatMAC(x=GetValue(OSPath=x.OSPath + "CurrentAddress") || "")
+          )
 
 # NetworkSetup2 plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.NetworkSetup2
 # https://thinkdfir.com/2019/10/05/hunting-for-mac-addresses
@@ -1297,9 +1407,11 @@ Keys:
         Description: Bluetooth Devices
         HiveType: SYSTEM
         Category: Devices
-        KeyPath: ControlSet*\Services\BTHPORT\Parameters\Devices
+        KeyPath: ControlSet*\Services\BTHPORT\Parameters\Devices\*
         Recursive: false
         Comment: "Displays the Bluetooth devices that have been connected to this computer"
+        Filter: x=>true
+        Details: x=>FetchKeyValues(OSPath=x.OSPath)
 
 # BTHPORT plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.BluetoothServicesBthPort
 
@@ -1307,9 +1419,15 @@ Keys:
         Description: Volume Info Cache
         HiveType: SOFTWARE
         Category: Devices
-        KeyPath: Microsoft\Windows Search\VolumeInfoCache
+        KeyPath: Microsoft\Windows Search\VolumeInfoCache\*
         Recursive: false
         Comment: "2 = Removable, 3 = Fixed, 4 = Network, 5 = Optical, 6 = RAM disk, 0 = Unknown"
+        Filter: x=>true
+        Details: |
+          x=>FetchKeyValues(OSPath=x.OSPath) + dict(
+             DriveName=x.OSPath.Basename,
+             DriveType=ExtractValueFromComment(x=GetValue(OSPath=x.OSPath + "DriveType"))
+          )
 
 # VolumeInfoCache plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.VolumeInfoCache
 # https://docs.microsoft.com/en-us/dotnet/api/system.io.drivetype?view=net-5.0
@@ -1320,9 +1438,31 @@ Keys:
         Description: USBSTOR
         HiveType: SYSTEM
         Category: Devices
-        KeyPath: ControlSet*\Enum\USBSTOR
+        KeyPath: ControlSet*\Enum\USBSTOR\*
         Recursive: false
         Comment: "Displays list of USB devices that have been plugged into this system. If & is second character within serial number, serial number is only unique on the system"
+        Filter: x=>true
+        Details: |
+          x=>dict(
+            Name=x.OSPath.Basename,
+            Manufacturer=split(string=x.OSPath.Basename, sep="&")[1],
+            Title=split(string=x.OSPath.Basename, sep="&")[2],
+            Version=split(string=x.OSPath.Basename, sep="&")[3],
+            Instance={
+              SELECT OSPath.Basename AS Serial, dict(
+                 DeviceName=utf16(string=GetRawValue(OSPath=OSPath + "/Properties/{540b947e-8b40-45bc-a8a2-6a0b894cbda2}/0004/@")),
+                 Installed=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0064/@")),
+                 FirstInstalled=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0065/@")),
+                 LastConnected=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0066/@")),
+                 LastRemoved=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0067/@"))
+              ) AS Properties,
+              to_dict(item={
+                 SELECT OSPath.Basename AS _key, Data.value AS _value
+                 FROM glob(globs="*", accessor="registry", root=OSPath)
+              }) AS Metadata
+              FROM glob(globs='*', root=x.OSPath, accessor="raw_registry")
+            }
+          )
 
 # USBSTOR plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.USBSTOR
 # https://www.jaiminton.com/cheatsheet/DFIR/#usb-information-1
@@ -1334,9 +1474,30 @@ Keys:
         Description: USB
         HiveType: SYSTEM
         Category: Devices
-        KeyPath: ControlSet*\Enum\USB
+        KeyPath: ControlSet*\Enum\USB\VID_*
         Recursive: false
         Comment: "Provides VID and PID numbers of USB devices. Match serial number from USBSTOR and search for VID and PID across the system"
+        Filter: x=>true
+        Details: |
+          x=>dict(
+            Name=x.OSPath.Basename,
+            Vid=split(string=x.OSPath.Basename, sep="&")[0],
+            Pid=split(string=x.OSPath.Basename, sep="&")[1],
+            Instance={
+              SELECT OSPath.Basename AS Serial, dict(
+                 DeviceName=utf16(string=GetRawValue(OSPath=OSPath + "/Properties/{540b947e-8b40-45bc-a8a2-6a0b894cbda2}/0004/@")),
+                 Installed=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0064/@")),
+                 FirstInstalled=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0065/@")),
+                 LastConnected=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0066/@")),
+                 LastRemoved=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0067/@"))
+              ) AS Properties,
+              to_dict(item={
+                 SELECT OSPath.Basename AS _key, Data.value AS _value
+                 FROM glob(globs="*", accessor="registry", root=OSPath)
+              }) AS Metadata
+              FROM glob(globs='*', root=x.OSPath, accessor="raw_registry")
+            }
+          )
 
 # USB plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.USB
 # https://www.tristiansforensicsecurity.com/2018/11/28/basic-usb-forensics-in-windows/
@@ -2665,6 +2826,7 @@ Keys:
         ValueName: IsOfficeSyncIntegrationEnabled
         Recursive: true
         Comment: "Office Sync Integration, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
     -
         Description: OneDrive
         HiveType: NTUSER
@@ -2729,6 +2891,7 @@ Keys:
         ValueName: Enabled
         Recursive: true
         Comment: "Displays the status of Windows Event Log Channels (Key Path) on this system, 0 = Disabled, 1 - Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.ibm.com/mysupport/s/question/0D50z000062kolQ/how-to-monitor-custom-event-log?language=en_US
 # SYSTEM\\ControlSet00*\Services\EventLog\* will display the Provider GUID for each Event Log channel listed here. This recursive key is not enabled here
@@ -2740,6 +2903,7 @@ Keys:
         KeyPath: ControlSet001\Control\WMI\Autologger\EventLog-Application
         Recursive: true
         Comment: "Displays the status of Providers within the Application Event Log on this system, 0 = Disabled, 1 - Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # ETW plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.ETW
 
@@ -2750,6 +2914,7 @@ Keys:
         KeyPath: ControlSet001\Control\WMI\Autologger\EventLog-System
         Recursive: true
         Comment: "Displays the status of Providers within the Application Event Log on this system, 0 = Disabled, 1 - Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # ETW plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.ETW
 
@@ -3116,6 +3281,7 @@ Keys:
         ValueName: Shadow
         Recursive: true
         Comment: "Shadow RDP sessions, 0 = Disabled, 1 = Full Control with user's permission, 2 = Full Control without user's permission, 3 = View Session with user's permission, 4 = View Session without user's permission"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://twitter.com/inversecos/status/1380006149479559170
 # https://bitsadm.in/blog/spying-on-users-using-rdp-shadowing
@@ -3128,6 +3294,7 @@ Keys:
         ValueName: fDenyTSConnections
         Recursive: true
         Comment: "Displays the status of whether the system can accept Terminal Server (RDP) connections, 0 = Disabled (Inbound RDP enabled), 1 = Enabled (Inbound RDP disabled)"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-terminalservices-localsessionmanager-fdenytsconnections
 
@@ -3139,6 +3306,7 @@ Keys:
         ValueName: UserAuthentication
         Recursive: true
         Comment: "Displays whether a Network-Level user authentication is required before a remote desktop connection is established. 0 = Disabled (no authentication required), 1 = Enabled (authentication required)"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-terminalservices-rdp-winstationextensions-userauthentication
 
@@ -3150,6 +3318,7 @@ Keys:
         ValueName: DisableAntiSpyware
         Recursive: true
         Comment: "Displays the status of whether Windows Defender AntiSpyware is enabled or not. 0 = Enabled, 1 = Disabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/security-malware-windows-defender-disableantispyware
 # https://answers.microsoft.com/en-us/protect/forum/all/how-to-kill-antimalware-service-executable/b5ce5b46-a65b-460c-b4cd-e2cca50358cf
@@ -3163,6 +3332,7 @@ Keys:
         ValueName: DisableAntiVirus
         Recursive: true
         Comment: "Displays the status of whether Windows Defender AntiVirus is enabled or not. 0 = Enabled, 1 = Disabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/security-malware-windows-defender-disableantispyware
 # https://answers.microsoft.com/en-us/protect/forum/all/how-to-kill-antimalware-service-executable/b5ce5b46-a65b-460c-b4cd-e2cca50358cf
@@ -3176,6 +3346,7 @@ Keys:
         ValueName: DisableBlockAtFirstSeen
         Recursive: false
         Comment: "Windows Defender DisableBlockAtFirstSeen Status, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://gist.github.com/MHaggis/a955f1351a7d07592b90ab605e3b02d9
 
@@ -3187,6 +3358,7 @@ Keys:
         ValueName: SpynetReporting
         Recursive: false
         Comment: "Windows Defender SpynetReporting Status, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://gist.github.com/MHaggis/a955f1351a7d07592b90ab605e3b02d9
 
@@ -3198,6 +3370,7 @@ Keys:
         ValueName: SubmitSamplesConsent
         Recursive: false
         Comment: "Windows Defender SubmitSamplesConsent Status, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://gist.github.com/MHaggis/a955f1351a7d07592b90ab605e3b02d9
 
@@ -3244,6 +3417,7 @@ Keys:
         ValueName: UseAdvancedStartup
         Recursive: false
         Comment: "0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
     -
         Description: Hades IOCs
         HiveType: SOFTWARE
@@ -3252,6 +3426,7 @@ Keys:
         ValueName: EnableBDEWithNoTPM
         Recursive: false
         Comment: "1 = Default, 0 = Disabled, 1 = Enabled"
+        Details: x=>ExtractValueFromComment(x=x)
     -
         Description: Hades IOCs
         HiveType: SOFTWARE
@@ -3260,6 +3435,7 @@ Keys:
         ValueName: UseTPM
         Recursive: false
         Comment: "0 = Do Not Allow TPM, 1 = Require TPM, 2 = Allow TPM"
+        Details: x=>ExtractValueFromComment(x=x)
     -
         Description: Hades IOCs
         HiveType: SOFTWARE
@@ -3268,6 +3444,7 @@ Keys:
         ValueName: UseTPMKey
         Recursive: false
         Comment: "0 = Do not allow startup key with TPM, 1 = Require startup key with TPM, 2 = Allow startup key with TPM"
+        Details: x=>ExtractValueFromComment(x=x)
     -
         Description: Hades IOCs
         HiveType: SOFTWARE
@@ -3276,6 +3453,7 @@ Keys:
         ValueName: UseTPMKeyPIN
         Recursive: false
         Comment: "0 = Do not allow startup key and PIN with TPM, 1 = Require startup key and PIN with TPM, 2 = Allow startup key and PIN with TPM"
+        Details: x=>ExtractValueFromComment(x=x)
     -
         Description: Hades IOCs
         HiveType: SOFTWARE
@@ -3300,6 +3478,7 @@ Keys:
         ValueName: UseTPMPIN
         Recursive: false
         Comment: "0 = Do not allow startup PIN with TPM, 1 = Require startup PIN with TPM, 2 = Allow startup PIN with TPM"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.VolumeEncryption::ConfigureAdvancedStartup_Name
 
@@ -3350,6 +3529,7 @@ Keys:
         KeyPath: Microsoft\Windows Defender\Real-Time Protection
         Recursive: false
         Comment: "Windows Defender Real-Time Protection Status, 0 = Enabled, 1 = Disabled"
+        Details: x=>ExtractValueFromComment(x=x)
 
 # https://www.windowsphoneinfo.com/threads/cannot-open-security-dashboard-for-windows-defender.114537/
 # https://gist.github.com/MHaggis/a955f1351a7d07592b90ab605e3b02d9
@@ -3369,6 +3549,7 @@ Keys:
         KeyPath: Microsoft\Windows Defender\Reporting
         Recursive: false
         Comment: "Windows Defender Real-Time Protection Status, 0 = Enabled, 1 = Disabled"
+        Details: x=>ExtractValueFromComment(x=x)
     -
         Description: Windows Defender
         HiveType: SOFTWARE
@@ -3377,6 +3558,7 @@ Keys:
         ValueName: fDenyTSConnections
         Recursive: false
         Comment: "Windows Defender Real-Time Protection Status, 0 = Enabled, 1 = Disabled"
+        Details: x=>ExtractValueFromComment(x=x)
     -
         Description: Windows Defender
         HiveType: SOFTWARE

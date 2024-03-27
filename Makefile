@@ -5,6 +5,5 @@ all:
 recmd:
 	./reghunter convert --output Rules/RECmdBatch.yaml RECmd_Batch/*.reb
 
-
 artifact:
 	./reghunter compile --output output/Windows.Registry.Hunter.yaml Rules/*.yaml
