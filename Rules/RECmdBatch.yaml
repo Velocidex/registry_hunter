@@ -1,3 +1,69 @@
+Comment: |-
+  DO NOT Edit! Content produced from the following files:
+
+  RECmd_Batch/AllRegExecutablesFoundOrRun.reb
+  RECmd_Batch/BCDBootVolume.reb
+  RECmd_Batch/BasicSystemInfo.reb
+  RECmd_Batch/BatchExample.reb
+  RECmd_Batch/BatchExampleServices.reb
+  RECmd_Batch/BatchExampleSysCache.reb
+  RECmd_Batch/BatchExampleUserAssist.reb
+  RECmd_Batch/BatchExampleWildCard.reb
+  RECmd_Batch/BinaryIncludeDemo.reb
+  RECmd_Batch/InstalledSoftware.reb
+  RECmd_Batch/Kroll_Batch.reb
+  RECmd_Batch/RECmd_Batch_MC.reb
+  RECmd_Batch/RegistryASEPs.reb
+  RECmd_Batch/SoftwareASEPs.reb
+  RECmd_Batch/SoftwareClassesASEPs.reb
+  RECmd_Batch/SoftwareWoW6432ASEPs.reb
+  RECmd_Batch/SystemASEPs.reb
+  RECmd_Batch/UserActivity.reb
+  RECmd_Batch/UserClassesASEPs.reb
+Preamble:
+- |
+  LET FetchKeyValues(OSPath) = to_dict(item={
+    SELECT Name AS _key, Data.value AS _value
+    FROM glob(globs="*", accessor="registry", root=OSPath)
+  })
+- |
+  LET GetDateFrom128Bit(x) = parse_binary(accessor="data",
+    filename=x, profile='''
+    [["X", 0, [
+       ["year", 0, "uint16"],
+       ["month", 2, "uint16"],
+       ["day", 6, "uint16"],
+       ["hour", 8, "uint16"],
+       ["minute", 10, "uint16"],
+       ["seconds", 12, "uint16"],
+       ["Date", 0, "Value", {
+          value: "x=>format(format='%04d-%02d-%02dT%02d:%02d:%02d', args=[x.year, x.month, x.day, x.hour, x.minute, x.seconds])"
+        }]
+    ]]]
+    ''', struct="X").Date
+- |
+  LET FormatMAC(x) = parse_binary(accessor="data",
+    filename=x, profile='''
+    [["X", 0, [
+      ["x0", 0, "uint8"],
+      ["x1", 1, "uint8"],
+      ["x2", 2, "uint8"],
+      ["x3", 3, "uint8"],
+      ["x4", 4, "uint8"],
+      ["x5", 5, "uint8"],
+      ["mac", 0, Value, {"value": "x=>format(format='%02x:%02x:%02x:%02x:%02x:%02x', args=[x.x0, x.x1, x.x2, x.x3, x.x4, x.x5])"}]
+    ]]]
+    ''', struct="X").mac
+- |
+  LET ExtractValueFromComment(x) = parse_string_with_regex(
+    string=x.Metadata.Comment, regex=format(format="%v [=-] ([^,]+)", args=x.Data)).g1
+- |
+  -- Map from binary integer to a winfiletime - handle both binary encoding and integers
+  LET FILETIME(t) = if(condition=format(format="%T", args=[t,]) =~ "\\[\\]uint8",
+     then=timestamp(winfiletime=parse_binary(accessor="data", filename=t, struct="uint64") || 0),
+     else=timestamp(winfiletime=t || 0))
+- |
+  LET GetRawValue(OSPath) = stat(filename=OSPath, accessor="raw_registry").Data.value
 Rules:
 - Author: Troyla
   Description: AppCompatFlags CIT System
@@ -723,7 +789,7 @@ Rules:
   Category: System Info
   Glob: ControlSet001\Control\NetworkSetup2\Interfaces\*\Kernel\CurrentAddress
   Root: HKEY_LOCAL_MACHINE\System
-  Details: FormatIP(value=Data.Value)
+  Details: x=>ip(netaddr4_le=x.Data)
 - Author: Troy Larson
   Description: User Products InstallProperties
   Category: Installed Software
@@ -818,6 +884,7 @@ Rules:
     = Disabled, 1 = Enabled
   Glob: Microsoft\Windows NT\CurrentVersion\WinLogon\AutoAdminLogon
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: WinLogon
   Category: System Info
@@ -896,7 +963,7 @@ Rules:
   Comment: Last system shutdown time
   Glob: ControlSet00*\Control\Windows\ShutdownTime
   Root: HKEY_LOCAL_MACHINE\System
-  Details: Filetime(value=Data.Value)
+  Details: x=>FILETIME(t=x.Data)
 - Author: Andrew Rathbun
   Description: Windows OS Language
   Category: System Info
@@ -909,36 +976,42 @@ Rules:
   Comment: Virtual Memory Pagefile Encryption, 0 = Disabled, 1 = Enabled
   Glob: ControlSet*\Control\FileSystem\NtfsEncryptPagingFile
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: TRIM Status
   Category: System Info
   Comment: TRIM, 0 = Enabled, 1 = Disabled
   Glob: ControlSet*\Control\FileSystem\DisableDeleteNotification
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: NTFS File Compression Status
   Category: System Info
   Comment: NTFS File Compression, 0 = Enabled, 1 = Disabled
   Glob: ControlSet*\Control\FileSystem\NtfsDisableCompression
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: NTFS File Encryption Status
   Category: System Info
   Comment: NTFS File Encryption, 0 = Enabled, 1 = Disabled
   Glob: ControlSet*\Control\FileSystem\NtfsDisableEncryption
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: NTFS LastAccess Timestamp Status
   Category: System Info
   Comment: NTFS LastAccess Timestamp, 2147483650 = Enabled, 1 = Disabled
   Glob: ControlSet*\Control\FileSystem\NtfsDisableLastAccessUpdate
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Long Paths Enabled
   Category: System Info
   Comment: NTFS Long Paths, 0 = Disabled, 1 = Enabled
   Glob: ControlSet*\Control\FileSystem\LongPathsEnabled
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Prefetch Status
   Category: System Info
@@ -946,31 +1019,57 @@ Rules:
     Enabled, 3 = Application and Boot Prefetching Enabled
   Glob: ControlSet00*\Control\Session Manager\Memory Management\PrefetchParameters\EnablePrefetcher
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Clear Page File at Shutdown Status
   Category: System Info
   Comment: 0 = Disabled, 1 = Enabled
   Glob: ControlSet00*\Control\Session Manager\Memory Management\ClearPageFileAtShutdown
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: System Time Zone Information
   Category: System Info
   Comment: Displays the current Time Zone configuration for this system
   Glob: ControlSet00*\Control\TimeZoneInformation
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>FetchKeyValues(OSPath=x.OSPath)
+  Filter: x=>true
 - Author: Andrew Rathbun
   Description: Network Connections
   Category: System Info
   Comment: Displays list of network connections
   Glob: Microsoft\Windows NT\CurrentVersion\NetworkList
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: |
+    x=>dict(
+       Profiles={
+         SELECT ProfileName, Description, Managed,
+                Category, CategoryType, GetDateFrom128Bit(x= DateCreated) AS DateCreated,
+                GetDateFrom128Bit(x=DateLastConnected) AS DateLastConnected
+         FROM read_reg_key(root=x.OSPath, globs="Profiles/*")
+      },
+       Signatures={
+         SELECT Key.OSPath[-2:] AS Key,
+                FormatMAC(x=DefaultGatewayMac) AS DefaultGatewayMac,
+                DnsSuffix, ProfileGuid,
+                FirstNetwork
+         FROM read_reg_key(root=x.OSPath,
+              globs="/Signatures/*/*")
+      }
+    )
+  Filter: x=>true
 - Author: Andrew Rathbun
   Description: Device Classes
   Category: System Info
   Comment: Displays a list of PnP devices (Plug and Play) that were connected to this
     system
-  Glob: ControlSet*\Control\DeviceClasses
+  Glob: ControlSet*\Control\DeviceClasses\*\##*
   Root: HKEY_LOCAL_MACHINE\System
+  Details: |
+    x=>parse_string_with_regex(string=x.OSPath.Basename,
+         regex="##\\?#(?P<Type>[^#]+)#(?P<Name>[^#]+)#(?P<serialNumber>[^#]+)#(?P<Class>.+)")
+  Filter: x=>true
 - Author: Andrew Rathbun
   Description: System Info (Current)
   Category: System Info
@@ -1013,7 +1112,7 @@ Rules:
   Comment: Current OS install time
   Glob: Microsoft\Windows NT\CurrentVersion\InstallTime
   Root: HKEY_LOCAL_MACHINE\Software
-  Details: Filetime(value=Data.Value)
+  Details: x=>FILETIME(t=x.Data)
 - Author: Andrew Rathbun
   Description: System Info (Current)
   Category: System Info
@@ -1026,7 +1125,7 @@ Rules:
   Comment: Current OS install date
   Glob: Microsoft\Windows NT\CurrentVersion\InstallDate
   Root: HKEY_LOCAL_MACHINE\Software
-  Details: Epoch(value=Data.Value)
+  Details: x=>timestamp(epoch=x.Data)
 - Author: Andrew Rathbun
   Description: System Info (Current)
   Category: System Info
@@ -1099,7 +1198,7 @@ Rules:
   Comment: Historical OS install time
   Glob: Setup\Source OS*\InstallTime
   Root: HKEY_LOCAL_MACHINE\System
-  Details: Filetime(value=Data.Value)
+  Details: x=>FILETIME(t=x.Data)
 - Author: Andrew Rathbun
   Description: System Info (Historical)
   Category: System Info
@@ -1112,7 +1211,7 @@ Rules:
   Comment: Historical OS install date
   Glob: Setup\Source OS*\InstallDate
   Root: HKEY_LOCAL_MACHINE\System
-  Details: Epoch(value=Data.Value)
+  Details: x=>timestamp(epoch=x.Data)
 - Author: Andrew Rathbun
   Description: System Info (Historical)
   Category: System Info
@@ -1159,8 +1258,14 @@ Rules:
   Description: Network Adapters
   Category: System Info
   Comment: Displays list of network adapters connected to this system
-  Glob: ControlSet*\Control\Class\?4d36e972-e325-11ce-bfc1-08002be10318?
+  Glob: ControlSet*\Control\Class\?4d36e972-e325-11ce-bfc1-08002be10318?\00*
   Root: HKEY_LOCAL_MACHINE\System
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath) + dict(
+      InstallTimeStamp=GetDateFrom128Bit(x=GetValue(OSPath=x.OSPath + "InstallTimeStamp")),
+      NetworkInterfaceInstallTimestamp=FILETIME(t=GetValue(OSPath=x.OSPath + "NetworkInterfaceInstallTimestamp"))
+    )
+  Filter: x=>true
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv4)
   Category: System Info
@@ -1172,6 +1277,7 @@ Rules:
   Comment: DHCP Broadcast, 0 = Disabled, 1 = Enabled
   Glob: ControlSet*\Services\Tcpip\Parameters\Interfaces\*\DhcpConnForceBroadcastFlag
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv4)
   Category: System Info
@@ -1250,12 +1356,14 @@ Rules:
   Comment: DHCP status, 0 = Disabled, 1 = Enabled
   Glob: ControlSet*\Services\Tcpip\Parameters\Interfaces\*\EnableDHCP
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv4)
   Category: System Info
   Comment: Multicast status, 0 = Disabled, 1 = Enabled
   Glob: ControlSet*\Services\Tcpip\Parameters\Interfaces\*\EnableMulticast
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv4)
   Category: System Info
@@ -1279,14 +1387,14 @@ Rules:
   Comment: Stores the time that the interface acquired the lease on its IP address
   Glob: ControlSet*\Services\Tcpip\Parameters\Interfaces\*\LeaseObtainedTime
   Root: HKEY_LOCAL_MACHINE\System
-  Details: Epoch(value=Data.Value)
+  Details: x=>timestamp(epoch=x.Data)
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv4)
   Category: System Info
   Comment: Stores the time when the lease on the interfaces' IP address expires
   Glob: ControlSet*\Services\Tcpip\Parameters\Interfaces\*\LeaseTerminatesTime
   Root: HKEY_LOCAL_MACHINE\System
-  Details: Epoch(value=Data.Value)
+  Details: x=>timestamp(epoch=x.Data)
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv4)
   Category: System Info
@@ -1337,6 +1445,7 @@ Rules:
   Comment: DHCP Broadcast, 0 = Disabled, 1 = Enabled
   Glob: ControlSet*\Services\Tcpip6\Parameters\Interfaces\*\DhcpConnForceBroadcastFlag
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv6)
   Category: System Info
@@ -1415,12 +1524,14 @@ Rules:
   Comment: DHCP status, 0 = Disabled, 1 = Enabled
   Glob: ControlSet*\Services\Tcpip6\Parameters\Interfaces\*\EnableDHCP
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv6)
   Category: System Info
   Comment: Multicast status, 0 = Disabled, 1 = Enabled
   Glob: ControlSet*\Services\Tcpip6\Parameters\Interfaces\*\EnableMulticast
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv6)
   Category: System Info
@@ -1444,14 +1555,14 @@ Rules:
   Comment: Stores the time that the interface acquired the lease on its IP address
   Glob: ControlSet*\Services\Tcpip6\Parameters\Interfaces\*\LeaseObtainedTime
   Root: HKEY_LOCAL_MACHINE\System
-  Details: Epoch(value=Data.Value)
+  Details: x=>timestamp(epoch=x.Data)
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv6)
   Category: System Info
   Comment: Stores the time when the lease on the interfaces' IP address expires
   Glob: ControlSet*\Services\Tcpip6\Parameters\Interfaces\*\LeaseTerminatesTime
   Root: HKEY_LOCAL_MACHINE\System
-  Details: Epoch(value=Data.Value)
+  Details: x=>timestamp(epoch=x.Data)
 - Author: Andrew Rathbun
   Description: Network Configuration (IPv6)
   Category: System Info
@@ -1497,18 +1608,21 @@ Rules:
   Comment: Windows 10 Activity Timeline status, 0 = Disabled, 1 = Enabled
   Glob: Policies\Microsoft\Windows\System\EnableActivityFeed
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Windows 10 Timeline Status
   Category: System Info
   Comment: Windows 10 Activity Timeline status, 0 = Disabled, 1 = Enabled
   Glob: Microsoft\PolicyManager\default\Privacy\EnableActivityFeed\value
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Clipboard History Status
   Category: System Info
   Comment: Displays the status of Clipboard History, 0 = Disabled, 1 = Enabled
   Glob: Microsoft\PolicyManager\default\Privacy\EnableClipboardHistory
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Clipboard History Status
   Category: System Info
@@ -1516,6 +1630,7 @@ Rules:
     Enabled
   Glob: Software\Policies\Microsoft\Windows\System\AllowCrossDeviceClipboard
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Clipboard History Status
   Category: System Info
@@ -1523,6 +1638,7 @@ Rules:
     Enabled
   Glob: Microsoft\PolicyManager\default\Privacy\AllowCrossDeviceClipboard\value
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: User Access Logging (SUM DB)
   Category: System Info
@@ -1530,6 +1646,7 @@ Rules:
     = 60 seconds, for example
   Glob: ControlSet*\Control\WMI\Autologger\SUM\PollingInterval
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Firewall Rules
   Category: System Info
@@ -1539,9 +1656,16 @@ Rules:
 - Author: Andrew Rathbun
   Description: MAC Addresses
   Category: System Info
-  Comment: Displays MAC Addresses related to this system
-  Glob: ControlSet00*\Control\NetworkSetup2
+  Comment: Displays MAC Addresses related to this system. This key normally gets Permission
+    Denied when using the API - use Raw Hives to access
+  Glob: ControlSet00*\Control\NetworkSetup2\Interfaces\*\Kernel
   Root: HKEY_LOCAL_MACHINE\System
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath) + dict(
+       PermanentAddress=FormatMAC(x=GetValue(OSPath=x.OSPath + "PermanentAddress") || ""),
+       CurrentAddress=FormatMAC(x=GetValue(OSPath=x.OSPath + "CurrentAddress") || "")
+    )
+  Filter: x=>true
 - Author: Andrew Rathbun
   Description: Microphone
   Category: Devices
@@ -1549,7 +1673,7 @@ Rules:
     application
   Glob: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone\**\LastUsedTimeStart
   Root: HKEY_LOCAL_MACHINE\Software
-  Details: Filetime(value=Data.Value)
+  Details: x=>FILETIME(t=x.Data)
 - Author: Andrew Rathbun
   Description: Microphone
   Category: Devices
@@ -1557,7 +1681,7 @@ Rules:
     application
   Glob: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone\**\LastUsedTimeStop
   Root: HKEY_LOCAL_MACHINE\Software
-  Details: Filetime(value=Data.Value)
+  Details: x=>FILETIME(t=x.Data)
 - Author: Andrew Rathbun
   Description: Webcam
   Category: Devices
@@ -1565,7 +1689,7 @@ Rules:
     application
   Glob: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam\*\*\**\LastUsedTimeStart
   Root: HKEY_LOCAL_MACHINE\Software
-  Details: Filetime(value=Data.Value)
+  Details: x=>FILETIME(t=x.Data)
 - Author: Andrew Rathbun
   Description: Webcam
   Category: Devices
@@ -1573,34 +1697,85 @@ Rules:
     application
   Glob: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam\*\*\**\LastUsedTimeStop
   Root: HKEY_LOCAL_MACHINE\Software
-  Details: Filetime(value=Data.Value)
+  Details: x=>FILETIME(t=x.Data)
 - Author: Andrew Rathbun
   Description: Bluetooth Devices
   Category: Devices
   Comment: Displays the Bluetooth devices that have been connected to this computer
-  Glob: ControlSet*\Services\BTHPORT\Parameters\Devices
+  Glob: ControlSet*\Services\BTHPORT\Parameters\Devices\*
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>FetchKeyValues(OSPath=x.OSPath)
+  Filter: x=>true
 - Author: Andrew Rathbun
   Description: Volume Info Cache
   Category: Devices
   Comment: 2 = Removable, 3 = Fixed, 4 = Network, 5 = Optical, 6 = RAM disk, 0 = Unknown
-  Glob: Microsoft\Windows Search\VolumeInfoCache
+  Glob: Microsoft\Windows Search\VolumeInfoCache\*
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath) + dict(
+       DriveName=x.OSPath.Basename,
+       DriveType=ExtractValueFromComment(x=GetValue(OSPath=x.OSPath + "DriveType"))
+    )
+  Filter: x=>true
 - Author: Andrew Rathbun
   Description: USBSTOR
   Category: Devices
   Comment: Displays list of USB devices that have been plugged into this system. If
     & is second character within serial number, serial number is only unique on the
     system
-  Glob: ControlSet*\Enum\USBSTOR
+  Glob: ControlSet*\Enum\USBSTOR\*
   Root: HKEY_LOCAL_MACHINE\System
+  Details: |
+    x=>dict(
+      Name=x.OSPath.Basename,
+      Manufacturer=split(string=x.OSPath.Basename, sep="&")[1],
+      Title=split(string=x.OSPath.Basename, sep="&")[2],
+      Version=split(string=x.OSPath.Basename, sep="&")[3],
+      Instance={
+        SELECT OSPath.Basename AS Serial, dict(
+           DeviceName=utf16(string=GetRawValue(OSPath=OSPath + "/Properties/{540b947e-8b40-45bc-a8a2-6a0b894cbda2}/0004/@")),
+           Installed=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0064/@")),
+           FirstInstalled=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0065/@")),
+           LastConnected=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0066/@")),
+           LastRemoved=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0067/@"))
+        ) AS Properties,
+        to_dict(item={
+           SELECT OSPath.Basename AS _key, Data.value AS _value
+           FROM glob(globs="*", accessor="registry", root=OSPath)
+        }) AS Metadata
+        FROM glob(globs='*', root=x.OSPath, accessor="raw_registry")
+      }
+    )
+  Filter: x=>true
 - Author: Andrew Rathbun
   Description: USB
   Category: Devices
   Comment: Provides VID and PID numbers of USB devices. Match serial number from USBSTOR
     and search for VID and PID across the system
-  Glob: ControlSet*\Enum\USB
+  Glob: ControlSet*\Enum\USB\VID_*
   Root: HKEY_LOCAL_MACHINE\System
+  Details: |
+    x=>dict(
+      Name=x.OSPath.Basename,
+      Vid=split(string=x.OSPath.Basename, sep="&")[0],
+      Pid=split(string=x.OSPath.Basename, sep="&")[1],
+      Instance={
+        SELECT OSPath.Basename AS Serial, dict(
+           DeviceName=utf16(string=GetRawValue(OSPath=OSPath + "/Properties/{540b947e-8b40-45bc-a8a2-6a0b894cbda2}/0004/@")),
+           Installed=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0064/@")),
+           FirstInstalled=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0065/@")),
+           LastConnected=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0066/@")),
+           LastRemoved=FILETIME(t=GetRawValue(OSPath=OSPath + "/Properties/{83da6326-97a6-4088-9453-a1923f573b29}/0067/@"))
+        ) AS Properties,
+        to_dict(item={
+           SELECT OSPath.Basename AS _key, Data.value AS _value
+           FROM glob(globs="*", accessor="registry", root=OSPath)
+        }) AS Metadata
+        FROM glob(globs='*', root=x.OSPath, accessor="raw_registry")
+      }
+    )
+  Filter: x=>true
 - Author: Andrew Rathbun
   Description: MountPoints2
   Category: Devices
@@ -2193,7 +2368,7 @@ Rules:
   Comment: Displays timestamps related to Macrium Reflect's CBT feature
   Glob: Macrium\Reflect\CBT\Sequence\**
   Root: HKEY_LOCAL_MACHINE\Software
-  Details: Filetime(value=Data.Value)
+  Details: x=>FILETIME(t=x.Data)
 - Author: Andrew Rathbun
   Description: Macrium Reflect
   Category: Third Party Applications
@@ -2310,7 +2485,7 @@ Rules:
   Comment: Displays the date that 4K Video Downloader was installed
   Glob: '*\SOFTWARE\4kdownload.com\4K Video Downloader\Limits\dayDownloadDate'
   Root: HKEY_USERS
-  Details: Epoch(value=Data.Value)
+  Details: x=>timestamp(epoch=x.Data)
 - Author: Andrew Rathbun
   Description: 4K Video Downloader
   Category: Third Party Applications
@@ -2365,6 +2540,7 @@ Rules:
   Comment: Office Sync Integration, 0 = Disabled, 1 = Enabled
   Glob: '*\Software\SyncEngines\Providers\OneDrive\*\\**\IsOfficeSyncIntegrationEnabled'
   Root: HKEY_USERS
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: OneDrive
   Category: Cloud Storage
@@ -2382,7 +2558,7 @@ Rules:
   Comment: Displays the last update time of the Accounts OneDrive Registry key
   Glob: '*\Software\Microsoft\OneDrive\Accounts\**\LastUpdate'
   Root: HKEY_USERS
-  Details: Epoch(value=Data.Value)
+  Details: x=>timestamp(epoch=x.Data)
 - Author: Andrew Rathbun
   Description: Dropbox
   Category: Cloud Storage
@@ -2402,6 +2578,7 @@ Rules:
     0 = Disabled, 1 - Enabled
   Glob: Microsoft\Windows\CurrentVersion\WINEVT\Channels\**\Enabled
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Application Event Log Providers
   Category: Event Logs
@@ -2409,6 +2586,7 @@ Rules:
     system, 0 = Disabled, 1 - Enabled
   Glob: ControlSet001\Control\WMI\Autologger\EventLog-Application\**
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: System Event Log Providers
   Category: Event Logs
@@ -2416,6 +2594,7 @@ Rules:
     system, 0 = Disabled, 1 - Enabled
   Glob: ControlSet001\Control\WMI\Autologger\EventLog-System\**
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Microsoft Office
   Category: Microsoft Office
@@ -2459,7 +2638,7 @@ Rules:
     365 for the first time
   Glob: '*\Software\Microsoft\Office\*\Common\Identity\Identities\*\AuthHistory\**'
   Root: HKEY_USERS
-  Details: Filetime(value=Data.Value)
+  Details: x=>FILETIME(t=x.Data)
 - Author: Andrew Rathbun
   Description: Microsoft Office
   Category: Microsoft Office
@@ -2640,6 +2819,7 @@ Rules:
     4 = View Session without user's permission
   Glob: Policies\Microsoft\Windows NT\Terminal Services\**\Shadow
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: RDP Connections Status
   Category: Threat Hunting
@@ -2647,6 +2827,7 @@ Rules:
     connections, 0 = Disabled (Inbound RDP enabled), 1 = Enabled (Inbound RDP disabled)
   Glob: ControlSet*\Control\Terminal Server\**\fDenyTSConnections
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: RDP User Authentication Status
   Category: Threat Hunting
@@ -2655,6 +2836,7 @@ Rules:
     1 = Enabled (authentication required)
   Glob: ControlSet*\Control\Terminal Server\WinStations\RDP-Tcp\**\UserAuthentication
   Root: HKEY_LOCAL_MACHINE\System
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Windows Defender Status
   Category: Threat Hunting
@@ -2662,6 +2844,7 @@ Rules:
     or not. 0 = Enabled, 1 = Disabled
   Glob: Policies\Microsoft\Windows Defender\**\DisableAntiSpyware
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Windows Defender Status
   Category: Threat Hunting
@@ -2669,24 +2852,28 @@ Rules:
     not. 0 = Enabled, 1 = Disabled
   Glob: Policies\Microsoft\Windows Defender\**\DisableAntiVirus
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Windows Defender
   Category: Antivirus
   Comment: Windows Defender DisableBlockAtFirstSeen Status, 0 = Disabled, 1 = Enabled
   Glob: Microsoft\Windows Defender\SpyNet\DisableBlockAtFirstSeen
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Windows Defender
   Category: Antivirus
   Comment: Windows Defender SpynetReporting Status, 0 = Disabled, 1 = Enabled
   Glob: Microsoft\Windows Defender\SpyNet\SpynetReporting
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Windows Defender
   Category: Antivirus
   Comment: Windows Defender SubmitSamplesConsent Status, 0 = Disabled, 1 = Enabled
   Glob: Microsoft\Windows Defender\SpyNet\SubmitSamplesConsent
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: PortProxy Configuration
   Category: Threat Hunting
@@ -2711,18 +2898,21 @@ Rules:
   Comment: 0 = Disabled, 1 = Enabled
   Glob: Policies\Microsoft\Windows\System\UseAdvancedStartup
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Hades IOCs
   Category: Threat Hunting
   Comment: 1 = Default, 0 = Disabled, 1 = Enabled
   Glob: Policies\Microsoft\Windows\System\EnableBDEWithNoTPM
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Hades IOCs
   Category: Threat Hunting
   Comment: 0 = Do Not Allow TPM, 1 = Require TPM, 2 = Allow TPM
   Glob: Policies\Microsoft\Windows\System\UseTPM
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Hades IOCs
   Category: Threat Hunting
@@ -2730,6 +2920,7 @@ Rules:
     2 = Allow startup key with TPM
   Glob: Policies\Microsoft\Windows\System\UseTPMKey
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Hades IOCs
   Category: Threat Hunting
@@ -2737,6 +2928,7 @@ Rules:
     and PIN with TPM, 2 = Allow startup key and PIN with TPM
   Glob: Policies\Microsoft\Windows\System\UseTPMKeyPIN
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Hades IOCs
   Category: Threat Hunting
@@ -2756,6 +2948,7 @@ Rules:
     2 = Allow startup PIN with TPM
   Glob: Policies\Microsoft\Windows\System\UseTPMPIN
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: REvil IOCs
   Category: Threat Hunting
@@ -2780,6 +2973,7 @@ Rules:
   Comment: Windows Defender Real-Time Protection Status, 0 = Enabled, 1 = Disabled
   Glob: Microsoft\Windows Defender\Real-Time Protection
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Symantec Endpoint Protection
   Category: Threat Hunting
@@ -2793,12 +2987,14 @@ Rules:
   Comment: Windows Defender Real-Time Protection Status, 0 = Enabled, 1 = Disabled
   Glob: Microsoft\Windows Defender\Reporting
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Windows Defender
   Category: Threat Hunting
   Comment: Windows Defender Real-Time Protection Status, 0 = Enabled, 1 = Disabled
   Glob: Microsoft\Windows Defender\fDenyTSConnections
   Root: HKEY_LOCAL_MACHINE\Software
+  Details: x=>ExtractValueFromComment(x=x)
 - Author: Andrew Rathbun
   Description: Windows Defender
   Category: Threat Hunting
@@ -2829,265 +3025,6 @@ Rules:
   Comment: Displays the connections made by MS Office - IOCs found here for CVE-2022-30190
   Glob: '*\Software\Microsoft\Office\*\Common\Internet\Server Cache\**'
   Root: HKEY_USERS
-- Author: Mike Cary
-  Description: Network
-  Category: Devices
-  Comment: Network Drives
-  Glob: '*\Network\**'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: Typed URLs
-  Category: Browser history
-  Comment: IE/Edge Typed URLs
-  Glob: '*\Software\Microsoft\Internet Explorer\TypedURLs'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: MS Office MRU
-  Category: File and Folder Opening
-  Comment: MS Office MRU
-  Glob: '*\SOFTWARE\Microsoft\Office\*\*\User MRU\*\*\**'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: Terminal Server Client
-  Category: Terminal Server Client
-  Comment: Terminal Server Client
-  Glob: '*\Software\Microsoft\Terminal Server Client'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: CIDSizeMRU
-  Category: File Access and Opening
-  Comment: CIDSizeMRU
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\CIDSizeMRU'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: FirstFolder
-  Category: File Access and Opening
-  Comment: OpenSavePidlMRU
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\FirstFolder'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: LastVisitedPidlMRU
-  Category: File Access and Opening
-  Comment: LastVisitedPidlMRU
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: LastVisitedPidlMRULegacy
-  Category: File Access and Opening
-  Comment: LastVisitedPidlMRULegacy
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRULegacy'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: OpenSavePidlMRU
-  Category: File Access and Opening
-  Comment: OpenSavePidlMRU
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU\**'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: File Extensions
-  Category: System Info
-  Comment: File Extensions
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: RecentDocs
-  Category: File Access and Opening
-  Comment: RecentDocs
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\**'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: MountPoints2
-  Category: Devices
-  Comment: Mount Points - NTUSER
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2\**'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: User Run Key
-  Category: Autoruns
-  Comment: User Run Key
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Run'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: User RunOnce Key
-  Category: Autoruns
-  Comment: User RunOnce Key
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\RunOnce'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: RunMRU
-  Category: Program Execution
-  Comment: RunMRU(Start>Run)
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: TypedPaths
-  Category: File Access and Opening
-  Comment: TypedPaths
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: UserAssist
-  Category: Program Execution
-  Comment: user assist
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\**'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: WordWheelQuery
-  Category: User Searches
-  Comment: User Searches
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery\**'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: RecentApps
-  Category: Program Execution
-  Comment: RecentApps
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Search\RecentApps\**'
-  Root: HKEY_USERS
-- Author: Mike Cary
-  Description: SAM Users
-  Category: Users
-  Comment: User accounts in SAM file
-  Glob: SAM\Domains\Account\Users\**
-  Root: SAM
-- Author: Mike Cary
-  Description: Windows NT Current Version
-  Category: System Info
-  Comment: OS version and install info
-  Glob: Microsoft\Windows NT\CurrentVersion
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Mike Cary
-  Description: Network List
-  Category: Autoruns
-  Comment: Network List
-  Glob: Microsoft\Windows NT\CurrentVersion\NetworkList
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Mike Cary
-  Description: Group Policy Run Key
-  Category: Autoruns
-  Comment: Group Policy Run Key
-  Glob: Microsoft\Windows\CurrentVersion\policies\Explorer\Run
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Mike Cary
-  Description: System Run Key
-  Category: Autoruns
-  Comment: System Run Key
-  Glob: Microsoft\Windows\CurrentVersion\Run
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Mike Cary
-  Description: System RunOnce Key
-  Category: Autoruns
-  Comment: System RunOnce Key
-  Glob: Microsoft\Windows\CurrentVersion\RunOnce
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Mike Cary
-  Description: Portable Devices
-  Category: Devices
-  Comment: Portable Devices
-  Glob: Microsoft\Windows Portable Devices\Devices\\**
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Mike Cary
-  Description: ComputerName
-  Category: System Info
-  Comment: Computer name
-  Glob: ControlSet00*\Control\ComputerName\ComputerName\ComputerName
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: AppCompatCache
-  Category: Program Execution
-  Comment: AppCompatCache
-  Glob: ControlSet00*\Control\Session Manager\AppCompatCache
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: TimeZoneInformation
-  Category: System Info
-  Comment: TimeZoneInformation
-  Glob: ControlSet00*\Control\TimeZoneInformation
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: Services
-  Category: Services
-  Comment: Services
-  Glob: ControlSet00*\Services\**
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: BAM
-  Category: Program Execution
-  Comment: BAM
-  Glob: ControlSet00*\Services\bam\UserSettings\**
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: DAM
-  Category: Program Execution
-  Comment: DAM
-  Glob: ControlSet00*\Services\dam\UserSettings\**
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: Network Shares
-  Category: Network
-  Comment: Network Shares
-  Glob: ControlSet00*\Services\lanmanserver\Shares
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: DHCP Network Hints
-  Category: Network Configuration
-  Comment: DHCP Hints
-  Glob: ControlSet00*\Services\Tcpip\Parameters\Interfaces\**
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: Network Interfaces
-  Category: Network Configuration
-  Comment: Network Interfaces
-  Glob: ControlSet00*\Services\Tcpip\Parameters\Interfaces\*\**
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: MountedDevices
-  Category: Devices
-  Comment: Mounted Drives
-  Glob: MountedDevices
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: Setup
-  Category: Devices
-  Comment: Setup key
-  Glob: Setup
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: Current Control Set Name
-  Category: Devices
-  Comment: Current Control Set Name
-  Glob: Select\Current
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: Shutdown Time
-  Category: System Info
-  Comment: Shutdown Time
-  Glob: ControlSet00*\Control\Windows\ShutdownTime
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Mike Cary
-  Description: ProfileList Flags
-  Category: ProfileList
-  Glob: Microsoft\Windows NT\CurrentVersion\ProfileList\*\Flags
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Mike Cary
-  Description: ProfileList ProfileImagepath
-  Category: ProfileList
-  Glob: Microsoft\Windows NT\CurrentVersion\ProfileList\*\ProfileImagepath
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Mike Cary
-  Description: ProfileList RunLogonScriptsync
-  Category: ProfileList
-  Glob: Microsoft\Windows NT\CurrentVersion\ProfileList\*\RunLogonScriptsync
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Mike Cary
-  Description: ProfileList Sid
-  Category: ProfileList
-  Glob: Microsoft\Windows NT\CurrentVersion\ProfileList\*\Sid
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Mike Cary
-  Description: ProfileList State
-  Category: ProfileList
-  Glob: Microsoft\Windows NT\CurrentVersion\ProfileList\*\State
-  Root: HKEY_LOCAL_MACHINE\Software
 - Author: Troyla
   Description: Clients StartMenuInternet shell open command
   Category: ASEP

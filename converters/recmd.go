@@ -38,9 +38,12 @@ type KeyDescription struct {
 	// happens to be stored in binary as Windows Filetime, therefore,
 	// setting FILETIME as our value for BinaryConvert will make this
 	// a human readable timestamp within the RECmd CSV output
-	BinaryConvert string `json:"BinaryConvert"`
-	Comment       string `json:"Comment"`
-	Disabled      bool   `json:"Disabled"`
+	BinaryConvert string   `json:"BinaryConvert"`
+	Comment       string   `json:"Comment"`
+	Disabled      bool     `json:"Disabled"`
+	Details       string   `json:"Details"`
+	Filter        string   `json:"Filter"`
+	Preamble      []string `json:"Preamble"`
 }
 
 type RECmdBatch struct {
@@ -48,6 +51,7 @@ type RECmdBatch struct {
 	Author      string           `json:"Author"`
 	Keys        []KeyDescription `json:"Keys"`
 	Disabled    bool             `json:"Disabled"`
+	Preamble    []string         `json:"Preamble,omitempty"`
 }
 
 type RuleError struct {
@@ -86,7 +90,7 @@ func (self *RECmdConverter) Errors() []RuleError {
 	return self.errors
 }
 
-func (self *RECmdConverter) ParseYaml(data string) error {
+func (self *RECmdConverter) ParseYaml(data, path string) error {
 	batch_file := &RECmdBatch{}
 	err := yaml.Unmarshal([]byte(data), batch_file)
 	if err != nil {
@@ -99,6 +103,11 @@ func (self *RECmdConverter) ParseYaml(data string) error {
 
 	self.batch_files = append(self.batch_files, batch_file)
 
+	self.output.Comment = fmt.Sprintf("DO NOT Edit! Content produced from the following files:\n\n%v", path)
+
+	// Global preamble verses
+	self.output.Preamble = append(self.output.Preamble, batch_file.Preamble...)
+
 	for _, key := range batch_file.Keys {
 		if key.Disabled {
 			continue
@@ -109,6 +118,8 @@ func (self *RECmdConverter) ParseYaml(data string) error {
 			Description: key.Description,
 			Comment:     key.Comment,
 			Category:    key.Category,
+			Filter:      key.Filter,
+			Preamble:    key.Preamble,
 		}
 
 		err := mapHive(key.HiveType, &rule)
@@ -132,16 +143,19 @@ func (self *RECmdConverter) ParseYaml(data string) error {
 
 		rule.Glob = strings.TrimPrefix(rule.Glob, "\\")
 
-		if key.BinaryConvert != "" {
-			err := validateBinaryConvert(key.BinaryConvert, &rule)
-			if err != nil {
-				self.rejectRule(key.Description,
-					fmt.Sprintf("While processing %v: %v",
-						key.Description, err))
-				continue
+		if key.Details != "" {
+			rule.Details = key.Details
+		} else {
+			if key.BinaryConvert != "" {
+				err := validateBinaryConvert(key.BinaryConvert, &rule)
+				if err != nil {
+					self.rejectRule(key.Description,
+						fmt.Sprintf("While processing %v: %v",
+							key.Description, err))
+					continue
+				}
 			}
 		}
-
 		self.output.Rules = append(self.output.Rules, rule)
 	}
 
@@ -158,13 +172,13 @@ func escapeQuotes(in string) string {
 func validateBinaryConvert(name string, rule *config.RegistryRule) error {
 	switch strings.ToUpper(name) {
 	case "EPOCH":
-		rule.Details = "Epoch(value=Data.Value)"
+		rule.Details = "x=>timestamp(epoch=x.Data)"
 
 	case "FILETIME":
-		rule.Details = "Filetime(value=Data.Value)"
+		rule.Details = "x=>FILETIME(t=x.Data)"
 
 	case "IP":
-		rule.Details = "FormatIP(value=Data.Value)"
+		rule.Details = "x=>ip(netaddr4_le=x.Data)"
 
 	default:
 		return errors.New("Unknown binary convertion " + name)

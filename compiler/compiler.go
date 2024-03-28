@@ -7,8 +7,10 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"os"
+	"strings"
 	"text/template"
 
+	"github.com/Velocidex/ordereddict"
 	"github.com/Velocidex/registry_hunter/config"
 	"github.com/Velocidex/yaml/v2"
 )
@@ -76,10 +78,34 @@ export: |
           Description="Map Amcache to /Amcache/"),
     ) + _required_mappings
 
-    LET _api_remapping <= (dict(
-       type="mount",
-       ` + "`" + `from` + "`" + `=dict(accessor="registry", prefix='/', path_type='registry'),
+    LET _api_remapping <= (
+      dict(type="mount",
+        ` + "`" + `from` + "`" + `=dict(accessor="registry", prefix='/', path_type='registry'),
        on=dict(accessor="registry", prefix='/', path_type="registry")),
+    )
+
+    -- In API mode we sometimes can not access the keys due to permissions.
+    -- We also map the raw hives to the raw_registry accessor to ensure
+    -- that we can access protected keys.
+    LET _raw_hive_mapping_for_api <= (
+      dict(type="mount",
+        ` + "`" + `from` + "`" + `=dict(accessor="raw_reg",
+         prefix=pathspec(Path='/',
+           DelegatePath="C:/Windows/System32/Config/SYSTEM",
+           DelegateAccessor="ntfs"),
+         path_type='registry'),
+       on=dict(accessor="raw_registry",
+               prefix='/HKEY_LOCAL_MACHINE/System',
+               path_type="registry")),
+      dict(type="mount",
+        ` + "`" + `from` + "`" + `=dict(accessor="raw_reg",
+         prefix=pathspec(Path='/',
+           DelegatePath="C:/Windows/System32/Config/SOFTWARE",
+           DelegateAccessor="ntfs"),
+         path_type='registry'),
+       on=dict(accessor="raw_registry",
+               prefix='/HKEY_LOCAL_MACHINE/Software',
+               path_type="registry")),
     )
 
     // The BCD hive is normally located on an unmounted drive so we
@@ -91,10 +117,22 @@ export: |
 
     // Apply the mappings:
     LET RemapRules = if(condition=RemappingStrategy = "API",
-       then=_api_remapping + _unmounted_hive_mapping,
+       then=_api_remapping +
+            _unmounted_hive_mapping +
+            _raw_hive_mapping_for_api,
+
     else=if(condition=RemappingStrategy = "API And NTUser.dat",
-       then=_api_remapping + _user_mappings + _unmounted_hive_mapping,
-    else=_user_mappings + _unmounted_hive_mapping + _standard_mappings + _bcd_map))
+       then=_api_remapping +
+            _user_mappings +
+            _unmounted_hive_mapping +
+            _raw_hive_mapping_for_api,
+
+    else=_user_mappings +
+         _unmounted_hive_mapping +
+         _standard_mappings +
+         _bcd_map))
+
+{{ .Preamble }}
 
     LET _MD <= parse_json_array(data=gunzip(string=base64decode(string="{{.Metadata }}")))
     LET MD(DescriptionFilter, RootFilter, CategoryFilter, CategoryExcludedFilter) = SELECT * FROM _MD
@@ -129,16 +167,20 @@ sources:
       SELECT Root AS _key, Globs AS _value FROM AllGlobs
     })
 
+    LET s = scope()
+
     LET Cache <= memoize(query={
-       SELECT Glob, Category, Description FROM AllRules
+       SELECT Glob, Category, Description, s.Details AS Details, s.Comment AS Comment, s.Filter AS Filter
+       FROM AllRules
     }, key="Glob", period=100000)
 
     LET _ <= remap(config=dict(remappings=RemapRules))
 
     LET Result = SELECT OSPath, Mtime,
        Data.value AS Data,
-       get(item=Cache, field=Globs[0]) AS MetadaData,
-       Globs[0] AS _Glob
+       get(item=Cache, field=Globs[0]) AS Metadata,
+       Globs[0] AS _Glob,
+       IsDir
     FROM foreach(row={
        SELECT _key AS Root, _value AS GlobsToSearch
        FROM items(item=GlobsMD)
@@ -150,10 +192,15 @@ sources:
        SELECT * FROM glob(globs=GlobsToSearch, root=Root, accessor="registry")
     }, workers=20)
 
-    SELECT MetadaData.Category AS Category, OSPath, Mtime, Data, MetadaData, _Glob
+    SELECT Metadata.Description AS Description,
+           Metadata.Category AS Category,
+           OSPath, Mtime, Data AS _RawData,
+           eval(func=Metadata.Details || "x=>x.Data") || Data AS Details,
+           Metadata AS _Metadata
     FROM Result
-    WHERE Category =~ CategoryFilter
-      AND MetadaData.Description =~ DescriptionFilter
+    WHERE eval(func=Metadata.Filter || "x=>NOT IsDir")
+      AND Category =~ CategoryFilter
+      AND Metadata.Description =~ DescriptionFilter
 `
 )
 
@@ -161,6 +208,7 @@ type templateParameters struct {
 	Name     string
 	Metadata string
 	Rules    []config.RegistryRule
+	Preamble string
 }
 
 type Compiler struct {
@@ -169,6 +217,8 @@ type Compiler struct {
 
 	// Groups the globs by root and globs
 	globs map[string][]string
+
+	PreambleVerses []string
 }
 
 func NewCompiler() *Compiler {
@@ -195,7 +245,16 @@ func (self *Compiler) LoadRules(filename string) error {
 		return err
 	}
 
-	self.rules = append(self.rules, rules.Rules...)
+	// Add preables from rules
+	for _, r := range rules.Rules {
+		if len(r.Preamble) > 0 {
+			self.PreambleVerses = append(self.PreambleVerses, r.Preamble...)
+		}
+		self.rules = append(self.rules, r)
+	}
+
+	// Add global preambles
+	self.PreambleVerses = append(self.PreambleVerses, rules.Preamble...)
 	return nil
 }
 
@@ -207,6 +266,38 @@ func (self *Compiler) buildMetadata() string {
 	gz.Write(serialized)
 	gz.Close()
 	return base64.StdEncoding.EncodeToString(b.Bytes())
+}
+
+func (self *Compiler) buildPreamble() string {
+	preamble := ordereddict.NewDict()
+
+	for _, p := range self.PreambleVerses {
+		if p == "" {
+			continue
+		}
+
+		_, exists := preamble.Get(p)
+		if !exists {
+			preamble.Set(p, true)
+		}
+	}
+
+	result := ""
+	for _, k := range preamble.Keys() {
+		result += k + "\n"
+	}
+
+	return self.indent(result, "    ")
+}
+
+func (self *Compiler) indent(in string, indent string) string {
+	lines := strings.Split(in, "\n")
+	result := make([]string, 0, len(lines))
+	for _, l := range lines {
+		result = append(result, indent+l)
+	}
+
+	return strings.Join(result, "\n")
 }
 
 func (self *Compiler) saveFile(filename string, item interface{}) error {
@@ -236,6 +327,7 @@ func (self *Compiler) Compile() (string, error) {
 		Name:     "Windows.Registry.Hunter",
 		Metadata: self.buildMetadata(),
 		Rules:    self.rules,
+		Preamble: self.buildPreamble(),
 	}
 
 	var b bytes.Buffer

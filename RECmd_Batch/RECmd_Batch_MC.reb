@@ -1,5 +1,6 @@
 Description: RECmd batch file
 Author: Mike Cary
+Disabled: true
 Version: 1
 Id: 4eec0ce6-d1c3-4b65-9f0e-3ccd429d506c
 Keys:
