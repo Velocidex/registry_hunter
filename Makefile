@@ -7,3 +7,7 @@ recmd:
 
 artifact:
 	./reghunter compile --output output/Windows.Registry.Hunter.yaml Rules/*.yaml
+	./reghunter compile --make_zip --output output/Windows.Registry.Hunter.zip Rules/*.yaml
+
+test:
+	cd tests && make test

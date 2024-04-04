@@ -1,6 +1,7 @@
 Description: BinaryInclude demo
 Author: Eric Zimmerman
 Version: 1
+Disabled: true
 Id: 1e144fa4-70ca-478f-b0b9-a148e4ba1b90
 Keys:
     -
@@ -10,6 +11,7 @@ Keys:
         KeyPath: ControlSet001\Control\NetworkSetup2\Interfaces\*\Kernel
         ValueName: CurrentAddress
         IncludeBinary: true
+        # Not actually correct - this is a MAC address
         BinaryConvert: IP
 
 # IncludeBinary: true

@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"os"
+	"sort"
 	"strings"
 	"text/template"
 
@@ -21,20 +22,47 @@ name: {{.Name}}
 description: |
    This artifact parses and categorizes information for the registry.
 
-   ## Remapping Strategy
+   Read more about this artifact here https://github.com/Velocidex/registry_hunter
 
-   The artifact works by deploying search rules against the registry.
-   A rule searches for a specific piece of data
+   ## RemappingStrategy
 
-   1. SAM is mapped to /SAM/
-   2. NTUser.dat is mapped to HKEY_USERS/*
-   3. System and Software hives are mappeed to HKEY_LOCAL_MACHINE and CurrentControlSet
+   In order to present a unified view of all registry hives we remap various
+   hives we remap various hives into the "registry" accessor. There are a
+   number of strategies implemented for this:
+
+   1. API - This strategy uses the API for the majority of hives including
+      user hives. Therefore users who are not currently logged in will not
+      have their NTUser.dat hives mounted.
+   2. API And NTUser.dat - This strategy uses the API for most of the hives,
+      except for all the raw user hives will be mapped in HKEY_USERS.
+      Therefore all users will be visible.
+   3. Raw Hives - This stragegy is most suitable for working off an image or
+       acquired hive files. All raw hives will be mapped (include SYSTEM, SOFTWARE etc).
+
+   Using the API will result in faster collection times, but may be some
+   differences:
+
+   * Some registry keys are blocked with API access, even for the system
+     user - so we get permission denied for these. Therefore, even with the API
+     stragegy above we remap the raw files into the "raw_registry" accessor.
+     The rule may work around this by using this accessor directly.
+   * Some hive files are not accessible and can only be accessible using the
+     API (e.g. the BCD hives).
 
 parameters:
+- name: Categories
+  type: multichoice
+  default: |
+   {{ .CategoriesJSON }}
+  choices:
+   {{- range $val := .Categories }}
+    - "{{ $val }}"
+   {{- end }}
 - name: CategoryFilter
+  description: If this is set we use the regular expression instead of the choices above.
   type: regex
-  default: .
 - name: CategoryExcludedFilter
+  description: Exclude any categories based on this regular expression
   type: regex
   default: XXXXXX
 - name: DescriptionFilter
@@ -44,7 +72,10 @@ parameters:
   type: regex
   default: .
 - name: RemappingStrategy
-  description:
+  description: |
+     In order to present a unified view of all registry hives we remap various hives
+     into the "registry" accessor. This setting controls the strategy we use to do so.
+     See more information in the artifact description.
   type: choices
   default: "API And NTUser.dat"
   choices:
@@ -52,56 +83,141 @@ parameters:
    - API And NTUser.dat
    - Raw Hives
 
+- name: RootDrive
+  default: C:/
+  description: |
+     Path to the top level drive. If one of the PathTO* parameters are not
+     specified, then we use this to figure out the usual paths to the hives.
+
+- name: PathTOSAM
+  description: "By default, hive is at C:/Windows/System32/Config/SAM"
+
+- name: PathTOAmcache
+  description: "By default, hive is at C:/Windows/appcompat/Programs/Amcache.hve"
+
+- name: PathTOSecurity
+  description: "By default, hive is at C:/Windows/System32/Config/SECURITY"
+
+- name: PathTOSystem
+  description: "By default, hive is at C:/Windows/System32/Config/SYSTEM"
+
+- name: PathTOSoftware
+  description: "By default, hive is at C:/Windows/System32/Config/SOFTWARE"
+
+- name: PathTOUsers
+  description: "By default, directory is at C:/Users"
+
 - name: NTFS_CACHE_TIME
   type: int
   description: How often to flush the NTFS cache. (Default is never).
   default: "1000000"
 
-
-imports:
-  - Windows.Registry.NTUser
-
 export: |
+    LET _info <= SELECT * FROM info()
+
+    -- On Non Windows systems we need to use case insensitive accessor or we might not find the right hives.
+    LET DefaultAccessor <= if(condition=_info[0].OS =~ "windows", then="raw_ntfs", else="file_nocase")
+    LET RootDrive <= pathspec(Path=RootDrive)
+    LET PathTOSAM <= PathTOSAM || RootDrive + "Windows/System32/config/SAM"
+    LET PathTOAmcache <= PathTOAmcache || RootDrive + "Windows/appcompat/Programs/Amcache.hve"
+    LET PathTOSystem <= PathTOSystem || RootDrive + "Windows/System32/Config/System"
+    LET PathTOSecurity <= PathTOSecurity || RootDrive + "Windows/System32/Config/Security"
+    LET PathTOSoftware <= PathTOSoftware || RootDrive + "Windows/System32/Config/Software"
+    LET PathTOUsers <= PathTOUsers || RootDrive + "Users/"
+
+    -- HivePath: The path to the hive on disk
+    -- RegistryPath: The path in the registry to mount the hive
+    -- RegMountPoint: The path inside the hive to mount (usually /)
+    LET _map_file_to_reg_path(HivePath, RegistryPath, RegMountPoint, Accessor, Description) = dict(
+       type="mount", description=Description,
+       ` + "`" + `from` + "`" + `=dict(accessor='raw_reg',
+                   prefix=pathspec(
+                      Path=RegMountPoint,
+                      DelegateAccessor=Accessor,
+                      DelegatePath=HivePath),
+                   path_type='registry'),
+        ` + "`" + `on` + "`" + `=dict(accessor='registry',
+                  prefix=RegistryPath,
+                  path_type='registry'))
+
+    LET _standard_mappings = (
+       _map_file_to_reg_path(
+          HivePath=PathTOSystem,
+          RegistryPath="HKEY_LOCAL_MACHINE\\System\\CurrentControlSet",
+          RegMountPoint="/ControlSet001",
+          Accessor=DefaultAccessor,
+          Description="Map SYSTEM Hive to CurrentControlSet"),
+       _map_file_to_reg_path(
+          HivePath=PathTOSoftware,
+          RegistryPath="HKEY_LOCAL_MACHINE\\Software",
+          RegMountPoint="/",
+          Accessor=DefaultAccessor,
+          Description="Map Software hive to HKEY_LOCAL_MACHINE"),
+       _map_file_to_reg_path(
+          HivePath=PathTOSystem,
+          RegistryPath="HKEY_LOCAL_MACHINE\\System",
+          RegMountPoint="/",
+          Accessor=DefaultAccessor,
+          Description="Map System hive to HKEY_LOCAL_MACHINE"),
+       _map_file_to_reg_path(
+          HivePath=PathTOSecurity,
+          RegistryPath="HKEY_LOCAL_MACHINE\\Security",
+          RegMountPoint="/",
+          Accessor=DefaultAccessor,
+          Description="Map SECURITY Hive to HKEY_LOCAL_MACHINE"),
+    )
+
     // Map raw hives for hives that are not normally accessible via API
     LET _unmounted_hive_mapping = (
       _map_file_to_reg_path(
-          HivePath="C:/Windows/System32/Config/SAM",
+          HivePath=PathTOSAM,
           RegistryPath="SAM",
           RegMountPoint="/",
-          Accessor="auto",
+          Accessor=DefaultAccessor,
           Description="Map SAM to /SAM/"),
       _map_file_to_reg_path(
-          HivePath="C:/Windows/appcompat/Programs/Amcache.hve",
+          HivePath=PathTOAmcache,
           RegistryPath="Amcache",
           RegMountPoint="/",
-          Accessor="auto",
+          Accessor=DefaultAccessor,
           Description="Map Amcache to /Amcache/"),
-    ) + _required_mappings
+    )
 
     LET _api_remapping <= (
-      dict(type="mount",
-        ` + "`" + `from` + "`" + `=dict(accessor="registry", prefix='/', path_type='registry'),
-       on=dict(accessor="registry", prefix='/', path_type="registry")),
+        -- By default remap the entire "registry" accessor for API access.
+        dict(type="mount",
+          ` + "`" + `from` + "`" + `=dict(accessor="registry", prefix='/', path_type='registry'),
+          on=dict(accessor="registry", prefix='/', path_type="registry")),
+
+       -- Always remap raw Security because the API stops us from reading the keys.
+       _map_file_to_reg_path(
+          HivePath=PathTOSecurity,
+          RegistryPath="HKEY_LOCAL_MACHINE\\Security",
+          RegMountPoint="/",
+          Accessor=DefaultAccessor,
+          Description="Map SECURITY Hive to HKEY_LOCAL_MACHINE"),
     )
 
     -- In API mode we sometimes can not access the keys due to permissions.
-    -- We also map the raw hives to the raw_registry accessor to ensure
-    -- that we can access protected keys.
+    -- These mapping ensure rules can specifically access the raw hives if they
+    -- need to.
     LET _raw_hive_mapping_for_api <= (
       dict(type="mount",
+        description="Map System Hive to raw_registry accessor",
         ` + "`" + `from` + "`" + `=dict(accessor="raw_reg",
          prefix=pathspec(Path='/',
-           DelegatePath="C:/Windows/System32/Config/SYSTEM",
-           DelegateAccessor="ntfs"),
+           DelegatePath=PathTOSystem,
+           DelegateAccessor=DefaultAccessor),
          path_type='registry'),
        on=dict(accessor="raw_registry",
                prefix='/HKEY_LOCAL_MACHINE/System',
                path_type="registry")),
       dict(type="mount",
+        description="Map Software Hive to raw_registry accessor",
         ` + "`" + `from` + "`" + `=dict(accessor="raw_reg",
          prefix=pathspec(Path='/',
-           DelegatePath="C:/Windows/System32/Config/SOFTWARE",
-           DelegateAccessor="ntfs"),
+           DelegatePath=PathTOSoftware,
+           DelegateAccessor=DefaultAccessor),
          path_type='registry'),
        on=dict(accessor="raw_registry",
                prefix='/HKEY_LOCAL_MACHINE/Software',
@@ -109,28 +225,45 @@ export: |
     )
 
     // The BCD hive is normally located on an unmounted drive so we
-    // always map it with the API
+    // always map it with the API.
     LET _bcd_map <= (dict(
        type="mount",
        ` + "`" + `from` + "`" + `=dict(accessor="registry", prefix='HKEY_LOCAL_MACHINE\\BCD00000000', path_type='registry'),
        on=dict(accessor="registry", prefix='HKEY_LOCAL_MACHINE\\BCD00000000', path_type="registry")))
 
+    -- Map all the NTUser.dat files even in API mode because these are often not mounted.
+    LET _map_ntuser = SELECT
+    _map_file_to_reg_path(
+      HivePath=OSPath,
+      RegMountPoint="/",
+      Accessor=DefaultAccessor,
+      Description=format(format="Map NTUser.dat from User %v to HKEY_USERS",
+                         args=OSPath[-2]),
+
+      -- This is technically the SID but it is clearer to just use the username
+      RegistryPath="HKEY_USERS\\" + OSPath[-2] + "\\NTUser.dat") AS Mapping
+    FROM glob(globs="*/NTUser.dat", root=PathTOUsers)
+
+    LET _log_array(Message) = if(condition=log(message=Message), then=[])
+
     // Apply the mappings:
     LET RemapRules = if(condition=RemappingStrategy = "API",
        then=_api_remapping +
             _unmounted_hive_mapping +
-            _raw_hive_mapping_for_api,
+            _raw_hive_mapping_for_api + _log_array(Message="Using API Mapping"),
 
     else=if(condition=RemappingStrategy = "API And NTUser.dat",
        then=_api_remapping +
-            _user_mappings +
+            _map_ntuser.Mapping +
             _unmounted_hive_mapping +
-            _raw_hive_mapping_for_api,
+            _raw_hive_mapping_for_api  +
+            _log_array(Message="Using API And NTUser.dat Mapping"),
 
-    else=_user_mappings +
+    else=_map_ntuser.Mapping +
          _unmounted_hive_mapping +
          _standard_mappings +
-         _bcd_map))
+         _raw_hive_mapping_for_api +
+         _log_array(Message="Using Raw Hives Mapping")))
 
 {{ .Preamble }}
 
@@ -209,6 +342,9 @@ type templateParameters struct {
 	Metadata string
 	Rules    []config.RegistryRule
 	Preamble string
+
+	Categories     []string
+	CategoriesJSON string
 }
 
 type Compiler struct {
@@ -219,12 +355,15 @@ type Compiler struct {
 	globs map[string][]string
 
 	PreambleVerses []string
+
+	categories map[string]bool
 }
 
 func NewCompiler() *Compiler {
 	return &Compiler{
-		md:    make(map[string]config.RegistryRule),
-		globs: make(map[string][]string),
+		md:         make(map[string]config.RegistryRule),
+		globs:      make(map[string][]string),
+		categories: make(map[string]bool),
 	}
 }
 
@@ -250,6 +389,7 @@ func (self *Compiler) LoadRules(filename string) error {
 		if len(r.Preamble) > 0 {
 			self.PreambleVerses = append(self.PreambleVerses, r.Preamble...)
 		}
+		self.categories[r.Category] = true
 		self.rules = append(self.rules, r)
 	}
 
@@ -317,17 +457,39 @@ func (self *Compiler) saveFile(filename string, item interface{}) error {
 	return err
 }
 
+func (self *Compiler) buildCategories() (result []string) {
+	for k := range self.categories {
+		result = append(result, k)
+	}
+
+	sort.Strings(result)
+	return result
+}
+
+func (self *Compiler) GetRules() []byte {
+	serialized, _ := yaml.Marshal(self.rules)
+	return serialized
+}
+
 func (self *Compiler) Compile() (string, error) {
 	tmpl, err := template.New("").Parse(artifact_template)
 	if err != nil {
 		return "", err
 	}
 
+	categories := self.buildCategories()
+	serialized, err := json.Marshal(categories)
+	if err != nil {
+		return "", err
+	}
+
 	parameters := &templateParameters{
-		Name:     "Windows.Registry.Hunter",
-		Metadata: self.buildMetadata(),
-		Rules:    self.rules,
-		Preamble: self.buildPreamble(),
+		Name:           "Windows.Registry.Hunter",
+		Metadata:       self.buildMetadata(),
+		Rules:          self.rules,
+		Preamble:       self.buildPreamble(),
+		Categories:     categories,
+		CategoriesJSON: string(serialized),
 	}
 
 	var b bytes.Buffer

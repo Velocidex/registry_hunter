@@ -63,6 +63,11 @@ Preamble:
      then=timestamp(winfiletime=parse_binary(accessor="data", filename=t, struct="uint64") || 0),
      else=timestamp(winfiletime=t || 0))
 - |
+  -- Map from binary integer to a winfiletime - handle both binary encoding and integers
+  LET IP(t) = if(condition=format(format="%T", args=[t,]) =~ "\\[\\]uint8",
+     then=ip(netaddr4_le=parse_binary(accessor="data", filename=t, struct="uint32be") || 0),
+     else=ip(netaddr4_le=t || 0))
+- |
   LET GetRawValue(OSPath) = stat(filename=OSPath, accessor="raw_registry").Data.value
 Rules:
 - Author: Troyla
@@ -778,18 +783,6 @@ Rules:
   Comment: user assist
   Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\**'
   Root: HKEY_USERS
-- Author: Eric Zimmerman
-  Description: WildCardTest
-  Category: WildCardTest
-  Comment: WildCardTest
-  Glob: ControlSet*\Services\\**
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Eric Zimmerman
-  Description: demo
-  Category: System Info
-  Glob: ControlSet001\Control\NetworkSetup2\Interfaces\*\Kernel\CurrentAddress
-  Root: HKEY_LOCAL_MACHINE\System
-  Details: x=>ip(netaddr4_le=x.Data)
 - Author: Troy Larson
   Description: User Products InstallProperties
   Category: Installed Software

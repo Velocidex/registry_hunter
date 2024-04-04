@@ -178,7 +178,7 @@ func validateBinaryConvert(name string, rule *config.RegistryRule) error {
 		rule.Details = "x=>FILETIME(t=x.Data)"
 
 	case "IP":
-		rule.Details = "x=>ip(netaddr4_le=x.Data)"
+		rule.Details = "x=>IP(t=x.Data)"
 
 	default:
 		return errors.New("Unknown binary convertion " + name)
