@@ -21,7 +21,7 @@ jobs:
 
     - name: Build artifacts
       run: |
-        make all recmd
+        make all recmd artifact
 
     - name: Run tests
       run: |
