@@ -11,7 +11,7 @@ Rules:
 - Description: Interface Properties
   Category: System Info
   Glob: CurrentControl*\Services\Tcpip\Parameters\Interfaces\*
-  Root: HKEY_LOCAL_MACHINE\SYSTEM
+  Root: HKEY_LOCAL_MACHINE\System
   Details: |
     x=>FetchKeyValues(OSPath=x.OSPath) + dict(
        LeaseObtainedTime=timestamp(epoch=GetValue(OSPath=x.OSPath + "LeaseObtainedTime")),

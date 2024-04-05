@@ -49,6 +49,12 @@ Preamble:
        else=timestamp(winfiletime=t || 0))
 
   - |
+    -- Map from binary integer to a winfiletime - handle both binary encoding and integers
+    LET IP(t) = if(condition=format(format="%T", args=[t,]) =~ "\\[\\]uint8",
+       then=ip(netaddr4_le=parse_binary(accessor="data", filename=t, struct="uint32be") || 0),
+       else=ip(netaddr4_le=t || 0))
+
+  - |
     LET GetRawValue(OSPath) = stat(filename=OSPath, accessor="raw_registry").Data.value
 
 
