@@ -1,0 +1,118 @@
+Preamble:
+  - |
+    LET AppCompatCacheParser <= '''[
+    ["HeaderWin10", "x=>x.HeaderSize", [
+      ["HeaderSize", 0, "unsigned int"],
+      ["Entries", "x=>x.HeaderSize", Array, {
+          type: "Entry",
+          sentinel: "x=>x.Size = 0",
+          count: 10000,
+      }]
+    ]],
+    ["HeaderWin8", 128, [
+      ["Entries", 128, Array, {
+          type: "EntryWin8",
+          sentinel: "x=>x.EntrySize = 0",
+          count: 10000,
+      }]
+    ]],
+
+    ["EntryWin8", "x=>x.EntrySize + 12", [
+      ["Signature", 0, "String", {
+         length: 4,
+      }],
+      ["EntrySize", 8, "unsigned int"],
+      ["PathSize", 12, "uint16"],
+      ["Path", 14, "String", {
+          length: "x=>x.PathSize",
+          encoding: "utf16",
+      }],
+      ["LastMod", "x=>x.PathSize + 14 + 10", "WinFileTime"]
+    ]],
+
+    ["Entry", "x=>x.Size + 12", [
+      ["Signature", 0, "String", {
+         length: 4,
+      }],
+      ["Size", 8, "unsigned int"],
+      ["PathSize", 12, "uint16"],
+      ["Path", 14, "String", {
+          length: "x=>x.PathSize",
+          encoding: "utf16",
+      }],
+      ["LastMod", "x=>x.PathSize + 14", "WinFileTime"],
+      ["DataSize", "x=>x.PathSize + 14 + 8", "uint32"],
+      ["Data", "x=>x.PathSize + 14 + 8 + 4" , "String", {
+          length: "x=>x.DataSize",
+      }],
+
+      # The last byte of the Data block is 1 for execution
+      ["Execution", "x=>x.PathSize + 14 + 8 + 4 + x.DataSize - 4", "uint32"]
+    ]],
+
+    # This is the Win7 parser but we dont use it right now.
+    ["HeaderWin7x64", 128, [
+      ["Signature", 0, "uint32"],
+      ["Entries", 128, "Array", {
+          count: 10000,
+          sentinel: "x=>x.PathSize = 0",
+          type: EntryWin7x64,
+      }]
+    ]],
+    ["EntryWin7x64", 48, [
+      ["PathSize", 0, "uint16"],
+      ["PathOffset", 8, "uint32"],
+      ["Path", "x=>x.PathOffset - x.StartOf", "String", {
+          encoding: "utf16",
+          length: "x=>x.PathSize",
+      }],
+      ["LastMod", 16, "WinFileTime"]
+    ]]
+
+    ]'''
+
+    LET AppCompatCacheWin10(Blob) = parse_binary(
+        accessor="data",
+        filename=Blob,
+        profile=AppCompatCacheParser,
+        struct="HeaderWin10")
+
+    LET AppCompatCacheWin8(Blob) = parse_binary(
+        accessor="data",
+        filename=Blob,
+        profile=AppCompatCacheParser,
+        struct="HeaderWin8")
+
+    LET AppCompatCache(Blob) = SELECT *
+    FROM foreach(
+      row=if(
+        condition=AppCompatCacheWin10(Blob=Blob).HeaderSize IN (52, 48),
+        then=AppCompatCacheWin10(Blob=Blob).Entries,
+        else=AppCompatCacheWin8(Blob=Blob).Entries))
+
+Rules:
+- Description: "AppCompatCache: AKA ShimCache, data is only written to this value at reboot by winlogon.exe"
+  Root: HKEY_LOCAL_MACHINE\System
+  Category: Program Execution
+  Glob: ControlSet00*\Control\Session Manager\AppCompatCache\AppCompatCache
+  Details: |
+    x=>dict(Data={
+        SELECT LastMod, Path
+        FROM foreach(row=AppCompatCache(
+                 Blob=read_file(filename=x.OSPath, accessor="registry")
+        ))
+    })
+
+- Description: "AppCompatFlags: Displays programs that are configured to run in Compatibility Mode in Windows"
+  Root: HKEY_USERS
+  Category: Program Execution
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags'
+  Filter: x=>IsDir
+  Preamble:
+    - |
+      LET AppCompatFlagsPrograms = SELECT OSPath.Basename AS Program
+         FROM glob(globs='Compatibility Assistant/{Store,Persisted}/*',
+                   accessor="registry", root=OSPath)
+
+  Details: |
+    x=>dict(Programs=AppCompatFlagsPrograms(OSPath=x.OSPath).Program)

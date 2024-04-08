@@ -4,20 +4,63 @@ Preamble:
       SELECT Name AS _key, Data.value AS _value
       FROM glob(globs="*", accessor="registry", root=OSPath)
     })
+
+  - |
+    LET FetchKeyValuesWithRegex(OSPath, Regex) = to_dict(item={
+      SELECT Name AS _key, Data.value AS _value
+      FROM glob(globs="*", accessor="registry", root=OSPath)
+      WHERE Name =~ Regex
+    })
+
+  - |
+    LET _ProtocolLookup <= dict(`6`="TCP", `17`="UDP")
+    LET ProtocolLookup(X) = get(item=_ProtocolLookup, field=X) || X
+
+  - |
+    LET _ParseFirewallRule(X) = to_dict(item={
+       SELECT split(string=_value, sep_string="=")[0] AS _key,
+              split(string=_value, sep_string="=")[1] AS _value
+       FROM foreach(row=split(string=X, sep_string='|'))
+       WHERE NOT _key =~ "^v"
+    })
+
+    LET ParseFirewallRule(X) = _ParseFirewallRule(X=X) +
+       dict(Protocol=ProtocolLookup(X=_ParseFirewallRule(X=X).Protocol))
+
   - |
     LET GetValue(OSPath) = stat(filename=OSPath, accessor="registry").Data.value
 
+  - |
+    LET CalculateMRU(OSPath) = SELECT GetValue(OSPath=OSPath + g1) AS value
+        FROM parse_records_with_regex(accessor="data",
+        file=GetValue(OSPath=OSPath + "MRUList"), regex="(.)")
+
 Rules:
-- Description: Interface Properties
+- Description: Interface Properties (IPv4)
   Category: System Info
   Glob: CurrentControl*\Services\Tcpip\Parameters\Interfaces\*
   Root: HKEY_LOCAL_MACHINE\System
   Details: |
-    x=>FetchKeyValues(OSPath=x.OSPath) + dict(
+    x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="AddressType|DhcpConnForceBroadcastFlag|DhcpDefaultGateway|DhcpDomain|DhcpDomainSearchList|DhcpGatewayHardware|DhcpGatewayHardwareCount|DhcpIPAddress|DhcpNameServer|DhcpServer|DhcpSubnetMask|DhcpSubnetMaskOpt|Domain|EnableDHCP|EnableMulticast|IPAddress|IsServerNapAware|Lease}LeaseObtainedTime|LeaseTerminatesTime|NameServer|RegisterAdapterName|RegistrationEnabled|SubnetMask|T1|T2") + dict(
+       LeaseObtainedTime=timestamp(epoch=GetValue(OSPath=x.OSPath + "LeaseObtainedTime")),
+       LeaseTerminatesTime=timestamp(epoch=GetValue(OSPath=x.OSPath + "LeaseTerminatesTime")),
+       DhcpGatewayHardware=FormatMAC(x=GetValue(OSPath=x.OSPath + "DhcpGatewayHardware")),
+       T1=timestamp(epoch=GetValue(OSPath=x.OSPath + "T1")),
+       T2=timestamp(epoch=GetValue(OSPath=x.OSPath + "T2"))
+    )
+  Filter: x=>IsDir
+
+- Description: Interface Properties (IPv6)
+  Category: System Info
+  Glob: CurrentControl*\Services\Tcpip6\Parameters\Interfaces\*
+  Root: HKEY_LOCAL_MACHINE\System
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="AddressType|DhcpConnForceBroadcastFlag|DhcpDefaultGateway|DhcpDomain|DhcpDomainSearchList|DhcpGatewayHardware|DhcpGatewayHardwareCount|DhcpIPAddress|DhcpNameServer|DhcpServer|DhcpSubnetMask|DhcpSubnetMaskOpt|Domain|EnableDHCP|EnableMulticast|IPAddress|IsServerNapAware|Lease}LeaseObtainedTime|LeaseTerminatesTime|NameServer|RegisterAdapterName|RegistrationEnabled|SubnetMask|T1|T2") + dict(
        LeaseObtainedTime=timestamp(epoch=GetValue(OSPath=x.OSPath + "LeaseObtainedTime")),
        LeaseTerminatesTime=timestamp(epoch=GetValue(OSPath=x.OSPath + "LeaseTerminatesTime"))
     )
-  Filter: x=>true
+  Filter: x=>IsDir
+
 
 - Author: Troyla
   Description: Regedit.exe Last Run
@@ -31,3 +74,100 @@ Rules:
   Category: Executables
   Glob: '*\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit\LastKey'
   Root: HKEY_USERS
+
+- Description: "WinLogon: Displays the details of the last user logged in to this system"
+  Category: System Info
+  Glob: Microsoft\Windows NT\CurrentVersion\WinLogon
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="AutoLogonSID|LastUsedUsername|AutoAdminLogon|DefaultUserName|DefaultPassword") + dict(AllValues=FetchKeyValues(OSPath=x.OSPath))
+
+  Root: HKEY_LOCAL_MACHINE\Software
+
+- Description: "LogonUI: Displays the last logged on SAM user"
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows\CurrentVersion\Authentication\LogonUI
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="LastLoggedOnUser|LastLoggedOnSAMUser|LastLoggedOnDisplayName|SelectedUserSID|LastLoggedOnUserSID") + dict(AllValues=FetchKeyValues(OSPath=x.OSPath))
+
+- Description: System Info (Current)
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows NT\CurrentVersion
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="SystemRoot|RegisteredOwner|RegisteredOrganization|DisplayVersion|ComputerName|ProductName|InstallDate|InstallationType|CurrentMajorVersionNumber|EditionID|CurrentBuildNumber|CurrentBuild|CompositionEditionID|BuildLab")
+
+- Description: System Info (Historical)
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: Setup\Source OS*
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="SystemRoot|RegisteredOwner|RegisteredOrganization|DisplayVersion|ComputerName|ProductName|InstallDate|InstallationType|CurrentMajorVersionNumber|EditionID|CurrentBuildNumber|CurrentBuild|CompositionEditionID|BuildLab")
+
+- Description: Firewall Rules
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: ControlSet001\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules\*
+  Details: |
+    x=>ParseFirewallRule(X=x.Data) + dict(RuleName=x.OSPath.Basename)
+
+- Description: Microphone
+  Category: Devices
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(
+      LastUsedTimeStart=FILETIME(t=GetValue(OSPath=x.OSPath + "LastUsedTimeStart")),
+      LastUsedTimeStop=FILETIME(t=GetValue(OSPath=x.OSPath + "LastUsedTimeStop"))
+    )
+
+- Description: Webcam
+  Category: Devices
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam\**
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(
+      LastUsedTimeStart=FILETIME(t=GetValue(OSPath=x.OSPath + "LastUsedTimeStart")),
+      LastUsedTimeStop=FILETIME(t=GetValue(OSPath=x.OSPath + "LastUsedTimeStop"))
+    )
+
+- Author: Andrew Rathbun
+  Description: "JumplistData: Displays last execution time of a program"
+  Category: Program Execution
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Search\JumplistData\*'
+  Root: HKEY_USERS
+  Details: |
+    x=>dict(Program=x.OSPath.Basename, LastExecutionTime=FILETIME(t=x.Data))
+
+- Author: Andrew Rathbun
+  Description: "RunMRU: Tracks commands from the Run box in the Start menu, lower MRU # (Value Data3) = more recent"
+  Category: Program Execution
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(MRU=CalculateMRU(OSPath=x.OSPath).value,
+            All=FetchKeyValues(OSPath=x.OSPath))
+
+- Author: Andrew Rathbun
+  Description: CIDSizeMRU
+  Category: Program Execution
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\CIDSizeMRU'
+  Filter: x=>IsDir
+  Preamble:
+  - |
+    LET CalculateMRUEx(OSPath) = SELECT split(string=utf16(string=GetValue(OSPath=OSPath + str(str=_value))), sep='\x00')[0] AS value
+    FROM foreach(row=parse_binary(
+           profile='[["Header", 0, [["Array", 0, "Array", {"count": 20, "type": "int32"}]]]]',
+           accessor="data", filename=GetValue(OSPath=OSPath + "MRUListEx"), struct="Header").Array)
+    WHERE _value > 0
+
+  Details: |
+    x=>dict(MRU=CalculateMRUEx(OSPath=x.OSPath).value)

@@ -1,5 +1,6 @@
 Description: Kroll RECmd Batch File
 Author: Andrew Rathbun
+Disabled: false
 Version: 1.22
 Id: ecc582d5-a1b1-4256-ae64-ca2263b8f971
 Preamble:
@@ -99,6 +100,7 @@ Keys:
         ValueName: LastUsedUsername
         Recursive: false
         Comment: "Displays the username of the last user logged in to this system"
+        Disabled: true
 
 # https://windowsir.blogspot.com/2013/04/plugin-winlogon.html
 
@@ -110,6 +112,7 @@ Keys:
         ValueName: AutoLogonSID
         Recursive: false
         Comment: "Displays the SID of the user who is set to auto login to Windows"
+        Disabled: true
 
 # https://windowsir.blogspot.com/2013/04/plugin-winlogon.html
 
@@ -122,6 +125,7 @@ Keys:
         Recursive: false
         Comment: "Displays whether the system will automatically login a user as Admin, 0 = Disabled, 1 = Enabled"
         Details: x=>ExtractValueFromComment(x=x)
+        Disabled: true
 
     -
         Description: WinLogon
@@ -131,6 +135,8 @@ Keys:
         ValueName: DefaultUserName
         Recursive: false
         Comment: "Displays the default username the system will log in as"
+        Disabled: true
+
     -
         Description: WinLogon
         HiveType: SOFTWARE
@@ -139,6 +145,8 @@ Keys:
         ValueName: DefaultPassword
         Recursive: false
         Comment: "Displays the password to be used for the account specified in DefaultUserName"
+        Disabled: true
+
     -
         Description: LogonUI
         HiveType: SOFTWARE
@@ -147,6 +155,8 @@ Keys:
         ValueName: LastLoggedOnUser
         Recursive: false
         Comment: "Displays the last logged on SAM user"
+        Disabled: true
+
     -
         Description: LogonUI
         HiveType: SOFTWARE
@@ -155,6 +165,7 @@ Keys:
         ValueName: LastLoggedOnSAMUser
         Recursive: false
         Comment: "Displays the last logged on user"
+        Disabled: true
     -
         Description: LogonUI
         HiveType: SOFTWARE
@@ -163,6 +174,8 @@ Keys:
         ValueName: LastLoggedOnDisplayName
         Recursive: false
         Comment: "Displays the last logged on user's display name"
+        Disabled: true
+
     -
         Description: LogonUI
         HiveType: SOFTWARE
@@ -171,6 +184,8 @@ Keys:
         ValueName: SelectedUserSID
         Recursive: false
         Comment: "Displays the selected user's SID"
+        Disabled: true
+
     -
         Description: LogonUI
         HiveType: SOFTWARE
@@ -179,6 +194,8 @@ Keys:
         ValueName: LastLoggedOnUserSID
         Recursive: false
         Comment: "Displays the last logged on user's SID"
+        Disabled: true
+
     -
         Description: Windows Boot Volume
         HiveType: SYSTEM
@@ -440,6 +457,8 @@ Keys:
         ValueName: ComputerName
         Recursive: false
         Comment: "Name of computer used by the user"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SYSTEM
@@ -448,6 +467,8 @@ Keys:
         ValueName: ComputerName
         Recursive: false
         Comment: "Name of computer used by the user"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -456,6 +477,8 @@ Keys:
         ValueName: SystemRoot
         Recursive: false
         Comment: "Current location of %SystemRoot% Environment Variable"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -464,6 +487,8 @@ Keys:
         ValueName: RegisteredOwner
         Recursive: false
         Comment: "Current registered owner"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -472,6 +497,8 @@ Keys:
         ValueName: RegisteredOrganization
         Recursive: false
         Comment: "Current registered organization"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -480,6 +507,8 @@ Keys:
         ValueName: DisplayVersion
         Recursive: false
         Comment: "Current milestone update version"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -490,6 +519,7 @@ Keys:
         BinaryConvert: FILETIME
         Recursive: false
         Comment: "Current OS install time"
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -498,6 +528,8 @@ Keys:
         ValueName: ProductName
         Recursive: false
         Comment: "Current OS name"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -508,6 +540,8 @@ Keys:
         BinaryConvert: EPOCH
         Recursive: false
         Comment: "Current OS install date"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -516,6 +550,8 @@ Keys:
         ValueName: InstallationType
         Recursive: false
         Comment: "Current OS installation type"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -524,6 +560,8 @@ Keys:
         ValueName: EditionID
         Recursive: false
         Comment: "Current OS version and install info"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -532,6 +570,8 @@ Keys:
         ValueName: CurrentMajorVersionNumber
         Recursive: false
         Comment: "Current OS version and install info"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -540,6 +580,8 @@ Keys:
         ValueName: CurrentBuildNumber
         Recursive: false
         Comment: "Current OS version and install info"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -548,6 +590,8 @@ Keys:
         ValueName: CurrentBuild
         Recursive: false
         Comment: "Current OS build information"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -556,6 +600,8 @@ Keys:
         ValueName: CompositionEditionID
         Recursive: false
         Comment: "Current OS license type"
+        Disabled: true
+
     -
         Description: System Info (Current)
         HiveType: SOFTWARE
@@ -564,6 +610,7 @@ Keys:
         ValueName: BuildLab
         Recursive: false
         Comment: "Current OS build information"
+        Disabled: true
 
 # System Info -> System Info (Historical)
 
@@ -575,6 +622,8 @@ Keys:
         ValueName: SystemRoot
         Recursive: false
         Comment: "Historical location of %SystemRoot% Environment Variable"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -583,6 +632,8 @@ Keys:
         ValueName: RegisteredOwner
         Recursive: false
         Comment: "Historical registered owner"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -591,6 +642,8 @@ Keys:
         ValueName: RegisteredOrganization
         Recursive: false
         Comment: "Historical registered organization"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -599,6 +652,8 @@ Keys:
         ValueName: DisplayVersion
         Recursive: false
         Comment: "Historical milestone update version"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -609,6 +664,8 @@ Keys:
         BinaryConvert: FILETIME
         Recursive: false
         Comment: "Historical OS install time"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -617,6 +674,8 @@ Keys:
         ValueName: ProductName
         Recursive: false
         Comment: "Historical OS name"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -627,6 +686,8 @@ Keys:
         BinaryConvert: EPOCH
         Recursive: false
         Comment: "Historical OS install date"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -635,6 +696,8 @@ Keys:
         ValueName: InstallationType
         Recursive: false
         Comment: "Historical OS installation type"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -643,6 +706,8 @@ Keys:
         ValueName: EditionID
         Recursive: false
         Comment: "Historical OS version and install info"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -651,6 +716,8 @@ Keys:
         ValueName: CurrentMajorVersionNumber
         Recursive: false
         Comment: "Historical OS version and install info"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -659,6 +726,8 @@ Keys:
         ValueName: CurrentBuildNumber
         Recursive: false
         Comment: "Historical OS version and install info"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -667,6 +736,8 @@ Keys:
         ValueName: CurrentBuild
         Recursive: false
         Comment: "Historical OS build information"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -675,6 +746,8 @@ Keys:
         ValueName: CompositionEditionID
         Recursive: false
         Comment: "Historical OS license type"
+        Disabled: true
+
     -
         Description: System Info (Historical)
         HiveType: SYSTEM
@@ -683,6 +756,7 @@ Keys:
         ValueName: BuildLab
         Recursive: false
         Comment: "Historical OS build information"
+        Disabled: true
 
 # https://az4n6.blogspot.com/2017/02/when-windows-lies.html
 # https://www.nextofwindows.com/when-was-my-windows-10-originally-installed
@@ -716,6 +790,7 @@ Keys:
         ValueName: AddressType
         Recursive: false
         Comment: ""
+        Disabled: true
 
     -
         Description: Network Configuration (IPv4)
@@ -726,6 +801,7 @@ Keys:
         Recursive: false
         Comment: "DHCP Broadcast, 0 = Disabled, 1 = Enabled"
         Details: x=>ExtractValueFromComment(x=x)
+        Disabled: true
 
 # https://support.microsoft.com/en-us/topic/windows-vista-can-t-get-an-ip-address-from-certain-routers-or-dhcp-servers-ee61b030-e749-878b-9725-247d8bd95c5e
 
@@ -737,6 +813,7 @@ Keys:
         ValueName: DhcpDefaultGateway
         Recursive: false
         Comment: "Displays the ordered list of gateways that can be used as the default gateway for this system."
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc959606(v=technet.10)
 
@@ -748,6 +825,7 @@ Keys:
         ValueName: DhcpDomain
         Recursive: false
         Comment: "Specifies the Domain Name System (DNS) domain name of the interface, as provided by the Dynamic Host Configuration Protocol (DHCP)"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962456(v=technet.10)
 
@@ -759,6 +837,8 @@ Keys:
         ValueName: DhcpDomainSearchList
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv4)
         HiveType: SYSTEM
@@ -768,6 +848,8 @@ Keys:
         IncludeBinary: true
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv4)
         HiveType: SYSTEM
@@ -776,6 +858,8 @@ Keys:
         ValueName: DhcpGatewayHardwareCount
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv4)
         HiveType: SYSTEM
@@ -784,6 +868,7 @@ Keys:
         ValueName: DhcpIPAddress
         Recursive: false
         Comment: "Specifies the IP addresses of the interface, as configured by Dynamic Host Configuration Protocol (DHCP)"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962469(v=technet.10)
 
@@ -795,6 +880,7 @@ Keys:
         ValueName: DhcpNameServer
         Recursive: false
         Comment: "Stores a list of Domain Name System (DNS) servers to which Windows Sockets sends queries when it resolves names for the interface"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962470(v=technet.10)
 
@@ -806,6 +892,7 @@ Keys:
         ValueName: DhcpServer
         Recursive: false
         Comment: "Stores the IP address of the Dynamic Host Configuration Protocol (DHCP) server that granted the lease to the IP address stored in the value of the DhcpIPAddress entry"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962473(v=technet.10)
 
@@ -817,6 +904,7 @@ Keys:
         ValueName: DhcpSubnetMask
         Recursive: false
         Comment: "Specifies the subnet mask for the IP address specified in the value of either the IPAddress entry or the DhcpIPAddress entry"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962474(v=technet.10)
 
@@ -828,6 +916,7 @@ Keys:
         ValueName: DhcpSubnetMaskOpt
         Recursive: false
         Comment: "Specifies the subnet mask associated with a Dynamic Host Configuration Protocol (DHCP) option"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962475(v=technet.10)
 
@@ -839,6 +928,7 @@ Keys:
         ValueName: Domain
         Recursive: false
         Comment: "Specifies the Domain Name System (DNS) domain name of the interface, as provided by the Dynamic Host Configuration Protocol (DHCP)"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962476(v=technet.10)
 
@@ -851,6 +941,7 @@ Keys:
         Recursive: false
         Comment: "DHCP status, 0 = Disabled, 1 = Enabled"
         Details: x=>ExtractValueFromComment(x=x)
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/desktop/mscs/enabledhcp
 
@@ -863,6 +954,7 @@ Keys:
         Recursive: false
         Comment: "Multicast status, 0 = Disabled, 1 = Enabled"
         Details: x=>ExtractValueFromComment(x=x)
+        Disabled: true
 
 # https://www.microsoftpressstore.com/articles/article.aspx?p=2217263&seqNum=8
 
@@ -874,6 +966,7 @@ Keys:
         ValueName: IPAddress
         Recursive: false
         Comment: "Specifies the IP addresses of the interface"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc938245(v=technet.10)
 
@@ -885,6 +978,8 @@ Keys:
         ValueName: IsServerNapAware
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv4)
         HiveType: SYSTEM
@@ -893,6 +988,7 @@ Keys:
         ValueName: Lease
         Recursive: false
         Comment: "Specifies how long the lease on the IP address for this interface is valid"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978464(v=technet.10)
 
@@ -906,6 +1002,7 @@ Keys:
         IncludeBinary: true
         BinaryConvert: EPOCH
         Comment: "Stores the time that the interface acquired the lease on its IP address"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978465(v=technet.10)
 
@@ -919,6 +1016,7 @@ Keys:
         IncludeBinary: true
         BinaryConvert: EPOCH
         Comment: "Stores the time when the lease on the interfaces' IP address expires"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978467(v=technet.10)
 
@@ -930,6 +1028,7 @@ Keys:
         ValueName: NameServer
         Recursive: false
         Comment: "Stores a list of Domain Name System (DNS) servers to which Windows Sockets sends queries when it resolves names for this interface"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978468(v=technet.10)
 
@@ -941,6 +1040,8 @@ Keys:
         ValueName: RegisterAdapterName
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv4)
         HiveType: SYSTEM
@@ -949,6 +1050,7 @@ Keys:
         ValueName: RegistrationEnabled
         Recursive: false
         Comment: "Dynamic DNS registration for a specific network interface controller (NIC)"
+        Disabled: true
 
 # https://www.serverbrain.org/networking-guide-2003/configuring-dynamic-dns-registration-problem.html
 
@@ -960,6 +1062,7 @@ Keys:
         ValueName: SubnetMask
         Recursive: false
         Comment: "Specifies the subnet mask for the IP address specified in the value of IPAddress or DhcpIPAddress"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc938248(v=technet.10)
 
@@ -971,6 +1074,7 @@ Keys:
         ValueName: T1
         Recursive: false
         Comment: "Displays time that the DHCP client stores for when the service will try to renew its IP address lease"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978470(v=technet.10)
 
@@ -982,6 +1086,7 @@ Keys:
         ValueName: T2
         Recursive: false
         Comment: "Displays time that the DHCP client stores for when the service will try to broadcast a renewal request"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978471(v=technet.10)?redirectedfrom=MSDN
 
@@ -995,6 +1100,8 @@ Keys:
         ValueName: AddressType
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv6)
         HiveType: SYSTEM
@@ -1004,6 +1111,7 @@ Keys:
         Recursive: false
         Comment: "DHCP Broadcast, 0 = Disabled, 1 = Enabled"
         Details: x=>ExtractValueFromComment(x=x)
+        Disabled: true
 
 # https://support.microsoft.com/en-us/topic/windows-vista-can-t-get-an-ip-address-from-certain-routers-or-dhcp-servers-ee61b030-e749-878b-9725-247d8bd95c5e
 
@@ -1015,6 +1123,7 @@ Keys:
         ValueName: DhcpDefaultGateway
         Recursive: false
         Comment: "Displays the ordered list of gateways that can be used as the default gateway for this system."
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc959606(v=technet.10)
 
@@ -1026,6 +1135,7 @@ Keys:
         ValueName: DhcpDomain
         Recursive: false
         Comment: "Specifies the Domain Name System (DNS) domain name of the interface, as provided by the Dynamic Host Configuration Protocol (DHCP)"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962456(v=technet.10)
 
@@ -1037,6 +1147,8 @@ Keys:
         ValueName: DhcpDomainSearchList
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv6)
         HiveType: SYSTEM
@@ -1045,6 +1157,8 @@ Keys:
         ValueName: DhcpGatewayHardware
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv6)
         HiveType: SYSTEM
@@ -1053,6 +1167,8 @@ Keys:
         ValueName: DhcpGatewayHardwareCount
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv6)
         HiveType: SYSTEM
@@ -1061,6 +1177,7 @@ Keys:
         ValueName: DhcpIPAddress
         Recursive: false
         Comment: "Specifies the IP addresses of the interface, as configured by Dynamic Host Configuration Protocol (DHCP)"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962469(v=technet.10)
 
@@ -1072,6 +1189,7 @@ Keys:
         ValueName: DhcpNameServer
         Recursive: false
         Comment: "Stores a list of Domain Name System (DNS) servers to which Windows Sockets sends queries when it resolves names for the interface"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962470(v=technet.10)
 
@@ -1083,6 +1201,7 @@ Keys:
         ValueName: DhcpServer
         Recursive: false
         Comment: "Stores the IP address of the Dynamic Host Configuration Protocol (DHCP) server that granted the lease to the IP address stored in the value of the DhcpIPAddress entry"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962473(v=technet.10)
 
@@ -1094,6 +1213,7 @@ Keys:
         ValueName: DhcpSubnetMask
         Recursive: false
         Comment: "Specifies the subnet mask for the IP address specified in the value of either the IPAddress entry or the DhcpIPAddress entry"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962474(v=technet.10)
 
@@ -1105,6 +1225,7 @@ Keys:
         ValueName: DhcpSubnetMaskOpt
         Recursive: false
         Comment: "Specifies the subnet mask associated with a Dynamic Host Configuration Protocol (DHCP) option"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962475(v=technet.10)
 
@@ -1116,6 +1237,7 @@ Keys:
         ValueName: Domain
         Recursive: false
         Comment: "Specifies the Domain Name System (DNS) domain name of the interface, as provided by the Dynamic Host Configuration Protocol (DHCP)"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962476(v=technet.10)
 
@@ -1128,6 +1250,7 @@ Keys:
         Recursive: false
         Comment: "DHCP status, 0 = Disabled, 1 = Enabled"
         Details: x=>ExtractValueFromComment(x=x)
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/desktop/mscs/enabledhcp
 
@@ -1140,6 +1263,7 @@ Keys:
         Recursive: false
         Comment: "Multicast status, 0 = Disabled, 1 = Enabled"
         Details: x=>ExtractValueFromComment(x=x)
+        Disabled: true
 
 # https://www.microsoftpressstore.com/articles/article.aspx?p=2217263&seqNum=8
 
@@ -1151,6 +1275,7 @@ Keys:
         ValueName: IPAddress
         Recursive: false
         Comment: "Specifies the IP addresses of the interface"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc938245(v=technet.10)
 
@@ -1162,6 +1287,8 @@ Keys:
         ValueName: IsServerNapAware
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv6)
         HiveType: SYSTEM
@@ -1170,6 +1297,7 @@ Keys:
         ValueName: Lease
         Recursive: false
         Comment: "Specifies how long the lease on the IP address for this interface is valid"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978464(v=technet.10)
 
@@ -1183,6 +1311,7 @@ Keys:
         IncludeBinary: true
         BinaryConvert: EPOCH
         Comment: "Stores the time that the interface acquired the lease on its IP address"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978465(v=technet.10)
 
@@ -1196,6 +1325,7 @@ Keys:
         IncludeBinary: true
         BinaryConvert: EPOCH
         Comment: "Stores the time when the lease on the interfaces' IP address expires"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978467(v=technet.10)
 
@@ -1207,6 +1337,7 @@ Keys:
         ValueName: NameServer
         Recursive: false
         Comment: "Stores a list of Domain Name System (DNS) servers to which Windows Sockets sends queries when it resolves names for this interface"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978468(v=technet.10)
 
@@ -1218,6 +1349,8 @@ Keys:
         ValueName: RegisterAdapterName
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Network Configuration (IPv6)
         HiveType: SYSTEM
@@ -1226,6 +1359,7 @@ Keys:
         ValueName: RegistrationEnabled
         Recursive: false
         Comment: "Dynamic DNS registration for a specific network interface controller (NIC)"
+        Disabled: true
 
 # https://www.serverbrain.org/networking-guide-2003/configuring-dynamic-dns-registration-problem.html
 
@@ -1237,6 +1371,7 @@ Keys:
         ValueName: SubnetMask
         Recursive: false
         Comment: "Specifies the subnet mask for the IP address specified in the value of IPAddress or DhcpIPAddress"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc938248(v=technet.10)
 
@@ -1248,6 +1383,7 @@ Keys:
         ValueName: T1
         Recursive: false
         Comment: "Displays time that the DHCP client stores for when the service will try to renew its IP address lease"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978470(v=technet.10)
 
@@ -1259,6 +1395,7 @@ Keys:
         ValueName: T2
         Recursive: false
         Comment: "Displays time that the DHCP client stores for when the service will try to broadcast a renewal request"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978471(v=technet.10)?redirectedfrom=MSDN
 
@@ -1332,7 +1469,6 @@ Keys:
         ValueName: PollingInterval
         Recursive: False
         Comment: "Displays the updating interval for the SUM DB. Default is 24 hours. 60000 = 60 seconds, for example"
-        Details: x=>ExtractValueFromComment(x=x)
 
 # https://youtu.be/p4XI8-ldE5o?t=627
 
@@ -1345,6 +1481,7 @@ Keys:
         KeyPath: ControlSet001\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules
         Recursive: False
         Comment: "Displays firewall rules on this system"
+        Disabled: true
 
 # FirewallRules plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.FirewallRules
 
@@ -1379,6 +1516,8 @@ Keys:
         BinaryConvert: FILETIME
         Recursive: true
         Comment: "Displays the timestamp of when a microphone started being used with a given application"
+        Disabled: true
+
     -
         Description: Microphone
         HiveType: SOFTWARE
@@ -1389,6 +1528,8 @@ Keys:
         BinaryConvert: FILETIME
         Recursive: true
         Comment: "Displays the timestamp of when a microphone stopped being used with a given application"
+        Disabled: true
+
     -
         Description: Webcam
         HiveType: SOFTWARE
@@ -1399,6 +1540,8 @@ Keys:
         BinaryConvert: FILETIME
         Recursive: true
         Comment: "Displays the timestamp of when a webcam started being used with a given application"
+        Disabled: true
+
     -
         Description: Webcam
         HiveType: SOFTWARE
@@ -1409,6 +1552,8 @@ Keys:
         BinaryConvert: FILETIME
         Recursive: true
         Comment: "Displays the timestamp of when a webcam stopped being used with a given application"
+        Disabled: true
+
     -
         Description: Bluetooth Devices
         HiveType: SYSTEM
@@ -1483,7 +1628,7 @@ Keys:
         KeyPath: ControlSet*\Enum\USB\VID_*
         Recursive: false
         Comment: "Provides VID and PID numbers of USB devices. Match serial number from USBSTOR and search for VID and PID across the system"
-        Filter: x=>true
+        Filter: x=>IsDir
         Details: |
           x=>dict(
             Name=x.OSPath.Basename,
@@ -1674,6 +1819,8 @@ Keys:
         ValueName: EulaAccepted
         Recursive: false
         Comment: "Displays all SysInternals Tools that had the EULA accepted, indicating either execution of the tool or the Registry values were added intentionally prior to execution"
+        Details: |
+          x=>dict(Program=x.OSPath[-2], FirstRunTimestamp=x.Mtime)
 
 # https://docs.microsoft.com/en-us/sysinternals/
 # https://hahndorf.eu/blog/post/2010/03/07/WorkAroundSysinternalsLicensePopups
@@ -1686,6 +1833,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Search\JumplistData
         Recursive: false
         Comment: "Displays last execution time of a program"
+        Disabled: true
 
 # JumplistData plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.JumplistData
 # https://twitter.com/sv2hui/status/1005763370186891269?lang=en
@@ -1707,6 +1855,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
         Recursive: false
         Comment: "Tracks commands from the Run box in the Start menu, lower MRU # (Value Data3) = more recent"
+        Disabled: true
 
 # RunMRU plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.RunMRU
 # https://digitalf0rensics.wordpress.com/2014/01/17/windows-registry-and-forensics-part2/
@@ -1722,6 +1871,7 @@ Keys:
         ValueName: AppCompatCache
         Recursive: false
         Comment: "AKA ShimCache, data is only written to this value at reboot by winlogon.exe"
+        Disabled: true
 
 # AppCompatCache plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.AppCompatCache
 # https://medium.com/@bromiley/windows-wednesday-shim-cache-1997ba8b13e7
@@ -1739,6 +1889,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags
         Recursive: false
         Comment: "Displays programs that are configured to run in Compatibility Mode in Windows"
+        Disabled: true
 
 # AppCompatFlags2 plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.AppCompatFlags2
 # https://journeyintoir.blogspot.com/2013/12/revealing-program-compatibility.html
@@ -1750,6 +1901,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\CIDSizeMRU
         Recursive: false
         Comment: "Recently ran applications, lower MRU # (Value Data3) = more recent"
+        Disabled: true
 
 # CIDSizeMRU plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.CIDSizeMRU
 # https://windowsir.blogspot.com/2013/07/howto-determine-user-access-to-files.html
@@ -1788,6 +1940,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Applets\Regedit
         Recursive: false
         Comment: "Displays the last key opened with RegEdit"
+        Disabled: true
 
 # https://www.thewindowsclub.com/jump-to-any-registry-key-windows
 # https://renenyffenegger.ch/notes/Windows/registry/tree/HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Applets/Regedit/index

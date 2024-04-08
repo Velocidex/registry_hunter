@@ -1,4 +1,5 @@
 Description: Services batch file example
+Disabled: true
 Author: Eric Zimmerman
 Version: 1
 Id: ab13eb5f-32db-6cdc-84df-58ec11dc1a

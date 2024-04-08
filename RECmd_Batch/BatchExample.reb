@@ -1,5 +1,6 @@
 Description: Sample RECmd batch file of a whole lot of stuff
 Author: Eric Zimmerman
+Disabled: true
 Version: 1
 Id: ab13eb5f-31db-5cdc-83df-88ec12dc1a
 Keys:
@@ -20,7 +21,7 @@ Keys:
     -
         Description: Network MRU
         HiveType: NTUSER
-        Category: Network shares
+        Category: Network Shares
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\Map Network Drive MRU
         ValueName: MRUList
         Recursive: false
@@ -36,6 +37,7 @@ Keys:
         Description: Some non-existent key
         HiveType: SYSTEM
         Category: Fake
+        Disabled: true
         KeyPath: Software\Wizzo\john\doe
         Recursive: true
         Comment: this is only here to show you what will happen if a key isnt found!
@@ -43,6 +45,7 @@ Keys:
         Description: Some non-existent key 2
         HiveType: NTUSER
         Category: Fake
+        Disabled: true
         KeyPath: Software\Wizzo\john\doe
         Recursive: true
         Comment: Another non-existent key to keep you on your toes
