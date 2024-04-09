@@ -33,5 +33,5 @@ type RegistryRule struct {
 	// A registry rule can define VQL to be added to the artifact
 	// preamble. This allows the rule to define complex parsers to be
 	// used in the Details column.
-	Preamble []string `json:"Preamle,omitempty"`
+	Preamble []string `json:"Preamble,omitempty"`
 }

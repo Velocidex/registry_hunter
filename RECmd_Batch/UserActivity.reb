@@ -1,4 +1,5 @@
 Description: User Configuration and Activity
+Disabled: true
 Author: Troy Larson
 Version: 1
 Id: 87fafa06-0c44-48b1-9f2c-2eca469d1309

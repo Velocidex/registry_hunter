@@ -1,4 +1,5 @@
 Description: Basic System Information
+Disabled: true
 Author: Troy Larson
 Version: 1
 Id: 1e145fa4-70ca-478f-b0b9-a148e4ba1b90

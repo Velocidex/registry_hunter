@@ -1,4 +1,5 @@
 Description: Executables discovered or used
+Disabled: true
 Author: Troyla
 Version: 1
 Id: 230a19c6-4234-459e-a4da-fb10b19e8101

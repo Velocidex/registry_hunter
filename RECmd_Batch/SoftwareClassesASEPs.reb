@@ -1,4 +1,5 @@
 Description: CIS Software\Classes ASEPs
+Disabled: true
 Author: Troyla
 Version: 1.0
 Id: c43433a2-9b81-4cf4-b701-dd717da57bd9

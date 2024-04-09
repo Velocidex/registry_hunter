@@ -1,6 +1,7 @@
 Description: Installed Software
 Author: Troy Larson
 Version: 1
+Disabled: true
 Id: 49ff9762-4dce-413f-928b-786daa8aec5f
 Keys:
     -

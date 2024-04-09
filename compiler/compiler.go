@@ -5,6 +5,7 @@ import (
 	"compress/gzip"
 	"encoding/base64"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"os"
 	"sort"
@@ -116,7 +117,7 @@ export: |
     LET _info <= SELECT * FROM info()
 
     -- On Non Windows systems we need to use case insensitive accessor or we might not find the right hives.
-    LET DefaultAccessor <= if(condition=_info[0].OS =~ "windows", then="raw_ntfs", else="file_nocase")
+    LET DefaultAccessor <= if(condition=_info[0].OS =~ "windows", then="ntfs", else="file_nocase")
     LET RootDrive <= pathspec(Path=RootDrive)
     LET PathTOSAM <= PathTOSAM || RootDrive + "Windows/System32/config/SAM"
     LET PathTOAmcache <= PathTOAmcache || RootDrive + "Windows/appcompat/Programs/Amcache.hve"
@@ -241,7 +242,7 @@ export: |
                          args=OSPath[-2]),
 
       -- This is technically the SID but it is clearer to just use the username
-      RegistryPath="HKEY_USERS\\" + OSPath[-2] + "\\NTUser.dat") AS Mapping
+      RegistryPath="HKEY_USERS\\" + OSPath[-2]) AS Mapping
     FROM glob(globs="*/NTUser.dat", root=PathTOUsers)
 
     LET _log_array(Message) = if(condition=log(message=Message), then=[])
@@ -274,28 +275,50 @@ export: |
        AND Category =~ CategoryFilter
        AND NOT Category =~ CategoryExcludedFilter
 
-sources:
-- name: Remapping
-  query: |
-    SELECT * FROM RemapRules
-
-- name: Rules
-  query: |
     LET AllRules <=
       SELECT * FROM MD(DescriptionFilter=DescriptionFilter, RootFilter=RootFilter,
         CategoryFilter=CategoryFilter, CategoryExcludedFilter=CategoryExcludedFilter)
-    SELECT * FROM AllRules
 
-- name: Globs
-  query: |
     LET AllGlobs <=
       SELECT Root, enumerate(items=Glob) AS Globs
       FROM AllRules
       GROUP BY Root
 
+sources:
+- name: Remapping
+  query: |
+    SELECT * FROM RemapRules
+
+  notebook:
+  - type: none
+
+- name: Rules
+  query: |
+    SELECT * FROM AllRules
+  notebook:
+  - type: none
+
+- name: Globs
+  notebook:
+  - type: none
+
+  query: |
     SELECT * FROM AllGlobs
 
-- query: |
+- name: Results
+  notebook:
+   {{- range $val := .Categories }}
+    - type: vql
+      output: "<h1>Category {{ $val }}</h1>Press recalculate to View"
+      template: |
+         /*
+         # Category {{ $val }}
+         */
+         SELECT Description, OSPath AS Key, Mtime, Details FROM source()
+         WHERE Category = '''{{ $val }}'''
+
+   {{- end }}
+  query: |
     LET GlobsMD <= to_dict(item={
       SELECT Root AS _key, Globs AS _value FROM AllGlobs
     })
@@ -351,8 +374,9 @@ type Compiler struct {
 	rules []config.RegistryRule
 	md    map[string]config.RegistryRule
 
-	// Groups the globs by root and globs
-	globs map[string][]string
+	// Detect rules using the same globs - these are not supported and
+	// one of the rules will be rejected
+	globs map[string]config.RegistryRule
 
 	PreambleVerses []string
 
@@ -362,7 +386,7 @@ type Compiler struct {
 func NewCompiler() *Compiler {
 	return &Compiler{
 		md:         make(map[string]config.RegistryRule),
-		globs:      make(map[string][]string),
+		globs:      make(map[string]config.RegistryRule),
 		categories: make(map[string]bool),
 	}
 }
@@ -386,11 +410,20 @@ func (self *Compiler) LoadRules(filename string) error {
 
 	// Add preables from rules
 	for _, r := range rules.Rules {
+		key := r.Root + r.Glob
+		existing_rule, pres := self.globs[key]
+		if pres {
+			fmt.Printf("Rule %v by %v has the same glob as rule %v by %v... skipping this rule!\n",
+				r.Description, r.Author, existing_rule.Description, existing_rule.Author)
+		}
+		self.globs[key] = r
+
 		if len(r.Preamble) > 0 {
 			self.PreambleVerses = append(self.PreambleVerses, r.Preamble...)
 		}
 		self.categories[r.Category] = true
 		self.rules = append(self.rules, r)
+
 	}
 
 	// Add global preambles
