@@ -462,24 +462,6 @@ Rules:
   Glob: '*\Software\Microsoft\Windows\CurrentVersion\Search\RecentApps\**'
   Root: HKEY_USERS
 - Author: Andrew Rathbun
-  Description: Background Activity Moderator (BAM)
-  Category: Program Execution
-  Comment: Displays the last execution time of a program
-  Glob: ControlSet*\Services\BAM\State\UserSettings\*
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Andrew Rathbun
-  Description: Desktop Activity Moderator (DAM)
-  Category: Program Execution
-  Comment: DAM
-  Glob: ControlSet*\Services\DAM\State\UserSettings\*
-  Root: HKEY_LOCAL_MACHINE\System
-- Author: Andrew Rathbun
-  Description: UserAssist
-  Category: Program Execution
-  Comment: GUI-based programs launched from the desktop
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\*\Count'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
   Description: MuiCache (Vista+)
   Category: Program Execution
   Comment: Displays new applications that have been executed within Windows
@@ -491,12 +473,6 @@ Rules:
   Comment: Displays new applications that have been executed within Windows
   Glob: '*\Software\ClassesSoftware\Microsoft\Windows\ShellNoRoam\MUICache'
   Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: RADAR
-  Category: Program Execution
-  Comment: Displays applications that were running at one point in time on this system
-  Glob: Microsoft\RADAR\HeapLeakDetection
-  Root: HKEY_LOCAL_MACHINE\Software
 - Author: Andrew Rathbun
   Description: Pinned Taskbar Items
   Category: User Activity
@@ -522,195 +498,12 @@ Rules:
   Glob: '*\SOFTWARE\Microsoft\Office\*\*\User MRU\*\File MRU'
   Root: HKEY_USERS
 - Author: Andrew Rathbun
-  Description: WordWheelQuery
-  Category: User Activity
-  Comment: User Searches
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery\**'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
   Description: FirstFolder
   Category: User Activity
   Comment: FirstFolder, tracks the application's first folder that is presented to
     the user during an Open or Save As operation
   Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\FirstFolder\**'
   Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: OpenSavePidlMRU
-  Category: User Activity
-  Comment: Tracks files that have been opened or saved within a Windows shell dialog
-    box
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: OpenSaveMRU
-  Category: User Activity
-  Comment: Tracks files that have been opened or saved within a Windows shell dialog
-    box
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: LastVisitedPidlMRU
-  Category: User Activity
-  Comment: Tracks the specific executable used by an application to open the files
-    documented in OpenSavePidlMRU
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: LastVisitedPidlMRU
-  Category: User Activity
-  Comment: Tracks the specific executable used by an application to open the files
-    documented in OpenSavePidlMRU
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRULegacy'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: RecentDocs
-  Category: User Activity
-  Comment: Files recently opened from Windows Explorer
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\**'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: Recent File List
-  Category: User Activity
-  Comment: Displays recent files accessed by the user with an application
-  Glob: '*\Software\*\*\Recent File List'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: Recent Folder List
-  Category: User Activity
-  Glob: '*\Software\*\*\Recent Folder List'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: Recent Document List
-  Category: User Activity
-  Glob: '*\Software\*\*\Settings\Recent Document List'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: Recent
-  Category: User Activity
-  Glob: '*\Software\Microsoft\*\*\Recent'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: RecentFind
-  Category: User Activity
-  Glob: '*\Software\Microsoft\*\*\RecentFind'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: Recent File List
-  Category: User Activity
-  Glob: '*\Software\Microsoft\*\Recent File List'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: User Shell Folders
-  Category: User Activity
-  Comment: Displays where a user's Shell folders are mapped to
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times the user has received a notification for an
-    application
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppBadgeUpdated\**'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times a pinned application was launched from the
-    taskbar
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppLaunch\**'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times an application switched focus (i.e. minimized,
-    maximized, etc)
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppSwitched\**'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times an application was right-clicked
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\ShowJumpView\**'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times the Start button was clicked
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\TrayButtonClicked\**\StartButton'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times the Clock button was clicked
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\TrayButtonClicked\**\ClockButton'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times the Multitasking button was clicked
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\TrayButtonClicked\**\MultitaskingButton'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times the Notification Center button was clicked
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\TrayButtonClicked\**\NotificationCenterButton'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times the Search button was clicked
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\TrayButtonClicked\**\SearchButton'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times the Search box was clicked
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\TrayButtonClicked\**\SearchBox'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: FeatureUsage
-  Category: User Activity
-  Comment: Displays the number of times the Show Desktop button was clicked
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\TrayButtonClicked\**\ShowDesktopButton'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: Terminal Server Client (RDP)
-  Category: User Activity
-  Comment: Displays the IP addresses/hostnames of devices this system has connected
-    to (Outbound RDP)
-  Glob: '*\Software\Microsoft\Terminal Server Client'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: Run (Group Policy)
-  Category: Autoruns
-  Comment: Group Policy Run Key
-  Glob: Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Andrew Rathbun
-  Description: Run (NTUSER)
-  Category: Autoruns
-  Comment: Program execution upon successful user logon
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Run'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: RunOnce (NTUSER)
-  Category: Autoruns
-  Comment: Program execution upon successful user logon
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\RunOnce'
-  Root: HKEY_USERS
-- Author: Andrew Rathbun
-  Description: Run (SYSTEM)
-  Category: Autoruns
-  Comment: Program execution upon successful user logon
-  Glob: Microsoft\Windows\CurrentVersion\Run
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Andrew Rathbun
-  Description: RunOnce (SYSTEM)
-  Category: Autoruns
-  Comment: Program execution upon successful user logon
-  Glob: Microsoft\Windows\CurrentVersion\RunOnce
-  Root: HKEY_LOCAL_MACHINE\Software
 - Author: Andrew Rathbun
   Description: RunNotification
   Category: Autoruns
@@ -752,12 +545,6 @@ Rules:
   Category: Autoruns
   Comment: Displays list of programs that start up upon system boot
   Glob: Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder\**
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Andrew Rathbun
-  Description: Scheduled Tasks (TaskCache)
-  Category: Autoruns
-  Comment: Displays Scheduled Tasks and their last start/stop time
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
   Root: HKEY_LOCAL_MACHINE\Software
 - Author: Andrew Rathbun
   Description: VNC Viewer
@@ -1121,12 +908,6 @@ Rules:
   Comment: Displays the user's specified storage location for Dropbox
   Glob: Microsoft\Windows\CurrentVersion\Explorer\SyncRootManager\Dropbox*\UserSyncRoots\**
   Root: HKEY_LOCAL_MACHINE\Software
-- Author: Andrew Rathbun
-  Description: Services
-  Category: Services
-  Comment: Displays list of services running on this computer
-  Glob: ControlSet*\Services
-  Root: HKEY_LOCAL_MACHINE\System
 - Author: Andrew Rathbun
   Description: Event Logs Logging Status
   Category: Event Logs

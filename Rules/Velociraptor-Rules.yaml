@@ -35,6 +35,10 @@ Preamble:
         FROM parse_records_with_regex(accessor="data",
         file=GetValue(OSPath=OSPath + "MRUList"), regex="(.)")
 
+  - |
+    LET ResolveSID(SID) = pathspec(parse=stat(accessor="registry",
+        filename="HKEY_LOCAL_MACHINE/Software/Microsoft/Windows NT/CurrentVersion/ProfileList/" + SID + "/ProfileImagePath").Data.value).Basename
+
 Rules:
 - Description: Interface Properties (IPv4)
   Category: System Info
@@ -163,11 +167,369 @@ Rules:
   Filter: x=>IsDir
   Preamble:
   - |
+    LET MRUProfile <= '''
+    [["Header", 0, [
+       ["Array", 0, "Array", {
+          "count": 500,
+          "sentinel": "x=>NOT x",
+          "type": "int32"
+        }]
+    ]]]
+    '''
+
     LET CalculateMRUEx(OSPath) = SELECT split(string=utf16(string=GetValue(OSPath=OSPath + str(str=_value))), sep='\x00')[0] AS value
     FROM foreach(row=parse_binary(
-           profile='[["Header", 0, [["Array", 0, "Array", {"count": 20, "type": "int32"}]]]]',
+           profile=MRUProfile,
            accessor="data", filename=GetValue(OSPath=OSPath + "MRUListEx"), struct="Header").Array)
     WHERE _value > 0
 
   Details: |
     x=>dict(MRU=CalculateMRUEx(OSPath=x.OSPath).value)
+
+- Author: Andrew Rathbun
+  Description: Background Activity Moderator (BAM)
+  Category: Program Execution
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: 'ControlSet*\Services\BAM\State\UserSettings\*'
+  Filter: x=>IsDir
+  Preamble:
+  - |
+    LET _BAMPrograms(Root) = SELECT OSPath.Basename AS Program,
+      timestamp(winfiletime=parse_binary(accessor="data",
+          filename=Data.value, struct="uint64")) AS Timestamp
+    FROM glob(accessor="registry", globs="*", root=Root)
+    WHERE NOT Program =~ "^(Version|Sequence)"
+
+  Details: |
+    x=>dict(Programs=_BAMPrograms(Root=x.OSPath),
+            UserSID=x.OSPath.Basename,
+            Username=ResolveSID(SID=x.OSPath.Basename))
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: Desktop Activity Moderator (DAM)
+  Category: Program Execution
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: 'ControlSet*\Services\DAM\State\UserSettings\*'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(Programs=_BAMPrograms(Root=x.OSPath),
+            UserSID=x.OSPath.Basename,
+            Username=ResolveSID(SID=x.OSPath.Basename))
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "UserAssist: GUI-based programs launched from the desktop"
+  Category: Program Execution
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\*\Count\*'
+  Preamble:
+  - |
+    LET userAssistProfile = '''
+      [
+        ["Header", 0, [
+          ["NumberOfExecutions", 4, "uint32"],
+          ["LastExecution", 60, "WinFileTime", {"type":"uint64"}]
+        ]]
+      ]
+    '''
+
+    LET _ExtractUserAssist(Data) = parse_binary(accessor="data",
+                      filename=Data,
+                      profile=userAssistProfile, struct="Header")
+
+  Details: |
+    x=>dict(Program=rot13(string=x.OSPath.Basename),
+            NumberOfExecutions=_ExtractUserAssist(OSPath=x.Data).NumberOfExecutions,
+            LastExecutionTime=_ExtractUserAssist(OSPath=x.Data).LastExecution)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "RADAR: Displays applications that were running at one point in time on this system"
+  Category: Program Execution
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: 'Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications'
+  Filter: x=>IsDir
+  Preamble:
+    - |
+      LET _RADAR(OSPath) = SELECT OSPath.Basename AS Program,
+         timestamp(winfiletime=GetValue(OSPath=OSPath + "LastDetectionTime")) AS LastDetectionTime
+      FROM glob(accessor="registry", globs='*', root=OSPath)
+
+  Details: |
+    x=>dict(Programs=_RADAR(OSPath=x.OSPath))
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "WordWheelQuery: User Searches"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(MRU=CalculateMRUEx(OSPath=x.OSPath).value)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "OpenSavePidlMRU: Tracks files that have been opened or saved within a Windows shell dialog box"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(MRU=CalculateMRUEx(OSPath=x.OSPath).value)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "OpenSaveMRU: Tracks files that have been opened or saved within a Windows shell dialog box"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(MRU=CalculateMRUEx(OSPath=x.OSPath).value)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "LastVisitedPidlMRU: Tracks the specific executable used by an application to open the files documented in OpenSavePidlMRU"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(MRU=CalculateMRUEx(OSPath=x.OSPath).value)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "RecentDocs: Files recently opened from Windows Explorer"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(MRU=CalculateMRUEx(OSPath=x.OSPath).value)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "Recent File List: Displays recent files accessed by the user with an application"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\*\*\Recent File List'
+  Filter: x=>IsDir
+  Preamble:
+    - |
+      LET _RecentFileList(OSPath) = SELECT Data.value AS F
+      FROM glob(accessor="registry", globs='*', root=OSPath)
+      WHERE OSPath.Basename =~ "File"
+
+  Details: |
+    x=>dict(Files=_RecentFileList(OSPath=x.OSPath).F)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "Recent Folder List: Displays recent folders accessed by the user with an application"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\*\*\Recent Folder List'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(Files=_RecentFileList(OSPath=x.OSPath).F)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "Recent Document List: Displays recent Documents accessed by the user with an application"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\*\*\Settings\Recent Document List'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(Files=_RecentFileList(OSPath=x.OSPath).F)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "Recent"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\*\*\Recent'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(Files=_RecentFileList(OSPath=x.OSPath).F)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "RecentFind"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\*\*\RecentFind'
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(Files=_RecentFileList(OSPath=x.OSPath).F)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "User Shell Folders: Displays where a user's Shell folders are mapped to"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders'
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath)
+
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "FeatureUsage: Displays the number of times the user has received a notification for an application"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage'
+  Filter: x=>IsDir
+  Preamble:
+    - |
+      LET _FeatureUsage(OSPath) = SELECT OSPath.Basename AS Application,
+          Data.value AS Number
+      FROM glob(accessor="registry", globs='*', root=OSPath)
+  Details: |
+    x=>dict(AppBadgeUpdated= _FeatureUsage(OSPath=x.OSPath + "AppBadgeUpdated"),
+            AppLaunch=_FeatureUsage(OSPath=x.OSPath + "AppLaunch"),
+            AppSwitched=_FeatureUsage(OSPath=x.OSPath + "AppSwitched"),
+            ShowJumpView=_FeatureUsage(OSPath=x.OSPath + "ShowJumpView"),
+            TrayButtonClicked=FetchKeyValues(OSPath=x.OSPath + "TrayButtonClicked"))
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "Terminal Server Client (RDP): Displays the IP addresses/hostnames of devices this system has connected to (Outbound RDP)"
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Terminal Server Client'
+  Filter: x=>IsDir
+  Preamble:
+    - |
+      LET RDPMRU(OSPath) = SELECT Data.value AS Server
+      FROM glob(accessor="registry", globs='*', root=OSPath + "Default")
+      WHERE OSPath.Basename =~ "MRU"
+
+  Details: |
+    x=>dict(
+     DefaultMRU=RDPMRU(OSPath=x.OSPath).Server,
+     Servers={
+      SELECT OSPath.Basename AS Server,
+        FetchKeyValues(OSPath=OSPath) AS Details
+      FROM glob(accessor="registry", globs='*', root=x.OSPath + "Servers")
+    })
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "Run (Group Policy)"
+  Category: Autoruns
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: 'Microsoft\Windows\CurrentVersion\Policies\Explorer\Run*'
+  Filter: x=>IsDir AND Details
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "Run (NTUSER)"
+  Category: Autoruns
+  Root: HKEY_USERS
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Run*'
+  Filter: x=>IsDir AND Details
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "Run (SYSTEM)"
+  Category: Autoruns
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: 'Microsoft\Windows\CurrentVersion\Run*'
+  Filter: x=>IsDir AND Details
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: Scheduled Tasks (TaskCache)
+  Category: Autoruns
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
+  Filter: x=>IsDir AND Details
+  # https://cyber.wtf/2022/06/01/windows-registry-analysis-todays-episode-tasks/
+  Preamble:
+  - |
+    LET _ParseActions(Data)  = parse_binary(accessor="data",
+                filename=Data, struct="Header",
+                profile='''
+    [["Header", 0, [
+     ["__Ver", 0, "uint16"],
+     ["__UserLen", 2, "uint32"],
+     ["User", 6, "String", {length: "x=>x.__UserLen", encoding: "utf16"}],
+     ["__ActionType", "x=>6 + x.__UserLen", "uint16"],
+     ["ActionType", "x=>6 + x.__UserLen", "Enumeration", {
+        type: "uint32",
+        choices: {
+          "26214": "BinaryAction",
+          "30583": "ComHanlder",
+          "34952": "Email",
+          "39321": "MessageBox",
+        }
+     }],
+     ["Action", "x=>6 + x.__UserLen + 2", "Union", {
+       selector: "x=>x.__ActionType",
+       choices: {
+         "26214": BinaryAction,
+         "30583": ComHandler,
+       }
+     }],
+    ]],
+    ["ComHandler", 0, [
+     ["ClassID", 4, "GUID"],
+     ["__DataLen", 20, uint32],
+     ["Data", 24, "String", {
+       "length": "x=>x.__DataLen",
+       "encoding": "utf16",
+     }]
+    ]],
+    ["GUID", 16, [
+     ["__D1", 0, "uint32"],
+     ["__D2", 4, "uint16"],
+     ["__D3", 6, "uint16"],
+     ["__D4", 8, "String", {"term": "", "length": 2}],
+     ["__D5", 10, "String", {"term": "", "length": 6}],
+     ["Value", 0, "Value", {
+        "value": "x=>format(format='{%08x-%04x-%04x-%02x-%02x}', args=[x.__D1, x.__D2, x.__D3, x.__D4, x.__D5])"
+    }]
+    ]],
+    ["BinaryAction", 0, [
+     ["__BinLen", 4, "uint32"],
+     ["Binary", 8, "String", {length: "x=>x.__BinLen", encoding: "utf16"}],
+    ]]]
+    ''')
+
+    LET _ParseDynamicInfo(Data) = parse_binary(accessor="data",
+                filename=Data, struct="Header",
+                profile='''
+    [["Header", 0, [
+     ["__Ver", 0, "uint16"],
+     ["Created", 4, "WinFileTime", {"type": "uint64"}],
+     ["LastStart", 12, "WinFileTime", {"type": "uint64"}],
+     ["LastStop", 20, "WinFileTime", {"type": "uint64"}],
+     ["TaskState", 28, "uint32"],
+     ["LastErrorCode", 32, "uint32"],
+     ["LastSuccessfulRun", 36, "WinFileTime", {"type": "uint64"}],
+    ]]]
+    ''')
+
+    LET _TaskCache(OSPath) = SELECT to_dict(item={
+      SELECT OSPath.Basename AS _key,
+        if(condition= OSPath.Basename =~ "DynamicInfo",
+           then=_ParseDynamicInfo(Data=Data.value),
+        else= if(condition= OSPath.Basename =~ "Actions",
+           then=_ParseActions(Data=Data.value),
+        else=Data.value)) AS _value
+      FROM glob(accessor="registry", globs='*', root=OSPath)
+    }) + dict(OSPath=OSPath) AS Details
+    FROM glob(accessor="registry", globs='*', root=OSPath)
+  Details: |
+    x=>dict(Tasks= _TaskCache(OSPath=x.OSPath))
+
+
+- Author: Andrew Rathbun, Mike Cohen
+  Description: "Services: Displays list of services running on this computer"
+  Category: Services
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: 'ControlSet*\Services\*'
+  Filter: x=>IsDir
+  Preamble:
+    - |
+      LET _ServiceTypeLookup <= dict(`1`="KernelDriver", `2`="FileSystemDriver", `4`="Adapter", `8`="RecognizerDriver", `16`="Win32OwnProcess", `32`="Win32ShareProcess", `256`="InteractiveProcess", `96`="Win32ShareProcess")
+      LET _ServiceStartModeLookup <= dict(`0`="Boot", `1`="System", `2`="Automatic", `3`="Manual", `4`="Disabled")
+
+      LET _ServicesInfo(OSPath) =
+          FetchKeyValuesWithRegex(OSPath=OSPath, Regex="Description|DisplayName|ServiceDll|Group|ImagePath|RequiredPrivileges|Type|Parameters|SERVICEDLL") +
+          dict(Mtime=Mtime, Service=OSPath.Basename,
+               TypeName=get(item=_ServiceTypeLookup, field=str(str=GetValue(OSPath=OSPath + "Type"))),
+               StartName=get(item=_ServiceStartModeLookup, field=str(str=GetValue(OSPath=OSPath + "Start")))
+          )
+  Details: |
+    x=>_ServicesInfo(OSPath=x.OSPath)

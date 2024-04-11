@@ -1916,6 +1916,7 @@ Keys:
         KeyPath: ControlSet*\Services\BAM\State\UserSettings\*
         Recursive: false
         Comment: "Displays the last execution time of a program"
+        Disabled: true
 
 # Bam plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.Bam
 # https://www.andreafortuna.org/2018/05/23/forensic-artifacts-evidences-of-program-execution-on-windows-systems/
@@ -1929,6 +1930,7 @@ Keys:
         KeyPath: ControlSet*\Services\DAM\State\UserSettings\*
         Recursive: false
         Comment: "DAM"
+        Disabled: true
 
 # Bam plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.Bam
 # https://www.cellebrite.com/en/analyzing-program-execution-windows-artifacts/
@@ -1952,6 +1954,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\*\Count
         Recursive: false
         Comment: "GUI-based programs launched from the desktop"
+        Disabled: true
 
 # UserAssist plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.UserAssist
 # https://www.sans.org/security-resources/posters/windows-forensic-analysis/170/download
@@ -1991,6 +1994,7 @@ Keys:
         KeyPath: Microsoft\RADAR\HeapLeakDetection
         Recursive: false
         Comment: "Displays applications that were running at one point in time on this system"
+        Disabled: true
 
 # RADAR plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.RADAR
 # http://windowsir.blogspot.com/2011/09/registry-stuff.html
@@ -2059,6 +2063,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery
         Recursive: true
         Comment: "User Searches"
+        Disabled: true
 
 # https://www.sans.org/security-resources/posters/windows-forensic-analysis/170/download
 # https://tzworks.net/prototype_page.php?proto_id=19
@@ -2083,6 +2088,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU
         Recursive: false
         Comment: "Tracks files that have been opened or saved within a Windows shell dialog box"
+        Disabled: true
 
 # OpenSavePidlMRU plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.OpenSavePidlMRU
 # https://www.sans.org/blog/opensavemru-and-lastvisitedmru/
@@ -2094,6 +2100,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU
         Recursive: false
         Comment: "Tracks files that have been opened or saved within a Windows shell dialog box"
+        Disabled: true
 
 # OpenSaveMRU plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.OpenSaveMRU
 
@@ -2104,6 +2111,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
         Recursive: false
         Comment: "Tracks the specific executable used by an application to open the files documented in OpenSavePidlMRU"
+        Disabled: true
 
 # LastVisitedPidlMRU plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.LastVisitedPidlMRU
 # https://www.sans.org/blog/opensavemru-and-lastvisitedmru
@@ -2119,6 +2127,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRULegacy
         Recursive: false
         Comment: "Tracks the specific executable used by an application to open the files documented in OpenSavePidlMRU"
+        Disabled: true
 
 # LastVisitedPidlMRU plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.LastVisitedPidlMRU
 # https://www.sans.org/blog/opensavemru-and-lastvisitedmru
@@ -2134,6 +2143,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
         Recursive: true
         Comment: "Files recently opened from Windows Explorer"
+        Disabled: true
 
 # RecentDocs plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.RecentDocs
 # https://forensic4cast.com/2019/03/the-recentdocs-key-in-windows-10/
@@ -2149,6 +2159,7 @@ Keys:
         KeyPath: Software\*\*\Recent File List
         Recursive: false
         Comment: "Displays recent files accessed by the user with an application"
+        Disabled: true
 
 # https://www.forensafe.com/blogs/paintmru.html
 
@@ -2159,6 +2170,8 @@ Keys:
         KeyPath: Software\*\*\Recent Folder List
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Recent Document List
         HiveType: NTUSER
@@ -2166,6 +2179,8 @@ Keys:
         KeyPath: Software\*\*\Settings\Recent Document List
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Recent
         HiveType: NTUSER
@@ -2173,6 +2188,8 @@ Keys:
         KeyPath: Software\Microsoft\*\*\Recent
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: RecentFind
         HiveType: NTUSER
@@ -2180,6 +2197,8 @@ Keys:
         KeyPath: Software\Microsoft\*\*\RecentFind
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: Recent File List
         HiveType: NTUSER
@@ -2187,6 +2206,8 @@ Keys:
         KeyPath: Software\Microsoft\*\Recent File List
         Recursive: false
         Comment: ""
+        Disabled: true
+
     -
         Description: User Shell Folders
         HiveType: NTUSER
@@ -2194,6 +2215,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
         Recursive: false
         Comment: "Displays where a user's Shell folders are mapped to"
+        Disabled: true
 
 # User Activity -> FeatureUsage
 
@@ -2207,6 +2229,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppBadgeUpdated
         Recursive: true
         Comment: "Displays the number of times the user has received a notification for an application"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2218,6 +2241,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppLaunch
         Recursive: true
         Comment: "Displays the number of times a pinned application was launched from the taskbar"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2229,6 +2253,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppSwitched
         Recursive: true
         Comment: "Displays the number of times an application switched focus (i.e. minimized, maximized, etc)"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2240,6 +2265,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\ShowJumpView
         Recursive: true
         Comment: "Displays the number of times an application was right-clicked"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2252,6 +2278,7 @@ Keys:
         ValueName: StartButton
         Recursive: true
         Comment: "Displays the number of times the Start button was clicked"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2264,6 +2291,7 @@ Keys:
         ValueName: ClockButton
         Recursive: true
         Comment: "Displays the number of times the Clock button was clicked"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2276,6 +2304,7 @@ Keys:
         ValueName: MultitaskingButton
         Recursive: true
         Comment: "Displays the number of times the Multitasking button was clicked"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2288,6 +2317,7 @@ Keys:
         ValueName: NotificationCenterButton
         Recursive: true
         Comment: "Displays the number of times the Notification Center button was clicked"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2300,6 +2330,7 @@ Keys:
         ValueName: SearchButton
         Recursive: true
         Comment: "Displays the number of times the Search button was clicked"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2312,6 +2343,7 @@ Keys:
         ValueName: SearchBox
         Recursive: true
         Comment: "Displays the number of times the Search box was clicked"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2324,6 +2356,7 @@ Keys:
         ValueName: ShowDesktopButton
         Recursive: true
         Comment: "Displays the number of times the Show Desktop button was clicked"
+        Disabled: true
 
 # https://www.group-ib.com/blog/featureusage
 # https://www.crowdstrike.com/blog/how-to-employ-featureusage-for-windows-10-taskbar-forensics/
@@ -2337,6 +2370,7 @@ Keys:
         KeyPath: Software\Microsoft\Terminal Server Client
         Recursive: false
         Comment: "Displays the IP addresses/hostnames of devices this system has connected to (Outbound RDP)"
+        Disabled: true
 
 # TerminalServerClient plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.TerminalServerClient
 # Default subkey stores previous RDP connection entries the user has connected to
@@ -2359,6 +2393,8 @@ Keys:
         KeyPath: Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
         Recursive: false
         Comment: "Group Policy Run Key"
+        Disabled: true
+
     -
         Description: Run (NTUSER)
         HiveType: NTUSER
@@ -2366,6 +2402,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Run
         Recursive: false
         Comment: "Program execution upon successful user logon"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys
 # https://www.andreafortuna.org/2017/10/18/windows-registry-in-forensic-analysis/
@@ -2377,6 +2414,7 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\RunOnce
         Recursive: false
         Comment: "Program execution upon successful user logon"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys
 
@@ -2387,6 +2425,7 @@ Keys:
         KeyPath: Microsoft\Windows\CurrentVersion\Run
         Recursive: false
         Comment: "Program execution upon successful user logon"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys
 
@@ -2397,6 +2436,7 @@ Keys:
         KeyPath: Microsoft\Windows\CurrentVersion\RunOnce
         Recursive: false
         Comment: "Program execution upon successful user logon"
+        Disabled: true
 
 # https://docs.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys
 
@@ -2470,6 +2510,7 @@ Keys:
         KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
         Recursive: false
         Comment: "Displays Scheduled Tasks and their last start/stop time"
+        Disabled: true
 
 # TaskCache plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.TaskCache
 # https://digital-forensics.sans.org/media/DFPS_FOR508_v4.4_1-19.pdf
@@ -3034,6 +3075,7 @@ Keys:
         KeyPath: ControlSet*\Services
         Recursive: false
         Comment: "Displays list of services running on this computer"
+        Disabled: true
 
 # Services plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.Services
 # https://www.forensafe.com/blogs/windowsservices.html
