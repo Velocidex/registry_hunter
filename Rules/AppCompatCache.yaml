@@ -95,13 +95,14 @@ Rules:
   Root: HKEY_LOCAL_MACHINE\System
   Category: Program Execution
   Glob: ControlSet00*\Control\Session Manager\AppCompatCache\AppCompatCache
-  Details: |
-    x=>dict(Data={
-        SELECT LastMod, Path
+  Preamble:
+  - |
+    LET AppCompatCacheTable(OSPath) = SELECT LastMod, Path
         FROM foreach(row=AppCompatCache(
-                 Blob=read_file(filename=x.OSPath, accessor="registry")
-        ))
-    })
+                 Blob=read_file(filename=OSPath, accessor="registry")))
+
+  Details: |
+    x=>AppCompatCacheTable(OSPath=x.OSPath)
 
 - Description: "AppCompatFlags: Displays programs that are configured to run in Compatibility Mode in Windows"
   Root: HKEY_USERS
