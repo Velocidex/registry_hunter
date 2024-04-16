@@ -1,10 +1,14 @@
 Preamble:
+  # Fetch all the values under the key specified in OSPath as a dict
+  # with key being the value name, and value being the value.
   - |
     LET FetchKeyValues(OSPath) = to_dict(item={
       SELECT Name AS _key, Data.value AS _value
       FROM glob(globs="*", accessor="registry", root=OSPath)
     })
 
+  # Similar to FetchKeyValues() but also allows a regular expression
+  # to select only some desired values.
   - |
     LET FetchKeyValuesWithRegex(OSPath, Regex) = to_dict(item={
       SELECT Name AS _key, Data.value AS _value
@@ -12,32 +16,42 @@ Preamble:
       WHERE Name =~ Regex
     })
 
+  # Convert from a numeric protocl id to a name.
   - |
     LET _ProtocolLookup <= dict(`6`="TCP", `17`="UDP")
     LET ProtocolLookup(X) = get(item=_ProtocolLookup, field=X) || X
 
-  - |
-    LET _ParseFirewallRule(X) = to_dict(item={
-       SELECT split(string=_value, sep_string="=")[0] AS _key,
-              split(string=_value, sep_string="=")[1] AS _value
-       FROM foreach(row=split(string=X, sep_string='|'))
-       WHERE NOT _key =~ "^v"
-    })
-
-    LET ParseFirewallRule(X) = _ParseFirewallRule(X=X) +
-       dict(Protocol=ProtocolLookup(X=_ParseFirewallRule(X=X).Protocol))
-
+  # A general purpose function to get the value in OSPath
   - |
     LET GetValue(OSPath) = stat(filename=OSPath, accessor="registry").Data.value
 
+  # Calculates simple MRU keys. These contain simple lists of indexes
+  # in the MRUList value (e.g. "cabd") which reference the relevant
+  # values in the specified order.
   - |
     LET CalculateMRU(OSPath) = SELECT GetValue(OSPath=OSPath + g1) AS value
         FROM parse_records_with_regex(accessor="data",
-        file=GetValue(OSPath=OSPath + "MRUList"), regex="(.)")
+        file=GetValue(OSPath=OSPath + "MRUList") || "", regex="(.)")
 
+  # Resolve the SID to a name based on the registry profile (i.e. does
+  # not use lookupSID() which depends on running live on the system).
   - |
     LET ResolveSID(SID) = pathspec(parse=stat(accessor="registry",
         filename="HKEY_LOCAL_MACHINE/Software/Microsoft/Windows NT/CurrentVersion/ProfileList/" + SID + "/ProfileImagePath").Data.value).Basename
+
+  - |
+    LET FormatMAC(x) = parse_binary(accessor="data",
+      filename=x, profile='''
+      [["X", 0, [
+        ["x0", 0, "uint8"],
+        ["x1", 1, "uint8"],
+        ["x2", 2, "uint8"],
+        ["x3", 3, "uint8"],
+        ["x4", 4, "uint8"],
+        ["x5", 5, "uint8"],
+        ["mac", 0, Value, {"value": "x=>format(format='%02x:%02x:%02x:%02x:%02x:%02x', args=[x.x0, x.x1, x.x2, x.x3, x.x4, x.x5])"}]
+      ]]]
+      ''', struct="X").mac
 
 Rules:
 - Description: Interface Properties (IPv4)
@@ -48,7 +62,7 @@ Rules:
     x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="AddressType|DhcpConnForceBroadcastFlag|DhcpDefaultGateway|DhcpDomain|DhcpDomainSearchList|DhcpGatewayHardware|DhcpGatewayHardwareCount|DhcpIPAddress|DhcpNameServer|DhcpServer|DhcpSubnetMask|DhcpSubnetMaskOpt|Domain|EnableDHCP|EnableMulticast|IPAddress|IsServerNapAware|Lease}LeaseObtainedTime|LeaseTerminatesTime|NameServer|RegisterAdapterName|RegistrationEnabled|SubnetMask|T1|T2") + dict(
        LeaseObtainedTime=timestamp(epoch=GetValue(OSPath=x.OSPath + "LeaseObtainedTime")),
        LeaseTerminatesTime=timestamp(epoch=GetValue(OSPath=x.OSPath + "LeaseTerminatesTime")),
-       DhcpGatewayHardware=FormatMAC(x=GetValue(OSPath=x.OSPath + "DhcpGatewayHardware")),
+       DhcpGatewayHardware=FormatMAC(x=GetValue(OSPath=x.OSPath + "DhcpGatewayHardware") || ""),
        T1=timestamp(epoch=GetValue(OSPath=x.OSPath + "T1")),
        T2=timestamp(epoch=GetValue(OSPath=x.OSPath + "T2"))
     )
@@ -116,6 +130,18 @@ Rules:
   Category: System Info
   Root: HKEY_LOCAL_MACHINE\System
   Glob: ControlSet001\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules\*
+  Preamble:
+  - |
+    LET _ParseFirewallRule(X) = to_dict(item={
+       SELECT split(string=_value, sep_string="=")[0] AS _key,
+              split(string=_value, sep_string="=")[1] AS _value
+       FROM foreach(row=split(string=X, sep_string='|'))
+       WHERE NOT _key =~ "^v"
+    })
+
+    LET ParseFirewallRule(X) = _ParseFirewallRule(X=X) +
+       dict(Protocol=ProtocolLookup(X=_ParseFirewallRule(X=X).Protocol))
+
   Details: |
     x=>ParseFirewallRule(X=x.Data) + dict(RuleName=x.OSPath.Basename)
 
@@ -180,7 +206,9 @@ Rules:
     LET CalculateMRUEx(OSPath) = SELECT split(string=utf16(string=GetValue(OSPath=OSPath + str(str=_value))), sep='\x00')[0] AS value
     FROM foreach(row=parse_binary(
            profile=MRUProfile,
-           accessor="data", filename=GetValue(OSPath=OSPath + "MRUListEx"), struct="Header").Array)
+           accessor="data",
+           filename=GetValue(OSPath=OSPath + "MRUListEx") || "",
+           struct="Header").Array)
     WHERE _value > 0
 
   Details: |

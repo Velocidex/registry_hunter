@@ -1,0 +1,117 @@
+[
+  {
+    "Description": "Interface Properties (IPv4)",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces\\{1bb91f68-bffe-4da6-9930-aec7b60ff3b2}",
+    "Mtime": "2023-10-18T02:46:27Z",
+    "Details": {
+      "AddressType": 0,
+      "DhcpConnForceBroadcastFlag": 0,
+      "DhcpDefaultGateway": [
+        "192.168.88.2"
+      ],
+      "DhcpDomain": "localdomain",
+      "DhcpGatewayHardware": "c0:a8:58:02:06:00",
+      "DhcpGatewayHardwareCount": 1,
+      "DhcpIPAddress": "192.168.88.141",
+      "DhcpNameServer": "192.168.88.2",
+      "DhcpServer": "192.168.88.254",
+      "DhcpSubnetMask": "255.255.255.0",
+      "DhcpSubnetMaskOpt": [
+        "255.255.255.0"
+      ],
+      "Domain": "",
+      "EnableDHCP": 1,
+      "IsServerNapAware": 0,
+      "LeaseTerminatesTime": "2023-10-18T03:16:27Z",
+      "NameServer": "",
+      "T1": "2023-10-18T03:01:27Z",
+      "T2": "2023-10-18T03:12:42Z",
+      "LeaseObtainedTime": "2023-10-18T02:46:27Z"
+    }
+  },
+  {
+    "Description": "Interface Properties (IPv4)",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces\\{a5fa02ea-6d81-11ee-bc9c-806e6f6e6963}",
+    "Mtime": "2023-10-18T05:43:50Z",
+    "Details": {
+      "LeaseObtainedTime": null,
+      "LeaseTerminatesTime": null,
+      "DhcpGatewayHardware": "00:00:00:00:00:00",
+      "T1": null,
+      "T2": null
+    }
+  },
+  {
+    "Description": "Interface Properties (IPv4)",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces\\{eaf4990c-0ea9-46af-8101-6d18e2d9cb92}",
+    "Mtime": "2023-10-18T05:43:43Z",
+    "Details": {
+      "Domain": "",
+      "EnableDHCP": 1,
+      "NameServer": "",
+      "LeaseObtainedTime": null,
+      "LeaseTerminatesTime": null,
+      "DhcpGatewayHardware": "00:00:00:00:00:00",
+      "T1": null,
+      "T2": null
+    }
+  },
+  {
+    "Description": "Interface Properties (IPv6)",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\Tcpip6\\Parameters\\Interfaces\\{07374750-e68b-490e-9330-9fd785cd71b6}",
+    "Mtime": "2021-05-08T08:24:20Z",
+    "Details": {
+      "EnableDHCP": 1,
+      "LeaseObtainedTime": null,
+      "LeaseTerminatesTime": null
+    }
+  },
+  {
+    "Description": "Interface Properties (IPv6)",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\Tcpip6\\Parameters\\Interfaces\\{1bb91f68-bffe-4da6-9930-aec7b60ff3b2}",
+    "Mtime": "2023-10-18T02:46:27Z",
+    "Details": {
+      "EnableDHCP": 1,
+      "LeaseObtainedTime": null,
+      "LeaseTerminatesTime": null
+    }
+  },
+  {
+    "Description": "Interface Properties (IPv6)",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\Tcpip6\\Parameters\\Interfaces\\{2ee2c70c-a092-4d88-a654-98c8d7645cd5}",
+    "Mtime": "2021-05-08T08:24:20Z",
+    "Details": {
+      "EnableDHCP": 1,
+      "LeaseObtainedTime": null,
+      "LeaseTerminatesTime": null
+    }
+  },
+  {
+    "Description": "Interface Properties (IPv6)",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\Tcpip6\\Parameters\\Interfaces\\{93123211-9629-4e04-82f0-ea2e4f221468}",
+    "Mtime": "2021-05-08T08:24:20Z",
+    "Details": {
+      "EnableDHCP": 1,
+      "LeaseObtainedTime": null,
+      "LeaseTerminatesTime": null
+    }
+  },
+  {
+    "Description": "Interface Properties (IPv6)",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\Tcpip6\\Parameters\\Interfaces\\{eaf4990c-0ea9-46af-8101-6d18e2d9cb92}",
+    "Mtime": "2023-10-18T05:43:43Z",
+    "Details": {
+      "EnableDHCP": 1,
+      "LeaseObtainedTime": null,
+      "LeaseTerminatesTime": null
+    }
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "Description": "Recent File List: Displays recent files accessed by the user with an application",
+    "Category": "User Activity",
+    "OSPath": "HKEY_USERS\\user1\\Software\\Altova\\XML Spy\\Recent File List",
+    "Mtime": "2014-11-07T22:59:18Z",
+    "Details": {
+      "Files": [
+        "D:\\temp\\xml.xml",
+        "C:\\Users\\eric\\Desktop\\New folder\\skype1.xml",
+        "C:\\Users\\eric\\Desktop\\New folder\\skype.xml",
+        "C:\\ProjectWorkingFolder\\GOON2\\GOON2\\bin\\Debug\\Data\\bumble_bee.xml",
+        "C:\\ProjectWorkingFolder\\GOON2\\GOON2\\bin\\Debug\\Data\\zimjob1.xml"
+      ]
+    }
+  },
+  {
+    "Description": "Recent File List: Displays recent files accessed by the user with an application",
+    "Category": "User Activity",
+    "OSPath": "HKEY_USERS\\user1\\Software\\Microsoft\\Microsoft Management Console\\Recent File List",
+    "Mtime": "2014-11-25T15:59:20Z",
+    "Details": {
+      "Files": [
+        "C:\\Windows\\system32\\eventvwr.msc",
+        "C:\\Windows\\system32\\compmgmt.msc",
+        "C:\\Windows\\system32\\devmgmt.msc"
+      ]
+    }
+  }
+]

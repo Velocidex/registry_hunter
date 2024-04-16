@@ -1,0 +1,9 @@
+[
+  {
+    "Description": "Regedit.exe Last Key Viewed",
+    "Category": "Executables",
+    "OSPath": "HKEY_USERS\\user1\\Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Regedit\\LastKey",
+    "Mtime": "2014-11-07T18:10:37Z",
+    "Details": "Computer\\HKEY_CLASSES_ROOT\\Local Settings\\Software\\Microsoft\\Windows\\Shell\\BagMRU\\1"
+  }
+]

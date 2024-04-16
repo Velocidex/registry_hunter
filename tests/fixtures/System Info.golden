@@ -1,0 +1,31 @@
+[
+  {
+    "Description": "System Info (Current)",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion",
+    "Mtime": "2023-10-18T02:46:28Z",
+    "Details": {
+      "BuildLab": "20348.fe_release.210507-1500",
+      "BuildLabEx": "20348.1.amd64fre.fe_release.210507-1500",
+      "CompositionEditionID": "ServerStandard",
+      "CurrentBuild": "20348",
+      "CurrentBuildNumber": "20348",
+      "CurrentMajorVersionNumber": 10,
+      "DisplayVersion": "21H2",
+      "EditionID": "ServerStandard",
+      "InstallDate": 1697597085,
+      "InstallationType": "Server",
+      "ProductName": "Windows Server 2022 Standard",
+      "RegisteredOrganization": "",
+      "RegisteredOwner": "Windows User",
+      "SystemRoot": "C:\\Windows"
+    }
+  },
+  {
+    "Description": "System Info (Current)",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\InstallTime",
+    "Mtime": "2023-10-18T02:46:28Z",
+    "Details": "2023-10-18T02:44:45Z"
+  }
+]

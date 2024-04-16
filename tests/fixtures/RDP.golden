@@ -1,0 +1,83 @@
+[
+  {
+    "Description": "RDP Connections Status",
+    "Category": "Threat Hunting",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Control\\Terminal Server\\fDenyTSConnections",
+    "Mtime": "2023-10-18T02:46:26Z",
+    "Details": "Enabled (Inbound RDP disabled)"
+  },
+  {
+    "Description": "RDP Connections Status",
+    "Category": "Threat Hunting",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet002\\Control\\Terminal Server\\fDenyTSConnections",
+    "Mtime": "2023-10-18T05:44:35Z",
+    "Details": "Enabled (Inbound RDP disabled)"
+  },
+  {
+    "Description": "RDP User Authentication Status",
+    "Category": "Threat Hunting",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Control\\Terminal Server\\WinStations\\RDP-Tcp\\UserAuthentication",
+    "Mtime": "2021-05-08T08:24:51Z",
+    "Details": "Enabled (authentication required)"
+  },
+  {
+    "Description": "RDP User Authentication Status",
+    "Category": "Threat Hunting",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet002\\Control\\Terminal Server\\WinStations\\RDP-Tcp\\UserAuthentication",
+    "Mtime": "2021-05-08T08:24:51Z",
+    "Details": "Enabled (authentication required)"
+  },
+  {
+    "Description": "Terminal Server Client (RDP): Displays the IP addresses/hostnames of devices this system has connected to (Outbound RDP)",
+    "Category": "User Activity",
+    "OSPath": "HKEY_USERS\\user1\\Software\\Microsoft\\Terminal Server Client",
+    "Mtime": "2014-11-28T16:52:31Z",
+    "Details": {
+      "DefaultMRU": [
+        "SU-SVR02",
+        "GOON-pc.su.local",
+        "SU-SVR03",
+        "SU-BAK02",
+        "SU-SVR01"
+      ],
+      "Servers": [
+        {
+          "Server": "GOON-pc.su.local",
+          "Details": {
+            "UsernameHint": "SU\\eric"
+          }
+        },
+        {
+          "Server": "SU-BAK02",
+          "Details": {
+            "UsernameHint": "SU\\administrator"
+          }
+        },
+        {
+          "Server": "SU-SVR01",
+          "Details": {
+            "UsernameHint": "SU\\administrator"
+          }
+        },
+        {
+          "Server": "SU-SVR02",
+          "Details": {
+            "UsernameHint": "SU\\administrator"
+          }
+        },
+        {
+          "Server": "SU-SVR03",
+          "Details": {
+            "UsernameHint": "su\\administrator"
+          }
+        },
+        {
+          "Server": "SU-SVR05",
+          "Details": {
+            "UsernameHint": "su\\administrator"
+          }
+        }
+      ]
+    }
+  }
+]

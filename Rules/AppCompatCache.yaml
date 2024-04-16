@@ -7,6 +7,7 @@ Preamble:
           type: "Entry",
           sentinel: "x=>x.Size = 0",
           count: 10000,
+          max_count: 10000,
       }]
     ]],
     ["HeaderWin8", 128, [
@@ -14,6 +15,7 @@ Preamble:
           type: "EntryWin8",
           sentinel: "x=>x.EntrySize = 0",
           count: 10000,
+          max_count: 10000,
       }]
     ]],
 
@@ -92,17 +94,20 @@ Preamble:
 
 Rules:
 - Description: "AppCompatCache: AKA ShimCache, data is only written to this value at reboot by winlogon.exe"
-  Root: HKEY_LOCAL_MACHINE\System
   Category: Program Execution
-  Glob: ControlSet00*\Control\Session Manager\AppCompatCache\AppCompatCache
-  Preamble:
-  - |
-    LET AppCompatCacheTable(OSPath) = SELECT LastMod, Path
-        FROM foreach(row=AppCompatCache(
-                 Blob=read_file(filename=OSPath, accessor="registry")))
 
-  Details: |
-    x=>AppCompatCacheTable(OSPath=x.OSPath)
+  # This is a full query rule which does not use Globs because we need
+  # to split the different hits across multiple rows.
+  Query: |
+    LET Globs <= '''HKEY_LOCAL_MACHINE\System\ControlSet00*\Control\Session Manager\AppCompatCache\AppCompatCache'''
+    SELECT * FROM foreach(row={
+      SELECT OSPath, Mtime, NULL AS _RawData, NULL AS _Metadata
+      FROM glob(accessor="registry", globs=Globs)
+    }, query={
+      SELECT Description, Category, OSPath, Mtime,
+             dict(Path=Path, LastMod=LastMod) AS Details
+      FROM foreach(row=AppCompatCache(Blob=read_file(filename=OSPath, accessor="registry")))
+    })
 
 - Description: "AppCompatFlags: Displays programs that are configured to run in Compatibility Mode in Windows"
   Root: HKEY_USERS

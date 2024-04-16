@@ -1,0 +1,92 @@
+[
+  {
+    "Description": "CIDSizeMRU",
+    "Category": "Program Execution",
+    "OSPath": "HKEY_USERS\\user1\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\CIDSizeMRU",
+    "Mtime": "2014-12-08T13:43:37Z",
+    "Details": {
+      "MRU": [
+        "devenv.exe",
+        "snagiteditor.exe",
+        "ShellBagsExplorer.vshost.exe",
+        "postbox.exe",
+        "Kjs.AppLife.Update.MakeUpdate.UI.exe",
+        "{2C2B5BDC-CC12-49CD-8887-C6536BDDCFF3}",
+        "xwforensics.exe",
+        "Skype.exe",
+        "EditPadPro7.exe",
+        "chrome.exe",
+        "vmware.exe",
+        "SumatraPDF.exe",
+        "ShellBagsExplorer.exe",
+        "{E91E2A02-2A32-4640-9A06-8F92C0AAD835}",
+        "{041A58F1-5B94-426F-8F4F-0250AC969788}",
+        "Aid4Mail.exe",
+        "OpenWith.exe",
+        "SmartAssembly.exe",
+        "Infragistics.VersionUtility.UI.exe",
+        "kitty_portable.exe",
+        "ArsenalImageMounterMountTool.exe",
+        "elex.exe",
+        "WinHex.exe",
+        "Highlighter.exe",
+        "rr.exe",
+        "cpwsave.exe",
+        "FTK Imager.exe",
+        "emule.exe",
+        "vlc.exe",
+        "Hasher.vshost.exe",
+        "Hubstream.Intelligence.Agent.exe",
+        "TortoiseProc.exe",
+        "ImgBurn.exe",
+        "mbam.exe",
+        "navicat.exe",
+        "SkypeAlyzer.exe",
+        "TrueCrypt.exe",
+        "TrueCrypt Format.exe",
+        "iexplore.exe",
+        "dopus.exe",
+        "SerialWizard.exe",
+        "xwforensics64.exe",
+        "BCompare.exe",
+        "XWFRT.exe",
+        "GOON2.exe",
+        "XWFRT.vshost.exe",
+        "PowerGREP4.exe",
+        "RegexBuddy4.exe",
+        "ProjectConverter.exe"
+      ]
+    }
+  },
+  {
+    "Description": "LastVisitedPidlMRU: Tracks the specific executable used by an application to open the files documented in OpenSavePidlMRU",
+    "Category": "User Activity",
+    "OSPath": "HKEY_USERS\\user1\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\LastVisitedPidlMRU",
+    "Mtime": "2014-12-08T13:43:37Z",
+    "Details": {
+      "MRU": [
+        "devenv.exe",
+        "ShellBagsExplorer.vshost.exe"
+      ]
+    }
+  },
+  {
+    "Description": "OpenSavePidlMRU: Tracks files that have been opened or saved within a Windows shell dialog box",
+    "Category": "User Activity",
+    "OSPath": "HKEY_USERS\\user1\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU",
+    "Mtime": "2014-11-25T15:31:07Z",
+    "Details": {
+      "MRU": []
+    }
+  },
+  {
+    "Description": "RunMRU: Tracks commands from the Run box in the Start menu, lower MRU # (Value Data3) = more recent",
+    "Category": "Program Execution",
+    "OSPath": "HKEY_USERS\\user1\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU",
+    "Mtime": "2014-05-20T14:26:30Z",
+    "Details": {
+      "MRU": [],
+      "All": {}
+    }
+  }
+]
