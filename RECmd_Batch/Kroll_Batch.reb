@@ -27,19 +27,6 @@ Preamble:
       ''', struct="X").Date
 
   - |
-    LET FormatMAC(x) = parse_binary(accessor="data",
-      filename=x, profile='''
-      [["X", 0, [
-        ["x0", 0, "uint8"],
-        ["x1", 1, "uint8"],
-        ["x2", 2, "uint8"],
-        ["x3", 3, "uint8"],
-        ["x4", 4, "uint8"],
-        ["x5", 5, "uint8"],
-        ["mac", 0, Value, {"value": "x=>format(format='%02x:%02x:%02x:%02x:%02x:%02x', args=[x.x0, x.x1, x.x2, x.x3, x.x4, x.x5])"}]
-      ]]]
-      ''', struct="X").mac
-  - |
     LET ExtractValueFromComment(x) = parse_string_with_regex(
       string=x.Metadata.Comment, regex=format(format="%v [=-] ([^,]+)", args=x.Data)).g1
 

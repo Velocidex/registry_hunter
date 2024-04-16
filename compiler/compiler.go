@@ -11,6 +11,7 @@ import (
 	"sort"
 	"strings"
 	"text/template"
+	"time"
 
 	"github.com/Velocidex/ordereddict"
 	"github.com/Velocidex/registry_hunter/config"
@@ -22,6 +23,8 @@ const (
 name: {{.Name}}
 description: |
    This artifact parses and categorizes information for the registry.
+
+   Build time: {{ .Time }}
 
    Read more about this artifact here https://github.com/Velocidex/registry_hunter
 
@@ -89,6 +92,10 @@ parameters:
   description: |
      Path to the top level drive. If one of the PathTO* parameters are not
      specified, then we use this to figure out the usual paths to the hives.
+
+- name: AlsoUploadHives
+  type: bool
+  description: If checked, we also upload all the hives.
 
 - name: PathTOSAM
   description: "By default, hive is at C:/Windows/System32/Config/SAM"
@@ -268,6 +275,15 @@ export: |
 
 {{ .Preamble }}
 
+    -- This contains the queries for Full Query Rules - they skip the glob and just run arbitrary VQL.
+    LET FullQueries <= parse_json_array(data=gunzip(string=base64decode(string="{{ .QueriesJSON }}")))
+
+    LET AllFullQueries <=
+        SELECT * FROM FullQueries
+        WHERE Category =~ CategoryFilter
+          AND Description =~ DescriptionFilter
+
+    -- This contains the metadata for Glob rules.
     LET _MD <= parse_json_array(data=gunzip(string=base64decode(string="{{.Metadata }}")))
     LET MD(DescriptionFilter, RootFilter, CategoryFilter, CategoryExcludedFilter) = SELECT * FROM _MD
      WHERE Description =~ DescriptionFilter
@@ -294,7 +310,7 @@ sources:
 
 - name: Rules
   query: |
-    SELECT * FROM AllRules
+    SELECT * FROM chain(a=AllRules, b=AllFullQueries)
   notebook:
   - type: none
 
@@ -304,6 +320,24 @@ sources:
 
   query: |
     SELECT * FROM AllGlobs
+
+- name: Uploads
+  notebook:
+  - type: none
+
+  query: |
+   LET UploadFiles = SELECT OSPath AS SourceFile, Size,
+       Btime AS Created,
+       Ctime AS Changed,
+       Mtime AS Modified,
+       Atime AS LastAccessed,
+       upload(file=OSPath, accessor=DefaultAccessor, mtime=Mtime) AS Upload
+    FROM glob(accessor=DefaultAccessor, globs=[
+       PathTOSAM, PathTOAmcache, PathTOSystem,
+       PathTOSecurity, PathTOSoftware, PathTOUsers + "*/ntuser.dat*"
+    ])
+
+   SELECT * FROM if(condition=AlsoUploadHives, then=UploadFiles)
 
 - name: Results
   notebook:
@@ -348,7 +382,7 @@ sources:
        SELECT * FROM glob(globs=GlobsToSearch, root=Root, accessor="registry")
     }, workers=20)
 
-    SELECT Metadata.Description AS Description,
+    LET GlobRules = SELECT Metadata.Description AS Description,
            Metadata.Category AS Category,
            OSPath, Mtime, Data AS _RawData,
            eval(func=Metadata.Details || "x=>x.Data") || Data AS Details,
@@ -357,6 +391,14 @@ sources:
     WHERE eval(func=Metadata.Filter || "x=>NOT IsDir")
       AND Category =~ CategoryFilter
       AND Metadata.Description =~ DescriptionFilter
+
+    SELECT * FROM chain(
+    a=GlobRules,
+    b={
+      SELECT * FROM foreach(row=AllFullQueries, query={
+        SELECT * FROM query(query=Query, inherit=TRUE)
+      })
+    })
 `
 )
 
@@ -366,8 +408,13 @@ type templateParameters struct {
 	Rules    []config.RegistryRule
 	Preamble string
 
+	// Rules that are full queries
+	QueriesJSON string
+
 	Categories     []string
 	CategoriesJSON string
+
+	Time string
 }
 
 type Compiler struct {
@@ -381,6 +428,8 @@ type Compiler struct {
 	PreambleVerses []string
 
 	categories map[string]bool
+
+	queries []config.RegistryRule
 }
 
 func NewCompiler() *Compiler {
@@ -389,6 +438,14 @@ func NewCompiler() *Compiler {
 		globs:      make(map[string]config.RegistryRule),
 		categories: make(map[string]bool),
 	}
+}
+
+func (self *Compiler) serialize(item interface{}) string {
+	serialized, err := json.Marshal(item)
+	if err != nil {
+		return ""
+	}
+	return string(serialized)
 }
 
 func (self *Compiler) LoadRules(filename string) error {
@@ -410,6 +467,11 @@ func (self *Compiler) LoadRules(filename string) error {
 
 	// Add preables from rules
 	for _, r := range rules.Rules {
+		if r.Query != "" {
+			self.queries = append(self.queries, r)
+			continue
+		}
+
 		key := r.Root + r.Glob
 		existing_rule, pres := self.globs[key]
 		if pres {
@@ -437,6 +499,14 @@ func (self *Compiler) buildMetadata() string {
 	var b bytes.Buffer
 	gz := gzip.NewWriter(&b)
 	gz.Write(serialized)
+	gz.Close()
+	return base64.StdEncoding.EncodeToString(b.Bytes())
+}
+
+func (self *Compiler) compress(in string) string {
+	var b bytes.Buffer
+	gz := gzip.NewWriter(&b)
+	gz.Write([]byte(in))
 	gz.Close()
 	return base64.StdEncoding.EncodeToString(b.Bytes())
 }
@@ -511,18 +581,15 @@ func (self *Compiler) Compile() (string, error) {
 	}
 
 	categories := self.buildCategories()
-	serialized, err := json.Marshal(categories)
-	if err != nil {
-		return "", err
-	}
-
 	parameters := &templateParameters{
 		Name:           "Windows.Registry.Hunter",
 		Metadata:       self.buildMetadata(),
 		Rules:          self.rules,
 		Preamble:       self.buildPreamble(),
 		Categories:     categories,
-		CategoriesJSON: string(serialized),
+		CategoriesJSON: self.serialize(categories),
+		QueriesJSON:    self.compress(self.serialize(self.queries)),
+		Time:           time.Now().UTC().Format(time.RFC3339),
 	}
 
 	var b bytes.Buffer

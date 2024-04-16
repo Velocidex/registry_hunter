@@ -1,0 +1,126 @@
+[
+  {
+    "Description": "Background Activity Moderator (BAM)",
+    "Category": "Program Execution",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\bam\\State\\UserSettings\\S-1-5-21-3275454858-3348516582-95323724-1000",
+    "Mtime": "2023-10-18T02:51:01Z",
+    "Details": {
+      "Programs": [
+        {
+          "Program": "Microsoft.Windows.Search_cw5n1h2txyewy",
+          "Timestamp": "2023-10-18T02:46:40Z"
+        },
+        {
+          "Program": "Microsoft.Windows.SecHealthUI_cw5n1h2txyewy",
+          "Timestamp": "2023-10-18T02:51:01Z"
+        },
+        {
+          "Program": "Microsoft.Windows.ShellExperienceHost_cw5n1h2txyewy",
+          "Timestamp": "2023-10-18T02:50:47Z"
+        },
+        {
+          "Program": "Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy",
+          "Timestamp": "2023-10-18T02:47:37Z"
+        },
+        {
+          "Program": "MicrosoftWindows.Client.CBS_cw5n1h2txyewy",
+          "Timestamp": "2023-10-18T02:46:39Z"
+        },
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Users\\Test\\AppData\\Local\\Temp\\vmware-Test\\0000334e\\setup64.exe",
+          "Timestamp": "2023-10-18T02:45:43Z"
+        },
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Windows\\System32\\ApplicationFrameHost.exe",
+          "Timestamp": "2023-10-18T02:51:00Z"
+        },
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Windows\\System32\\ServerManager.exe",
+          "Timestamp": "2023-10-18T02:49:25Z"
+        },
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Windows\\Temp\\{CE01E01D-6287-41D5-8BCE-C47ADD000C4A}\\.be\\VC_redist.x86.exe",
+          "Timestamp": "2023-10-18T02:45:01Z"
+        },
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Windows\\explorer.exe",
+          "Timestamp": "2023-10-18T02:46:39Z"
+        }
+      ],
+      "UserSID": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "Username": "Test"
+    }
+  },
+  {
+    "Description": "Background Activity Moderator (BAM)",
+    "Category": "Program Execution",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\bam\\State\\UserSettings\\S-1-5-90-0-1",
+    "Mtime": "2023-10-18T02:46:39Z",
+    "Details": {
+      "Programs": [
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Windows\\System32\\dwm.exe",
+          "Timestamp": "2023-10-18T02:46:39Z"
+        }
+      ],
+      "UserSID": "S-1-5-90-0-1",
+      "Username": ""
+    }
+  },
+  {
+    "Description": "Background Activity Moderator (BAM)",
+    "Category": "Program Execution",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet002\\Services\\bam\\State\\UserSettings\\S-1-5-21-3275454858-3348516582-95323724-1000",
+    "Mtime": "2023-10-18T02:46:42Z",
+    "Details": {
+      "Programs": [
+        {
+          "Program": "Microsoft.Windows.Search_cw5n1h2txyewy",
+          "Timestamp": "2023-10-18T02:46:40Z"
+        },
+        {
+          "Program": "Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy",
+          "Timestamp": "2023-10-18T02:46:40Z"
+        },
+        {
+          "Program": "MicrosoftWindows.Client.CBS_cw5n1h2txyewy",
+          "Timestamp": "2023-10-18T02:46:39Z"
+        },
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Users\\Test\\AppData\\Local\\Temp\\vmware-Test\\0000334e\\setup64.exe",
+          "Timestamp": "2023-10-18T02:45:43Z"
+        },
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Windows\\System32\\ServerManager.exe",
+          "Timestamp": "2023-10-18T02:46:42Z"
+        },
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Windows\\Temp\\{CE01E01D-6287-41D5-8BCE-C47ADD000C4A}\\.be\\VC_redist.x86.exe",
+          "Timestamp": "2023-10-18T02:45:01Z"
+        },
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Windows\\explorer.exe",
+          "Timestamp": "2023-10-18T02:46:39Z"
+        }
+      ],
+      "UserSID": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "Username": "Test"
+    }
+  },
+  {
+    "Description": "Background Activity Moderator (BAM)",
+    "Category": "Program Execution",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet002\\Services\\bam\\State\\UserSettings\\S-1-5-90-0-1",
+    "Mtime": "2023-10-18T02:46:39Z",
+    "Details": {
+      "Programs": [
+        {
+          "Program": "\\Device\\HarddiskVolume3\\Windows\\System32\\dwm.exe",
+          "Timestamp": "2023-10-18T02:46:39Z"
+        }
+      ],
+      "UserSID": "S-1-5-90-0-1",
+      "Username": ""
+    }
+  }
+]

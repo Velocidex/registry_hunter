@@ -1,0 +1,52 @@
+[
+  {
+    "Description": "WinLogon: Displays the details of the last user logged in to this system",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+    "Mtime": "2023-10-18T02:46:27Z",
+    "Details": {
+      "AutoAdminLogon": "1",
+      "AutoLogonSID": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "DefaultUserName": "Test",
+      "LastUsedUsername": "Test",
+      "AllValues": {
+        "AlternateShells": null,
+        "AutoAdminLogon": "1",
+        "AutoLogonSID": "S-1-5-21-3275454858-3348516582-95323724-1000",
+        "AutoRestartShell": 1,
+        "Background": "0 0 0",
+        "CachedLogonsCount": "10",
+        "DebugServerCommand": "no",
+        "DefaultDomainName": "",
+        "DefaultUserName": "Test",
+        "DisableBackButton": 1,
+        "DisableCAD": 1,
+        "EnableSIHostIntegration": 1,
+        "ForceUnlockLogon": 0,
+        "GPExtensions": null,
+        "LastLogOffEndTimePerfCounter": 820121538,
+        "LastUsedUsername": "Test",
+        "LegalNoticeCaption": "",
+        "LegalNoticeText": "",
+        "PasswordExpiryWarning": 5,
+        "PowerdownAfterShutdown": "0",
+        "PreCreateKnownFolders": "{A520A1A4-1780-4FF6-BD18-167343C5AF16}",
+        "ReportBootOk": "1",
+        "Shell": "explorer.exe",
+        "ShellAppRuntime": "ShellAppRuntime.exe",
+        "ShellCritical": 0,
+        "ShellInfrastructure": "sihost.exe",
+        "ShutdownFlags": 135,
+        "SiHostCritical": 0,
+        "SiHostReadyTimeOut": 0,
+        "SiHostRestartCountLimit": 0,
+        "SiHostRestartTimeGap": 0,
+        "UserDefaults": null,
+        "Userinit": "C:\\Windows\\system32\\userinit.exe,",
+        "VMApplet": "SystemPropertiesPerformance.exe /pagefile",
+        "WinStationsDisabled": "0",
+        "scremoveoption": "0"
+      }
+    }
+  }
+]

@@ -1,0 +1,4931 @@
+[
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\AllJoyn-Router-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Private",
+      "LPort": "9955",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "AJRouter",
+      "Name": "@FirewallAPI.dll,-37003",
+      "Desc": "@FirewallAPI.dll,-37004",
+      "EmbedCtxt": "@FirewallAPI.dll,-37002",
+      "RuleName": "AllJoyn-Router-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\AllJoyn-Router-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Private",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "AJRouter",
+      "Name": "@FirewallAPI.dll,-37007",
+      "Desc": "@FirewallAPI.dll,-37008",
+      "EmbedCtxt": "@FirewallAPI.dll,-37002",
+      "RuleName": "AllJoyn-Router-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\AllJoyn-Router-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Private",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "AJRouter",
+      "Name": "@FirewallAPI.dll,-37005",
+      "Desc": "@FirewallAPI.dll,-37006",
+      "EmbedCtxt": "@FirewallAPI.dll,-37002",
+      "RuleName": "AllJoyn-Router-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\AllJoyn-Router-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Private",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "AJRouter",
+      "Name": "@FirewallAPI.dll,-37009",
+      "Desc": "@FirewallAPI.dll,-37010",
+      "EmbedCtxt": "@FirewallAPI.dll,-37002",
+      "RuleName": "AllJoyn-Router-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\ComPlusNetworkAccess-DCOM-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "135",
+      "App": "%systemroot%\\system32\\svchost.exe",
+      "Svc": "rpcss",
+      "Name": "@%systemroot%\\system32\\firewallapi.dll,-3401",
+      "Desc": "@%systemroot%\\system32\\firewallapi.dll,-3402",
+      "EmbedCtxt": "@%systemroot%\\system32\\firewallapi.dll,-3400",
+      "RuleName": "ComPlusNetworkAccess-DCOM-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\ComPlusRemoteAdministration-DCOM-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%systemroot%\\system32\\dllhost.exe",
+      "Svc": "COMSysApp",
+      "Name": "@%systemroot%\\system32\\firewallapi.dll,-3406",
+      "Desc": "@%systemroot%\\system32\\firewallapi.dll,-3407",
+      "EmbedCtxt": "@%systemroot%\\system32\\firewallapi.dll,-3405",
+      "RuleName": "ComPlusRemoteAdministration-DCOM-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-DHCP-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "68",
+      "RPort": "67",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dhcp",
+      "Name": "@FirewallAPI.dll,-25301",
+      "Desc": "@FirewallAPI.dll,-25303",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-DHCP-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-DHCP-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "LPort": "68",
+      "RPort": "67",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dhcp",
+      "Name": "@FirewallAPI.dll,-25302",
+      "Desc": "@FirewallAPI.dll,-25303",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-DHCP-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-DHCPV6-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "546",
+      "RPort": "547",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dhcp",
+      "Name": "@FirewallAPI.dll,-25304",
+      "Desc": "@FirewallAPI.dll,-25306",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-DHCPV6-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-DHCPV6-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "LPort": "546",
+      "RPort": "547",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dhcp",
+      "Name": "@FirewallAPI.dll,-25305",
+      "Desc": "@FirewallAPI.dll,-25306",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-DHCPV6-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-DNS-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "53",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@FirewallAPI.dll,-25405",
+      "Desc": "@FirewallAPI.dll,-25406",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-DNS-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-Diag-ICMP4-EchoRequest-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "1",
+      "Profile": "Public",
+      "ICMP4": "8:*",
+      "RA4": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-27001",
+      "Desc": "@FirewallAPI.dll,-27005",
+      "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "RuleName": "CoreNet-Diag-ICMP4-EchoRequest-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-Diag-ICMP4-EchoRequest-In-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "1",
+      "Profile": "Domain",
+      "ICMP4": "8:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-27001",
+      "Desc": "@FirewallAPI.dll,-27005",
+      "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "RuleName": "CoreNet-Diag-ICMP4-EchoRequest-In-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-Diag-ICMP4-EchoRequest-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "1",
+      "Profile": "Public",
+      "ICMP4": "8:*",
+      "RA4": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-27002",
+      "Desc": "@FirewallAPI.dll,-27005",
+      "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "RuleName": "CoreNet-Diag-ICMP4-EchoRequest-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-Diag-ICMP4-EchoRequest-Out-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "1",
+      "Profile": "Domain",
+      "ICMP4": "8:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-27002",
+      "Desc": "@FirewallAPI.dll,-27005",
+      "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "RuleName": "CoreNet-Diag-ICMP4-EchoRequest-Out-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-Diag-ICMP6-EchoRequest-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "58",
+      "Profile": "Public",
+      "ICMP6": "128:*",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-27003",
+      "Desc": "@FirewallAPI.dll,-27005",
+      "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "RuleName": "CoreNet-Diag-ICMP6-EchoRequest-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-Diag-ICMP6-EchoRequest-In-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "58",
+      "Profile": "Domain",
+      "ICMP6": "128:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-27003",
+      "Desc": "@FirewallAPI.dll,-27005",
+      "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "RuleName": "CoreNet-Diag-ICMP6-EchoRequest-In-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-Diag-ICMP6-EchoRequest-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "Profile": "Public",
+      "ICMP6": "128:*",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-27004",
+      "Desc": "@FirewallAPI.dll,-27005",
+      "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "RuleName": "CoreNet-Diag-ICMP6-EchoRequest-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-Diag-ICMP6-EchoRequest-Out-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "Profile": "Domain",
+      "ICMP6": "128:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-27004",
+      "Desc": "@FirewallAPI.dll,-27005",
+      "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "RuleName": "CoreNet-Diag-ICMP6-EchoRequest-Out-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-GP-LSASS-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "App": "%SystemRoot%\\system32\\lsass.exe",
+      "Name": "@FirewallAPI.dll,-25407",
+      "Desc": "@FirewallAPI.dll,-25408",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-GP-LSASS-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-GP-NP-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "RPort": "445",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25401",
+      "Desc": "@FirewallAPI.dll,-25401",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-GP-NP-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-GP-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "gpsvc",
+      "Name": "@FirewallAPI.dll,-25403",
+      "Desc": "@FirewallAPI.dll,-25404",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-GP-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP4-DUFRAG-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "1",
+      "ICMP4": "3:4",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25251",
+      "Desc": "@FirewallAPI.dll,-25257",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP4-DUFRAG-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-DU-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "1:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25110",
+      "Desc": "@FirewallAPI.dll,-25112",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "Edge": "TRUE",
+      "RuleName": "CoreNet-ICMP6-DU-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-LD-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "132:*",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25082",
+      "Desc": "@FirewallAPI.dll,-25088",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-LD-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-LD-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "132:*",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25083",
+      "Desc": "@FirewallAPI.dll,-25088",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-LD-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-LQ-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "130:*",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25061",
+      "Desc": "@FirewallAPI.dll,-25067",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-LQ-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-LQ-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "130:*",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25062",
+      "Desc": "@FirewallAPI.dll,-25067",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-LQ-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-LR-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "131:*",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25068",
+      "Desc": "@FirewallAPI.dll,-25074",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-LR-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-LR-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "131:*",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25069",
+      "Desc": "@FirewallAPI.dll,-25074",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-LR-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-LR2-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "143:*",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25075",
+      "Desc": "@FirewallAPI.dll,-25081",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-LR2-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-LR2-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "143:*",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25076",
+      "Desc": "@FirewallAPI.dll,-25081",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-LR2-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-NDA-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "136:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25026",
+      "Desc": "@FirewallAPI.dll,-25032",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "Edge": "TRUE",
+      "RuleName": "CoreNet-ICMP6-NDA-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-NDA-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "136:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25027",
+      "Desc": "@FirewallAPI.dll,-25032",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-NDA-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-NDS-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "135:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25019",
+      "Desc": "@FirewallAPI.dll,-25025",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "Edge": "TRUE",
+      "RuleName": "CoreNet-ICMP6-NDS-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-NDS-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "135:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25020",
+      "Desc": "@FirewallAPI.dll,-25025",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-NDS-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-PP-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "4:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25116",
+      "Desc": "@FirewallAPI.dll,-25118",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "Edge": "TRUE",
+      "RuleName": "CoreNet-ICMP6-PP-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-PP-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "4:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25117",
+      "Desc": "@FirewallAPI.dll,-25118",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-PP-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-PTB-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "2:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25001",
+      "Desc": "@FirewallAPI.dll,-25007",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "Edge": "TRUE",
+      "RuleName": "CoreNet-ICMP6-PTB-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-PTB-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "2:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25002",
+      "Desc": "@FirewallAPI.dll,-25007",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-PTB-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-RA-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "134:*",
+      "RA6": "fe80::/64",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25012",
+      "Desc": "@FirewallAPI.dll,-25018",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-RA-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-RA-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "134:*",
+      "LA6": "fe80::/64",
+      "RA6": "ff02::1",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25013",
+      "Desc": "@FirewallAPI.dll,-25018",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-RA-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-RS-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "133:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25009",
+      "Desc": "@FirewallAPI.dll,-25011",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-RS-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-RS-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "133:*",
+      "RA6": "ff02::2",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25008",
+      "Desc": "@FirewallAPI.dll,-25011",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-RS-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-TE-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "3:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25113",
+      "Desc": "@FirewallAPI.dll,-25115",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "Edge": "TRUE",
+      "RuleName": "CoreNet-ICMP6-TE-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-ICMP6-TE-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "3:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25114",
+      "Desc": "@FirewallAPI.dll,-25115",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-ICMP6-TE-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-IGMP-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "2",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25376",
+      "Desc": "@FirewallAPI.dll,-25382",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-IGMP-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-IGMP-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "2",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25377",
+      "Desc": "@FirewallAPI.dll,-25382",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-IGMP-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-IPHTTPS-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort2_10": "IPHTTPSIn",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25426",
+      "Desc": "@FirewallAPI.dll,-25428",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-IPHTTPS-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-IPHTTPS-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort2_10": "IPHTTPSOut",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "iphlpsvc",
+      "Name": "@FirewallAPI.dll,-25427",
+      "Desc": "@FirewallAPI.dll,-25429",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-IPHTTPS-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-IPv6-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "41",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25351",
+      "Desc": "@FirewallAPI.dll,-25357",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-IPv6-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-IPv6-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "41",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-25352",
+      "Desc": "@FirewallAPI.dll,-25358",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-IPv6-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-Teredo-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "Teredo",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "iphlpsvc",
+      "Name": "@FirewallAPI.dll,-25326",
+      "Desc": "@FirewallAPI.dll,-25332",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-Teredo-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\CoreNet-Teredo-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "iphlpsvc",
+      "Name": "@FirewallAPI.dll,-25327",
+      "Desc": "@FirewallAPI.dll,-25333",
+      "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "RuleName": "CoreNet-Teredo-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\DIAL-Protocol-Server-HTTPSTR-In-TCP-LocalSubnetScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Private",
+      "LPort": "10247",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-37102",
+      "Desc": "@FirewallAPI.dll,-37103",
+      "EmbedCtxt": "@FirewallAPI.dll,-37101",
+      "RuleName": "DIAL-Protocol-Server-HTTPSTR-In-TCP-LocalSubnetScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\DIAL-Protocol-Server-In-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "LPort": "10247",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-37102",
+      "Desc": "@FirewallAPI.dll,-37103",
+      "EmbedCtxt": "@FirewallAPI.dll,-37101",
+      "RuleName": "DIAL-Protocol-Server-In-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\DeliveryOptimization-TCP-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "7680",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dosvc",
+      "Name": "@%systemroot%\\system32\\dosvc.dll,-102",
+      "Desc": "@%systemroot%\\system32\\dosvc.dll,-104",
+      "EmbedCtxt": "@%systemroot%\\system32\\dosvc.dll,-100",
+      "Edge": "TRUE",
+      "RuleName": "DeliveryOptimization-TCP-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\DeliveryOptimization-UDP-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "7680",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dosvc",
+      "Name": "@%systemroot%\\system32\\dosvc.dll,-103",
+      "Desc": "@%systemroot%\\system32\\dosvc.dll,-104",
+      "EmbedCtxt": "@%systemroot%\\system32\\dosvc.dll,-100",
+      "Edge": "TRUE",
+      "RuleName": "DeliveryOptimization-UDP-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\EventForwarder-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\system32\\NetEvtFwdr.exe",
+      "Name": "@FirewallAPI.dll,-36802",
+      "Desc": "@FirewallAPI.dll,-36803",
+      "EmbedCtxt": "@FirewallAPI.dll,-36801",
+      "RuleName": "EventForwarder-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\EventForwarder-RPCSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC-EPMap",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "RPCSS",
+      "Name": "@FirewallAPI.dll,-36804",
+      "Desc": "@FirewallAPI.dll,-36805",
+      "EmbedCtxt": "@FirewallAPI.dll,-36801",
+      "RuleName": "EventForwarder-RPCSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-ICMP4-ERQ-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "1",
+      "ICMP4": "8:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28543",
+      "Desc": "@FirewallAPI.dll,-28547",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-ICMP4-ERQ-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-ICMP4-ERQ-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "1",
+      "ICMP4": "8:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28544",
+      "Desc": "@FirewallAPI.dll,-28547",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-ICMP4-ERQ-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-ICMP6-ERQ-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "58",
+      "ICMP6": "128:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28545",
+      "Desc": "@FirewallAPI.dll,-28547",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-ICMP6-ERQ-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-ICMP6-ERQ-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "58",
+      "ICMP6": "128:*",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28546",
+      "Desc": "@FirewallAPI.dll,-28547",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-ICMP6-ERQ-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-LLMNR-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "5355",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@FirewallAPI.dll,-28548",
+      "Desc": "@FirewallAPI.dll,-28549",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-LLMNR-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-LLMNR-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "5355",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@FirewallAPI.dll,-28550",
+      "Desc": "@FirewallAPI.dll,-28551",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-LLMNR-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-NB_Datagram-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "138",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28527",
+      "Desc": "@FirewallAPI.dll,-28530",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-NB_Datagram-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-NB_Datagram-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "138",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28531",
+      "Desc": "@FirewallAPI.dll,-28534",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-NB_Datagram-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-NB_Name-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "137",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28519",
+      "Desc": "@FirewallAPI.dll,-28522",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-NB_Name-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-NB_Name-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "137",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28523",
+      "Desc": "@FirewallAPI.dll,-28526",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-NB_Name-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-NB_Session-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "139",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28503",
+      "Desc": "@FirewallAPI.dll,-28506",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-NB_Session-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-NB_Session-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "139",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28507",
+      "Desc": "@FirewallAPI.dll,-28510",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-NB_Session-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-RPCSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC-EPMap",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Rpcss",
+      "Name": "@FirewallAPI.dll,-28539",
+      "Desc": "@FirewallAPI.dll,-28542",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-RPCSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-SMB-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "445",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28511",
+      "Desc": "@FirewallAPI.dll,-28514",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-SMB-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-SMB-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "445",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28515",
+      "Desc": "@FirewallAPI.dll,-28518",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-SMB-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-SMBQ-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "443",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28653",
+      "Desc": "@FirewallAPI.dll,-28654",
+      "EmbedCtxt": "@FirewallAPI.dll,-28652",
+      "LOM": "TRUE",
+      "RuleName": "FPS-SMBQ-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-SMBQ-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "443",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28655",
+      "Desc": "@FirewallAPI.dll,-28656",
+      "EmbedCtxt": "@FirewallAPI.dll,-28652",
+      "RuleName": "FPS-SMBQ-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPS-SpoolSvc-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\system32\\spoolsv.exe",
+      "Svc": "Spooler",
+      "Name": "@FirewallAPI.dll,-28535",
+      "Desc": "@FirewallAPI.dll,-28538",
+      "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "RuleName": "FPS-SpoolSvc-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\FPSSMBD-iWARP-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "5445",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28603",
+      "Desc": "@FirewallAPI.dll,-28606",
+      "EmbedCtxt": "@FirewallAPI.dll,-28602",
+      "RuleName": "FPSSMBD-iWARP-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MDNS-In-UDP-Domain-Active",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "LPort": "5353",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37303",
+      "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37304",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "RuleName": "MDNS-In-UDP-Domain-Active"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MDNS-In-UDP-Private-Active",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Private",
+      "LPort": "5353",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37303",
+      "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37304",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "RuleName": "MDNS-In-UDP-Private-Active"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MDNS-In-UDP-Public-Active",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "LPort": "5353",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37303",
+      "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37304",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "RuleName": "MDNS-In-UDP-Public-Active"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MDNS-Out-UDP-Domain-Active",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "RPort": "5353",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37305",
+      "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37306",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "RuleName": "MDNS-Out-UDP-Domain-Active"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MDNS-Out-UDP-Private-Active",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Private",
+      "RPort": "5353",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37305",
+      "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37306",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "RuleName": "MDNS-Out-UDP-Private-Active"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MDNS-Out-UDP-Public-Active",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "RPort": "5353",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37305",
+      "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37306",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "RuleName": "MDNS-Out-UDP-Public-Active"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MSDTC-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\msdtc.exe",
+      "Name": "@FirewallAPI.dll,-33503",
+      "Desc": "@FirewallAPI.dll,-33506",
+      "EmbedCtxt": "@FirewallAPI.dll,-33502",
+      "RuleName": "MSDTC-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MSDTC-KTMRM-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "ktmrm",
+      "Name": "@FirewallAPI.dll,-33511",
+      "Desc": "@FirewallAPI.dll,-33512",
+      "EmbedCtxt": "@FirewallAPI.dll,-33502",
+      "RuleName": "MSDTC-KTMRM-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MSDTC-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\msdtc.exe",
+      "Name": "@FirewallAPI.dll,-33507",
+      "Desc": "@FirewallAPI.dll,-33510",
+      "EmbedCtxt": "@FirewallAPI.dll,-33502",
+      "RuleName": "MSDTC-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MSDTC-RPCSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC-EPMap",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "RPCSS",
+      "Name": "@FirewallAPI.dll,-33513",
+      "Desc": "@FirewallAPI.dll,-33514",
+      "EmbedCtxt": "@FirewallAPI.dll,-33502",
+      "RuleName": "MSDTC-RPCSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-DeviceManagement-CertificateInstall-TCP-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\dmcertinst.exe",
+      "Name": "@FirewallAPI.dll,-37507",
+      "Desc": "@FirewallAPI.dll,-37508",
+      "EmbedCtxt": "@FirewallAPI.dll,-37502",
+      "RuleName": "Microsoft-Windows-DeviceManagement-CertificateInstall-TCP-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-DeviceManagement-OmaDmClient-TCP-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\omadmclient.exe",
+      "Name": "@FirewallAPI.dll,-37503",
+      "Desc": "@FirewallAPI.dll,-37504",
+      "EmbedCtxt": "@FirewallAPI.dll,-37502",
+      "RuleName": "Microsoft-Windows-DeviceManagement-OmaDmClient-TCP-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-DeviceManagement-deviceenroller-TCP-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "443",
+      "App": "%SystemRoot%\\system32\\deviceenroller.exe",
+      "Name": "@FirewallAPI.dll,-37509",
+      "Desc": "@FirewallAPI.dll,-37510",
+      "EmbedCtxt": "@FirewallAPI.dll,-37502",
+      "RuleName": "Microsoft-Windows-DeviceManagement-deviceenroller-TCP-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-Enrollment-WinRT-TCP-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "DmEnrollmentSvc",
+      "Name": "@FirewallAPI.dll,-37505",
+      "Desc": "@FirewallAPI.dll,-37506",
+      "EmbedCtxt": "@FirewallAPI.dll,-37502",
+      "RuleName": "Microsoft-Windows-Enrollment-WinRT-TCP-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-PeerDist-HostedClient-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "443",
+      "App": "SYSTEM",
+      "Name": "@peerdistsh.dll,-10006",
+      "Desc": "@peerdistsh.dll,-11006",
+      "EmbedCtxt": "@peerdistsh.dll,-9003",
+      "RuleName": "Microsoft-Windows-PeerDist-HostedClient-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-PeerDist-HostedServer-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "443",
+      "App": "SYSTEM",
+      "Name": "@peerdistsh.dll,-10004",
+      "Desc": "@peerdistsh.dll,-11004",
+      "EmbedCtxt": "@peerdistsh.dll,-9002",
+      "RuleName": "Microsoft-Windows-PeerDist-HostedServer-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-PeerDist-HostedServer-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "LPort": "443",
+      "App": "SYSTEM",
+      "Name": "@peerdistsh.dll,-10005",
+      "Desc": "@peerdistsh.dll,-11005",
+      "EmbedCtxt": "@peerdistsh.dll,-9002",
+      "RuleName": "Microsoft-Windows-PeerDist-HostedServer-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-PeerDist-HttpTrans-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "80",
+      "App": "SYSTEM",
+      "Name": "@peerdistsh.dll,-10000",
+      "Desc": "@peerdistsh.dll,-11000",
+      "EmbedCtxt": "@peerdistsh.dll,-9000",
+      "RuleName": "Microsoft-Windows-PeerDist-HttpTrans-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-PeerDist-HttpTrans-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "80",
+      "App": "SYSTEM",
+      "Name": "@peerdistsh.dll,-10001",
+      "Desc": "@peerdistsh.dll,-11001",
+      "EmbedCtxt": "@peerdistsh.dll,-9000",
+      "RuleName": "Microsoft-Windows-PeerDist-HttpTrans-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-PeerDist-WSD-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "3702",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%systemroot%\\system32\\svchost.exe",
+      "Svc": "PeerDistSvc",
+      "Name": "@peerdistsh.dll,-10002",
+      "Desc": "@peerdistsh.dll,-11002",
+      "EmbedCtxt": "@peerdistsh.dll,-9001",
+      "RuleName": "Microsoft-Windows-PeerDist-WSD-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-PeerDist-WSD-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "3702",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%systemroot%\\system32\\svchost.exe",
+      "Svc": "PeerDistSvc",
+      "Name": "@peerdistsh.dll,-10003",
+      "Desc": "@peerdistsh.dll,-11003",
+      "EmbedCtxt": "@peerdistsh.dll,-9001",
+      "RuleName": "Microsoft-Windows-PeerDist-WSD-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Microsoft-Windows-Unified-Telemetry-Client",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "443",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "DiagTrack",
+      "Name": "@%windir%\\system32\\diagtrack.dll,-3001",
+      "Desc": "@%windir%\\system32\\diagtrack.dll,-3003",
+      "EmbedCtxt": "DiagTrack",
+      "RuleName": "Microsoft-Windows-Unified-Telemetry-Client"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MsiScsi-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Msiscsi",
+      "Name": "@FirewallAPI.dll,-29003",
+      "Desc": "@FirewallAPI.dll,-29006",
+      "EmbedCtxt": "@FirewallAPI.dll,-29002",
+      "RuleName": "MsiScsi-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\MsiScsi-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Msiscsi",
+      "Name": "@FirewallAPI.dll,-29007",
+      "Desc": "@FirewallAPI.dll,-29010",
+      "EmbedCtxt": "@FirewallAPI.dll,-29002",
+      "RuleName": "MsiScsi-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-FDPHOST-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "3702",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "fdphost",
+      "Name": "@FirewallAPI.dll,-32785",
+      "Desc": "@FirewallAPI.dll,-32788",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-FDPHOST-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-FDPHOST-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "3702",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "fdphost",
+      "Name": "@FirewallAPI.dll,-32789",
+      "Desc": "@FirewallAPI.dll,-32792",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-FDPHOST-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-FDRESPUB-WSD-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "3702",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "fdrespub",
+      "Name": "@FirewallAPI.dll,-32809",
+      "Desc": "@FirewallAPI.dll,-32810",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-FDRESPUB-WSD-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-FDRESPUB-WSD-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "3702",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "fdrespub",
+      "Name": "@FirewallAPI.dll,-32811",
+      "Desc": "@FirewallAPI.dll,-32812",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-FDRESPUB-WSD-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-LLMNR-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "5355",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@FirewallAPI.dll,-32801",
+      "Desc": "@FirewallAPI.dll,-32804",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-LLMNR-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-LLMNR-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "5355",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "dnscache",
+      "Name": "@FirewallAPI.dll,-32805",
+      "Desc": "@FirewallAPI.dll,-32808",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-LLMNR-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-NB_Datagram-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "138",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-32777",
+      "Desc": "@FirewallAPI.dll,-32780",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-NB_Datagram-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-NB_Datagram-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "138",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-32781",
+      "Desc": "@FirewallAPI.dll,-32784",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-NB_Datagram-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-NB_Name-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "137",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-32769",
+      "Desc": "@FirewallAPI.dll,-32772",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-NB_Name-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-NB_Name-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "137",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-32773",
+      "Desc": "@FirewallAPI.dll,-32776",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-NB_Name-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-SSDPSrv-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "1900",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Ssdpsrv",
+      "Name": "@FirewallAPI.dll,-32753",
+      "Desc": "@FirewallAPI.dll,-32756",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-SSDPSrv-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-SSDPSrv-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "1900",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Ssdpsrv",
+      "Name": "@FirewallAPI.dll,-32757",
+      "Desc": "@FirewallAPI.dll,-32760",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-SSDPSrv-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-UPnP-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "2869",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "upnphost",
+      "Name": "@FirewallAPI.dll,-32821",
+      "Desc": "@FirewallAPI.dll,-32822",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-UPnP-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-UPnPHost-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "2869",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-32761",
+      "Desc": "@FirewallAPI.dll,-32764",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-UPnPHost-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-UPnPHost-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "2869",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-32765",
+      "Desc": "@FirewallAPI.dll,-32768",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-UPnPHost-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-WSDEVNT-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "5357",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-32817",
+      "Desc": "@FirewallAPI.dll,-32818",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-WSDEVNT-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-WSDEVNT-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "5357",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-32819",
+      "Desc": "@FirewallAPI.dll,-32820",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-WSDEVNT-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-WSDEVNTS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "5358",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-32813",
+      "Desc": "@FirewallAPI.dll,-32814",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-WSDEVNTS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NETDIS-WSDEVNTS-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "5358",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-32815",
+      "Desc": "@FirewallAPI.dll,-32816",
+      "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "RuleName": "NETDIS-WSDEVNTS-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NVS-FrameServer-In-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "554",
+      "LPort2_10": "8554-8558",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "FrameServer",
+      "Name": "@FirewallAPI.dll,-54002",
+      "Desc": "@FirewallAPI.dll,-54003",
+      "EmbedCtxt": "@FirewallAPI.dll,-54001",
+      "RuleName": "NVS-FrameServer-In-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NVS-FrameServer-In-UDP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort2_10": "5000-5020",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "FrameServer",
+      "Name": "@FirewallAPI.dll,-54006",
+      "Desc": "@FirewallAPI.dll,-54007",
+      "EmbedCtxt": "@FirewallAPI.dll,-54001",
+      "RuleName": "NVS-FrameServer-In-UDP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\NVS-FrameServer-Out-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "554",
+      "RPort2_10": "8554-8558",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "FrameServer",
+      "Name": "@FirewallAPI.dll,-54004",
+      "Desc": "@FirewallAPI.dll,-54005",
+      "EmbedCtxt": "@FirewallAPI.dll,-54001",
+      "RuleName": "NVS-FrameServer-Out-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Netlogon-NamedPipe-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "445",
+      "App": "System",
+      "Name": "@firewallapi.dll,-37682",
+      "Desc": "@firewallapi.dll,-37683",
+      "EmbedCtxt": "@firewallapi.dll,-37681",
+      "RuleName": "Netlogon-NamedPipe-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Netlogon-TCP-RPC-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\System32\\lsass.exe",
+      "Name": "@firewallapi.dll,-37684",
+      "Desc": "@firewallapi.dll,-37685",
+      "EmbedCtxt": "@firewallapi.dll,-37681",
+      "RuleName": "Netlogon-TCP-RPC-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PerfLogsAlerts-DCOM-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "LPort": "135",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%systemroot%\\system32\\svchost.exe",
+      "Svc": "rpcss",
+      "Name": "@FirewallAPI.dll,-34755",
+      "Desc": "@FirewallAPI.dll,-34756",
+      "EmbedCtxt": "@FirewallAPI.dll,-34752",
+      "RuleName": "PerfLogsAlerts-DCOM-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PerfLogsAlerts-DCOM-In-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "LPort": "135",
+      "App": "%systemroot%\\system32\\svchost.exe",
+      "Svc": "rpcss",
+      "Name": "@FirewallAPI.dll,-34755",
+      "Desc": "@FirewallAPI.dll,-34756",
+      "EmbedCtxt": "@FirewallAPI.dll,-34752",
+      "RuleName": "PerfLogsAlerts-DCOM-In-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PerfLogsAlerts-PLASrv-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%systemroot%\\system32\\plasrv.exe",
+      "Name": "@FirewallAPI.dll,-34753",
+      "Desc": "@FirewallAPI.dll,-34754",
+      "EmbedCtxt": "@FirewallAPI.dll,-34752",
+      "RuleName": "PerfLogsAlerts-PLASrv-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PerfLogsAlerts-PLASrv-In-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "App": "%systemroot%\\system32\\plasrv.exe",
+      "Name": "@FirewallAPI.dll,-34753",
+      "Desc": "@FirewallAPI.dll,-34754",
+      "EmbedCtxt": "@FirewallAPI.dll,-34752",
+      "RuleName": "PerfLogsAlerts-PLASrv-In-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-HTTPSTR-In-TCP-LocalSubnetScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Private",
+      "LPort": "10246",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-36002",
+      "Desc": "@FirewallAPI.dll,-36003",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-HTTPSTR-In-TCP-LocalSubnetScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-HTTPSTR-In-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "LPort": "10246",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-36002",
+      "Desc": "@FirewallAPI.dll,-36003",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-HTTPSTR-In-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-HTTPSTR-In-TCP-PlayToScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "LPort": "10246",
+      "RA42": "Ply2Renders",
+      "RA62": "Ply2Renders",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-36002",
+      "Desc": "@FirewallAPI.dll,-36003",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-HTTPSTR-In-TCP-PlayToScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-In-RTSP-LocalSubnetScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Private",
+      "LPort": "23556",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\mdeserver.exe",
+      "Name": "@FirewallAPI.dll,-36008",
+      "Desc": "@FirewallAPI.dll,-36009",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-In-RTSP-LocalSubnetScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-In-RTSP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "LPort": "23556",
+      "App": "%SystemRoot%\\system32\\mdeserver.exe",
+      "Name": "@FirewallAPI.dll,-36008",
+      "Desc": "@FirewallAPI.dll,-36009",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-In-RTSP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-In-RTSP-PlayToScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "LPort": "23556",
+      "RA42": "Ply2Renders",
+      "RA62": "Ply2Renders",
+      "App": "%SystemRoot%\\system32\\mdeserver.exe",
+      "Name": "@FirewallAPI.dll,-36008",
+      "Desc": "@FirewallAPI.dll,-36009",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-In-RTSP-PlayToScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-In-UDP-LocalSubnetScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Private",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\mdeserver.exe",
+      "Name": "@FirewallAPI.dll,-36004",
+      "Desc": "@FirewallAPI.dll,-36005",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-In-UDP-LocalSubnetScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-In-UDP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "App": "%SystemRoot%\\system32\\mdeserver.exe",
+      "Name": "@FirewallAPI.dll,-36004",
+      "Desc": "@FirewallAPI.dll,-36005",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-In-UDP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-In-UDP-PlayToScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "RA42": "Ply2Renders",
+      "RA62": "Ply2Renders",
+      "App": "%SystemRoot%\\system32\\mdeserver.exe",
+      "Name": "@FirewallAPI.dll,-36004",
+      "Desc": "@FirewallAPI.dll,-36005",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-In-UDP-PlayToScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-Out-UDP-LocalSubnetScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Private",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\mdeserver.exe",
+      "Name": "@FirewallAPI.dll,-36006",
+      "Desc": "@FirewallAPI.dll,-36007",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-Out-UDP-LocalSubnetScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-Out-UDP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "App": "%SystemRoot%\\system32\\mdeserver.exe",
+      "Name": "@FirewallAPI.dll,-36006",
+      "Desc": "@FirewallAPI.dll,-36007",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-Out-UDP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-Out-UDP-PlayToScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "RA42": "Ply2Renders",
+      "RA62": "Ply2Renders",
+      "App": "%SystemRoot%\\system32\\mdeserver.exe",
+      "Name": "@FirewallAPI.dll,-36006",
+      "Desc": "@FirewallAPI.dll,-36007",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-Out-UDP-PlayToScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-QWave-In-TCP-PlayToScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "LPort": "2177",
+      "RA42": "Ply2Renders",
+      "RA62": "Ply2Renders",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-36014",
+      "Desc": "@FirewallAPI.dll,-36015",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-QWave-In-TCP-PlayToScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-QWave-In-UDP-PlayToScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "LPort": "2177",
+      "RA42": "Ply2Renders",
+      "RA62": "Ply2Renders",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-36010",
+      "Desc": "@FirewallAPI.dll,-36011",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-QWave-In-UDP-PlayToScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-QWave-Out-TCP-PlayToScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "RPort": "2177",
+      "RA42": "Ply2Renders",
+      "RA62": "Ply2Renders",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-36016",
+      "Desc": "@FirewallAPI.dll,-36017",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-QWave-Out-TCP-PlayToScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-QWave-Out-UDP-PlayToScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "RPort": "2177",
+      "RA42": "Ply2Renders",
+      "RA62": "Ply2Renders",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-36012",
+      "Desc": "@FirewallAPI.dll,-36013",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-QWave-Out-UDP-PlayToScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-SSDP-Discovery-PlayToScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "LPort2_20": "Ply2Disc",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "ssdpsrv",
+      "Name": "@FirewallAPI.dll,-36104",
+      "Desc": "@FirewallAPI.dll,-36105",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-SSDP-Discovery-PlayToScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\PlayTo-UPnP-Events-PlayToScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "LPort": "2869",
+      "RA42": "Ply2Renders",
+      "RA62": "Ply2Renders",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-36106",
+      "Desc": "@FirewallAPI.dll,-36107",
+      "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "RuleName": "PlayTo-UPnP-Events-PlayToScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RRAS-GRE-In",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "47",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-33769",
+      "Desc": "@FirewallAPI.dll,-33772",
+      "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "RuleName": "RRAS-GRE-In"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RRAS-GRE-Out",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "47",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-33773",
+      "Desc": "@FirewallAPI.dll,-33776",
+      "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "RuleName": "RRAS-GRE-Out"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RRAS-L2TP-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "1701",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-33753",
+      "Desc": "@FirewallAPI.dll,-33756",
+      "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "RuleName": "RRAS-L2TP-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RRAS-L2TP-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "1701",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-33757",
+      "Desc": "@FirewallAPI.dll,-33760",
+      "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "RuleName": "RRAS-L2TP-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RRAS-PPTP-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "1723",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-33765",
+      "Desc": "@FirewallAPI.dll,-33768",
+      "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "RuleName": "RRAS-PPTP-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RRAS-PPTP-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RPort": "1723",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-33761",
+      "Desc": "@FirewallAPI.dll,-33764",
+      "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "RuleName": "RRAS-PPTP-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RVM-RPCSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC-EPMap",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "RPCSS",
+      "Name": "@FirewallAPI.dll,-34506",
+      "Desc": "@FirewallAPI.dll,-34507",
+      "EmbedCtxt": "@FirewallAPI.dll,-34501",
+      "RuleName": "RVM-RPCSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RVM-VDS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\system32\\vds.exe",
+      "Svc": "vds",
+      "Name": "@FirewallAPI.dll,-34502",
+      "Desc": "@FirewallAPI.dll,-34503",
+      "EmbedCtxt": "@FirewallAPI.dll,-34501",
+      "RuleName": "RVM-VDS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RVM-VDSLDR-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\system32\\vdsldr.exe",
+      "Name": "@FirewallAPI.dll,-34504",
+      "Desc": "@FirewallAPI.dll,-34505",
+      "EmbedCtxt": "@FirewallAPI.dll,-34501",
+      "RuleName": "RVM-VDSLDR-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteDesktop-In-TCP-WS",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "3387",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28780",
+      "Desc": "@FirewallAPI.dll,-28781",
+      "EmbedCtxt": "@FirewallAPI.dll,-28782",
+      "RuleName": "RemoteDesktop-In-TCP-WS"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteDesktop-In-TCP-WSS",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "3392",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-28783",
+      "Desc": "@FirewallAPI.dll,-28784",
+      "EmbedCtxt": "@FirewallAPI.dll,-28782",
+      "RuleName": "RemoteDesktop-In-TCP-WSS"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteDesktop-Shadow-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\RdpSa.exe",
+      "Name": "@FirewallAPI.dll,-28778",
+      "Desc": "@FirewallAPI.dll,-28779",
+      "EmbedCtxt": "@FirewallAPI.dll,-28752",
+      "Edge": "TRUE",
+      "Defer": "App",
+      "RuleName": "RemoteDesktop-Shadow-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteDesktop-UserMode-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "3389",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "termservice",
+      "Name": "@FirewallAPI.dll,-28775",
+      "Desc": "@FirewallAPI.dll,-28756",
+      "EmbedCtxt": "@FirewallAPI.dll,-28752",
+      "RuleName": "RemoteDesktop-UserMode-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteDesktop-UserMode-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "3389",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "termservice",
+      "Name": "@FirewallAPI.dll,-28776",
+      "Desc": "@FirewallAPI.dll,-28777",
+      "EmbedCtxt": "@FirewallAPI.dll,-28752",
+      "RuleName": "RemoteDesktop-UserMode-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteEventLogSvc-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Eventlog",
+      "Name": "@FirewallAPI.dll,-29253",
+      "Desc": "@FirewallAPI.dll,-29256",
+      "EmbedCtxt": "@FirewallAPI.dll,-29252",
+      "RuleName": "RemoteEventLogSvc-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteEventLogSvc-NP-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "445",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-29257",
+      "Desc": "@FirewallAPI.dll,-29260",
+      "EmbedCtxt": "@FirewallAPI.dll,-29252",
+      "RuleName": "RemoteEventLogSvc-NP-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteEventLogSvc-RPCSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC-EPMap",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "RPCSS",
+      "Name": "@FirewallAPI.dll,-29265",
+      "Desc": "@FirewallAPI.dll,-29268",
+      "EmbedCtxt": "@FirewallAPI.dll,-29252",
+      "RuleName": "RemoteEventLogSvc-RPCSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteFwAdmin-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "policyagent",
+      "Name": "@FirewallAPI.dll,-30003",
+      "Desc": "@FirewallAPI.dll,-30006",
+      "EmbedCtxt": "@FirewallAPI.dll,-30002",
+      "RuleName": "RemoteFwAdmin-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteFwAdmin-RPCSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC-EPMap",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "RPCSS",
+      "Name": "@FirewallAPI.dll,-30007",
+      "Desc": "@FirewallAPI.dll,-30010",
+      "EmbedCtxt": "@FirewallAPI.dll,-30002",
+      "RuleName": "RemoteFwAdmin-RPCSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteSvcAdmin-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\system32\\services.exe",
+      "Name": "@FirewallAPI.dll,-29503",
+      "Desc": "@FirewallAPI.dll,-29506",
+      "EmbedCtxt": "@FirewallAPI.dll,-29502",
+      "RuleName": "RemoteSvcAdmin-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteSvcAdmin-NP-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "445",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-29507",
+      "Desc": "@FirewallAPI.dll,-29510",
+      "EmbedCtxt": "@FirewallAPI.dll,-29502",
+      "RuleName": "RemoteSvcAdmin-NP-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteSvcAdmin-RPCSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC-EPMap",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "RPCSS",
+      "Name": "@FirewallAPI.dll,-29515",
+      "Desc": "@FirewallAPI.dll,-29518",
+      "EmbedCtxt": "@FirewallAPI.dll,-29502",
+      "RuleName": "RemoteSvcAdmin-RPCSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteTask-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "schedule",
+      "Name": "@FirewallAPI.dll,-33253",
+      "Desc": "@FirewallAPI.dll,-33256",
+      "EmbedCtxt": "@FirewallAPI.dll,-33252",
+      "RuleName": "RemoteTask-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\RemoteTask-RPCSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC-EPMap",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "RPCSS",
+      "Name": "@FirewallAPI.dll,-33257",
+      "Desc": "@FirewallAPI.dll,-33260",
+      "EmbedCtxt": "@FirewallAPI.dll,-33252",
+      "RuleName": "RemoteTask-RPCSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\SLBM-MUX-IN-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\MuxSvcHost.exe",
+      "Svc": "SlbMux",
+      "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-36903",
+      "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-36904",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-36902",
+      "RuleName": "SLBM-MUX-IN-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\SNMPTRAP-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "LPort": "162",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\snmptrap.exe",
+      "Svc": "SNMPTRAP",
+      "Name": "@firewallapi.dll,-50327",
+      "Desc": "@firewallapi.dll,-50328",
+      "EmbedCtxt": "@firewallapi.dll,-50323",
+      "RuleName": "SNMPTRAP-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\SNMPTRAP-In-UDP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "LPort": "162",
+      "App": "%SystemRoot%\\system32\\snmptrap.exe",
+      "Svc": "SNMPTRAP",
+      "Name": "@firewallapi.dll,-50327",
+      "Desc": "@firewallapi.dll,-50328",
+      "EmbedCtxt": "@firewallapi.dll,-50323",
+      "RuleName": "SNMPTRAP-In-UDP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\SPPSVC-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "1688",
+      "App": "%SystemRoot%\\system32\\sppextcomobj.exe",
+      "Svc": "sppsvc",
+      "Name": "@FirewallAPI.dll,-28003",
+      "Desc": "@FirewallAPI.dll,-28006",
+      "EmbedCtxt": "@FirewallAPI.dll,-28002",
+      "RuleName": "SPPSVC-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\SSTP-IN-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "443",
+      "App": "System",
+      "Name": "@sstpsvc.dll,-35002",
+      "Desc": "@sstpsvc.dll,-35003",
+      "EmbedCtxt": "@sstpsvc.dll,-35001",
+      "RuleName": "SSTP-IN-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\TPMVSCMGR-RPCSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "LPort": "135",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "rpcss",
+      "Name": "@FirewallAPI.dll,-36502",
+      "Desc": "@FirewallAPI.dll,-36503",
+      "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "RuleName": "TPMVSCMGR-RPCSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\TPMVSCMGR-RPCSS-In-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "LPort": "135",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "rpcss",
+      "Name": "@FirewallAPI.dll,-36502",
+      "Desc": "@FirewallAPI.dll,-36503",
+      "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "RuleName": "TPMVSCMGR-RPCSS-In-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\TPMVSCMGR-Server-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\RmtTpmVscMgrSvr.exe",
+      "Name": "@FirewallAPI.dll,-36504",
+      "Desc": "@FirewallAPI.dll,-36505",
+      "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "RuleName": "TPMVSCMGR-Server-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\TPMVSCMGR-Server-In-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "App": "%SystemRoot%\\system32\\RmtTpmVscMgrSvr.exe",
+      "Name": "@FirewallAPI.dll,-36504",
+      "Desc": "@FirewallAPI.dll,-36505",
+      "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "RuleName": "TPMVSCMGR-Server-In-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\TPMVSCMGR-Server-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\RmtTpmVscMgrSvr.exe",
+      "Name": "@FirewallAPI.dll,-36506",
+      "Desc": "@FirewallAPI.dll,-36507",
+      "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "RuleName": "TPMVSCMGR-Server-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\TPMVSCMGR-Server-Out-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "App": "%SystemRoot%\\system32\\RmtTpmVscMgrSvr.exe",
+      "Name": "@FirewallAPI.dll,-36506",
+      "Desc": "@FirewallAPI.dll,-36507",
+      "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "RuleName": "TPMVSCMGR-Server-Out-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WINRM-HTTP-Compat-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "80",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-35001",
+      "Desc": "@FirewallAPI.dll,-35002",
+      "EmbedCtxt": "@FirewallAPI.dll,-30252",
+      "RuleName": "WINRM-HTTP-Compat-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WINRM-HTTP-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Private",
+      "LPort": "5985",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-30253",
+      "Desc": "@FirewallAPI.dll,-30256",
+      "EmbedCtxt": "@FirewallAPI.dll,-30267",
+      "RuleName": "WINRM-HTTP-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WINRM-HTTP-In-TCP-PUBLIC",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "LPort": "5985",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-30253",
+      "Desc": "@FirewallAPI.dll,-30256",
+      "EmbedCtxt": "@FirewallAPI.dll,-30267",
+      "RuleName": "WINRM-HTTP-In-TCP-PUBLIC"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMI-ASYNC-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "App": "%systemroot%\\system32\\wbem\\unsecapp.exe",
+      "Name": "@FirewallAPI.dll,-34256",
+      "Desc": "@FirewallAPI.dll,-34257",
+      "EmbedCtxt": "@FirewallAPI.dll,-34251",
+      "RuleName": "WMI-ASYNC-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMI-RPCSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "135",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "rpcss",
+      "Name": "@FirewallAPI.dll,-34252",
+      "Desc": "@FirewallAPI.dll,-34253",
+      "EmbedCtxt": "@FirewallAPI.dll,-34251",
+      "RuleName": "WMI-RPCSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMI-WINMGMT-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "winmgmt",
+      "Name": "@FirewallAPI.dll,-34254",
+      "Desc": "@FirewallAPI.dll,-34255",
+      "EmbedCtxt": "@FirewallAPI.dll,-34251",
+      "RuleName": "WMI-WINMGMT-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMI-WINMGMT-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "winmgmt",
+      "Name": "@FirewallAPI.dll,-34258",
+      "Desc": "@FirewallAPI.dll,-34259",
+      "EmbedCtxt": "@FirewallAPI.dll,-34251",
+      "RuleName": "WMI-WINMGMT-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMP-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "App": "%ProgramFiles%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31003",
+      "Desc": "@FirewallAPI.dll,-31006",
+      "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "RuleName": "WMP-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMP-In-UDP-x86",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "App": "%ProgramFiles(x86)%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31023",
+      "Desc": "@FirewallAPI.dll,-31006",
+      "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "RuleName": "WMP-In-UDP-x86"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMP-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "App": "%ProgramFiles%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31011",
+      "Desc": "@FirewallAPI.dll,-31014",
+      "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "RuleName": "WMP-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMP-Out-TCP-x86",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "App": "%ProgramFiles(x86)%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31025",
+      "Desc": "@FirewallAPI.dll,-31014",
+      "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "RuleName": "WMP-Out-TCP-x86"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMP-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "App": "%ProgramFiles%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31007",
+      "Desc": "@FirewallAPI.dll,-31010",
+      "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "RuleName": "WMP-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMP-Out-UDP-x86",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "App": "%ProgramFiles(x86)%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31024",
+      "Desc": "@FirewallAPI.dll,-31010",
+      "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "RuleName": "WMP-Out-UDP-x86"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-HTTPSTR-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "LPort": "10243",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-31285",
+      "Desc": "@FirewallAPI.dll,-31288",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-HTTPSTR-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-HTTPSTR-In-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "LPort": "10243",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-31285",
+      "Desc": "@FirewallAPI.dll,-31288",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-HTTPSTR-In-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-HTTPSTR-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "RPort": "10243",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-31289",
+      "Desc": "@FirewallAPI.dll,-31292",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-HTTPSTR-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-HTTPSTR-Out-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "RPort": "10243",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-31289",
+      "Desc": "@FirewallAPI.dll,-31292",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-HTTPSTR-Out-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmpnetwk.exe",
+      "Name": "@FirewallAPI.dll,-31313",
+      "Desc": "@FirewallAPI.dll,-31316",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-In-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmpnetwk.exe",
+      "Name": "@FirewallAPI.dll,-31313",
+      "Desc": "@FirewallAPI.dll,-31316",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-In-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmpnetwk.exe",
+      "Name": "@FirewallAPI.dll,-31305",
+      "Desc": "@FirewallAPI.dll,-31308",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-In-UDP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmpnetwk.exe",
+      "Name": "@FirewallAPI.dll,-31305",
+      "Desc": "@FirewallAPI.dll,-31308",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-In-UDP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmpnetwk.exe",
+      "Name": "@FirewallAPI.dll,-31317",
+      "Desc": "@FirewallAPI.dll,-31320",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-Out-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmpnetwk.exe",
+      "Name": "@FirewallAPI.dll,-31317",
+      "Desc": "@FirewallAPI.dll,-31320",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-Out-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmpnetwk.exe",
+      "Name": "@FirewallAPI.dll,-31309",
+      "Desc": "@FirewallAPI.dll,-31312",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-Out-UDP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmpnetwk.exe",
+      "Name": "@FirewallAPI.dll,-31309",
+      "Desc": "@FirewallAPI.dll,-31312",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-Out-UDP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-QWave-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "LPort": "2177",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-31261",
+      "Desc": "@FirewallAPI.dll,-31264",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-QWave-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-QWave-In-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "LPort": "2177",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-31261",
+      "Desc": "@FirewallAPI.dll,-31264",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-QWave-In-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-QWave-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "LPort": "2177",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-31253",
+      "Desc": "@FirewallAPI.dll,-31256",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-QWave-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-QWave-In-UDP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "LPort": "2177",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-31253",
+      "Desc": "@FirewallAPI.dll,-31256",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-QWave-In-UDP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-QWave-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "RPort": "2177",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-31265",
+      "Desc": "@FirewallAPI.dll,-31268",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-QWave-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-QWave-Out-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "RPort": "2177",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-31265",
+      "Desc": "@FirewallAPI.dll,-31268",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-QWave-Out-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-QWave-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "RPort": "2177",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-31257",
+      "Desc": "@FirewallAPI.dll,-31260",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-QWave-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-QWave-Out-UDP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "RPort": "2177",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Qwave",
+      "Name": "@FirewallAPI.dll,-31257",
+      "Desc": "@FirewallAPI.dll,-31260",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-QWave-Out-UDP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-SSDPSrv-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "1900",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "ssdpsrv",
+      "Name": "@FirewallAPI.dll,-31269",
+      "Desc": "@FirewallAPI.dll,-31272",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-SSDPSrv-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-SSDPSrv-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "RPort": "1900",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "ssdpsrv",
+      "Name": "@FirewallAPI.dll,-31273",
+      "Desc": "@FirewallAPI.dll,-31276",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-SSDPSrv-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-UPnP-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "upnphost",
+      "Name": "@FirewallAPI.dll,-31321",
+      "Desc": "@FirewallAPI.dll,-31322",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-UPnP-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-UPnPHost-In-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "2869",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-31277",
+      "Desc": "@FirewallAPI.dll,-31280",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-UPnPHost-In-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-UPnPHost-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "System",
+      "Name": "@FirewallAPI.dll,-31281",
+      "Desc": "@FirewallAPI.dll,-31284",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-UPnPHost-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-WMP-In-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31293",
+      "Desc": "@FirewallAPI.dll,-31296",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-WMP-In-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-WMP-In-UDP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31293",
+      "Desc": "@FirewallAPI.dll,-31296",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-WMP-In-UDP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-WMP-Out-TCP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Public",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31301",
+      "Desc": "@FirewallAPI.dll,-31304",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-WMP-Out-TCP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-WMP-Out-TCP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "TCP",
+      "Profile": "Domain",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31301",
+      "Desc": "@FirewallAPI.dll,-31304",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-WMP-Out-TCP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-WMP-Out-UDP",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Public",
+      "RA4": "LocalSubnet",
+      "RA6": "LocalSubnet",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31297",
+      "Desc": "@FirewallAPI.dll,-31300",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-WMP-Out-UDP"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\WMPNSS-WMP-Out-UDP-NoScope",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "Out",
+      "Protocol": "UDP",
+      "Profile": "Domain",
+      "App": "%PROGRAMFILES%\\Windows Media Player\\wmplayer.exe",
+      "Name": "@FirewallAPI.dll,-31297",
+      "Desc": "@FirewallAPI.dll,-31300",
+      "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "RuleName": "WMPNSS-WMP-Out-UDP-NoScope"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Wininit-Shutdown-In-Rule-TCP-RPC",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%systemroot%\\system32\\wininit.exe",
+      "Name": "@firewallapi.dll,-36753",
+      "Desc": "@firewallapi.dll,-36754",
+      "EmbedCtxt": "@firewallapi.dll,-36751",
+      "RuleName": "Wininit-Shutdown-In-Rule-TCP-RPC"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\Wininit-Shutdown-In-Rule-TCP-RPC-EPMapper",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC-EPMap",
+      "App": "%systemroot%\\system32\\wininit.exe",
+      "Name": "@firewallapi.dll,-36755",
+      "Desc": "@firewallapi.dll,-36756",
+      "EmbedCtxt": "@firewallapi.dll,-36751",
+      "RuleName": "Wininit-Shutdown-In-Rule-TCP-RPC-EPMapper"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\vm-monitoring-dcom",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "135",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "RpcSs",
+      "Name": "@%SystemRoot%\\system32\\icsvc.dll,-709",
+      "Desc": "@%SystemRoot%\\system32\\icsvc.dll,-710",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\icsvc.dll,-700",
+      "RuleName": "vm-monitoring-dcom"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\vm-monitoring-icmpv4",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "1",
+      "App": "System",
+      "Name": "@%SystemRoot%\\system32\\icsvc.dll,-701",
+      "Desc": "@%SystemRoot%\\system32\\icsvc.dll,-702",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\icsvc.dll,-700",
+      "RuleName": "vm-monitoring-icmpv4"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\vm-monitoring-icmpv6",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "58",
+      "App": "System",
+      "Name": "@%SystemRoot%\\system32\\icsvc.dll,-703",
+      "Desc": "@%SystemRoot%\\system32\\icsvc.dll,-704",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\icsvc.dll,-700",
+      "RuleName": "vm-monitoring-icmpv6"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\vm-monitoring-nb-session",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "139",
+      "App": "System",
+      "Name": "@%SystemRoot%\\system32\\icsvc.dll,-705",
+      "Desc": "@%SystemRoot%\\system32\\icsvc.dll,-706",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\icsvc.dll,-700",
+      "RuleName": "vm-monitoring-nb-session"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\vm-monitoring-rpc",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "FALSE",
+      "Dir": "In",
+      "Protocol": "TCP",
+      "LPort": "RPC",
+      "App": "%SystemRoot%\\system32\\svchost.exe",
+      "Svc": "Schedule",
+      "Name": "@%SystemRoot%\\system32\\icsvc.dll,-707",
+      "Desc": "@%SystemRoot%\\system32\\icsvc.dll,-708",
+      "EmbedCtxt": "@%SystemRoot%\\system32\\icsvc.dll,-700",
+      "RuleName": "vm-monitoring-rpc"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{0A0E053E-3026-4373-8FB2-AF079186CC87}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Windows.StartMenuExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.StartMenuExperienceHost/StartMenuExperienceHost/PkgDisplayName}",
+      "Desc": "@{Microsoft.Windows.StartMenuExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.StartMenuExperienceHost/StartMenuExperienceHost/PkgDisplayName}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-515815643-2845804217-1874292103-218650560-777617685-4287762684-137415000",
+      "EmbedCtxt": "@{Microsoft.Windows.StartMenuExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.StartMenuExperienceHost/StartMenuExperienceHost/PkgDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{0A0E053E-3026-4373-8FB2-AF079186CC87}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{10DBBEA2-D5A8-4260-AF55-A2EA93349100}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Win32WebViewHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Windows.Win32WebViewHost/resources/DisplayName}",
+      "Desc": "@{Microsoft.Win32WebViewHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Windows.Win32WebViewHost/resources/Description}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-1310292540-1029022339-4008023048-2190398717-53961996-4257829345-603366646",
+      "EmbedCtxt": "@{Microsoft.Win32WebViewHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Windows.Win32WebViewHost/resources/DisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{10DBBEA2-D5A8-4260-AF55-A2EA93349100}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{162C049F-A102-4650-956C-B52FEB526B76}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Profile": "Private",
+      "Name": "@{Microsoft.Windows.StartMenuExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.StartMenuExperienceHost/StartMenuExperienceHost/PkgDisplayName}",
+      "Desc": "@{Microsoft.Windows.StartMenuExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.StartMenuExperienceHost/StartMenuExperienceHost/PkgDisplayName}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-515815643-2845804217-1874292103-218650560-777617685-4287762684-137415000",
+      "EmbedCtxt": "@{Microsoft.Windows.StartMenuExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.StartMenuExperienceHost/StartMenuExperienceHost/PkgDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{162C049F-A102-4650-956C-B52FEB526B76}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{39672307-9331-455C-B6F4-35344F797136}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.AAD.BrokerPlugin_1000.19580.1000.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}",
+      "Desc": "@{Microsoft.AAD.BrokerPlugin_1000.19580.1000.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-1910091885-1573563583-1104941280-2418270861-3411158377-2822700936-2990310272",
+      "EmbedCtxt": "@{Microsoft.AAD.BrokerPlugin_1000.19580.1000.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{39672307-9331-455C-B6F4-35344F797136}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{4B5AC739-47F1-44E0-889F-6DD269F4BD6D}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Windows.PeopleExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.PeopleExperienceHost/resources/PkgDisplayName}",
+      "Desc": "@{Microsoft.Windows.PeopleExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.PeopleExperienceHost/resources/PkgDisplayName}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-3911328773-608413955-1309177842-678056087-3306350038-3682494511-2300153425",
+      "EmbedCtxt": "@{Microsoft.Windows.PeopleExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.PeopleExperienceHost/resources/PkgDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{4B5AC739-47F1-44E0-889F-6DD269F4BD6D}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{5C1F3F53-340F-44EE-AF9F-EF2DFE8769CB}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Windows.Apprep.ChxApp_1000.20348.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Apprep.ChxApp/resources/DisplayName}",
+      "Desc": "@{Microsoft.Windows.Apprep.ChxApp_1000.20348.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Apprep.ChxApp/resources/DisplayName}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-1255970798-2717750985-493741290-1721212560-3530798636-1829112236-3118580706",
+      "EmbedCtxt": "@{Microsoft.Windows.Apprep.ChxApp_1000.20348.1.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Apprep.ChxApp/resources/DisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{5C1F3F53-340F-44EE-AF9F-EF2DFE8769CB}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{61C96530-7B15-417E-B3F1-3DE4F5CF5502}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "Windows Feature Experience Pack",
+      "Desc": "Windows Feature Experience Pack",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-283421221-3183566570-1718213290-751554359-3541592344-2312209569-3374928651",
+      "EmbedCtxt": "Windows Feature Experience Pack",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{61C96530-7B15-417E-B3F1-3DE4F5CF5502}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{66F4F281-451E-4CE1-9561-0E0874C37F5C}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.LockApp_10.0.20348.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.LockApp/resources/AppDisplayName}",
+      "Desc": "@{Microsoft.LockApp_10.0.20348.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.LockApp/resources/AppDisplayName}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-2758101530-1321080646-1475665648-4066602542-2880396197-3643791541-2654759312",
+      "EmbedCtxt": "@{Microsoft.LockApp_10.0.20348.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.LockApp/resources/AppDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{66F4F281-451E-4CE1-9561-0E0874C37F5C}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{707A1F0B-FFC9-4889-A65D-AA426ECF1FD2}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.AccountsControl_10.0.20348.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.AccountsControl/Resources/DisplayName}",
+      "Desc": "@{Microsoft.AccountsControl_10.0.20348.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.AccountsControl/Resources/DisplayName}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-969871995-3242822759-583047763-1618006129-3578262429-3647035748-2471858633",
+      "EmbedCtxt": "@{Microsoft.AccountsControl_10.0.20348.1_neutral__cw5n1h2txyewy?ms-resource://Microsoft.AccountsControl/Resources/DisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{707A1F0B-FFC9-4889-A65D-AA426ECF1FD2}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{7A893EC3-7425-4FB3-9971-CC4791A59A44}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Profile": "Private",
+      "Name": "@{Microsoft.Windows.Search_1.15.0.20348_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Search/resources/PackageDisplayName}",
+      "Desc": "@{Microsoft.Windows.Search_1.15.0.20348_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Search/resources/ProductDescription}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-536077884-713174666-1066051701-3219990555-339840825-1966734348-1611281757",
+      "EmbedCtxt": "@{Microsoft.Windows.Search_1.15.0.20348_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Search/resources/PackageDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{7A893EC3-7425-4FB3-9971-CC4791A59A44}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{82AE310E-FA9C-4A72-9CC5-D4AFF3B1DC2E}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Windows.ShellExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.ShellExperienceHost/resources/PkgDisplayName}",
+      "Desc": "@{Microsoft.Windows.ShellExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.ShellExperienceHost/resources/PkgDisplayName}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-155514346-2573954481-755741238-1654018636-1233331829-3075935687-2861478708",
+      "EmbedCtxt": "@{Microsoft.Windows.ShellExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.ShellExperienceHost/resources/PkgDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{82AE310E-FA9C-4A72-9CC5-D4AFF3B1DC2E}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{889C8932-9CF3-494B-89E4-0597623CC833}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Windows.OOBENetworkCaptivePortal_10.0.19580.1000_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.OOBENetworkCaptivePortal/Resources/AppDisplayName}",
+      "Desc": "@{Microsoft.Windows.OOBENetworkCaptivePortal_10.0.19580.1000_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.OOBENetworkCaptivePortal/Resources/AppDisplayName}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-3119458392-1009845475-4083330090-3659807469-4003170139-1239840055-303833190",
+      "EmbedCtxt": "@{Microsoft.Windows.OOBENetworkCaptivePortal_10.0.19580.1000_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.OOBENetworkCaptivePortal/Resources/AppDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{889C8932-9CF3-494B-89E4-0597623CC833}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{932CB2D0-F4B1-4749-806D-8FCBBD92AA3B}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Profile": "Private",
+      "Name": "@{Microsoft.Windows.SecHealthUI_10.0.20348.859_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.SecHealthUI/resources/PackageDisplayName}",
+      "Desc": "@{Microsoft.Windows.SecHealthUI_10.0.20348.859_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.SecHealthUI/resources/ProductDescription}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-2668987081-2569674137-3179742174-4270009011-3803107086-2981642713-3349210623",
+      "EmbedCtxt": "@{Microsoft.Windows.SecHealthUI_10.0.20348.859_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.SecHealthUI/resources/PackageDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{932CB2D0-F4B1-4749-806D-8FCBBD92AA3B}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{ADF727FD-5B7B-422C-BFC2-D1EBED34E0A7}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Profile": "Private",
+      "Name": "@{Microsoft.AAD.BrokerPlugin_1000.19580.1000.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}",
+      "Desc": "@{Microsoft.AAD.BrokerPlugin_1000.19580.1000.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-1910091885-1573563583-1104941280-2418270861-3411158377-2822700936-2990310272",
+      "EmbedCtxt": "@{Microsoft.AAD.BrokerPlugin_1000.19580.1000.0_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.AAD.BrokerPlugin/resources/PackageDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{ADF727FD-5B7B-422C-BFC2-D1EBED34E0A7}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{BCBD819B-37AC-40B6-AB35-F7D69E732A05}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Windows.CloudExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}",
+      "Desc": "@{Microsoft.Windows.CloudExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-2434737943-167758768-3180539153-984336765-1107280622-3591121930-2677285773",
+      "EmbedCtxt": "@{Microsoft.Windows.CloudExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{BCBD819B-37AC-40B6-AB35-F7D69E732A05}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{C0C56FAD-42D7-481C-862D-66130F1B2137}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Protocol": "UDP",
+      "LPort": "5353",
+      "App": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "Name": "Microsoft Edge (mDNS-In)",
+      "Desc": "Inbound rule for Microsoft Edge to allow mDNS traffic.",
+      "EmbedCtxt": "Microsoft Edge",
+      "RuleName": "{C0C56FAD-42D7-481C-862D-66130F1B2137}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{D025BCBC-F802-4AC3-91F2-4EBB9F809CBE}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Windows.SecHealthUI_10.0.20348.859_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.SecHealthUI/resources/PackageDisplayName}",
+      "Desc": "@{Microsoft.Windows.SecHealthUI_10.0.20348.859_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.SecHealthUI/resources/ProductDescription}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-2668987081-2569674137-3179742174-4270009011-3803107086-2981642713-3349210623",
+      "EmbedCtxt": "@{Microsoft.Windows.SecHealthUI_10.0.20348.859_neutral__cw5n1h2txyewy?ms-resource://Microsoft.Windows.SecHealthUI/resources/PackageDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{D025BCBC-F802-4AC3-91F2-4EBB9F809CBE}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{D7B813F9-C7D7-4A8C-A57E-36CF0F4F138E}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Windows.NarratorQuickStart_10.0.20348.1_neutral_neutral_8wekyb3d8bbwe?ms-resource://Microsoft.Windows.NarratorQuickStart/Resources/AppDisplayName}",
+      "Desc": "@{Microsoft.Windows.NarratorQuickStart_10.0.20348.1_neutral_neutral_8wekyb3d8bbwe?ms-resource://Microsoft.Windows.NarratorQuickStart/Resources/AppDescription}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-577703620-721806600-2575725278-1938300505-2177978512-2240326487-1220425747",
+      "EmbedCtxt": "@{Microsoft.Windows.NarratorQuickStart_10.0.20348.1_neutral_neutral_8wekyb3d8bbwe?ms-resource://Microsoft.Windows.NarratorQuickStart/Resources/AppDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{D7B813F9-C7D7-4A8C-A57E-36CF0F4F138E}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{DDA29A24-624F-4E8B-B40B-BAFE2380E4D4}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Profile": "Private",
+      "Name": "@{Microsoft.Windows.CloudExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}",
+      "Desc": "@{Microsoft.Windows.CloudExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-2434737943-167758768-3180539153-984336765-1107280622-3591121930-2677285773",
+      "EmbedCtxt": "@{Microsoft.Windows.CloudExperienceHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.CloudExperienceHost/resources/appDescription}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{DDA29A24-624F-4E8B-B40B-BAFE2380E4D4}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{E7DE91D5-3731-48DE-9C55-8EC1BF36BBB9}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "In",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Win32WebViewHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Windows.Win32WebViewHost/resources/DisplayName}",
+      "Desc": "@{Microsoft.Win32WebViewHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Windows.Win32WebViewHost/resources/Description}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-1310292540-1029022339-4008023048-2190398717-53961996-4257829345-603366646",
+      "EmbedCtxt": "@{Microsoft.Win32WebViewHost_10.0.20348.1_neutral_neutral_cw5n1h2txyewy?ms-resource://Windows.Win32WebViewHost/resources/DisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Edge": "TRUE",
+      "Protocol": null,
+      "RuleName": "{E7DE91D5-3731-48DE-9C55-8EC1BF36BBB9}"
+    }
+  },
+  {
+    "Description": "Firewall Rules",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\FirewallRules\\{EC7E6934-4385-42A5-96E7-E9103F44A0DF}",
+    "Mtime": "2023-10-18T02:47:09Z",
+    "Details": {
+      "Action": "Allow",
+      "Active": "TRUE",
+      "Dir": "Out",
+      "Profile": "Public",
+      "Name": "@{Microsoft.Windows.Search_1.15.0.20348_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Search/resources/PackageDisplayName}",
+      "Desc": "@{Microsoft.Windows.Search_1.15.0.20348_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Search/resources/ProductDescription}",
+      "LUOwn": "S-1-5-21-3275454858-3348516582-95323724-1000",
+      "AppPkgId": "S-1-15-2-536077884-713174666-1066051701-3219990555-339840825-1966734348-1611281757",
+      "EmbedCtxt": "@{Microsoft.Windows.Search_1.15.0.20348_neutral_neutral_cw5n1h2txyewy?ms-resource://Microsoft.Windows.Search/resources/PackageDisplayName}",
+      "Platform": "2:6:2",
+      "Platform2": "GTEQ",
+      "Protocol": null,
+      "RuleName": "{EC7E6934-4385-42A5-96E7-E9103F44A0DF}"
+    }
+  }
+]

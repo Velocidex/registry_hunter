@@ -1,0 +1,30 @@
+[
+  {
+    "Description": "User Shell Folders: Displays where a user's Shell folders are mapped to",
+    "Category": "User Activity",
+    "OSPath": "HKEY_USERS\\user1\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders",
+    "Mtime": "2014-05-20T14:19:35Z",
+    "Details": {
+      "AppData": "%USERPROFILE%\\AppData\\Roaming",
+      "Cache": "%USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\INetCache",
+      "Cookies": "%USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\INetCookies",
+      "Desktop": "%USERPROFILE%\\Desktop",
+      "Favorites": "%USERPROFILE%\\Favorites",
+      "History": "%USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\History",
+      "Local AppData": "%USERPROFILE%\\AppData\\Local",
+      "My Music": "%USERPROFILE%\\Music",
+      "My Pictures": "%USERPROFILE%\\Pictures",
+      "My Video": "%USERPROFILE%\\Videos",
+      "NetHood": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Network Shortcuts",
+      "Personal": "%USERPROFILE%\\Documents",
+      "PrintHood": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Printer Shortcuts",
+      "Programs": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs",
+      "Recent": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Recent",
+      "SendTo": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\SendTo",
+      "Start Menu": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu",
+      "Startup": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
+      "Templates": "%USERPROFILE%\\AppData\\Roaming\\Microsoft\\Windows\\Templates",
+      "{374DE290-123F-4565-9164-39C4925E467B}": "%USERPROFILE%\\Downloads"
+    }
+  }
+]

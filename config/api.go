@@ -34,4 +34,9 @@ type RegistryRule struct {
 	// preamble. This allows the rule to define complex parsers to be
 	// used in the Details column.
 	Preamble []string `json:"Preamble,omitempty"`
+
+	// Some rules need more freedom and so they can provide a full
+	// query. This is useful to add rules that go beyond just simple
+	// glob() (e.g. WMI etc).
+	Query string `json:"Query,omitempty"`
 }
