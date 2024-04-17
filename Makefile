@@ -17,3 +17,7 @@ artifact_zip:
 
 test:
 	cd tests && make test
+
+
+test_update:
+	cd tests && make test_update

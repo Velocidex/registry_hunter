@@ -285,7 +285,12 @@ export: |
 
     -- This contains the metadata for Glob rules.
     LET _MD <= parse_json_array(data=gunzip(string=base64decode(string="{{.Metadata }}")))
-    LET MD(DescriptionFilter, RootFilter, CategoryFilter, CategoryExcludedFilter) = SELECT * FROM _MD
+    LET MD(DescriptionFilter, RootFilter, CategoryFilter, CategoryExcludedFilter) =
+     SELECT Glob, Category, Description,
+            get(field="Details") AS Details,
+            get(field="Comment") AS Comment,
+            get(field="Filter") AS Filter, Root
+     FROM _MD
      WHERE Description =~ DescriptionFilter
        AND Root =~ RootFilter
        AND Category =~ CategoryFilter
@@ -348,8 +353,12 @@ sources:
          /*
          # Category {{ $val }}
          */
-         SELECT Description, OSPath AS Key, Mtime, Details FROM source()
-         WHERE Category = '''{{ $val }}'''
+
+         -- Adjust the Description Regex to focus on specific rules.
+         SELECT Description, count() AS Count,
+                OSPath AS Key, Mtime, Details FROM source()
+         WHERE Category = '''{{ $val }}''' AND Description =~ "."
+         GROUP BY Description
 
    {{- end }}
   query: |
@@ -357,10 +366,9 @@ sources:
       SELECT Root AS _key, Globs AS _value FROM AllGlobs
     })
 
-    LET s = scope()
-
     LET Cache <= memoize(query={
-       SELECT Glob, Category, Description, s.Details AS Details, s.Comment AS Comment, s.Filter AS Filter
+       SELECT Glob, Category, Description,
+              Details, Filter, Comment
        FROM AllRules
     }, key="Glob", period=100000)
 
@@ -380,7 +388,8 @@ sources:
 
     }, query={
        SELECT * FROM glob(globs=GlobsToSearch, root=Root, accessor="registry")
-    }, workers=20)
+    })
+    -- WHERE log(message="Glob %v Metadata %v", args=[Globs[0], Metadata], dedup=-1)
 
     LET GlobRules = SELECT Metadata.Description AS Description,
            Metadata.Category AS Category,
@@ -389,8 +398,7 @@ sources:
            Metadata AS _Metadata
     FROM Result
     WHERE eval(func=Metadata.Filter || "x=>NOT IsDir")
-      AND Category =~ CategoryFilter
-      AND Metadata.Description =~ DescriptionFilter
+      -- AND log(message="Found %v Filter %v", args=[OSPath, Metadata.Filter], dedup=-1)
 
     SELECT * FROM chain(
     a=GlobRules,
