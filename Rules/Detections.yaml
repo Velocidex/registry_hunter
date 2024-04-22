@@ -1,0 +1,18 @@
+# This file contains Threat Hunting detections for specific compromise types.
+
+Rules:
+- Description: Rclone
+  Category: Threat Hunting
+  Author: BusterBaxter5
+  Comment: We detect both the config file and registry artifacts from AppCompatFlags
+  Query: |
+    SELECT * FROM chain(a={
+      SELECT Description, Category, OSPath, Mtime,
+           dict(Uploaded=upload(filename=OSPath), Type="Config File") AS Details
+      FROM glob(globs="C:\\Users\\*\\AppData\\Roaming\\rclone\\rclone.conf")
+    }, b={
+      SELECT Description, Category, OSPath, Mtime,
+           dict(Path=OSPath.Basename, Data=Data.value) AS Details
+      FROM glob(accessor="registry",
+                globs="HKEY_USERS\\*\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Compatibility Assistant\\Store\\*rclone*")
+    })

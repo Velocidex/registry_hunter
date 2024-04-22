@@ -1,0 +1,20 @@
+# docs/content/_index.md
+APIs
+Accessor
+Accessors
+Autoruns
+DFIR
+EulaCheck
+Executables
+MRU
+OSPath
+Sysinternals
+VQL
+Velociraptor
+YAML
+accessor
+accessors
+namespace
+parsers
+psexec
+misconfiguration
