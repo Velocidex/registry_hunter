@@ -14,7 +14,7 @@ To read more about this project, see https://github.com/Velocidex/registry_hunte
 As DFIR practitioners, the Windows registry is a treasure trove of
 information. The Windows registry stores information about system
 configuration and therefore we can use it to understand what software
-was installed, how it was configured and hunt for mis-configuration or
+was installed, how it was configured and hunt for misconfiguration or
 deliberate compromises to achieve attacker persistence.
 
 There are many tools out there to extract forensically relevant
@@ -51,7 +51,7 @@ Accessor](https://docs.velociraptor.app/docs/forensic/filesystem/#the-registry-a
 
 This allows Velociraptor to use simple `glob()` expressions to find
 keys and values in the registry. For example in the
-[Windows.Registry.Sysinternals.EulaCheck](https://docs.velociraptor.app/artifact_references/pages/windows.registry.sysinternals.eulacheck.html) artifact we can search for evidence of running `Sysinternal
+[Windows.Registry.Sysinternals.EulaCheck](https://docs.velociraptor.app/artifact_references/pages/windows.registry.sysinternals.eulacheck.html) artifact we can search for evidence of running `Sysinternals
 tools`. The following is a simplified query:
 
 ```vql
@@ -300,7 +300,7 @@ found keys or values. The following values will be available:
 The above example returns a dictionary documenting the program and
 the modification time.
 
-![Sysinternal hunt output](sysinternals_reg.png)
+![Sysinternals hunt output](sysinternals_reg.png)
 
 A more complex rule is the following which assembles the `Most
 Recently Used` values in the `Run Box`:
@@ -380,6 +380,33 @@ Rules:
    other interesting information.
 3. Note that here we collect multiple related results from multiple
    categories.
+
+## Current Categories
+
+The following are the current categories used. When adding new rules,
+please try to stick to these categories. In future this list may
+evolve and consolidate:
+
+* Antivirus
+* Autoruns
+* Cloud Storage
+* Devices
+* Event Logs
+* Executables
+* Installed Software
+* Microsoft Exchange
+* Microsoft Office
+* Network Shares
+* Program Execution
+* Services
+* System Info
+* Third Party Applications
+* Threat Hunting
+* User Accounts
+* User Activity
+* Volume Shadow Copies
+* Web Browsers
+
 
 ## Conclusions
 

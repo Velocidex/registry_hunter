@@ -116,7 +116,7 @@ Rules:
   Filter: x=>IsDir
   Preamble:
     - |
-      LET AppCompatFlagsPrograms = SELECT OSPath.Basename AS Program
+      LET AppCompatFlagsPrograms(OSPath) = SELECT OSPath.Basename AS Program
          FROM glob(globs='Compatibility Assistant/{Store,Persisted}/*',
                    accessor="registry", root=OSPath)
 
