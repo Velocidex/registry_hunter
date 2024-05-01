@@ -346,6 +346,11 @@ sources:
 
 - name: Results
   notebook:
+    - type: vql
+      output: "<h1>All Results</h1>Press recalculate to View"
+      template: |
+         SELECT * FROM source()
+
    {{- range $val := .Categories }}
     - type: vql
       output: "<h1>Category {{ $val }}</h1>Press recalculate to View"
