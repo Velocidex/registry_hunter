@@ -18,6 +18,9 @@ var (
 
 	output_make_zip = compile_cmd.Flag("make_zip", "Produce a ZIP file we can use to hunt").
 			Bool()
+
+	output_index = compile_cmd.Flag("index", "Where to write the rules index").
+			String()
 )
 
 func makeZip(rules_compiler *compiler.Compiler) error {
@@ -73,6 +76,13 @@ func doCompile() error {
 
 	for _, filename := range *compile_yaml {
 		err := rules_compiler.LoadRules(filename)
+		if err != nil {
+			return err
+		}
+	}
+
+	if *output_index != "" {
+		err := rules_compiler.WriteIndex(*output_index)
 		if err != nil {
 			return err
 		}

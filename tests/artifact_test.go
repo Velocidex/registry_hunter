@@ -287,6 +287,13 @@ var (
 			Root:              reghiveTestDirectory,
 			Columns:           standardColumns,
 		},
+		{
+			Name:              "Environment",
+			Artifact:          "Windows.Registry.Hunter/Results",
+			DescriptionFilter: "Environment",
+			Root:              reghiveTestDirectory,
+			Columns:           standardColumns,
+		},
 	}
 )
 

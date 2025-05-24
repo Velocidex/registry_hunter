@@ -13,7 +13,7 @@ artifact:
 
 # Build the ZIP file for importing
 artifact_zip:
-	./reghunter compile --make_zip --output output/Windows.Registry.Hunter.zip Rules/*.yaml
+	./reghunter compile --make_zip --output output/Windows.Registry.Hunter.zip --index docs/content/docs/rules/index.json Rules/*.yaml
 
 test:
 	cd tests && make test

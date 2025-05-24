@@ -1349,3 +1349,2466 @@ Rules:
   Comment: Displays the connections made by MS Office - IOCs found here for CVE-2022-30190
   Glob: '*\Software\Microsoft\Office\*\Common\Internet\Server Cache\**'
   Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Select ControlSet
+  Category: ASEP
+  Glob: Select
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: ServiceControlManagerExtension
+  Category: ASEP
+  Glob: ControlSet*\Control\ServiceControlManagerExtension
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: BootVerificationProgram
+  Category: ASEP
+  Glob: ControlSet*\Control\BootVerificationProgram\Imagepath
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: LSA Authentication Packages
+  Category: ASEP
+  Glob: ControlSet*\Control\LSA\Authentication Packages
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: LSA Notification Packages
+  Category: ASEP
+  Glob: ControlSet*\Control\LSA\Notification Packages
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: LSA Security Packages
+  Category: ASEP
+  Glob: ControlSet*\Control\LSA\Security Packages
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: LSA OsConfig
+  Category: ASEP
+  Glob: ControlSet*\Control\LSA\OsConfig\Security Packages
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: NetworkProvider Order
+  Category: ASEP
+  Glob: ControlSet*\Control\NetworkProvider\*\**\ProviderOrder
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Print Driver
+  Category: ASEP
+  Glob: ControlSet*\Control\Print\Monitors\*\**\Driver
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Print Providers
+  Category: ASEP
+  Glob: ControlSet*\Control\Print\Providers\*\**\Name
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: SafeBoot
+  Category: ASEP
+  Glob: ControlSet*\Control\SafeBoot\AlternateShell
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: SafeBoot Minimal
+  Category: ASEP
+  Glob: ControlSet*\Control\SafeBoot\Minimal\*\**\@
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: SafeBoot Network
+  Category: ASEP
+  Glob: ControlSet*\Control\SafeBoot\Network\*\**\@
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: SecurityProviders
+  Category: ASEP
+  Glob: ControlSet*\Control\SecurityProviders\SecurityProviders
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Session Manager BootExecute
+  Category: ASEP
+  Glob: ControlSet*\Control\Session Manager\BootExecute
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Session Manager BootShell
+  Category: ASEP
+  Glob: ControlSet*\Control\Session Manager\BootShell
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Session Manager Execute
+  Category: ASEP
+  Glob: ControlSet*\Control\Session Manager\Execute
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Session Manager InitialCommand
+  Category: ASEP
+  Glob: ControlSet*\Control\Session Manager\InitialCommand
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Session Manager InitialCommand
+  Category: ASEP
+  Glob: ControlSet*\Control\Session Manager\*InitialCommand
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Session Manager PendingFileRenameOperations
+  Category: ASEP
+  Glob: ControlSet*\Control\Session Manager\PendingFileRenameOperations
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Session Manager PendingFileRenameOperations*
+  Category: ASEP
+  Glob: ControlSet*\Control\Session Manager\PendingFileRenameOperations*
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Session Manager SETUPEXECUTE
+  Category: ASEP
+  Glob: ControlSet*\Control\Session Manager\SetUpExecute
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Session Manager KnownDLLs
+  Category: ASEP
+  Glob: ControlSet*\Control\Session Manager\KnownDLLs
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Session Manager SubSystems
+  Category: ASEP
+  Glob: ControlSet*\Control\Session Manager\SubSystems
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Terminal Server StartupPrograms
+  Category: ASEP
+  Glob: ControlSet*\Control\Terminal Server\Wds\rdpwd\StartupPrograms
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Terminal Server WinStations RDP-Tcp
+  Category: ASEP
+  Glob: ControlSet*\Control\Terminal Server\WinStations\RDP-Tcp\TSMMRemotingAllowedApps
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WOW KnownDLLs
+  Category: ASEP
+  Glob: ControlSet*\Control\WOW\KnownDLLs
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services AutoRun
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\AutoRun
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services BootFlags
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\BootFlags
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services DelayedAutoStart
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\DelayedAutoStart
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services DependOnService
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\DependOnService
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services Description
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\Description
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services DisplayName
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\DisplayName
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services ErrorControl
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\ErrorControl
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services Group
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\Group
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services ImagePath
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\ImagePath
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services Library
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\Library
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services ObjectName
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\ObjectName
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services ProviderPath
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\ProviderPath
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services ProxyDllFile
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\ProxyDllFile
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services RequiredPrivileges
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\RequiredPrivileges
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services ServiceDll
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\ServiceDll
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services ServiceMain
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\ServiceMain
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services ServiceSidType
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\ServiceSidType
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services Start
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\Start
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Services Type
+  Category: ASEP
+  Glob: ControlSet*\Services\*\**\Type
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WinSock2 AppId_Catalog AppFullPath
+  Category: ASEP
+  Glob: ControlSet*\Services\WinSock2\Parameters\AppId_Catalog\*\AppFullPath
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WinSock2 AppId_Catalog AppArgs
+  Category: ASEP
+  Glob: ControlSet*\Services\WinSock2\Parameters\AppId_Catalog\*\AppArgs
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WinSock2 NameSpace_Catalog5 DisplayString
+  Category: ASEP
+  Glob: ControlSet*\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\*\DisplayString
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WinSock2 NameSpace_Catalog5 Enabled
+  Category: ASEP
+  Glob: ControlSet*\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\*\Enabled
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WinSock2 NameSpace_Catalog5 LibraryPath
+  Category: ASEP
+  Glob: ControlSet*\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries\*\LibraryPath
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WinSock2 NameSpace_Catalog5 64 DisplayString
+  Category: ASEP
+  Glob: ControlSet*\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries64\*\DisplayString
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WinSock2 NameSpace_Catalog5 64 Enabled
+  Category: ASEP
+  Glob: ControlSet*\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries64\*\Enabled
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WinSock2 NameSpace_Catalog5 64 LibraryPath
+  Category: ASEP
+  Glob: ControlSet*\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries64\*\LibraryPath
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WinSock2 Protocol_Catalog9 ProtocolName
+  Category: ASEP
+  Glob: ControlSet*\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\*\ProtocolName
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: WinSock2 Protocol_Catalog9 64 ProtocolName
+  Category: ASEP
+  Glob: ControlSet*\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries64\*\ProtocolName
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: Setup
+  Category: ASEP
+  Glob: Setup\CmdLine
+  Root: HKEY_LOCAL_MACHINE\System
+- Author: Troy Larson
+  Description: .cmd
+  Category: ASEP
+  Glob: Classes\.cmd\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: .cmd PersistentHandler
+  Category: ASEP
+  Glob: Classes\.cmd\PersistentHandler\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: .exe
+  Category: ASEP
+  Glob: Classes\.exe\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: .exe PersistentHandler
+  Category: ASEP
+  Glob: Classes\.exe\PersistentHandler\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: shell Open Command
+  Category: ASEP Classes
+  Glob: Classes\*\shell\**\DelegateExecute
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: shell Runas command
+  Category: ASEP Classes
+  Glob: Classes\*\shell\**\IsolatedCommand
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: ShellEx ColumnHandlers
+  Category: ASEP
+  Glob: Classes\*\ShellEx\ColumnHandlers\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: ShellEx ContextMenuHandlers
+  Category: ASEP
+  Glob: Classes\*\ShellEx\ContextMenuHandlers\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: shellex ContextMenuHandlers InstallFont
+  Category: ASEP Classes
+  Glob: Classes\*\shellex\ContextMenuHandlers\InstallFont\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: shellex ContextMenuHandlers Open With
+  Category: ASEP Classes
+  Glob: Classes\*\shellex\ContextMenuHandlers\Open With\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: shellex ContextMenuHandlers Open With EncryptionMenu
+  Category: ASEP Classes
+  Glob: Classes\*\shellex\ContextMenuHandlers\Open With EncryptionMenu\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: ShellEx ContextMenuHandlers OpenContainingFolderMenu
+  Category: ASEP Classes
+  Glob: Classes\*\ShellEx\ContextMenuHandlers\OpenContainingFolderMenu\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: shellex ContextMenuHandlers PlayTo
+  Category: ASEP Classes
+  Glob: Classes\*\shellex\ContextMenuHandlers\PlayTo\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: ShellEx CopyHookHandlers
+  Category: ASEP
+  Glob: Classes\*\ShellEx\CopyHookHandlers\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: ShellEx DragDropHandlers
+  Category: ASEP
+  Glob: Classes\*\ShellEx\DragDropHandlers\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: ShellEx ExtShellFolderViews
+  Category: ASEP
+  Glob: Classes\*\ShellEx\ExtShellFolderViews\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: ShellEX IconHandler
+  Category: ASEP Classes
+  Glob: Classes\*\ShellEX\IconHandler
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: ShellEx PropertySheetHandlers
+  Category: ASEP
+  Glob: Classes\*\ShellEx\PropertySheetHandlers\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: CLSID InprocServer32
+  Category: ASEP
+  Glob: Classes\CLSID\*\InprocServer32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: CLSID InprocServer32
+  Category: ASEP
+  Glob: Classes\CLSID\*\InprocServer32\Assembly
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: CLSID Instance CLSID
+  Category: ASEP
+  Glob: Classes\CLSID\*\Instance\**\CLSID
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: CLSID Instance FriendlyName
+  Category: ASEP
+  Glob: Classes\CLSID\*\Instance\**\FriendlyName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: CLSID LocalServer32
+  Category: ASEP
+  Glob: Classes\CLSID\*\LocalServer32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: CLSID LocalServer32
+  Category: ASEP
+  Glob: Classes\CLSID\*\LocalServer32\Assembly
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: CLSID PersistentHandler
+  Category: ASEP
+  Glob: Classes\CLSID\*\PersistentHandler
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: CLSID TypeLib
+  Category: ASEP
+  Glob: Classes\CLSID\*\TypeLib\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: cmdfile shell open command
+  Category: ASEP
+  Glob: Classes\cmdfile\shell\open\command\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Directory background shellex ContextMenuHandlers
+  Category: ASEP Classes
+  Glob: Classes\Directory\background\shellex\ContextMenuHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Directory shellex CopyHookHandlers
+  Category: ASEP Classes
+  Glob: Classes\Directory\shellex\CopyHookHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Directory shellex DragDropHandlers
+  Category: ASEP Classes
+  Glob: Classes\Directory\shellex\DragDropHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Directory shellex PropertySheetHandlers
+  Category: ASEP Classes
+  Glob: Classes\Directory\shellex\PropertySheetHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Drive shellex ContextMenuHandlers
+  Category: ASEP Classes
+  Glob: Classes\Drive\shellex\ContextMenuHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Exefile Shell Open Command
+  Category: ASEP Classes
+  Glob: Classes\Exefile\Shell\Open\Command\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Classes Filter
+  Category: ASEP Classes
+  Glob: Classes\Filter\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Folder shellex ContextMenuHandlers
+  Category: ASEP Classes
+  Glob: Classes\Folder\shellex\ContextMenuHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Folder shellex DragDropHandlers
+  Category: ASEP Classes
+  Glob: Classes\Folder\shellex\DragDropHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Folder shellex PropertySheetHandlers
+  Category: ASEP Classes
+  Glob: Classes\Folder\shellex\PropertySheetHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: htmlfile shell open command
+  Category: ASEP Classes
+  Glob: Classes\htmlfile\shell\open\command\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Interface ProxyStubClsid32
+  Category: ASEP Classes
+  Glob: Classes\Interface\*\ProxyStubClsid32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Interface TypeLib
+  Category: ASEP Classes
+  Glob: Classes\Interface\*\TypeLib\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Protocols Filter
+  Category: ASEP Classes
+  Glob: Classes\Protocols\Filter\*\CLSID
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Protocols Handler
+  Category: ASEP Classes
+  Glob: Classes\Protocols\Handler\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Protocols Handler
+  Category: ASEP Classes
+  Glob: Classes\Protocols\Handler\*\CLSID
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Protocols Name-Space Handler
+  Category: ASEP Classes
+  Glob: Classes\Protocols\Name-Space Handler\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Protocols Name-Space Handler
+  Category: ASEP Classes
+  Glob: Classes\Protocols\Name-Space Handler\*\CLSID
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: SystemFileAssociations ShellEx ContextMenuHandlers ShellImagePreview
+  Category: ASEP Classes
+  Glob: Classes\SystemFileAssociations\*\ShellEx\ContextMenuHandlers\ShellImagePreview\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: TypeLib win32
+  Category: ASEP Classes
+  Glob: Classes\TypeLib\*\*\*\win32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: TypeLib win64
+  Category: ASEP Classes
+  Glob: Classes\TypeLib\*\*\*\win64\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 shell Open Command
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\*\shell\**\DelegateExecute
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 shell Runas command
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\*\shell\**\IsolatedCommand
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 ShellEx ColumnHandlers
+  Category: ASEP
+  Glob: Classes\Wow6432Node\*\ShellEx\ColumnHandlers\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 ShellEx ContextMenuHandlers
+  Category: ASEP
+  Glob: Classes\Wow6432Node\*\ShellEx\ContextMenuHandlers\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 shellex ContextMenuHandlers InstallFont
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\*\shellex\ContextMenuHandlers\InstallFont\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 shellex ContextMenuHandlers Open With
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\*\shellex\ContextMenuHandlers\Open With\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 shellex ContextMenuHandlers Open With EncryptionMenu
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\*\shellex\ContextMenuHandlers\Open With EncryptionMenu\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 ShellEx ContextMenuHandlers OpenContainingFolderMenu
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\*\ShellEx\ContextMenuHandlers\OpenContainingFolderMenu\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 shellex ContextMenuHandlers PlayTo
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\*\shellex\ContextMenuHandlers\PlayTo\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 ShellEx CopyHookHandlers
+  Category: ASEP
+  Glob: Classes\Wow6432Node\*\ShellEx\CopyHookHandlers\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 ShellEx DragDropHandlers
+  Category: ASEP
+  Glob: Classes\Wow6432Node\*\ShellEx\DragDropHandlers\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 ShellEx ExtShellFolderViews
+  Category: ASEP
+  Glob: Classes\Wow6432Node\*\ShellEx\ExtShellFolderViews\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 ShellEX IconHandler
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\*\ShellEX\IconHandler
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 ShellEx PropertySheetHandlers
+  Category: ASEP
+  Glob: Classes\Wow6432Node\*\ShellEx\PropertySheetHandlers\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 CLSID InprocServer32
+  Category: ASEP
+  Glob: Classes\Wow6432Node\CLSID\*\InprocServer32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 CLSID InprocServer32
+  Category: ASEP
+  Glob: Classes\Wow6432Node\CLSID\*\InprocServer32\Assembly
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 CLSID Instance CLSID
+  Category: ASEP
+  Glob: Classes\Wow6432Node\CLSID\*\Instance\**\CLSID
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 CLSID Instance FriendlyName
+  Category: ASEP
+  Glob: Classes\Wow6432Node\CLSID\*\Instance\**\FriendlyName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 CLSID LocalServer32
+  Category: ASEP
+  Glob: Classes\Wow6432Node\CLSID\*\LocalServer32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 CLSID LocalServer32
+  Category: ASEP
+  Glob: Classes\Wow6432Node\CLSID\*\LocalServer32\Assembly
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 CLSID PersistentHandler
+  Category: ASEP
+  Glob: Classes\Wow6432Node\CLSID\*\PersistentHandler
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 CLSID TypeLib
+  Category: ASEP
+  Glob: Classes\Wow6432Node\CLSID\*\TypeLib\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Directory background shellex ContextMenuHandlers
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Directory\background\shellex\ContextMenuHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Directory shellex CopyHookHandlers
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Directory\shellex\CopyHookHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Directory shellex DragDropHandlers
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Directory\shellex\DragDropHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Directory shellex PropertySheetHandlers
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Directory\shellex\PropertySheetHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Drive shellex ContextMenuHandlers
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Drive\shellex\ContextMenuHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Classes Filter
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Filter\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Folder shellex ContextMenuHandlers
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Folder\shellex\ContextMenuHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Folder shellex DragDropHandlers
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Folder\shellex\DragDropHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Folder shellex PropertySheetHandlers
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Folder\shellex\PropertySheetHandlers\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Interface ProxyStubClsid32
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Interface\*\ProxyStubClsid32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Interface TypeLib
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\Interface\*\TypeLib\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 TypeLib win32
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\TypeLib\*\*\*\win32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 TypeLib win64
+  Category: ASEP Classes
+  Glob: Classes\Wow6432Node\TypeLib\*\*\*\win64\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: StartMenuInternet shell open command
+  Category: ASEP
+  Glob: Clients\StartMenuInternet\*\shell\open\command\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: StartMenuInternet shell naom command
+  Category: ASEP
+  Glob: Clients\StartMenuInternet\*\shell\naom\command\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: StartMenuInternet Shell RunAs Command
+  Category: ASEP
+  Glob: Clients\StartMenuInternet\*\Shell\RunAs\Command\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Chrome Extensions
+  Category: ASEP
+  Glob: Google\Chrome\Extensions\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Google Update
+  Category: ASEP
+  Glob: Google\Update\path
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: .NETFramework
+  Category: ASEP
+  Glob: Microsoft\.NETFramework\DbgManagedDebugger
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Active Setup Installed Components
+  Category: ASEP
+  Glob: Microsoft\Active Setup\Installed Components\*\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Active Setup Installed Components
+  Category: ASEP
+  Glob: Microsoft\Active Setup\Installed Components\*\LocalizedName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Active Setup Installed Components
+  Category: ASEP
+  Glob: Microsoft\Active Setup\Installed Components\*\ShellComponent
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Active Setup Installed Components
+  Category: ASEP
+  Glob: Microsoft\Active Setup\Installed Components\*\StubPath
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Command Processor
+  Category: ASEP
+  Glob: Microsoft\Command Processor\autorun
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Cryptography Offload
+  Category: ASEP
+  Glob: Microsoft\Cryptography\Offload\**\ExpoOffload
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Ctf LangBarAddin
+  Category: ASEP
+  Glob: Microsoft\Ctf\LangBarAddin\**\Filepath
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Approved Extensions
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Approved Extensions\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Explorer Bars
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Explorer Bars\*\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Extension Validation
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Extension Validation\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Extensions
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Extensions\**\ClsidExtension
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Low Rights DragDrop
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Low Rights\DragDrop\**\AppName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Low Rights DragDrop
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Low Rights\DragDrop\**\AppPath
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Low Rights ElevationPolicy
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Low Rights\ElevationPolicy\**\AppName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Low Rights ElevationPolicy
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Low Rights\ElevationPolicy\**\AppPath
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Low Rights ElevationPolicy
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Low Rights\ElevationPolicy\**\CLSID
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Plugins Extension
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Plugins\Extension\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Toolbar
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Toolbar
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Toolbar ShellBrowser
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Toolbar\ShellBrowser
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer Toolbar WebBrowser
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\Toolbar\WebBrowser
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Explorer URLSearchHooks
+  Category: ASEP
+  Glob: Microsoft\Internet Explorer\URLSearchHooks
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Office Addins
+  Category: ASEP
+  Glob: Microsoft\Office\*\Addins\**\Description
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Office Addins
+  Category: ASEP
+  Glob: Microsoft\Office\*\Addins\**\FriendlyName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Office Addins
+  Category: ASEP
+  Glob: Microsoft\Office\*\Addins\**\LoadBehavior
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Authentication Credential Provider Filters
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Authentication\Credential Provider Filters\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Authentication Credential Providers
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Authentication\Credential Providers\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Authentication PLAP Providers
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Authentication\PLAP Providers\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Explorer Browser Helper Objects
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Explorer FindExtensions
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Explorer\FindExtensions\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Explorer FindExtensions Static
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Explorer\FindExtensions\Static\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Explorer SharedTaskScheduler
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Explorer\SharedTaskScheduler
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Explorer ShellExecuteHooks
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Explorer ShellIconOverlayIdentifiers
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Explorer ShellServiceObjects
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Explorer\ShellServiceObjects\**\autostart
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Ext PreApproved
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Ext\PreApproved\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Group Policy Scripts Shutdown
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Shutdown\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Group Policy Scripts Startup
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Startup\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Internet Settings
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Internet Settings\AutoConfigURL
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Explorer Run
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Policies System
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Policies\System\Shell
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Policies System
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Policies\System\UIHost
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Policies System
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Policies\System\Userinit
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Run
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Run
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: RunOnce
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Runonce
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: RunOnce Setup
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Runonce\Setup
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: RunOnceEx
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\RunOnceEx
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: RunServices
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\RunServices
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: RunServicesOnce
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\RunServicesOnce
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: SharedDLLs
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Shareddlls
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Shell Extensions Approved
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Shell Extensions\Approved
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: ShellServiceObjectDelayLoad
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\ShellServiceObjectDelayLoad
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Installed SDB
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Uninstall\*.sdb\**\InstallDate
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Installed SDB
+  Category: ASEP
+  Glob: Microsoft\Windows\CurrentVersion\Uninstall\*.sdb\**\DisplayName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: AeDebug
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\AeDebug\**\auto
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: AeDebug
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\AeDebug\**\Debugger
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: AeDebug
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\AeDebug\**\UserDebuggerHotKey
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: AppCompatFlags Custom
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: AppCompatFlags InstalledSDB
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseDescription
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: AppCompatFlags InstalledSDB
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseInstallTimeStamp
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: AppCompatFlags InstalledSDB
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabasePath
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: AppCompatFlags InstalledSDB
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseType
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: AppCompatFlags Layers
+  Category: ASEP
+  Glob: Microsoft\Windows NT\Current Version\AppCompatFlags\Layers
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Drivers
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Drivers
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Drivers32
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Drivers32
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Font Drivers
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Font Drivers\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Image File Execution Options
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Image File Execution Options\**\GlobalFlag
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Image File Execution Options
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Image File Execution Options\**\Debugger
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Boot
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Boot\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Logon
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Logon\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Maintenance
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Maintenance\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Plain
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Actions
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Author
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Description
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\DynamicInfo
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Hash
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Path
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Schema
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\SecurityDescriptor
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Source
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Triggers
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\URI
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Version
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Schedule TaskCache Tree
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\**\Id
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: SilentProcessExit
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\SilentProcessExit\**\ReportingMode
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: SilentProcessExit
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\SilentProcessExit\**\MonitorProcess
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Microsoft Windows NT SvcHost
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\SvcHost\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Microsoft Windows NT Terminal Server Run
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Terminal Server\install\Software\Microsoft\Windows\CurrentVersion\Run
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Microsoft Windows NT Terminal Server Runonce
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Terminal Server\install\Software\Microsoft\Windows\CurrentVersion\Runonce
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Microsoft Windows NT Terminal Server Runonceex
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Terminal Server\install\Software\Microsoft\Windows\CurrentVersion\Runonceex
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Microsoft Windows NT OsImagesFolder
+  Category: ASEP
+  Comment: Looking for OsImagesFolder.
+  Glob: Microsoft\Windows NT\CurrentVersion\Virtualization\LayerRootLocations\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Windows NT CV Windows AppInitDlls
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Windows\AppInit_Dlls
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Windows NT CV Windows IconServiceLib
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Windows\IconServiceLib
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Windows NT CV Windows Load
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Windows\Load
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Windows NT CV Windows RequireSignedAppInit_DLLs
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Windows\RequireSignedAppInit_DLLs
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Windows NT CV Windows Run
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Windows\Run
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon GinaDLL
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\Ginadll
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon Userinit
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon VMApplet
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\VMApplet
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon AppSetup
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\AppSetup
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon Shell
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\Shell
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon System
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\System
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon Taskman
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\Taskman
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon UIHost
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\UIHost
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon AlternateShells AvailableShells
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\AlternateShells\AvailableShells
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon GPExtensions
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon GPExtensions
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\DisplayName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon GPExtensions
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\dllname
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Winlogon Notify
+  Category: ASEP
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\**\dllname
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: MozillaPlugins
+  Category: ASEP
+  Glob: MozillaPlugins\*\path
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Policies Scripts Logoff
+  Category: ASEP
+  Glob: Policies\Microsoft\Windows\System\Scripts\Logoff\**\Script
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Policies Scripts Logon
+  Category: ASEP
+  Glob: Policies\Microsoft\Windows\System\Scripts\Logon\**\Script
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Policies Scripts Shutdown
+  Category: ASEP
+  Glob: Policies\Microsoft\Windows\System\Scripts\Shutdown\**\Script
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Policies Scripts Startup
+  Category: ASEP
+  Glob: Policies\Microsoft\Windows\System\Scripts\Startup\**\Script
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Google Update
+  Category: ASEP
+  Glob: Wow6432Node\Google\Update\path
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: WOW6432 .NETFramework
+  Category: ASEP
+  Glob: WOW6432Node\Microsoft\.NETFramework\DbgManagedDebugger
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Active Setup Installed Components
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Active Setup\Installed Components\*\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Active Setup Installed Components
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Active Setup\Installed Components\*\**\ShellComponent
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Active Setup Installed Components
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Active Setup\Installed Components\*\**\StubPath
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: WOW6432 Command Processor Autorun
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Command Processor\Autorun
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Ctf LangBarAddin
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Ctf\LangBarAddin\**\Filepath
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Approved Extensions
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Approved Extensions\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Explorer Bars
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Explorer Bars\*\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Extension Validation
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Extension Validation\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Extensions
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Extensions\**\ClsidExtension
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Low Rights DragDrop
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Low Rights\DragDrop\**\AppName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Low Rights DragDrop
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Low Rights\DragDrop\**\AppPath
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Low Rights ElevationPolicy AppName
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\**\AppName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Low Rights ElevationPolicy AppPath
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\**\AppPath
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Low Rights ElevationPolicy CLSID
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\**\CLSID
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Plugins Extension
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Plugins\Extension\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Toolbar
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Toolbar
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Toolbar ShellBrowser
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Toolbar\ShellBrowser
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE Toolbar WebBrowser
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\Toolbar\WebBrowser
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 IE URLSearchHooks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Internet Explorer\URLSearchHooks
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Office Addins
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Office\*\Addins\**\Description
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Office Addins
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Office\*\Addins\**\FriendlyName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Office Addins
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Office\*\Addins\**\LoadBehavior
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Authentication Credential Provider Filters
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Authentication\Credential Provider
+    Filters\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Authentication Credential Providers
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Authentication PLAP Providers
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Authentication\PLAP Providers\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Explorer Browser Helper Objects
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Explorer FindExtensions
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\FindExtensions\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Explorer FindExtensions Static
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\FindExtensions\Static\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Explorer SharedTaskScheduler
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\SharedTaskScheduler
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Explorer ShellExecuteHooks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Explorer ShellIconOverlayIdentifiers
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Explorer ShellServiceObjects
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\ShellServiceObjects\**\autostart
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Ext PreApproved
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Ext\PreApproved\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Internet Settings
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Internet Settings\AutoConfigURL
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Run
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Run
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 RunOnce
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Runonce
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 RunOnce Setup
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Runonce\Setup
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 RunOnceEx
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\RunOnceEx
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 RunServices
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\RunServices
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 RunServicesOnce
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\RunServicesOnce
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 SharedDLLs
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Shareddlls
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Shell Extensions Approved
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 ShellServiceObjectDelayLoad
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\ShellServiceObjectDelayLoad
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Installed SDB
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*.sdb\**\InstallDate
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Installed SDB
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*.sdb\**\DisplayName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 AeDebug
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AeDebug\**\auto
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 AeDebug
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AeDebug\**\Debugger
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 AeDebug
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AeDebug\**\UserDebuggerHotKey
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 AppCompatFlags InstalledSDB
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseDescription
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 AppCompatFlags InstalledSDB
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseInstallTimeStamp
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 AppCompatFlags InstalledSDB
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabasePath
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 AppCompatFlags InstalledSDB
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseType
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 AppCompatFlags Layers
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\Current Version\AppCompatFlags\Layers
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Drivers
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Drivers32
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Font Drivers
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Font Drivers\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Image File Execution Options
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\**\GlobalFlag
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Image File Execution Options
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\**\Debugger
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Boot
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Boot\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Logon
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Logon\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Maintenance
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Maintenance\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Plain
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Actions
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Author
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Description
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\DynamicInfo
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Hash
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Path
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Schema
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\SecurityDescriptor
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Source
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Triggers
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\URI
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Version
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Schedule TaskCache Tree
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\**\Id
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 SilentProcessExit
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\**\ReportingMode
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 SilentProcessExit
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\**\MonitorProcess
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Microsoft Windows NT SvcHost
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\SvcHost\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Microsoft Windows NT Terminal Server Run
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Terminal Server\install\Software\Microsoft\Windows\CurrentVersion\Run
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Microsoft Windows NT Terminal Server Runonce
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Terminal Server\install\Software\Microsoft\Windows\CurrentVersion\Runonce
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Microsoft Windows NT Terminal Server Runonceex
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Terminal Server\install\Software\Microsoft\Windows\CurrentVersion\Runonceex
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Microsoft Windows NT OsImagesFolder
+  Category: ASEP
+  Comment: Looking for OsImagesFolder.
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Virtualization\LayerRootLocations\**
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Microsoft Windows NT CurrentVersion Windows
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_Dlls
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Windows NT CV Windows IconServiceLib
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\IconServiceLib
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Windows NT CV Windows Load
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\Load
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Windows NT CV Windows RequireSignedAppInit_DLLs
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\RequireSignedAppInit_DLLs
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Windows NT CV Windows Run
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\Run
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon GinaDLL
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\Ginadll
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon Userinit
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon VMApplet
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\VMApplet
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon AppSetup
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\AppSetup
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon Shell
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon System
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\System
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon Taskman
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\Taskman
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon UIHost
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\UIHost
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon AlternateShells AvailableShells
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\AlternateShells\AvailableShells
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon GPExtensions
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\@
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon GPExtensions
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\DisplayName
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon GPExtensions
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\dllname
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 Winlogon Notify
+  Category: ASEP
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\**\dllname
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Wow6432 MozillaPlugins
+  Category: ASEP
+  Glob: Wow6432Node\MozillaPlugins\*\path
+  Root: HKEY_LOCAL_MACHINE\Software
+- Author: Troy Larson
+  Description: Desktop Wallpaper
+  Category: ASEP
+  Glob: '*\Control Panel\DeskTop\ConvertedWallpaper'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Desktop Wallpaper
+  Category: ASEP
+  Glob: '*\Control Panel\DeskTop\OriginalWallpaper'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Desktop Wallpaper
+  Category: ASEP
+  Glob: '*\Control Panel\DeskTop\WallPaper'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Desktop Screensaver
+  Category: ASEP
+  Glob: '*\Control Panel\DeskTop\scrnsave.exe'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Environment Logon Script
+  Category: ASEP
+  Glob: '*\Environment\UserInitMprLogonScript'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Chrome Extensions
+  Category: ASEP
+  Glob: '*\Software\Google\Chrome\Extensions\**\path'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Active Setup
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Active Setup\Installed Components\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Command Processor
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Command Processor\autorun'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Ctf LangBarAddin
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Ctf\LangBarAddin'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE Approved Extensions
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\Approved Extensions'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE DeskTop Components
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\DeskTop\Components\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE BackupWallpaper
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\Desktop\General\BackupWallpaper'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE wallpapersource
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\Desktop\General\wallpapersource'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE Explorer Bars
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\Explorer Bars\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE Extension Validation
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\Extension Validation\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE Extensions
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\Extensions\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE MenuExt
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\MenuExt\**\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE Toolbar ShellBrowser
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\Toolbar\ShellBrowser'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE Toolbar WebBrowser
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\Toolbar\WebBrowser'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: IE URLSearchHooks
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Internet Explorer\URLSearchHooks'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Office Addins
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Office\*\Addins'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Office Addins
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Office\*\Addins\*'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Explorer Browser Helper Objects
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Explorer SharedTaskScheduler
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\SharedTaskScheduler\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Explorer ShellIconOverlayIdentifiers
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Explorer ShellServiceObjects
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\ShellServiceObjects\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Ext Settings
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Ext\Settings\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Ext Stats
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Ext\Stats\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logoff
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\**\DisplayName'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logoff
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\**\ExecTime'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logoff
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\**\FileSysPath'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logoff
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\**\GPO-ID'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logoff
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\**\IsPowershell'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logoff
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\**\Parameters'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logoff
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\**\PSScriptOrder'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logoff
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\**\Script'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logoff
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff\*\**\SOM-ID'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logon
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon\*\**\DisplayName'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logon
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon\*\**\ExecTime'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logon
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon\*\**\FileSysPath'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logon
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon\*\**\GPO-ID'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logon
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon*\**\IsPowershell'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logon
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon\*\**\Parameters'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logon
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon\*\**\PSScriptOrder'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logon
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon\*\**\Script'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Group Policy Scripts Logon
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon\*\**\SOM-ID'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Internet Settings AutoConfigProxy
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Internet Settings\AutoConfigProxy'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Internet Settings AutoConfigURL
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Internet Settings\AutoConfigURL'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Policies Explorer NoDriveTypeAutoRun
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoDriveTypeAutoRun'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Policies Explorer Run
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Policies System Shell
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Policies\System\Shell'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Policies System
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Policies\System\UserInit'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Run
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Run'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: RunOnce
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\RunOnce'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: RunOnceEx
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\RunOnceEx'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: RunServices
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\RunServices'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: RunServicesOnce
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Shell Extensions Approved
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: ShellServiceObjectDelayLoad
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\ShellServiceObjectDelayLoad\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Drivers
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\drivers'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Drivers32
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\drivers32'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Terminal Server Run
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Windows\CurrentVersion\Run'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Terminal Server RunOnce
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Windows\CurrentVersion\RunOnce'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Terminal Server RunOnceEx
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Windows\CurrentVersion\RunOnceEx'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Load
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Run
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\Windows\Run'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Winlogon Shell
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Winlogon Userinit
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\userinit'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Winlogon VMapplet
+  Category: ASEP
+  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\VMapplet'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Mozilla Components, Extensions, & Plugins
+  Category: ASEP
+  Glob: '*\Software\Mozilla\*\Components\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Mozilla Components, Extensions, & Plugins
+  Category: ASEP
+  Glob: '*\Software\Mozilla\*\Extensions\Components\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Mozilla Components, Extensions, & Plugins
+  Category: ASEP
+  Glob: '*\Software\Mozilla\*\Extensions\Plugins\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Mozilla Components, Extensions, & Plugins
+  Category: ASEP
+  Glob: '*\Software\Mozilla\*\Plugins\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Mozilla Components, Extensions, & Plugins
+  Category: ASEP
+  Glob: '*\Software\MozillaPlugins\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Policies Desktop Screensaver
+  Category: ASEP
+  Glob: '*\Software\Policies\Microsoft\Windows\Control Panel\Desktop\Scrnsave.exe'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Policies Logoff Script
+  Category: ASEP
+  Glob: '*\Software\Policies\Microsoft\Windows\System\Scripts\Logoff\**\Script'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Policies Logon Script
+  Category: ASEP
+  Glob: '*\Software\Policies\Microsoft\Windows\System\Scripts\Logon\**\Script'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Domain Profile Authorized Applications
+  Category: ASEP
+  Glob: '*\Software\Policies\Microsoft\WindowsFirewall\DomainProfile\AuthorizedApplications\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Standard Profile Authorized Applications
+  Category: ASEP
+  Glob: '*\Software\Policies\Microsoft\WindowsFirewall\StandardProfile\AuthorizedApplications\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432 Active Setup
+  Category: ASEP
+  Glob: '*\Software\Wow6432Node\Microsoft\Active Setup\Installed Components\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432 Command Processor
+  Category: ASEP
+  Glob: '*\Software\Wow6432Node\Microsoft\Command Processor\autorun'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432 Internet Explorer Explorer Bars
+  Category: ASEP
+  Glob: '*\Software\Wow6432Node\Microsoft\Internet Explorer\Explorer Bars'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432 Internet Explorer Extension
+  Category: ASEP
+  Glob: '*\Software\Wow6432Node\Microsoft\Internet Explorer\Extension'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: WOW6432Node Office Addins
+  Category: ASEP
+  Glob: '*\Software\Wow6432Node\Microsoft\Office\*\Addins'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: WOW6432Node Office Addins
+  Category: ASEP
+  Glob: '*\Software\Wow6432Node\Microsoft\Office\*\Addins\*'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: WOW6432Node Drivers32
+  Category: ASEP
+  Glob: '*\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\**'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: WOW6432Node Run
+  Category: ASEP
+  Glob: '*\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Run'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: WOW6432Node RunOnce
+  Category: ASEP
+  Glob: '*\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\RunOnce'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: .cmd
+  Category: ASEP
+  Glob: '*\Software\Classes.cmd\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: .cmd PersistentHandler
+  Category: ASEP
+  Glob: '*\Software\Classes.cmd\PersistentHandler\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: .exe
+  Category: ASEP
+  Glob: '*\Software\Classes.exe\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: .exe PersistentHandler
+  Category: ASEP
+  Glob: '*\Software\Classes.exe\PersistentHandler\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: cmdfile
+  Category: ASEP
+  Glob: '*\Software\Classescmdfile\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: exefile
+  Category: ASEP
+  Glob: '*\Software\Classesexefile\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Htmlfile Open
+  Category: ASEP
+  Glob: '*\Software\ClassesHtmlfile\Shell\Open\Command\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: ShellEx ColumnHandlers
+  Category: ASEP
+  Glob: '*\Software\Classes*\ShellEx\ColumnHandlers\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: ShellEx ContextMenuHandlers
+  Category: ASEP
+  Glob: '*\Software\Classes*\ShellEx\ContextMenuHandlers\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: ShellEx CopyHookHandlers
+  Category: ASEP
+  Glob: '*\Software\Classes*\ShellEx\CopyHookHandlers\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: ShellEx DragDropHandlers
+  Category: ASEP
+  Glob: '*\Software\Classes*\ShellEx\DragDropHandlers\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: ShellEx ExtShellFolderViews
+  Category: ASEP
+  Glob: '*\Software\Classes*\ShellEx\ExtShellFolderViews\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: ShellEx PropertySheetHandlers
+  Category: ASEP
+  Glob: '*\Software\Classes*\ShellEx\PropertySheetHandlers\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Directory Background ContextMenuHandlers
+  Category: ASEP
+  Glob: '*\Software\ClassesDirectory\Background\ShellEx\ContextMenuHandlers\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: CLSID InprocServer32
+  Category: ASEP
+  Glob: '*\Software\ClassesCLSID\*\InprocServer32\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: CLSID InprocServer32
+  Category: ASEP
+  Glob: '*\Software\ClassesCLSID\*\InprocServer32\Assembly'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: CLSID LocalServer32
+  Category: ASEP
+  Glob: '*\Software\ClassesCLSID\*\LocalServer32\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: CLSID LocalServer32
+  Category: ASEP
+  Glob: '*\Software\ClassesCLSID\*\LocalServer32\Assembly'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: CLSID PersistentHandler
+  Category: ASEP
+  Glob: '*\Software\ClassesCLSID\*\PersistentHandler'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: CLSID TypeLib
+  Category: ASEP
+  Glob: '*\Software\ClassesCLSID\*\TypeLib\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: CLSID Instance CLSID
+  Category: ASEP
+  Glob: '*\Software\ClassesCLSID\*\Instance\**\CLSID'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: CLSID Instance FriendlyName
+  Category: ASEP
+  Glob: '*\Software\ClassesCLSID\*\Instance\**\FriendlyName'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Interface ProxyStubClsid32
+  Category: ASEP
+  Glob: '*\Software\ClassesInterface\*\ProxyStubClsid32\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Protocols CLSID
+  Category: ASEP
+  Glob: '*\Software\ClassesProtocols\Filter\*\CLSID'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Protocols Handler
+  Category: ASEP
+  Glob: '*\Software\ClassesProtocols\Handler\*\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Protocols Handler CLSID
+  Category: ASEP
+  Glob: '*\Software\ClassesProtocols\Handler\*\CLSID'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Protocols Name-Space Handler
+  Category: ASEP
+  Glob: '*\Software\ClassesProtocols\Name-Space Handler\*\**\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: ProtocolsName-Space Handler CLSID
+  Category: ASEP
+  Glob: '*\Software\ClassesProtocols\Name-Space Handler\*\**\CLSID'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: TypeLib
+  Category: ASEP
+  Glob: '*\Software\ClassesTypeLib\*\*\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: TypeLib Win32
+  Category: ASEP
+  Glob: '*\Software\ClassesTypeLib\*\*\*\win32\**\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: TypeLib Win64
+  Category: ASEP
+  Glob: '*\Software\ClassesTypeLib?*\*\*\win64\**\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432Node CLSID InprocServer32
+  Category: ASEP
+  Glob: '*\Software\ClassesWow6432Node\CLSID\*\InprocServer32\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432Node CLSID InprocServer32
+  Category: ASEP
+  Glob: '*\Software\ClassesWow6432Node\CLSID\*\InprocServer32\Assembly'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432Node CLSID LocalServer32
+  Category: ASEP
+  Glob: '*\Software\ClassesWow6432Node\CLSID\*\LocalServer32\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432Node CLSID LocalServer32
+  Category: ASEP
+  Glob: '*\Software\ClassesWow6432Node\CLSID\*\LocalServer32\Assembly'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432Node CLSID PersistentHandler
+  Category: ASEP
+  Glob: '*\Software\ClassesWow6432Node\CLSID\*\PersistentHandler'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432Node CLSID TypeLib
+  Category: ASEP
+  Glob: '*\Software\ClassesWow6432Node\CLSID\*\TypeLib\@'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432Node CLSID Instance CLSID
+  Category: ASEP
+  Glob: '*\Software\ClassesWow6432Node\CLSID\*\Instance\**\CLSID'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432Node CLSID Instance FriendlyName
+  Category: ASEP
+  Glob: '*\Software\ClassesWow6432Node\CLSID\*\Instance\**\FriendlyName'
+  Root: HKEY_USERS
+- Author: Troy Larson
+  Description: Wow6432Node Interface ProxyStubClsid32
+  Category: ASEP
+  Glob: '*\Software\ClassesWow6432Node\Interface\*\ProxyStubClsid32\@'
+  Root: HKEY_USERS
