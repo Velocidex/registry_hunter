@@ -27,7 +27,7 @@ const (
 	reghiveTestDirectory = "./test_files/C/"
 
 	// Use this for now until the next official release
-	velociraptorBinaryURL  = "https://storage.googleapis.com/releases.velocidex.com/velociraptor/velociraptor-v0.72-rc2-linux-amd64-musl"
+	velociraptorBinaryURL  = "https://github.com/Velocidex/velociraptor/releases/download/v0.74/velociraptor-v0.74.3-linux-amd64-musl"
 	velociraptorBinaryPath = "./velociraptor"
 
 	// The produced artifact

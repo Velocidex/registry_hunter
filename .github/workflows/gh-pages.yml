@@ -8,16 +8,16 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - uses: actions/setup-go@v3
+      - uses: actions/setup-go@93397bea11091df50f3d7e59dc26a7711a8bcfbe
         with:
-          go-version: '^1.20'
+          go-version: '^1.23'
 
       - run: go version
 
@@ -41,3 +41,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/public
+          force_orphan: true
