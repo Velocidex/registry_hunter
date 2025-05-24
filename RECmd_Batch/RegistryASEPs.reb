@@ -1,5 +1,5 @@
 Description: Registry ASEPs
-Disabled: true
+Disabled: false
 Author: Troy Larson
 Version: 1.0
 Id: d6b50e3a-291c-4d8a-afbc-4dd05d252742

@@ -16,3 +16,17 @@ Rules:
       FROM glob(accessor="registry",
                 globs="HKEY_USERS\\*\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Compatibility Assistant\\Store\\*rclone*")
     })
+
+- Description: DotNetStartupHooks
+  Category: Threat Hunting
+  Author: Chris Jones - CPIRT | FabFaeb | Antonio Blescia (TheThMando) | bmcder02
+  Comment: |
+    The .NET DLLs listed in the DOTNET_STARTUP_HOOKS environment
+    variable are loaded into .NET processes at runtime.
+
+  Query: |
+    SELECT OSPath, Data.value AS Value
+    FROM glob(globs=[
+    '''HKEY_LOCAL_MACHINE\System\ControlSet*\Control\Session Manager\Environment\DOTNET_STARTUP_HOOKS''',
+    '''HKEY_USERS\*\Environment\DOTNET_STARTUP_HOOKS'''], accessor="registry")
+    WHERE Value

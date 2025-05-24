@@ -561,3 +561,17 @@ Rules:
           )
   Details: |
     x=>_ServicesInfo(OSPath=x.OSPath)
+
+- Description: Environment Variables
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: ControlSet*\Control\Session Manager\Environment
+  Filter: x=>IsDir
+  Details: x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Description: Environment Variables
+  Category: System Info
+  Root: HKEY_USERS
+  Glob: '*\Environment'
+  Filter: x=>IsDir
+  Details: x=>FetchKeyValues(OSPath=x.OSPath)

@@ -1,0 +1,59 @@
+[
+  {
+    "Description": "Environment Variables",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet001\\Control\\Session Manager\\Environment",
+    "Mtime": "2023-10-18T05:43:40Z",
+    "Details": {
+      "ComSpec": "%SystemRoot%\\system32\\cmd.exe",
+      "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+      "NUMBER_OF_PROCESSORS": "2",
+      "OS": "Windows_NT",
+      "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+      "PROCESSOR_ARCHITECTURE": "AMD64",
+      "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 13, GenuineIntel",
+      "PROCESSOR_LEVEL": "6",
+      "PROCESSOR_REVISION": "9e0d",
+      "PSModulePath": "%ProgramFiles%\\WindowsPowerShell\\Modules;%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\Modules",
+      "Path": "%SystemRoot%\\system32;%SystemRoot%;%SystemRoot%\\System32\\Wbem;%SYSTEMROOT%\\System32\\WindowsPowerShell\\v1.0\\;%SYSTEMROOT%\\System32\\OpenSSH\\",
+      "TEMP": "%SystemRoot%\\TEMP",
+      "TMP": "%SystemRoot%\\TEMP",
+      "USERNAME": "SYSTEM",
+      "windir": "%SystemRoot%"
+    }
+  },
+  {
+    "Description": "Environment Variables",
+    "Category": "System Info",
+    "OSPath": "HKEY_LOCAL_MACHINE\\System\\ControlSet002\\Control\\Session Manager\\Environment",
+    "Mtime": "2023-10-18T05:43:40Z",
+    "Details": {
+      "ComSpec": "%SystemRoot%\\system32\\cmd.exe",
+      "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+      "NUMBER_OF_PROCESSORS": "2",
+      "OS": "Windows_NT",
+      "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+      "PROCESSOR_ARCHITECTURE": "AMD64",
+      "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 13, GenuineIntel",
+      "PROCESSOR_LEVEL": "6",
+      "PROCESSOR_REVISION": "9e0d",
+      "PSModulePath": "%ProgramFiles%\\WindowsPowerShell\\Modules;%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\Modules",
+      "Path": "%SystemRoot%\\system32;%SystemRoot%;%SystemRoot%\\System32\\Wbem;%SYSTEMROOT%\\System32\\WindowsPowerShell\\v1.0\\;%SYSTEMROOT%\\System32\\OpenSSH\\",
+      "TEMP": "%SystemRoot%\\TEMP",
+      "TMP": "%SystemRoot%\\TEMP",
+      "USERNAME": "SYSTEM",
+      "windir": "%SystemRoot%"
+    }
+  },
+  {
+    "Description": "Environment Variables",
+    "Category": "System Info",
+    "OSPath": "HKEY_USERS\\user1\\Environment",
+    "Mtime": "2014-06-27T19:12:14Z",
+    "Details": {
+      "Path": "C:\\Program Files (x86)\\IDM Computer Solutions\\UltraEdit\\",
+      "TEMP": "%USERPROFILE%\\AppData\\Local\\Temp",
+      "TMP": "%USERPROFILE%\\AppData\\Local\\Temp"
+    }
+  }
+]

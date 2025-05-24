@@ -3,12 +3,17 @@
 </script>
 
 <div class="input-group">
+  <span class="input-group-addon"
+        id="clear"><i class="fas fa-xmark"></i>
+  </span>
   <input type="text" id="myInput" onkeyup="doSearch()"
          class="form-control"
          placeholder="Search rules"
          aria-describedby="basic-addon2">
   <span class="input-group-addon"
-        id="basic-addon2"><i class="fas fa-search"></i></span>
+        id="basic-addon2"><i class="fas fa-search"></i>
+    <span class="total-count"></span>
+  </span>
 </div>
 
 <hr />
@@ -16,6 +21,11 @@
 <div class="search_results"></div>
 
 <script>
+  $("#clear").click(function() {
+      let next = $(this).next("input");
+      if (next) { next.val(""); doSearch(); }
+  })
+
 let all_data = [];
 
 $.ajax({
@@ -26,17 +36,70 @@ $.ajax({
 });
 
 function matchItem(filter, item) {
-    if (item.title.toUpperCase().includes(filter) ||
-        item.description.toUpperCase().includes(filter)) {
+    let description = item.Comment || "";
+    let title = item.Description || "";
+
+    if (title.toUpperCase().includes(filter) ||
+        description.toUpperCase().includes(filter)) {
         return true;
     }
 
-    let labels = item.tags || [];
+    let labels = [];
+    if (item.Category) {
+        labels.push(item.Category);
+    }
     for(let j=0;j<labels.length;j++) {
         if (labels[j].toUpperCase().includes(filter)) {
             return true;
         }
     }
+    return false;
+}
+
+const linebreak = new RegExp("[\\n\\r]")
+
+function addRow(key, value) {
+    if(!value) {
+        return "";
+    }
+
+    if (linebreak.test(value)) {
+        let lines = value.split("\n")
+        for (let i=0;i<lines.length;i++) {
+            lines[i] = "  " + lines[i]
+        }
+        return "\n" + key + ": |\n" + lines.join("\n")
+    };
+    return "\n" + key + ": " + value;
+}
+
+function insertRule(node, item) {
+    let description = $(node).find("p.description");
+    if (!description.length) {
+        return;
+    }
+
+    let existing = node.find("pre");
+    if (existing.length > 0) {
+        existing.remove();
+        description.show();
+        return;
+    }
+
+    description.hide();
+
+    let data = addRow("Description", item.Description) +
+        addRow("Author", item.Author) +
+        addRow("Comment", item.Comment) +
+        addRow("Category", item.Category) +
+        addRow("Glob", item.Glob) +
+        addRow("Root", item.Root) +
+        addRow("Details", item.Details);
+
+    let highlighted = hljs.highlight(data, {language: "yaml"});
+    let new_node = $("<pre>").append($("<code>").append(highlighted.value));
+    description.after(new_node);
+
     return false;
 }
 
@@ -61,6 +124,7 @@ function doSearch() {
 // Only show up to 50 hits to make the page load faster.
 function DrawResults(data) {
     $(".search_results").empty();
+    $("span.total-count").text("Total " + data.length);
 
     let most_results = data.length;
     if(most_results > 50) {
@@ -86,14 +150,20 @@ function DrawResults(data) {
     </div>
 </div>`);
 
-      template.find(".title").append(item.title);
-      template.find(".author").append(item.author);
-      template.find(".description").append(item.description);
-      template.find(".title").attr("href", item.link);
-      template.find(".date").append(item.date)
+      template.find(".title").append(item.Description);
+      template.find(".author").append(item.Author);
+      template.find(".description").append(item.Comment);
+      template.find(".title").attr("href", item.link).click(function() {
+          insertRule(template, item);
+          return false;
+      });
 
-    for (let j=0; j<item.tags.length; j++) {
-        let tag = item.tags[j];
+    let labels = [];
+    if (item.Category) {
+        labels.push(item.Category);
+    }
+    for (let j=0; j<labels.length; j++) {
+        let tag = labels[j];
         let link = $(`
 <a class="space tag"><i class="linkcolour label label-success">` +
                      tag + `</i></a>`).click(function() {
@@ -106,25 +176,4 @@ function DrawResults(data) {
   }
 };
 
-function myFunction() {
-  // Declare variables
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById('myInput');
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName('li');
-
-  // Loop through all list items, and hide those who don't match the
-  // search query
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
-}
 </script>

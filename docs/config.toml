@@ -6,6 +6,8 @@ title = 'Velociraptor Registry Hunting'
 [[module.imports]]
 path = 'github.com/alex-shpak/hugo-book'
 
+[markup.goldmark.renderer]
+unsafe= true
 
 [params]
 BookTheme = 'light'
