@@ -46,7 +46,7 @@ func makeZip(rules_compiler *compiler.Compiler) error {
 		return err
 	}
 
-	f, err = w.Create("rules.yml")
+	f, err = w.Create("rules.txt")
 	_, err = f.Write([]byte(rules_compiler.GetRules()))
 	if err != nil {
 		return err
