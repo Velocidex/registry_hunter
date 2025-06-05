@@ -422,11 +422,11 @@ Rules:
 
   Details: |
     x=>dict(
-     DefaultMRU=RDPMRU(OSPath=x.OSPath).Server,
+     DefaultMRU=RDPMRU(OSPath=OSPath).Server,
      Servers={
-      SELECT OSPath.Basename AS Server,
+      SELECT OSPath.Basename AS Server, Mtime,
         FetchKeyValues(OSPath=OSPath) AS Details
-      FROM glob(accessor="registry", globs='*', root=x.OSPath + "Servers")
+      FROM glob(accessor="registry", globs='*', root=OSPath + "Servers")
     })
 
 - Author: Andrew Rathbun, Mike Cohen

@@ -2,6 +2,7 @@ package main
 
 import (
 	"archive/zip"
+	"fmt"
 	"os"
 
 	"github.com/Velocidex/registry_hunter/compiler"
@@ -45,7 +46,7 @@ func makeZip(rules_compiler *compiler.Compiler) error {
 		return err
 	}
 
-	f, err = w.Create("rules.yml")
+	f, err = w.Create("rules.txt")
 	_, err = f.Write([]byte(rules_compiler.GetRules()))
 	if err != nil {
 		return err
@@ -77,7 +78,9 @@ func doCompile() error {
 	for _, filename := range *compile_yaml {
 		err := rules_compiler.LoadRules(filename)
 		if err != nil {
-			return err
+			fmt.Printf("Error: Unable to load rules from %v: %v\n",
+				filename, err)
+			continue
 		}
 	}
 

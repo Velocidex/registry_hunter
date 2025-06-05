@@ -2080,26 +2080,6 @@ Rules:
   Glob: Microsoft\.NETFramework\DbgManagedDebugger
   Root: HKEY_LOCAL_MACHINE\Software
 - Author: Troy Larson
-  Description: Active Setup Installed Components
-  Category: ASEP
-  Glob: Microsoft\Active Setup\Installed Components\*\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Troy Larson
-  Description: Active Setup Installed Components
-  Category: ASEP
-  Glob: Microsoft\Active Setup\Installed Components\*\LocalizedName
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Troy Larson
-  Description: Active Setup Installed Components
-  Category: ASEP
-  Glob: Microsoft\Active Setup\Installed Components\*\ShellComponent
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Troy Larson
-  Description: Active Setup Installed Components
-  Category: ASEP
-  Glob: Microsoft\Active Setup\Installed Components\*\StubPath
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Troy Larson
   Description: Command Processor
   Category: ASEP
   Glob: Microsoft\Command Processor\autorun
@@ -2661,21 +2641,6 @@ Rules:
   Glob: WOW6432Node\Microsoft\.NETFramework\DbgManagedDebugger
   Root: HKEY_LOCAL_MACHINE\Software
 - Author: Troy Larson
-  Description: Wow6432 Active Setup Installed Components
-  Category: ASEP
-  Glob: Wow6432Node\Microsoft\Active Setup\Installed Components\*\**\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Troy Larson
-  Description: Wow6432 Active Setup Installed Components
-  Category: ASEP
-  Glob: Wow6432Node\Microsoft\Active Setup\Installed Components\*\**\ShellComponent
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Troy Larson
-  Description: Wow6432 Active Setup Installed Components
-  Category: ASEP
-  Glob: Wow6432Node\Microsoft\Active Setup\Installed Components\*\**\StubPath
-  Root: HKEY_LOCAL_MACHINE\Software
-- Author: Troy Larson
   Description: WOW6432 Command Processor Autorun
   Category: ASEP
   Glob: Wow6432Node\Microsoft\Command Processor\Autorun
@@ -3203,11 +3168,6 @@ Rules:
   Glob: '*\Software\Google\Chrome\Extensions\**\path'
   Root: HKEY_USERS
 - Author: Troy Larson
-  Description: Active Setup
-  Category: ASEP
-  Glob: '*\Software\Microsoft\Active Setup\Installed Components\**'
-  Root: HKEY_USERS
-- Author: Troy Larson
   Description: Command Processor
   Category: ASEP
   Glob: '*\Software\Microsoft\Command Processor\autorun'
@@ -3566,11 +3526,6 @@ Rules:
   Description: Standard Profile Authorized Applications
   Category: ASEP
   Glob: '*\Software\Policies\Microsoft\WindowsFirewall\StandardProfile\AuthorizedApplications\**'
-  Root: HKEY_USERS
-- Author: Troy Larson
-  Description: Wow6432 Active Setup
-  Category: ASEP
-  Glob: '*\Software\Wow6432Node\Microsoft\Active Setup\Installed Components\**'
   Root: HKEY_USERS
 - Author: Troy Larson
   Description: Wow6432 Command Processor

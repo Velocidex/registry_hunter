@@ -5,3 +5,6 @@ serve:
 
 build:
 	hugo build
+
+clean:
+	rm -rf ./public/*

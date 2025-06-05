@@ -7,9 +7,10 @@ type RuleFile struct {
 }
 
 type RegistryRule struct {
-	Author      string `json:"Author,omitempty"`
-	Description string `json:"Description"`
-	Category    string `json:"Category"`
+	Description string `json:"Description,omitempty"`
+	Category    string `json:"Category,omitempty"`
+	Author      string `json:"Author,omitempty,omitempty"`
+	Reference   string `json:"Reference,omitempty"`
 	Comment     string `json:"Comment,omitempty"`
 
 	// The query will be running in a remapped environment where
