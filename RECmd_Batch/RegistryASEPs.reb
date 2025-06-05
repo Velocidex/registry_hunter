@@ -1161,38 +1161,7 @@ Keys:
         ValueName: DbgManagedDebugger
         Recursive: false
         Comment:
-    -
-        Description: Active Setup Installed Components
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Active Setup\Installed Components\*
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: Active Setup Installed Components
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Active Setup\Installed Components\*
-        ValueName: LocalizedName
-        Recursive: false
-        Comment:
-    -
-        Description: Active Setup Installed Components
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Active Setup\Installed Components\*
-        ValueName: ShellComponent
-        Recursive: false
-        Comment:
-    -
-        Description: Active Setup Installed Components
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Active Setup\Installed Components\*
-        ValueName: StubPath
-        Recursive: false
-        Comment:
+
     -
         Description: Command Processor
         HiveType: Software
@@ -2051,30 +2020,6 @@ Keys:
         Recursive: false
         Comment:
     -
-        Description: Wow6432 Active Setup Installed Components
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Active Setup\Installed Components\*
-        ValueName: (default)
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Active Setup Installed Components
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Active Setup\Installed Components\*
-        ValueName: ShellComponent
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Active Setup Installed Components
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Active Setup\Installed Components\*
-        ValueName: StubPath
-        Recursive: true
-        Comment:
-    -
         Description: WOW6432 Command Processor Autorun
         HiveType: Software
         Category: ASEP
@@ -2879,13 +2824,6 @@ Keys:
         Recursive: true
         Comment:
     -
-        Description: Active Setup
-        HiveType: ntuser
-        Category: ASEP
-        KeyPath: Software\Microsoft\Active Setup\Installed Components
-        Recursive: true
-        Comment:
-    -
         Description: Command Processor
         HiveType: ntuser
         Category: ASEP
@@ -3423,13 +3361,6 @@ Keys:
         HiveType: ntuser
         Category: ASEP
         KeyPath: Software\Policies\Microsoft\WindowsFirewall\StandardProfile\AuthorizedApplications
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Active Setup
-        HiveType: ntuser
-        Category: ASEP
-        KeyPath: Software\Wow6432Node\Microsoft\Active Setup\Installed Components
         Recursive: true
         Comment:
     -

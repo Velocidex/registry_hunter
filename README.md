@@ -12,7 +12,7 @@ This project maintains a set of `Rules` which are YAML files following
 a simple format. This project implements a compiler which compiles
 these rules into a VQL artifact that may be consumed by Velociraptor.
 
-The Rule file starts with the attibute Rules and contains a list of
+The Rule file starts with the attribute `Rules` and contains a list of
 rules:
 
 ```

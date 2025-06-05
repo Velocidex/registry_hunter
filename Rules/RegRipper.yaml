@@ -1,0 +1,123 @@
+# These rules are converted from RegRipper
+Preamble:
+  - |
+    LET GetProviderDllForGUID(GUID) = GetValue(
+        OSPath="HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\CLSID\\" + GUID + "\\InProcServer32\\@")
+
+  - |
+    LET _CharToString(X) = SELECT
+      format(format="%c", args=_value) AS C FROM foreach(row=X)
+  -  LET CharsToString(X) = join(array=_CharToString(X=X).C)
+
+Rules:
+- Description: Parse AmCache InventoryApplicationFile
+  Author: M. Cohen & H. Carvey
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/amcache.pl
+  Category: ASEP
+  Root: Amcache
+  Glob: Root\\InventoryApplication*\\*
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
+
+- Description: Parse AmCache DriverBinary
+  Author: M. Cohen & H. Carvey
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/amcache.pl
+  Category: ASEP
+  Root: Amcache
+  Glob: Root\\InventoryDriverBinary\\*
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.') + dict(Driver=OSPath.Basename)
+
+- Description: Parse AmCache InventoryApplicationShortcut
+  Author: M. Cohen & H. Carvey
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/amcache.pl
+  Category: ASEP
+  Root: Amcache
+  Glob: Root\\InventoryApplicationShortcut\\*
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
+
+- Description: Active Setup Installed Components
+  Category: ASEP
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Active Setup\Installed Components\*
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
+
+- Description: Active Setup Installed Components
+  Category: ASEP
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Wow6432Node\Microsoft\Active Setup\Installed Components\*
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
+
+- Description: AMSI Providers
+  Comment: |
+    The AMSI provider for Windows Defender seems to have been
+    removed/could not be found.
+
+    Analysis Tip: AMSI providers can be used for persistence.
+
+    The FeatureBit check determines if Authenicode signing is enabled or not.
+      0x01 - signing check is disabled; this is the default behavior (applies if value not found)
+      0x02 - signing check is enabled
+  Reference: |
+    https://pentestlab.blog/2021/05/17/persistence-amsi/
+
+  Author: M. Cohen & H. Carvey
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE/SOFTWARE
+  Filter: x=>true
+  Glob: 'Microsoft\AMSI\Providers\*'
+  Details: |
+    x=>dict(
+      FeatureBits=GetValue(OSPath=OSPath + "FeatureBits"),
+      ProviderDll=GetProviderDllForGUID(GUID=OSPath.Basename))
+
+- Description: Adobe app cRecentFiles values
+  Category: Third Party Applications
+  Root: HKEY_USERS
+  Glob: /*/Software/Adobe/*/*/AVGeneral/cRecent{Files,Folders}/*
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.') +
+       dict(Version=OSPath[-4], Software=OSPath[-5],
+            sDI=CharsToString(X=GetValue(OSPath=OSPath + "sDI")),
+            sDate=CharsToString(X=GetValue(OSPath=OSPath + "sDate")))
+
+- Description: Check for Windows 11 requirement bypass values
+  Author: M. Cohen & H. Carvey
+  Category: System Info
+  Comment: |
+    Analysis Tip: The "AllowUpgradesWithUnsupportedTPMOrCPU" value set
+    to 1 is a hack to allow Windows 11 updates to be installed on
+    systems that did not meet the TPM or CPU checks. This could be
+    interpreted as an attempt at defense evasion, by upgrading the
+    system image to provide additional capabilities, such as Windows
+    Subsystem for Android.
+
+  Reference: https://support.microsoft.com/en-us/windows/ways-to-install-windows-11-e0edbbfb-cfc5-4011-868b-2ce77ac7c70e
+  Root: HKEY_LOCAL_MACHINE/System
+  Glob: Setup\{MoSetup,LabConfig}\{AllowUpgradesWithUnsupportedTPMOrCPU,BypassRAMCheck,BypassTPMCheck,BypassSecureBootCheck}
+
+- Description: Gets user's AMSIEnable value
+  Author: M. Cohen & H. Carvey
+  Category: System Info
+  Root: HKEY_USERS
+  Glob: "*/Software/Microsoft/Windows Script/Settings/AmsiEnable"
+  Comment: |
+    Analysis Tip: If the AmsiEnable value is 0, AMSI is disabled.
+
+- Description: Gets contents of user's ApplicationAssociationToasts key
+  Author: M. Cohen & H. Carvey
+  Category: System Info
+  Root: HKEY_USERS
+  Glob: /*/Software\\Microsoft\\Windows\\CurrentVersion\\ApplicationAssociationToasts
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')

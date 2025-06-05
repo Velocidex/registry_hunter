@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"regexp"
 	"sort"
 	"strings"
 	"text/template"
@@ -16,6 +17,23 @@ import (
 	"github.com/Velocidex/ordereddict"
 	"github.com/Velocidex/registry_hunter/config"
 	"github.com/Velocidex/yaml/v2"
+)
+
+var (
+	// The following roots refer to the virtual hives that are mounted
+	// on the remap config. Rules may not specific different roots
+	// from these.
+	allowedRoots = []string{
+		// Rules that do not glob can have an empty root glob.
+		"",
+		"/",
+		"Amcache",
+		"HKEY_USERS",
+		"SAM",
+		"HKEY_LOCAL_MACHINE\\Security",
+		"HKEY_LOCAL_MACHINE\\System",
+		"HKEY_LOCAL_MACHINE\\Software",
+	}
 )
 
 const (
@@ -120,11 +138,16 @@ parameters:
   description: How often to flush the NTFS cache. (Default is never).
   default: "1000000"
 
+- name: DEBUG
+  type: bool
+  description: Add more logging.
+
 export: |
     LET _info <= SELECT * FROM info()
 
     -- On Non Windows systems we need to use case insensitive accessor or we might not find the right hives.
     LET DefaultAccessor <= if(condition=_info[0].OS =~ "windows", then="ntfs", else="file_nocase")
+    LET HKLM <= pathspec(parse="HKEY_LOCAL_MACHINE", path_type="registry")
     LET RootDrive <= pathspec(Path=RootDrive)
     LET PathTOSAM <= PathTOSAM || RootDrive + "Windows/System32/config/SAM"
     LET PathTOAmcache <= PathTOAmcache || RootDrive + "Windows/appcompat/Programs/Amcache.hve"
@@ -349,7 +372,7 @@ sources:
     - type: vql
       output: "<h1>All Results</h1>Press recalculate to View"
       template: |
-         SELECT * FROM source()
+         SELECT * FROM source(source="Results")
 
    {{- range $val := .Categories }}
     - type: vql
@@ -371,10 +394,14 @@ sources:
       SELECT Root AS _key, Globs AS _value FROM AllGlobs
     })
 
+    LET ShouldLog <= NOT DEBUG
+
     LET Cache <= memoize(query={
        SELECT Glob, Category, Description,
               Details, Filter, Comment
        FROM AllRules
+       WHERE ShouldLog || log(
+           message="Add to cache %v %v", args=[Glob, Description], dedup=-1)
     }, key="Glob", period=100000)
 
     LET _ <= remap(config=dict(remappings=RemapRules))
@@ -394,7 +421,9 @@ sources:
     }, query={
        SELECT * FROM glob(globs=GlobsToSearch, root=Root, accessor="registry")
     })
-    -- WHERE log(message="Glob %v Metadata %v", args=[Globs[0], Metadata], dedup=-1)
+    WHERE ShouldLog || log(
+          message="Glob %v OSPath %v Metadata %v",
+          args=[Globs[0], OSPath, Metadata], dedup=-1)
 
     LET GlobRules = SELECT Metadata.Description AS Description,
            Metadata.Category AS Category,
@@ -403,7 +432,6 @@ sources:
            Metadata AS _Metadata
     FROM Result
     WHERE eval(func=Metadata.Filter || "x=>NOT IsDir")
-      -- AND log(message="Found %v Filter %v", args=[OSPath, Metadata.Filter], dedup=-1)
 
     SELECT * FROM chain(
     a=GlobRules,
@@ -461,6 +489,43 @@ func (self *Compiler) serialize(item interface{}) string {
 	return string(serialized)
 }
 
+var (
+	pathSepRegex = regexp.MustCompile(`[/\\]+`)
+)
+
+func (self *Compiler) normalizeRoot(description, root string) string {
+	for _, allowed := range allowedRoots {
+		if strings.EqualFold(allowed, root) {
+			return allowed
+		}
+	}
+
+	fmt.Printf("Warning: Rule %v uses an unsupported Root: %v\n",
+		description, root)
+	return root
+}
+
+// FIXME: Currentl we duplicate the rules because each rule can only
+// have one glob but it would be ideal if the same rule could have
+// multiple globs.
+func (self *Compiler) normalizeRule(r *config.RegistryRule) []config.RegistryRule {
+	r.Glob = strings.TrimPrefix(pathSepRegex.ReplaceAllString(r.Glob, "\\"), "\\")
+	r.Root = self.normalizeRoot(r.Description,
+		pathSepRegex.ReplaceAllString(r.Root, "\\"))
+
+	// Expand the glob expression to support brace expansions
+	globs := []string{}
+	_brace_expansion(r.Glob, &globs)
+
+	res := []config.RegistryRule{}
+	for _, glob := range globs {
+		rule_copy := *r
+		rule_copy.Glob = glob
+		res = append(res, rule_copy)
+	}
+	return res
+}
+
 func (self *Compiler) LoadRules(filename string) error {
 	fd, err := os.Open(filename)
 	if err != nil {
@@ -478,27 +543,32 @@ func (self *Compiler) LoadRules(filename string) error {
 		return err
 	}
 
+	fmt.Printf("Loading %v rules from %v\n", len(rules.Rules), filename)
+
 	// Add preables from rules
 	for _, r := range rules.Rules {
-		if r.Query != "" {
-			self.queries = append(self.queries, r)
-			continue
-		}
+		for _, r := range self.normalizeRule(&r) {
 
-		key := r.Root + r.Glob
-		existing_rule, pres := self.globs[key]
-		if pres {
-			fmt.Printf("Rule %v by %v has the same glob as rule %v by %v... skipping this rule!\n",
-				r.Description, r.Author, existing_rule.Description, existing_rule.Author)
-		}
-		self.globs[key] = r
+			if r.Query != "" {
+				self.queries = append(self.queries, r)
+				continue
+			}
 
-		if len(r.Preamble) > 0 {
-			self.PreambleVerses = append(self.PreambleVerses, r.Preamble...)
-		}
-		self.categories[r.Category] = true
-		self.rules = append(self.rules, r)
+			key := r.Root + r.Glob
+			existing_rule, pres := self.globs[key]
+			if pres {
+				fmt.Printf("Rule %v by %v has the same glob (%v) as rule %v by %v... skipping this rule!\n",
+					r.Description, r.Author, r.Glob,
+					existing_rule.Description, existing_rule.Author)
+			}
+			self.globs[key] = r
 
+			if len(r.Preamble) > 0 {
+				self.PreambleVerses = append(self.PreambleVerses, r.Preamble...)
+			}
+			self.categories[r.Category] = true
+			self.rules = append(self.rules, r)
+		}
 	}
 
 	// Add global preambles
