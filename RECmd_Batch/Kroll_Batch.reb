@@ -3326,13 +3326,6 @@ Keys:
 # INSTALLED SOFTWARE
 # --------------------
 
-    -
-        Description: App Paths
-        HiveType: SOFTWARE
-        Category: Installed Software
-        KeyPath: Microsoft\Windows\CurrentVersion\App Paths
-        Recursive: false
-        Comment: "Displays list of installed software and the associated application paths"
 
 # AppPaths plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.AppPaths
 

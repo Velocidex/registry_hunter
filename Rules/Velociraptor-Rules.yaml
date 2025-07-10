@@ -53,6 +53,12 @@ Preamble:
       ]]]
       ''', struct="X").mac
 
+  - |
+    LET RemoveNullDictValue(D) = to_dict(item={
+       SELECT * FROM items(item=D)
+       WHERE _value
+    })
+
 Rules:
 - Description: Interface Properties (IPv4)
   Category: System Info
@@ -575,3 +581,71 @@ Rules:
   Glob: '*\Environment'
   Filter: x=>IsDir
   Details: x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Description: Exploit Guards MitigationOptions
+  Author: "@bmcdermott-r7 Blake McDermott"
+  Category: System Info
+  Comment: |
+    Parses Exploit Guards MitigationOptions to see what security
+    controls are enabled for each process, and returns them in a 15
+    digit hexidecimal value.
+  Reference: |
+    https://theryuu.github.io/ifeo-mitigationoptions.txt
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: "Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\*\\MitigationOptions"
+  Preamble:
+    - |
+      LET ParseMitigationOptions(H) = RemoveNullDictValue(D=dict(
+       DEP=
+         (H[-1:] = "1" && "Always On") ||
+         (H[-1:] = "2" && "Always On - enable ATL thunk emulation"),
+       SEHOP=(H[-2:-1] = "1"),
+       ASLR=
+          (H[-3:-2] = "1" && "Enable force relocate.") ||
+          (H[-3:-2] = "2" && "Force relocate off.") ||
+          (H[-3:-2] = "3" && "Force relocate always on."),
+       `Heap terminate`=
+          (H[-4:-3] = "1" && "Always On.") ||
+          (H[-4:-3] = "2" && "Always Off."),
+       `Bottom ASLR`=
+          (H[-5:-4] = "1" && "Always On.") ||
+          (H[-5:-4] = "2" && "Always Off."),
+       `HEASLR`=
+          (H[-6:-5] = "1" && "Always On.") ||
+          (H[-6:-5] = "2" && "Always Off."),
+       `Strict handle checks`=
+          (H[-7:-6] = "1" && "Always On.") ||
+          (H[-7:-6] = "2" && "Always Off."),
+       `Win32k system call disable policy`=
+          (H[-8:-7] = "1" && "Always On.") ||
+          (H[-8:-7] = "2" && "Always Off."),
+       `Extension point disable policy`=
+          (H[-9:-8] = "1" && "Always On.") ||
+          (H[-9:-8] = "2" && "Always Off."),
+       `Dynamic code policy (probably).`=
+          (H[-10:-9] = "1" && "Always On.") ||
+          (H[-10:-9] = "2" && "Always Off.") ||
+          (H[-10:-9] = "3" && "Always On with optout."),
+       `Control Flow Guard (CFG)`=
+          (H[-11:-10] = "1" && "Enable") ||
+          (H[-11:-10] = "2" && "Disable"),
+       `Binary signature policy.`=
+          (H[-12:-11] = "1" && "Microsoft signed only.") ||
+          (H[-12:-11] = "2" && "Disable?"),
+       `Font loading prevention.`=
+          (H[-13:-12] = "1" && "Enable") ||
+          (H[-13:-12] = "2" && "Disable") ||
+          (H[-13:-12] = "3" && "Enable with Audit"),
+       `Image load policy (remote images).`=
+          (H[-14:-13] = "1" && "Always On") ||
+          (H[-14:-13] = "2" && "Always Off") ||
+          (H[-14:-13] = "3" && "Reserved"),
+       `Image load policy (low mandatory label).`=
+          (H[-15:-14] = "1" && "Always On") ||
+          (H[-15:-14] = "2" && "Always Off") ||
+          (H[-15:-14] = "3" && "Reserved")))
+  Details: |
+    x=>dict(ProcName=x.OSPath[-2],
+            DecValue=x.Data,
+            HexValue=format(format="%#015x", args=x.Data),
+            Parsed=ParseMitigationOptions(H=format(format="%#015x", args=x.Data)))

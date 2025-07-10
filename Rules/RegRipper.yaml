@@ -1,4 +1,7 @@
-# These rules are converted from RegRipper
+# These rules are inspired from RegRipper. No actual code was copied
+# from RegRipper but it is used as a reference. Not all of the
+# RegRipper rules are used - old rules for unsupported operating
+# systems are omitted.
 Preamble:
   - |
     LET GetProviderDllForGUID(GUID) = GetValue(
@@ -8,10 +11,70 @@ Preamble:
     LET _CharToString(X) = SELECT
       format(format="%c", args=_value) AS C FROM foreach(row=X)
   -  LET CharsToString(X) = join(array=_CharToString(X=X).C)
+  - |
+    LET AppKeyExtract(OSPath) = SELECT Name,
+       get(item=AppKeyLookup, field=Name) AS Key, Mtime,
+       FetchKeyValuesWithRegex(OSPath=OSPath,
+          Regex="ShellExecute|Association|RegisteredApp") AS Details
+    FROM glob(root=OSPath, globs="*", accessor="registry")
+  - |
+    LET AppKeyLookup <= dict(
+      `20`="APPCOMMAND_BASS_BOOST",
+      `19`="APPCOMMAND_BASS_DOWN",
+      `21`="APPCOMMAND_BASS_UP",
+      `1`="APPCOMMAND_BROWSER_BACKWARD",
+      `6`="APPCOMMAND_BROWSER_FAVORITES",
+      `2`="APPCOMMAND_BROWSER_FORWARD",
+      `7`="APPCOMMAND_BROWSER_HOME",
+      `3`="APPCOMMAND_BROWSER_REFRESH",
+      `5`="APPCOMMAND_BROWSER_SEARCH",
+      `4`="APPCOMMAND_BROWSER_STOP",
+      `31`="APPCOMMAND_CLOSE",
+      `36`="APPCOMMAND_COPY",
+      `45`="APPCOMMAND_CORRECTION_LIST",
+      `37`="APPCOMMAND_CUT",
+      `43`="APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE",
+      `28`="APPCOMMAND_FIND",
+      `40`="APPCOMMAND_FORWARD_MAIL",
+      `27`="APPCOMMAND_HELP",
+      `17`="APPCOMMAND_LAUNCH_APP1",
+      `18`="APPCOMMAND_LAUNCH_APP2",
+      `15`="APPCOMMAND_LAUNCH_MAIL",
+      `16`="APPCOMMAND_LAUNCH_MEDIA_SELECT",
+      `52`="APPCOMMAND_MEDIA_CHANNEL_DOWN",
+      `51`="APPCOMMAND_MEDIA_CHANNEL_UP",
+      `49`="APPCOMMAND_MEDIA_FAST_FORWARD",
+      `11`="APPCOMMAND_MEDIA_NEXTTRACK",
+      `47`="APPCOMMAND_MEDIA_PAUSE",
+      `46`="APPCOMMAND_MEDIA_PLAY",
+      `14`="APPCOMMAND_MEDIA_PLAY_PAUSE",
+      `12`="APPCOMMAND_MEDIA_PREVIOUSTRACK",
+      `48`="APPCOMMAND_MEDIA_RECORD",
+      `50`="APPCOMMAND_MEDIA_REWIND",
+      `13`="APPCOMMAND_MEDIA_STOP",
+      `44`="APPCOMMAND_MIC_ON_OFF_TOGGLE",
+      `25`="APPCOMMAND_MICROPHONE_VOLUME_DOWN",
+      `24`="APPCOMMAND_MICROPHONE_VOLUME_MUTE",
+      `26`="APPCOMMAND_MICROPHONE_VOLUME_UP",
+      `29`="APPCOMMAND_NEW",
+      `30`="APPCOMMAND_OPEN",
+      `38`="APPCOMMAND_PASTE",
+      `33`="APPCOMMAND_PRINT",
+      `35`="APPCOMMAND_REDO",
+      `39`="APPCOMMAND_REPLY_TO_MAIL",
+      `32`="APPCOMMAND_SAVE",
+      `41`="APPCOMMAND_SEND_MAIL",
+      `42`="APPCOMMAND_SPELL_CHECK",
+      `22`="APPCOMMAND_TREBLE_DOWN",
+      `23`="APPCOMMAND_TREBLE_UP",
+      `34`="APPCOMMAND_UNDO",
+      `9`="APPCOMMAND_VOLUME_DOWN",
+      `8`="APPCOMMAND_VOLUME_MUTE",
+      `10`="APPCOMMAND_VOLUME_UP")
 
 Rules:
 - Description: Parse AmCache InventoryApplicationFile
-  Author: M. Cohen & H. Carvey
+  Author: M. Cohen
   Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/amcache.pl
   Category: ASEP
   Root: Amcache
@@ -21,7 +84,7 @@ Rules:
     x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
 
 - Description: Parse AmCache DriverBinary
-  Author: M. Cohen & H. Carvey
+  Author: M. Cohen
   Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/amcache.pl
   Category: ASEP
   Root: Amcache
@@ -31,7 +94,7 @@ Rules:
     x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.') + dict(Driver=OSPath.Basename)
 
 - Description: Parse AmCache InventoryApplicationShortcut
-  Author: M. Cohen & H. Carvey
+  Author: M. Cohen
   Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/amcache.pl
   Category: ASEP
   Root: Amcache
@@ -69,7 +132,7 @@ Rules:
   Reference: |
     https://pentestlab.blog/2021/05/17/persistence-amsi/
 
-  Author: M. Cohen & H. Carvey
+  Author: M. Cohen
   Category: System Info
   Root: HKEY_LOCAL_MACHINE/SOFTWARE
   Filter: x=>true
@@ -91,7 +154,7 @@ Rules:
             sDate=CharsToString(X=GetValue(OSPath=OSPath + "sDate")))
 
 - Description: Check for Windows 11 requirement bypass values
-  Author: M. Cohen & H. Carvey
+  Author: M. Cohen
   Category: System Info
   Comment: |
     Analysis Tip: The "AllowUpgradesWithUnsupportedTPMOrCPU" value set
@@ -106,18 +169,214 @@ Rules:
   Glob: Setup\{MoSetup,LabConfig}\{AllowUpgradesWithUnsupportedTPMOrCPU,BypassRAMCheck,BypassTPMCheck,BypassSecureBootCheck}
 
 - Description: Gets user's AMSIEnable value
-  Author: M. Cohen & H. Carvey
+  Author: M. Cohen
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/amsienable.pl
   Category: System Info
   Root: HKEY_USERS
-  Glob: "*/Software/Microsoft/Windows Script/Settings/AmsiEnable"
+  Glob: "/*/Software/Microsoft/Windows Script/Settings/AmsiEnable"
   Comment: |
     Analysis Tip: If the AmsiEnable value is 0, AMSI is disabled.
 
 - Description: Gets contents of user's ApplicationAssociationToasts key
-  Author: M. Cohen & H. Carvey
+  Author: M. Cohen
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appassoc.pl
   Category: System Info
   Root: HKEY_USERS
   Glob: /*/Software\\Microsoft\\Windows\\CurrentVersion\\ApplicationAssociationToasts
   Filter: x=>true
   Details: |
     x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
+
+- Description: Get entries from AppCertDlls key
+  Author: M. Cohen
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appcertdlls.pl
+  Category: ASEP
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: ControlSet*\Control\Session Manager\AppCertDlls
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
+
+- Description: Check services for AppEnvironment/AppEnvironmentExtra values
+  Author: M. Cohen
+  Category: Third Party Applications
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: ControlSet*\Services\*\Parameters\{AppEnvironment,AppEnvironmentExtra}
+  Filter: x=>true
+  Comment: |
+    Analysis Tip: The AppEnvironment and AppEnvironmentExtra values
+    allow a service to have access to environment variables that
+    override those set by the system at service startup. These values
+    are used by svrany\.exe and nssm\.exe.  Nssm\.exe makes use of the
+    Parameters\\AppExit subkey to determine actions to take upon exit,
+    and can be used to specify specific actions based on the app's
+    exit code.
+
+    Ref: https://nssm.cc/usage
+
+- Description: Gets contents of AppInit_DLLs value
+  Author: M. Cohen
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appinitdlls.pl
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows NT\CurrentVersion\Windows\{AppInit_DLLs,LoadAppInit_DLLs,RequireSignedAppInit_DLLs}
+  Filter: x=>true
+
+
+- Description: Extracts AppKeys entries
+  Author: M. Cohen
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appkeys.pl
+  Category: System Info
+  Root: HKEY_USERS
+  Glob: /*/Software\Microsoft\Windows\CurrentVersion\Explorer\AppKey
+  Filter: x=>true
+  Details: |
+    x=>AppKeyExtract(OSPath=x.OSPath)
+
+- Description: Extracts AppKeys entries
+  Author: M. Cohen
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appkeys.pl
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows\CurrentVersion\Explorer\AppKey
+  Filter: x=>true
+  Details: |
+    x=>AppKeyExtract(OSPath=x.OSPath)
+
+- Description: Gets contents of user's Applets key
+  Author: M. Cohen
+  Category: System Info
+  Root: HKEY_USERS
+  Glob: "/*/Software/Microsoft/Windows/CurrentVersion/Applets"
+  Filter: x=>true
+  Details: |
+    x=>dict(Regedit=dict(
+      LastKey=GetValue(OSPath=x.OSPath + "Regedit/LastKey"),
+      Favorites=FetchKeyValuesWithRegex(
+        OSPath=x.OSPath + "Regedit/Favorites", Regex='.')))
+
+- Description: Gets AppModelUnlock values
+  Author: M. Cohen
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: "Microsoft\\Windows\\CurrentVersion\\AppModelUnlock"
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appmodel.pl
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath,
+       Regex='AllowAllTrustedApps|AllowDevelopmentWithoutDevLicense')
+  Comment: |
+    Analysis Tip: Misuse of MS Apps can be an infection vector (see
+    ref).  AllowAllTrustedApps = 1 allows loading of Apps not from the
+    Windows Store (must have valid cert chain) (Enables sideloading)
+
+    AllowDevelopmentWithoutDevLicense = 1 enables dev mode, allowing
+    install of Apps from IDE, and allows users without
+    SeCreateSymbolicLinkPrivilege to create symlinks.
+
+    Ref: https://www.sentinelone.com/labs/inside-malicious-windows-apps-for-malware-deployment/
+    Ref: https://twitter.com/0gtweet/status/1675583251161792512
+
+
+- Description: Gets content of App Paths subkeys
+  Author: M. Cohen
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/apppaths.pl
+  Category: System Info
+  Root: HKEY_USERS
+  Glob: "/*/Software/Microsoft/Windows/CurrentVersion/App Paths"
+  Filter: x=>true
+  Preamble:
+  - |
+    LET GetAppPaths(OSPath) = SELECT OSPath, Mtime, FetchKeyValues(OSPath=OSPath) AS App
+      FROM glob(root=OSPath, globs="*", accessor="registry")
+      WHERE IsDir
+  Details: |
+    x=>GetAppPaths(OSPath=x.OSPath)
+
+- Description: Gets content of App Paths subkeys
+  Author: M. Cohen
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/apppaths.pl
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: "Microsoft\\Windows\\CurrentVersion\\App Paths"
+  Filter: x=>true
+  Preamble:
+  - |
+    LET GetAppPaths(OSPath) = SELECT OSPath, Mtime, FetchKeyValues(OSPath=OSPath) AS App
+      FROM glob(root=OSPath, globs="*", accessor="registry")
+      WHERE IsDir
+  Details: |
+    x=>GetAppPaths(OSPath=x.OSPath)
+
+- Description: Get autolaunch entries for when user connects to Terminal Server
+  Author: M. Cohen
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appsetup.pl
+  Category: Persistence
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: "Microsoft\\Windows NT\\CurrentVersion\\WinLogon\\AppSetup"
+  Comment: |
+    Analysis Tip: The commands listed will be launched when the user
+    connects to a Terminal Server. The entries will be found in the
+    system32 folder.
+
+- Description: Gets contents of user's Intellipoint\\AppSpecific subkeys
+  Author: M. Cohen
+  Reference: https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appspecific.pl
+  Category: System Info
+  Root: HKEY_USERS
+  Glob: "/*/Software\\Microsoft\\IntelliPoint\\AppSpecific\\*"
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
+
+- Description: Checks for persistence via Universal Windows Platform Apps
+  Author: M. Cohen
+  Reference: |
+    https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appx.pl
+    https://oddvar.moe/2018/09/06/persistence-using-universal-windows-platform-apps-appx/
+  Category: Persistence
+  Root: HKEY_USERS
+  Glob: "/*/Software\\Microsoft\\Windows\\CurrentVersion\\PackagedAppXDebug/*"
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
+
+- Description: Checks for persistence via Universal Windows Platform Apps
+  Author: M. Cohen
+  Reference: |
+    https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appx.pl
+    https://oddvar.moe/2018/09/06/persistence-using-universal-windows-platform-apps-appx/
+  Category: Persistence
+  Root: HKEY_USERS
+  Filter: x=>true
+  Glob: "/*/Software/Classes/ActivatableClasses/Package/*/DebugInformation/*"
+  Details: |
+    x=>dict(Application=x.OSPath[-1],
+            DebugPath=GetValue(OSPath=OSPath + "DebugPath"))
+
+- Description: Get shell open command settings for various file types
+  Author: M. Cohen
+  Reference: |
+    https://github.com/keydet89/RegRipper4.0/blob/main/plugins/assoc.pl
+    https://cocomelonc.github.io/malware/2022/08/26/malware-pers-9.html
+  Comment: |
+    Malware can persist by taking over the default actions when a user
+    double-clicks a particular file type.
+  Category: Persistence
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: "Classes/*/shell/{open,edit}/command/@"
+  Details: |
+    x=>dict(Application=x.OSPath[3],
+            Key=OSPath,
+            Command=GetValue(OSPath=OSPath))
+
+- Description: Automount settings
+  Reference: |
+    https://github.com/keydet89/RegRipper4.0/blob/main/plugins/automount.pl
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob:  ControlSet*/Services/mountmgr
+  Filter: x=>true
+  Details: |
+    x=>dict(
+        NoAutoMount=GetValue(OSPath=x.OSPath + "NoAutoMount"),
+        Automount=if(condition=GetValue(OSPath=x.OSPath + "NoAutoMount"),
+          then="Disabled", else="Enabled"))

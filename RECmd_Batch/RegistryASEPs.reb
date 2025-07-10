@@ -711,14 +711,6 @@ Keys:
         Recursive: false
         Comment:
     -
-        Description: Exefile Shell Open Command
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\Exefile\Shell\Open\Command
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
         Description: Classes Filter
         HiveType: Software
         Category: ASEP Classes
@@ -1845,14 +1837,6 @@ Keys:
         Recursive: false
         Comment:
     -
-        Description: Windows NT CV Windows RequireSignedAppInit_DLLs
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Windows
-        ValueName: RequireSignedAppInit_DLLs
-        Recursive: false
-        Comment:
-    -
         Description: Windows NT CV Windows Run
         HiveType: Software
         Category: ASEP
@@ -2646,14 +2630,6 @@ Keys:
         Category: ASEP
         KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows
         ValueName: Load
-        Recursive: false
-        Comment:
-    -
-        Description: Wow6432 Windows NT CV Windows RequireSignedAppInit_DLLs
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows
-        ValueName: RequireSignedAppInit_DLLs
         Recursive: false
         Comment:
     -

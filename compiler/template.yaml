@@ -6,6 +6,17 @@ description: |
 
    Read more about this artifact here https://github.com/Velocidex/registry_hunter
 
+   ## Collecting only few rules
+
+   This artifact contains thousands of rules and by default performs
+   deep registry analysis. If you do not need to apply all the rules,
+   simply navigate to:
+
+     https://registry-hunter.velocidex.com/docs/rules/
+
+   Select the rule you want and add the description to the
+   `DescriptionFilter` parameter below.
+
    ## RemappingStrategy
 
    In order to present a unified view of all registry hives we remap various
@@ -236,28 +247,45 @@ export: |
       RegistryPath="HKEY_USERS\\" + OSPath[-2]) AS Mapping
     FROM glob(globs="*/NTUser.dat", root=PathTOUsers)
 
+    LET _map_userclass = SELECT
+    _map_file_to_reg_path(
+      HivePath=OSPath,
+      RegMountPoint="/",
+      Accessor=DefaultAccessor,
+      Description=format(
+         format="Map UsrClass.dat from User %v to HKEY_USERS/%v/Software/Classes",
+         args=[OSPath[2], OSPath[2]]),
+
+      -- This is technically the SID but it is clearer to just use the username
+      RegistryPath="HKEY_USERS\\" + OSPath[2] + "\\Software\\Classes") AS Mapping
+    FROM glob(globs="*/AppData/Local/Microsoft/Windows/UsrClass.dat",
+              root=PathTOUsers)
+
+
     LET _log_array(Message) = if(condition=log(message=Message), then=[])
 
     // Apply the mappings:
-    LET RemapRules = if(condition=RemappingStrategy =~ "API",
-       then=_api_remapping +
-            _unmounted_hive_mapping +
-            _raw_hive_mapping_for_api + _log_array(Message="Using API Mapping"),
-
-    else=if(condition=RemappingStrategy =~ "API.+NTUser",
+    LET RemapRules = if(condition=RemappingStrategy =~ "API.+NTUser",
        then=_api_remapping +
             _map_ntuser.Mapping +
+            _map_userclass.Mapping +
             _unmounted_hive_mapping +
             _raw_hive_mapping_for_api  +
             _log_array(Message="Using API And NTUser.dat Mapping"),
 
+    else=if(condition=RemappingStrategy =~ "API",
+       then=_api_remapping +
+            _unmounted_hive_mapping +
+            _log_array(Message="Using API Mapping"),
+
     else=if(condition=RemappingStrategy =~ "raw hive",
        then=_map_ntuser.Mapping +
+            _map_userclass.Mapping +
             _unmounted_hive_mapping +
             _standard_mappings +
             _raw_hive_mapping_for_api +
             _log_array(Message="Using Raw Hives Mapping"),
-       else=log(message="Unsupported remapping strategy %v", args=RemappingStrategy))))
+    else=log(message="Unsupported remapping strategy %v", args=RemappingStrategy))))
 
 {{ .Preamble }}
 
