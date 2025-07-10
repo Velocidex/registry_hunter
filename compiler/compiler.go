@@ -111,6 +111,11 @@ func (self *Compiler) normalizeRule(r *config.RegistryRule) []config.RegistryRul
 	r.Root = self.normalizeRoot(r.Description,
 		pathSepRegex.ReplaceAllString(r.Root, "\\"))
 
+	if r.Category == "" {
+		fmt.Printf("Warning: Rule %v is missing category\n", r.Description)
+		r.Category = "Misc"
+	}
+
 	// Expand the glob expression to support brace expansions
 	globs := []string{}
 	_brace_expansion(r.Glob, &globs)

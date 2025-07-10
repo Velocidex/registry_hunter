@@ -224,22 +224,6 @@ Keys:
         Recursive: true
         Comment:
     -
-        Description: Windows AppInit_DLLs
-        HiveType: Software
-        Category: ASEP
-        KeyPath: WOW6432Node\Microsoft\Windows NT\CurrentVersion\Windows
-        ValueName: AppInit_DLLs
-        Recursive: true
-        Comment:
-    -
-        Description: Windows RequireSignedAppInit_DLLs
-        HiveType: Software
-        Category: ASEP
-        KeyPath: WOW6432Node\Microsoft\Windows NT\CurrentVersion\Windows
-        ValueName: RequireSignedAppInit_DLLs
-        Recursive: true
-        Comment:
-    -
         Description: Winlogon
         HiveType: Software
         Category: ASEP

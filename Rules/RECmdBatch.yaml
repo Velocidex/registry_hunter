@@ -1067,12 +1067,6 @@ Rules:
   Comment: CCleaner Browser Registry artifacts
   Glob: WOW6432Node\Piriform\Browser\**
   Root: HKEY_LOCAL_MACHINE\Software
-- Description: App Paths
-  Category: Installed Software
-  Author: Andrew Rathbun
-  Comment: Displays list of installed software and the associated application paths
-  Glob: Microsoft\Windows\CurrentVersion\App Paths
-  Root: HKEY_LOCAL_MACHINE\Software
 - Description: File Extensions
   Category: Installed Software
   Author: Andrew Rathbun
@@ -1793,11 +1787,6 @@ Rules:
   Category: ASEP Classes
   Author: Troy Larson
   Glob: Classes\Drive\shellex\ContextMenuHandlers\*\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Exefile Shell Open Command
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\Exefile\Shell\Open\Command\@
   Root: HKEY_LOCAL_MACHINE\Software
 - Description: Classes Filter
   Category: ASEP Classes
@@ -2530,11 +2519,6 @@ Rules:
   Author: Troy Larson
   Glob: Microsoft\Windows NT\CurrentVersion\Windows\Load
   Root: HKEY_LOCAL_MACHINE\Software
-- Description: Windows NT CV Windows RequireSignedAppInit_DLLs
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Windows\RequireSignedAppInit_DLLs
-  Root: HKEY_LOCAL_MACHINE\Software
 - Description: Windows NT CV Windows Run
   Category: ASEP
   Author: Troy Larson
@@ -3056,11 +3040,6 @@ Rules:
   Category: ASEP
   Author: Troy Larson
   Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\Load
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Windows NT CV Windows RequireSignedAppInit_DLLs
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\RequireSignedAppInit_DLLs
   Root: HKEY_LOCAL_MACHINE\Software
 - Description: Wow6432 Windows NT CV Windows Run
   Category: ASEP
