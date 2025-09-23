@@ -8,7 +8,7 @@ Rules:
   Query: |
     SELECT * FROM chain(a={
       SELECT Description, Category, OSPath, Mtime,
-           dict(Uploaded=upload(filename=OSPath), Type="Config File") AS Details
+           dict(Uploaded=upload(file=OSPath), Type="Config File") AS Details
       FROM glob(globs="C:\\Users\\*\\AppData\\Roaming\\rclone\\rclone.conf")
     }, b={
       SELECT Description, Category, OSPath, Mtime,
