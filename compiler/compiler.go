@@ -11,7 +11,6 @@ import (
 	"regexp"
 	"sort"
 	"strings"
-	"text/template"
 	"time"
 
 	"github.com/Velocidex/ordereddict"
@@ -40,6 +39,9 @@ var (
 
 //go:embed template.yaml
 var artifact_template string
+
+//go:embed meta_template.yaml
+var artifact_meta_template string
 
 type templateParameters struct {
 	Name     string
@@ -154,6 +156,7 @@ func (self *Compiler) LoadRules(filename string) error {
 
 			if r.Query != "" {
 				self.queries = append(self.queries, r)
+				self.rules = append(self.rules, r)
 				continue
 			}
 
@@ -216,17 +219,7 @@ func (self *Compiler) buildPreamble() string {
 		result += k + "\n"
 	}
 
-	return self.indent(result, "    ")
-}
-
-func (self *Compiler) indent(in string, indent string) string {
-	lines := strings.Split(in, "\n")
-	result := make([]string, 0, len(lines))
-	for _, l := range lines {
-		result = append(result, indent+l)
-	}
-
-	return strings.Join(result, "\n")
+	return indent(result, 4)
 }
 
 func (self *Compiler) saveFile(filename string, item interface{}) error {
@@ -261,11 +254,6 @@ func (self *Compiler) GetRules() []byte {
 }
 
 func (self *Compiler) Compile() (string, error) {
-	tmpl, err := template.New("").Parse(artifact_template)
-	if err != nil {
-		return "", err
-	}
-
 	categories := self.buildCategories()
 	parameters := &templateParameters{
 		Name:           "Windows.Registry.Hunter",
@@ -278,7 +266,15 @@ func (self *Compiler) Compile() (string, error) {
 		Time:           time.Now().UTC().Format(time.RFC3339),
 	}
 
-	var b bytes.Buffer
-	err = tmpl.Execute(&b, parameters)
-	return string(b.Bytes()), err
+	return calculateTemplate(artifact_template, parameters)
+}
+
+// A Meta artifact is used to verify the VQL of embedded rules.
+func (self *Compiler) CompileMeta() (string, error) {
+	parameters := &templateParameters{
+		Name:  "MetaArtifact",
+		Rules: self.rules,
+		Time:  time.Now().UTC().Format(time.RFC3339),
+	}
+	return calculateTemplate(artifact_meta_template, parameters)
 }

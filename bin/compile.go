@@ -17,6 +17,8 @@ var (
 	output_artifact = compile_cmd.Flag("output", "Where to write the final artifact").
 			Required().String()
 
+	output_meta_artifact = compile_cmd.Flag("meta", "Where to write the meta artifact").String()
+
 	output_make_zip = compile_cmd.Flag("make_zip", "Produce a ZIP file we can use to hunt").
 			Bool()
 
@@ -72,6 +74,23 @@ func makeFile(rules_compiler *compiler.Compiler) error {
 	return err
 }
 
+func makeMetaFile(rules_compiler *compiler.Compiler) error {
+	out_fd, err := os.OpenFile(*output_meta_artifact,
+		os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0600)
+	if err != nil {
+		return err
+	}
+	defer out_fd.Close()
+
+	artifact, err := rules_compiler.CompileMeta()
+	if err != nil {
+		return err
+	}
+
+	_, err = out_fd.Write([]byte(artifact))
+	return err
+}
+
 func doCompile() error {
 	rules_compiler := compiler.NewCompiler()
 
@@ -93,6 +112,13 @@ func doCompile() error {
 
 	if *output_make_zip {
 		return makeZip(rules_compiler)
+	}
+
+	if *output_meta_artifact != "" {
+		err := makeMetaFile(rules_compiler)
+		if err != nil {
+			return err
+		}
 	}
 
 	return makeFile(rules_compiler)

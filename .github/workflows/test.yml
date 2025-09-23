@@ -19,9 +19,25 @@ jobs:
       with:
         submodules: recursive
 
+    - name: Download Latest Velociraptor
+      uses: robinraju/release-downloader@v1
+      id: velociraptor
+      with:
+        repository: velocidex/velociraptor
+        tag: v0.75
+        fileName: "velociraptor-v0.75.2-linux-amd64-musl"
+        out-file-path: tests
+
     - name: Build artifacts
       run: |
         make all recmd artifact
+
+    - name: Run Velociraptor
+      run: |
+        mv ${{ fromJson(steps.velociraptor.outputs.downloaded_files)[0]}} ./tests/velociraptor
+        chmod +x ./tests/velociraptor
+        ls -l ./output/
+        ./tests/velociraptor artifacts verify --builtin -v ./output/*.yaml
 
     - name: Run tests
       run: |
