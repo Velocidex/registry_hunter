@@ -9,7 +9,7 @@ recmd:
 
 # Build the YAML artifact
 artifact:
-	./reghunter compile --output output/Windows.Registry.Hunter.yaml Rules/*.yaml
+	./reghunter compile --output output/Windows.Registry.Hunter.yaml --meta output/Windows.Registry.Hunter.Meta.yaml Rules/*.yaml
 
 # Build the ZIP file for importing
 artifact_zip:

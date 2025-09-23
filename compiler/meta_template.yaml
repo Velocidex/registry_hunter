@@ -1,0 +1,9 @@
+name: MetaArtifact
+sources:
+{{- range .Rules }}
+{{- if .Query }}
+- name: {{ .Description }}
+  query: |
+{{ Indent .Query 4 }}
+{{- end -}}
+{{- end -}}
