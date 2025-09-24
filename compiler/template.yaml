@@ -30,7 +30,7 @@ description: |
       except for all the raw user hives will be mapped in HKEY_USERS.
       Therefore all users will be visible.
    3. Raw Hives - This stragegy is most suitable for working off an image or
-       acquired hive files. All raw hives will be mapped (include SYSTEM, SOFTWARE etc).
+      acquired hive files. All raw hives will be mapped (include SYSTEM, SOFTWARE etc).
 
    Using the API will result in faster collection times, but may be some
    differences:
@@ -42,6 +42,16 @@ description: |
    * Some hive files are not accessible and can only be accessible using the
      API (e.g. the BCD hives).
 
+   ## CollectionPolicy
+
+   Some rules attempt to resolve links to other files on the disk. For
+   example, category `Autoruns` may attempt to resolve the actual
+   binaries being launched. These targets may be collected according
+   to the `CollectionPolicy`. By default targets are not
+   resolved. However, you may specify that unsigned binaries be
+   collected (uploaded to the server), or other files (e.g. a `lnk`
+   file).
+
 parameters:
 - name: Categories
   type: multichoice
@@ -51,19 +61,21 @@ parameters:
    {{- range $val := .Categories }}
     - "{{ $val }}"
    {{- end }}
-- name: CategoryFilter
-  description: If this is set we use the regular expression instead of the choices above.
-  type: regex
-- name: CategoryExcludedFilter
-  description: Exclude any categories based on this regular expression
-  type: regex
-  default: XXXXXX
-- name: DescriptionFilter
+- name: RuleFilter
   type: regex
   default: .
-- name: RootFilter
-  type: regex
-  default: .
+
+- name: CollectionPolicy
+  description: |
+    Extract targets will be collected using this policy.
+  type: choices
+  choices:
+    - ExcludeSigned
+    - HashOnly
+    - AllFiles
+    - None
+  default: HashOnly
+
 - name: RemappingStrategy
   description: |
      In order to present a unified view of all registry hives we remap various hives
@@ -87,46 +99,100 @@ parameters:
   type: bool
   description: If checked, we also upload all the hives.
 
-- name: PathTOSAM
-  description: "By default, hive is at C:/Windows/System32/Config/SAM"
-
-- name: PathTOAmcache
-  description: "By default, hive is at C:/Windows/appcompat/Programs/Amcache.hve"
-
-- name: PathTOSecurity
-  description: "By default, hive is at C:/Windows/System32/Config/SECURITY"
-
-- name: PathTOSystem
-  description: "By default, hive is at C:/Windows/System32/Config/SYSTEM"
-
-- name: PathTOSoftware
-  description: "By default, hive is at C:/Windows/System32/Config/SOFTWARE"
-
-- name: PathTOUsers
-  description: "By default, directory is at C:/Users"
-
-- name: NTFS_CACHE_TIME
-  type: int
-  description: How often to flush the NTFS cache. (Default is never).
-  default: "1000000"
-
 - name: DEBUG
   type: bool
   description: Add more logging.
 
+implied_permissions:
+- IMPERSONATION
+
 export: |
     LET _info <= SELECT * FROM info()
+    LET S = scope()
+    LET RootFilter <= S.RootFilter || "."
+    LET NTFS_CACHE_TIME <= S.NTFS_CACHE_TIME || 1000000
+    LET CollectionPolicy <= S.CollectionPolicy || "ExcludeSigned"
+
+    LET CollectionPolicy <= if(condition=RemappingStrategy =~ "API",
+      then= CollectionPolicy,
+      else=log(message="CollectionPolicy set to None as RemappingStrategy strategy is not API based") && "None")
+
+    LET MaxFileSize <= S.MaxFileSize || 0
+    LET MaxHashSize <= S.MaxHashSize || 100000000
+
+    // In ExcludeSigned and HashOnly we dont upload signed binaries.
+    LET ShouldUploadSignedBinary <= dict(
+       ShouldUpload = NOT CollectionPolicy =~ "ExcludeSigned|HashOnly")
+
+    // In HashOnly mode we never upload anything.
+    LET ShouldUploadAnyFile <= dict(
+       ShouldUpload = NOT CollectionPolicy =~ "HashOnly|None")
+
+    LET DoNotUpload <= dict(ShouldUpload=FALSE)
+
+    // Determine if we should upload the file based on signature.
+    LET ShouldUpload(Details) = if(
+      condition=MaxFileSize > 0 AND Details.Stat.Size > MaxFileSize,
+      then= Details + DoNotUpload,
+      else=if(
+       // What to do about binaries? If they have an issuer name then
+       // they are signed.
+       condition=Details.Signatures.IssuerName,
+       then=Details + ShouldUploadSignedBinary,
+       else=Details + ShouldUploadAnyFile))
+
+    // If the file is a binary, also add authenticode information.
+    LET MaybeBinary(OSPath, Details) = ShouldUpload(Details=if(
+       condition=Details.Magic =~ "PE.+executable",
+       then=Details + dict(Signatures=authenticode(filename=OSPath)),
+       else=Details))
+
+    // Hash the file if it is not too large
+    LET MaybeHash(OSPath) = if(
+      condition=stat(filename=OSPath).Size < MaxHashSize,
+      then=hash(path=OSPath),
+      else=log(message="Skipped hashing %v", args=OSPath, dedup=-1) && dict())
+
+    LET MaybeUpload(OSPath, Details) = if(condition=Details.ShouldUpload,
+      then=Details + dict(Upload=upload(file=OSPath)),
+      else=Details)
+
+    // Calculate the details column with hashes and magic.
+    LET _GetDetails(OSPath) = if(condition= CollectionPolicy =~ "None",
+    then=dict(),
+    else=MaybeUpload(OSPath=OSPath, Details=MaybeBinary(
+       OSPath=OSPath,
+       Details=dict(Hashes=MaybeHash(OSPath=OSPath),
+                    Stat=stat(filename=OSPath),
+                    Magic=magic(path=OSPath)))))
+
+    LET GetDetails(OSPath) = cache(
+       func= _GetDetails(OSPath=OSPath),
+       name="GetDetails", key=OSPath.String)
+
+    -- This contains the metadata for Glob rules.
+    LET _MD <= parse_json_array(data=gunzip(string=base64decode(string="{{.Metadata }}")))
+    LET MD(DescriptionFilter, RootFilter, CategoryFilter, CategoryExcludedFilter) =
+     SELECT Glob, Category, Description,
+            get(field="Details") AS Details,
+            get(field="Comment") AS Comment,
+            get(field="Filter") AS Filter, Root
+     FROM _MD
+     WHERE Description =~ DescriptionFilter
+       AND Root =~ RootFilter
+       AND Category =~ CategoryFilter
+       AND NOT Category =~ CategoryExcludedFilter
 
     -- On Non Windows systems we need to use case insensitive accessor or we might not find the right hives.
     LET DefaultAccessor <= if(condition=_info[0].OS =~ "windows", then="ntfs", else="file_nocase")
     LET HKLM <= pathspec(parse="HKEY_LOCAL_MACHINE", path_type="registry")
-    LET RootDrive <= pathspec(Path=RootDrive)
-    LET PathTOSAM <= PathTOSAM || RootDrive + "Windows/System32/config/SAM"
-    LET PathTOAmcache <= PathTOAmcache || RootDrive + "Windows/appcompat/Programs/Amcache.hve"
-    LET PathTOSystem <= PathTOSystem || RootDrive + "Windows/System32/Config/System"
-    LET PathTOSecurity <= PathTOSecurity || RootDrive + "Windows/System32/Config/Security"
-    LET PathTOSoftware <= PathTOSoftware || RootDrive + "Windows/System32/Config/Software"
-    LET PathTOUsers <= PathTOUsers || RootDrive + "Users/"
+    LET RootDrive <= pathspec(Path=S.RootDrive || "C:/")
+    LET PathTOSAM <= S.PathTOSAM || RootDrive + "Windows/System32/config/SAM"
+    LET PathTOAmcache <= S.PathTOAmcache || RootDrive + "Windows/appcompat/Programs/Amcache.hve"
+    LET PathTOSystem <= S.PathTOSystem || RootDrive + "Windows/System32/Config/System"
+    LET PathTOSecurity <= S.PathTOSecurity || RootDrive + "Windows/System32/Config/Security"
+    LET PathTOSoftware <= S.PathTOSoftware || RootDrive + "Windows/System32/Config/Software"
+    LET PathTOUsers <= S.PathTOUsers || RootDrive + "Users/"
 
     -- HivePath: The path to the hive on disk
     -- RegistryPath: The path in the registry to mount the hive
@@ -186,7 +252,16 @@ export: |
           Description="Map Amcache to /Amcache/"),
     )
 
+    LET _Env = SELECT _value FROM items(item= {
+       SELECT * FROM environ()
+    })
+    LET Env <= _Env[0]._value
+
     LET _api_remapping <= (
+        dict(type="impersonation",
+            os="windows",
+            hostname="RegistryMapper",
+            env=Env),
         -- By default remap the entire "registry" accessor for API access.
         dict(type="mount",
           `from`=dict(accessor="registry", prefix='/', path_type='registry'),
@@ -292,32 +367,6 @@ export: |
     -- This contains the queries for Full Query Rules - they skip the glob and just run arbitrary VQL.
     LET FullQueries <= parse_json_array(data=gunzip(string=base64decode(string="{{ .QueriesJSON }}")))
 
-    LET AllFullQueries <=
-        SELECT * FROM FullQueries
-        WHERE Category =~ CategoryFilter
-          AND Description =~ DescriptionFilter
-
-    -- This contains the metadata for Glob rules.
-    LET _MD <= parse_json_array(data=gunzip(string=base64decode(string="{{.Metadata }}")))
-    LET MD(DescriptionFilter, RootFilter, CategoryFilter, CategoryExcludedFilter) =
-     SELECT Glob, Category, Description,
-            get(field="Details") AS Details,
-            get(field="Comment") AS Comment,
-            get(field="Filter") AS Filter, Root
-     FROM _MD
-     WHERE Description =~ DescriptionFilter
-       AND Root =~ RootFilter
-       AND Category =~ CategoryFilter
-       AND NOT Category =~ CategoryExcludedFilter
-
-    LET AllRules <=
-      SELECT * FROM MD(DescriptionFilter=DescriptionFilter, RootFilter=RootFilter,
-        CategoryFilter=CategoryFilter, CategoryExcludedFilter=CategoryExcludedFilter)
-
-    LET AllGlobs <=
-      SELECT Root, enumerate(items=Glob) AS Globs
-      FROM AllRules
-      GROUP BY Root
 
 sources:
 - name: Remapping
@@ -329,6 +378,16 @@ sources:
 
 - name: Rules
   query: |
+    LET CategoryFilter <= S.CategoryFilter || join(array=Categories, sep="|")
+    LET AllFullQueries <=
+        SELECT * FROM FullQueries
+        WHERE Category =~ CategoryFilter
+          AND Description =~ RuleFilter
+
+    LET AllRules <=
+      SELECT * FROM MD(DescriptionFilter=RuleFilter, RootFilter=RootFilter,
+        CategoryFilter=CategoryFilter, CategoryExcludedFilter=S.CategoryExcludedFilter)
+
     SELECT * FROM chain(a=AllRules, b=AllFullQueries)
   notebook:
   - type: none
@@ -338,6 +397,11 @@ sources:
   - type: none
 
   query: |
+    LET AllGlobs <=
+      SELECT Root, enumerate(items=Glob) AS Globs
+      FROM AllRules
+      GROUP BY Root
+
     SELECT * FROM AllGlobs
 
 - name: Uploads
@@ -381,6 +445,21 @@ sources:
 
    {{- end }}
   query: |
+    LET CategoryFilter <= S.CategoryFilter || join(array=Categories, sep="|")
+    LET AllFullQueries <=
+        SELECT * FROM FullQueries
+        WHERE Category =~ CategoryFilter
+          AND Description =~ RuleFilter
+
+    LET AllRules <=
+      SELECT * FROM MD(DescriptionFilter=RuleFilter, RootFilter=RootFilter,
+        CategoryFilter=CategoryFilter, CategoryExcludedFilter=S.CategoryExcludedFilter)
+
+    LET AllGlobs <=
+      SELECT Root, enumerate(items=Glob) AS Globs
+      FROM AllRules
+      GROUP BY Root
+
     LET GlobsMD <= to_dict(item={
       SELECT Root AS _key, Globs AS _value FROM AllGlobs
     })

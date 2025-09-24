@@ -12,7 +12,7 @@ func (self *Compiler) WriteIndex(path string) error {
 		return err
 	}
 
-	serialized, _ := json.Marshal(self.rules)
+	serialized, _ := json.MarshalIndent(self.rules, " ", " ")
 	out_fd.Write(serialized)
 	return out_fd.Close()
 }

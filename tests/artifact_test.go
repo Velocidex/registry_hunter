@@ -157,11 +157,11 @@ func (self *RegistryHunterTestSuite) SetupTest() {
 }
 
 type testCase struct {
-	Name              string
-	Artifact          string
-	DescriptionFilter string
-	Root              string
-	Columns           []string
+	Name       string
+	Artifact   string
+	RuleFilter string
+	Root       string
+	Columns    []string
 
 	Disable bool
 }
@@ -175,124 +175,124 @@ var (
 		// Cover off on all the different hives we are supposed to map
 		{
 			// Covers HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services
-			Name:              "Interface Properties",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "Interface Properties",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "Interface Properties",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "Interface Properties",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
 			// Covers HKEY_LOCAL_MACHINE\Software
-			Name:              "WinLogon",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "WinLogon: Displays the details of the last user",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "WinLogon",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "WinLogon: Displays the details of the last user",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
 			// Covers HKEY_LOCAL_MACHINE\System
-			Name:              "System Info",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "System Info",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "System Info",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "System Info",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
 			// Covers HKEY_LOCAL_MACHINE\System
-			Name:              "Firewall Rules",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "Firewall Rules",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "Firewall Rules",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "Firewall Rules",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
 			// Covers HKEY_USERS
-			Name:              "Regedit.exe",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "Regedit.exe",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "Regedit.exe",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "Regedit.exe",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
 			// Covers HKEY_USERS
-			Name:              "MRU",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "MRU",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "MRU",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "MRU",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
 			// Covers HKEY_USERS
-			Name:              "UserAssist",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "UserAssist",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "UserAssist",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "UserAssist",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
 			// Covers HKEY_USERS
-			Name:              "WordWheelQuery",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "WordWheelQuery",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "WordWheelQuery",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "WordWheelQuery",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
 			// Covers HKEY_LOCAL_MACHINE\System
-			Name:              "Background Activity Moderator",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "Background Activity Moderator",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "Background Activity Moderator",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "Background Activity Moderator",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
-			Name:              "UserAssist",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "UserAssist",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "UserAssist",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "UserAssist",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
-			Name:              "Recent File List",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "Recent File List",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "Recent File List",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "Recent File List",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
-			Name:              "User Shell Folders",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "User Shell Folders",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "User Shell Folders",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "User Shell Folders",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
-			Name:              "RDP",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "RDP",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "RDP",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "RDP",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
-			Name:              "Scheduled Tasks",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "Scheduled Tasks",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "Scheduled Tasks",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "Scheduled Tasks",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
-			Name:              "Services",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "Services",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "Services",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "Services",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 		{
-			Name:              "Environment",
-			Artifact:          "Windows.Registry.Hunter/Results",
-			DescriptionFilter: "Environment",
-			Root:              reghiveTestDirectory,
-			Columns:           standardColumns,
+			Name:       "Environment",
+			Artifact:   "Windows.Registry.Hunter/Results",
+			RuleFilter: "Environment",
+			Root:       reghiveTestDirectory,
+			Columns:    standardColumns,
 		},
 	}
 )
@@ -319,11 +319,11 @@ func (self *RegistryHunterTestSuite) TestArtifact() {
 		RootDrive, _ := filepath.Abs(test.Root)
 		cmdline := []string{
 			self.binary, "--logfile", log_file.Name(),
-			"--definitions", artifactPath,
+			"--definitions", artifactPath, "--debug", "--debug_port", "6061",
 			"artifacts", "collect", test.Artifact, "--format", "jsonl",
 			"--args", "RootDrive=" + RootDrive,
 			"--args", `RemappingStrategy=Raw Hives`,
-			"--args", "DescriptionFilter=" + test.DescriptionFilter,
+			"--args", "RuleFilter=" + test.RuleFilter,
 		}
 		fmt.Printf("Testing %v\nRunning command %v\n", test.Name, cmdline)
 
