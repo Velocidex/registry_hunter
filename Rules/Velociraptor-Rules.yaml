@@ -16,7 +16,7 @@ Preamble:
       WHERE Name =~ Regex
     })
 
-  # Convert from a numeric protocl id to a name.
+  # Convert from a numeric protocol id to a name.
   - |
     LET _ProtocolLookup <= dict(`6`="TCP", `17`="UDP")
     LET ProtocolLookup(X) = get(item=_ProtocolLookup, field=X) || X
@@ -58,6 +58,15 @@ Preamble:
        SELECT * FROM items(item=D)
        WHERE _value
     })
+
+  # Try to parse the path into something resembling the binary.
+  # Sometimes we see things like "\SystemRoot\System32\..." which
+  # should be expanded into "%SystemRoot%\System32"
+  - LET ExpandPath(Path) = commandline_split(
+    command=expand(path=regex_transform(source=Path,
+      map=dict(
+        `^\\\\SystemRoot\\\\`="%SystemRoot%\\"
+      ))))[0]
 
 Rules:
 - Description: Interface Properties (IPv4)
@@ -145,7 +154,11 @@ Rules:
        WHERE NOT _key =~ "^v"
     })
 
-    LET ParseFirewallRule(X) = _ParseFirewallRule(X=X) +
+    LET MaybeEnrichFirewallRule(OSPath, Details) = if(condition=Details.App,
+    then=Details + GetDetails(OSPath=ExpandPath(Path=Details.App)), else=Details)
+
+    LET ParseFirewallRule(X) = MaybeEnrichFirewallRule(
+       OSPath=OSPath, Details=_ParseFirewallRule(X=X)) +
        dict(Protocol=ProtocolLookup(X=_ParseFirewallRule(X=X).Protocol))
 
   Details: |
@@ -459,8 +472,16 @@ Rules:
   Root: HKEY_LOCAL_MACHINE\Software
   Glob: 'Microsoft\Windows\CurrentVersion\Run*'
   Filter: x=>IsDir AND Details
+  Preamble:
+  - LET EnumerateRunKey(OSPath) = SELECT Name,
+        Data.value AS RawTarget,
+        ExpandPath(Path=Data.value) AS CommandImage,
+        GetDetails(OSPath=ExpandPath(Path=Data.value)) AS Details
+    FROM glob(accessor="registry", globs="*", root=OSPath)
+    WHERE NOT IsDir
+
   Details: |
-    x=>FetchKeyValues(OSPath=x.OSPath)
+    x=>EnumerateRunKey(OSPath=x.OSPath)
 
 - Author: Andrew Rathbun, Mike Cohen
   Description: Scheduled Tasks (TaskCache)
@@ -559,12 +580,18 @@ Rules:
       LET _ServiceTypeLookup <= dict(`1`="KernelDriver", `2`="FileSystemDriver", `4`="Adapter", `8`="RecognizerDriver", `16`="Win32OwnProcess", `32`="Win32ShareProcess", `256`="InteractiveProcess", `96`="Win32ShareProcess")
       LET _ServiceStartModeLookup <= dict(`0`="Boot", `1`="System", `2`="Automatic", `3`="Manual", `4`="Disabled")
 
-      LET _ServicesInfo(OSPath) =
-          FetchKeyValuesWithRegex(OSPath=OSPath, Regex="Description|DisplayName|ServiceDll|Group|ImagePath|RequiredPrivileges|Type|Parameters|SERVICEDLL") +
+      LET MaybeEnrichService(OSPath, Details) = if(condition=Details.ImagePath,
+       then=Details + GetDetails(OSPath=ExpandPath(Path=Details.ImagePath)),
+       else=Details)
+
+      LET _ServicesInfo(OSPath) = MaybeEnrichService(OSPath=OSPath, Details=
+          FetchKeyValuesWithRegex(OSPath=OSPath,
+               Regex="Description|DisplayName|ServiceDll|Group|ImagePath|RequiredPrivileges|Type|Parameters|SERVICEDLL") +
           dict(Mtime=Mtime, Service=OSPath.Basename,
                TypeName=get(item=_ServiceTypeLookup, field=str(str=GetValue(OSPath=OSPath + "Type"))),
                StartName=get(item=_ServiceStartModeLookup, field=str(str=GetValue(OSPath=OSPath + "Start")))
-          )
+          ))
+
   Details: |
     x=>_ServicesInfo(OSPath=x.OSPath)
 
