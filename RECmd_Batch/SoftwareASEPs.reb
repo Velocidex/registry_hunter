@@ -5,22 +5,6 @@ Version: 1.0
 Id: 0aca270c-9969-4c61-ad5e-6fe551dff59d
 Keys:
     -
-        Description: Clients StartMenuInternet shell open command
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Clients\StartMenuInternet\*\shell\open\command
-        ValueName: (default)
-        Recursive: true
-        Comment:
-    -
-        Description: Clients StartMenuInternet Shell RunAs Command
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Clients\StartMenuInternet\*\Shell\RunAs\Command
-        ValueName: (default)
-        Recursive: true
-        Comment:
-    -
         Description: Firefox Components
         HiveType: Software
         Category: ASEP

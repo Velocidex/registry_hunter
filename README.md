@@ -152,17 +152,19 @@ LET RuleName = "Active Setup Installed Components"
 LET _ <= SELECT artifact_set(definition=read_file(filename=OSPath)).name AS Name
 FROM glob(globs="F:/reghunter/*")
 
--- SELECT * FROM Artifact.Windows.Registry.Hunter(DescriptionFilter=RuleName, source="Remapping", RemappingStrategy="API")
--- SELECT * FROM Artifact.Windows.Registry.Hunter(DescriptionFilter=RuleName, source="Rules", RemappingStrategy="API")
-SELECT * FROM Artifact.Windows.Registry.Hunter(DescriptionFilter=RuleName, source="Results", RemappingStrategy="API")
+SELECT * FROM Artifact.Windows.Registry.Hunter(
+   CollectionPolicy="HashOnly",
+   RuleFilter=RuleName)
+WHERE _Source =~ "Results"
+
 ```
 
 In the above example, I am working on a rule called `Active Setup
 Installed Components`. The above query:
 
 1. Imports the new artifact that was just built from the shared folder.
-2. Runs the artifact with the API remapping strategy and a description
-   filter that should only select the rule I am working on right now.
+2. Runs the artifact with the HashOnly collection policy (This is a
+   bit faster than uploading all the targets).
 3. The results are shown from the Results source.
 
 Iterating is now very quick - I just rebuild the artifact in my dev

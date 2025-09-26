@@ -18,6 +18,8 @@ artifact_zip:
 test:
 	cd tests && make test
 
+verify: build recmd artifact
+	./tests/velociraptor artifacts verify -v ./output/*.yaml
 
 test_update:
 	cd tests && make test_update

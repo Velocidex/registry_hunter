@@ -59,14 +59,18 @@ Preamble:
        WHERE _value
     })
 
+  - LET _ExpandedTransforms <= dict(
+        `^\\\\SystemRoot\\\\`="%SystemRoot%\\",
+        `^C:\\\\Program Files.+`='"$0"',
+        `^%[^ ]+%.+`='"$0"'
+      )
+
   # Try to parse the path into something resembling the binary.
   # Sometimes we see things like "\SystemRoot\System32\..." which
   # should be expanded into "%SystemRoot%\System32"
   - LET ExpandPath(Path) = commandline_split(
     command=expand(path=regex_transform(source=Path,
-      map=dict(
-        `^\\\\SystemRoot\\\\`="%SystemRoot%\\"
-      ))))[0]
+      map=_ExpandedTransforms)))[0]
 
 Rules:
 - Description: Interface Properties (IPv4)
@@ -285,6 +289,7 @@ Rules:
 
   Details: |
     x=>dict(Program=rot13(string=x.OSPath.Basename),
+            Details=GetDetails(OSPath=rot13(string=x.OSPath.Basename)),
             NumberOfExecutions=_ExtractUserAssist(OSPath=x.Data).NumberOfExecutions,
             LastExecutionTime=_ExtractUserAssist(OSPath=x.Data).LastExecution)
 
@@ -555,7 +560,12 @@ Rules:
     ]]]
     ''')
 
-    LET _TaskCache(OSPath) = SELECT to_dict(item={
+    LET _TaskCacheEnrichBinaries(Details) =
+       Details + dict(BinaryInfo=GetDetails(
+           OSPath=ExpandPath(Path=Details.Actions.Action.Binary)))
+
+    LET _TaskCache(OSPath) = SELECT _TaskCacheEnrichBinaries(
+    Details=to_dict(item={
       SELECT OSPath.Basename AS _key,
         if(condition= OSPath.Basename =~ "DynamicInfo",
            then=_ParseDynamicInfo(Data=Data.value),
@@ -563,10 +573,12 @@ Rules:
            then=_ParseActions(Data=Data.value),
         else=Data.value)) AS _value
       FROM glob(accessor="registry", globs='*', root=OSPath)
-    }) + dict(OSPath=OSPath) AS Details
+    }) + dict(OSPath=OSPath)) AS Details
     FROM glob(accessor="registry", globs='*', root=OSPath)
+
+
   Details: |
-    x=>dict(Tasks= _TaskCache(OSPath=x.OSPath))
+    x=>_TaskCache(OSPath=x.OSPath).Details
 
 
 - Author: Andrew Rathbun, Mike Cohen
@@ -608,6 +620,17 @@ Rules:
   Glob: '*\Environment'
   Filter: x=>IsDir
   Details: x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Description: StartMenuInternet shell open command
+  Category: Autoruns
+  Author: Troy Larson and Mike Cohen
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Clients\StartMenuInternet\*\shell\*\command\@
+  Details: |
+    x=>dict(Command=x.Data,
+            Type=x.OSPath[-3],
+            Details=GetDetails(OSPath=ExpandPath(Path=x.Data)))
+
 
 - Description: Exploit Guards MitigationOptions
   Author: "@bmcdermott-r7 Blake McDermott"
@@ -676,3 +699,50 @@ Rules:
             DecValue=x.Data,
             HexValue=format(format="%#015x", args=x.Data),
             Parsed=ParseMitigationOptions(H=format(format="%#015x", args=x.Data)))
+
+
+- Description: TypeLib win64
+  Category: ASEP Classes
+  Author: Troy Larson and Mike Cohen
+  Glob: Classes\TypeLib\*\*\*\win64\@
+  Root: HKEY_LOCAL_MACHINE\Software
+  Preamble:
+    # Sometimes the path ends with an ordinal number for the exported
+    # class. For example: C:\Windows\System32\srm.dll\1
+    - LET _NormalizeClassDLL(OSPath) = if(
+      condition= OSPath.Basename =~ "^[1-9]+$",
+      then= OSPath.Dirname, else=OSPath)
+
+    - LET NormalizeClassDLL(OSPath) = _NormalizeClassDLL(
+       OSPath=pathspec(parse=OSPath, path_type="windows"))
+
+  Details: |
+    x=>GetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +
+       dict(ClassPath=x.Data)
+
+- Description: TypeLib win32
+  Category: ASEP Classes
+  Author: Troy Larson and Mike Cohen
+  Glob: Classes\TypeLib\*\*\*\win32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+  Details: |
+    x=>GetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +
+      dict(ClassPath=x.Data)
+
+- Description: Wow6432 TypeLib win64
+  Category: ASEP Classes
+  Author: Troy Larson and Mike Cohen
+  Glob: Classes\Wow6432Node\TypeLib\*\*\*\win64\@
+  Root: HKEY_LOCAL_MACHINE\Software
+  Details: |
+    x=>GetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +
+      dict(ClassPath=x.Data)
+
+- Description: Wow6432 TypeLib win32
+  Category: ASEP Classes
+  Author: Troy Larson and Mike Cohen
+  Glob: Classes\Wow6432Node\TypeLib\*\*\*\win32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+  Details: |
+    x=>GetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +
+     dict(ClassPath=x.Data)
