@@ -814,22 +814,6 @@ Keys:
         Recursive: false
         Comment:
     -
-        Description: TypeLib win32
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\TypeLib\*\*\*\win32
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: TypeLib win64
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\TypeLib\*\*\*\win64
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
         Description: Wow6432 shell Open Command
         HiveType: Software
         Category: ASEP Classes
@@ -1087,46 +1071,6 @@ Keys:
         HiveType: Software
         Category: ASEP Classes
         KeyPath: Classes\Wow6432Node\Interface\*\TypeLib
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: Wow6432 TypeLib win32
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\Wow6432Node\TypeLib\*\*\*\win32
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: Wow6432 TypeLib win64
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\Wow6432Node\TypeLib\*\*\*\win64
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: StartMenuInternet shell open command
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Clients\StartMenuInternet\*\shell\open\command
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: StartMenuInternet shell naom command
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Clients\StartMenuInternet\*\shell\naom\command
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: StartMenuInternet Shell RunAs Command
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Clients\StartMenuInternet\*\Shell\RunAs\Command
         ValueName: (default)
         Recursive: false
         Comment:

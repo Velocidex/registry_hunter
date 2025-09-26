@@ -7,7 +7,7 @@
    "Details": "x=\u003eAppCompatCache(Blob=read_file(accessor=\"registry\", filename=OSPath))\n",
    "Filter": "x=\u003etrue",
    "Preamble": [
-    "LET AppCompatCacheParser \u003c= '''[\n[\"HeaderWin10\", \"x=\u003ex.HeaderSize\", [\n  [\"HeaderSize\", 0, \"unsigned int\"],\n  [\"Entries\", \"x=\u003ex.HeaderSize\", Array, {\n      type: \"Entry\",\n      sentinel: \"x=\u003ex.Size = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n[\"HeaderWin8\", 128, [\n  [\"Entries\", 128, Array, {\n      type: \"EntryWin8\",\n      sentinel: \"x=\u003ex.EntrySize = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n\n[\"EntryWin8\", \"x=\u003ex.EntrySize + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"EntrySize\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14 + 10\", \"WinFileTime\"]\n]],\n\n[\"Entry\", \"x=\u003ex.Size + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"Size\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14\", \"WinFileTime\"],\n  [\"DataSize\", \"x=\u003ex.PathSize + 14 + 8\", \"uint32\"],\n  [\"Data\", \"x=\u003ex.PathSize + 14 + 8 + 4\" , \"String\", {\n      length: \"x=\u003ex.DataSize\",\n  }],\n\n  # The last byte of the Data block is 1 for execution\n  [\"Execution\", \"x=\u003ex.PathSize + 14 + 8 + 4 + x.DataSize - 4\", \"uint32\"]\n]],\n\n# This is the Win7 parser but we dont use it right now.\n[\"HeaderWin7x64\", 128, [\n  [\"Signature\", 0, \"uint32\"],\n  [\"Entries\", 128, \"Array\", {\n      count: 10000,\n      sentinel: \"x=\u003ex.PathSize = 0\",\n      type: EntryWin7x64,\n  }]\n]],\n[\"EntryWin7x64\", 48, [\n  [\"PathSize\", 0, \"uint16\"],\n  [\"PathOffset\", 8, \"uint32\"],\n  [\"Path\", \"x=\u003ex.PathOffset - x.StartOf\", \"String\", {\n      encoding: \"utf16\",\n      length: \"x=\u003ex.PathSize\",\n  }],\n  [\"LastMod\", 16, \"WinFileTime\"]\n]]\n\n]'''\n\nLET AppCompatCacheWin10(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin10\")\n\nLET AppCompatCacheWin8(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin8\")\n\nLET AppCompatCache(Blob) = SELECT LastMod, Path, Execution\nFROM foreach(\n  row=if(\n    condition=AppCompatCacheWin10(Blob=Blob).HeaderSize IN (52, 48),\n    then=AppCompatCacheWin10(Blob=Blob).Entries,\n    else=AppCompatCacheWin8(Blob=Blob).Entries))\n"
+    "LET AppCompatCacheParser \u003c= '''[\n[\"HeaderWin10\", \"x=\u003ex.HeaderSize\", [\n  [\"HeaderSize\", 0, \"unsigned int\"],\n  [\"Entries\", \"x=\u003ex.HeaderSize\", Array, {\n      type: \"Entry\",\n      sentinel: \"x=\u003ex.Size = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n[\"HeaderWin8\", 128, [\n  [\"Entries\", 128, Array, {\n      type: \"EntryWin8\",\n      sentinel: \"x=\u003ex.EntrySize = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n\n[\"EntryWin8\", \"x=\u003ex.EntrySize + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"EntrySize\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14 + 10\", \"WinFileTime\"]\n]],\n\n[\"Entry\", \"x=\u003ex.Size + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"Size\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14\", \"WinFileTime\"],\n  [\"DataSize\", \"x=\u003ex.PathSize + 14 + 8\", \"uint32\"],\n  [\"Data\", \"x=\u003ex.PathSize + 14 + 8 + 4\" , \"String\", {\n      length: \"x=\u003ex.DataSize\",\n  }],\n\n  # The last byte of the Data block is 1 for execution\n  [\"Execution\", \"x=\u003ex.PathSize + 14 + 8 + 4 + x.DataSize - 4\", \"uint32\"]\n]],\n\n# This is the Win7 parser but we dont use it right now.\n[\"HeaderWin7x64\", 128, [\n  [\"Signature\", 0, \"uint32\"],\n  [\"Entries\", 128, \"Array\", {\n      count: 10000,\n      sentinel: \"x=\u003ex.PathSize = 0\",\n      type: EntryWin7x64,\n  }]\n]],\n[\"EntryWin7x64\", 48, [\n  [\"PathSize\", 0, \"uint16\"],\n  [\"PathOffset\", 8, \"uint32\"],\n  [\"Path\", \"x=\u003ex.PathOffset - x.StartOf\", \"String\", {\n      encoding: \"utf16\",\n      length: \"x=\u003ex.PathSize\",\n  }],\n  [\"LastMod\", 16, \"WinFileTime\"]\n]]\n\n]'''\n\nLET AppCompatCacheWin10(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin10\")\n\nLET AppCompatCacheWin8(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin8\")\n\nLET AppCompatCache(Blob) = SELECT LastMod, Path,\n    Execution, GetDetails(OSPath=Path) AS Details\nFROM foreach(\n  row=if(\n    condition=AppCompatCacheWin10(Blob=Blob).HeaderSize IN (52, 48),\n    then=AppCompatCacheWin10(Blob=Blob).Entries,\n    else=AppCompatCacheWin8(Blob=Blob).Entries))\n"
    ]
   },
   {
@@ -2313,20 +2313,6 @@
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
-   "Description": "TypeLib win32",
-   "Category": "ASEP Classes",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\TypeLib\\*\\*\\*\\win32\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "TypeLib win64",
-   "Category": "ASEP Classes",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\TypeLib\\*\\*\\*\\win64\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
    "Description": "Wow6432 shell Open Command",
    "Category": "ASEP Classes",
    "Author": "Troy Larson",
@@ -2569,27 +2555,6 @@
    "Category": "ASEP Classes",
    "Author": "Troy Larson",
    "Glob": "Classes\\Wow6432Node\\TypeLib\\*\\*\\*\\win64\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "StartMenuInternet shell open command",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Clients\\StartMenuInternet\\*\\shell\\open\\command\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "StartMenuInternet shell naom command",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Clients\\StartMenuInternet\\*\\shell\\naom\\command\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "StartMenuInternet Shell RunAs Command",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Clients\\StartMenuInternet\\*\\Shell\\RunAs\\Command\\@",
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
@@ -5456,7 +5421,7 @@
    "Author": "Andrew Rathbun, Mike Cohen",
    "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\*\\Count\\*",
    "Root": "HKEY_USERS",
-   "Details": "x=\u003edict(Program=rot13(string=x.OSPath.Basename),\n        NumberOfExecutions=_ExtractUserAssist(OSPath=x.Data).NumberOfExecutions,\n        LastExecutionTime=_ExtractUserAssist(OSPath=x.Data).LastExecution)\n",
+   "Details": "x=\u003edict(Program=rot13(string=x.OSPath.Basename),\n        Details=GetDetails(OSPath=rot13(string=x.OSPath.Basename)),\n        NumberOfExecutions=_ExtractUserAssist(OSPath=x.Data).NumberOfExecutions,\n        LastExecutionTime=_ExtractUserAssist(OSPath=x.Data).LastExecution)\n",
    "Preamble": [
     "LET userAssistProfile = '''\n  [\n    [\"Header\", 0, [\n      [\"NumberOfExecutions\", 4, \"uint32\"],\n      [\"LastExecution\", 60, \"WinFileTime\", {\"type\":\"uint64\"}]\n    ]]\n  ]\n'''\n\nLET _ExtractUserAssist(Data) = parse_binary(accessor=\"data\",\n                  filename=Data,\n                  profile=userAssistProfile, struct=\"Header\")\n"
    ]
@@ -5635,10 +5600,10 @@
    "Author": "Andrew Rathbun, Mike Cohen",
    "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003edict(Tasks= _TaskCache(OSPath=x.OSPath))\n",
+   "Details": "x=\u003e_TaskCache(OSPath=x.OSPath).Details\n",
    "Filter": "x=\u003eIsDir AND Details",
    "Preamble": [
-    "LET _ParseActions(Data)  = parse_binary(accessor=\"data\",\n            filename=Data, struct=\"Header\",\n            profile='''\n[[\"Header\", 0, [\n [\"__Ver\", 0, \"uint16\"],\n [\"__UserLen\", 2, \"uint32\"],\n [\"User\", 6, \"String\", {length: \"x=\u003ex.__UserLen\", encoding: \"utf16\"}],\n [\"__ActionType\", \"x=\u003e6 + x.__UserLen\", \"uint16\"],\n [\"ActionType\", \"x=\u003e6 + x.__UserLen\", \"Enumeration\", {\n    type: \"uint32\",\n    choices: {\n      \"26214\": \"BinaryAction\",\n      \"30583\": \"ComHanlder\",\n      \"34952\": \"Email\",\n      \"39321\": \"MessageBox\",\n    }\n }],\n [\"Action\", \"x=\u003e6 + x.__UserLen + 2\", \"Union\", {\n   selector: \"x=\u003ex.__ActionType\",\n   choices: {\n     \"26214\": BinaryAction,\n     \"30583\": ComHandler,\n   }\n }],\n]],\n[\"ComHandler\", 0, [\n [\"ClassID\", 4, \"GUID\"],\n [\"__DataLen\", 20, uint32],\n [\"Data\", 24, \"String\", {\n   \"length\": \"x=\u003ex.__DataLen\",\n   \"encoding\": \"utf16\",\n }]\n]],\n[\"GUID\", 16, [\n [\"__D1\", 0, \"uint32\"],\n [\"__D2\", 4, \"uint16\"],\n [\"__D3\", 6, \"uint16\"],\n [\"__D4\", 8, \"String\", {\"term\": \"\", \"length\": 2}],\n [\"__D5\", 10, \"String\", {\"term\": \"\", \"length\": 6}],\n [\"Value\", 0, \"Value\", {\n    \"value\": \"x=\u003eformat(format='{%08x-%04x-%04x-%02x-%02x}', args=[x.__D1, x.__D2, x.__D3, x.__D4, x.__D5])\"\n}]\n]],\n[\"BinaryAction\", 0, [\n [\"__BinLen\", 4, \"uint32\"],\n [\"Binary\", 8, \"String\", {length: \"x=\u003ex.__BinLen\", encoding: \"utf16\"}],\n]]]\n''')\n\nLET _ParseDynamicInfo(Data) = parse_binary(accessor=\"data\",\n            filename=Data, struct=\"Header\",\n            profile='''\n[[\"Header\", 0, [\n [\"__Ver\", 0, \"uint16\"],\n [\"Created\", 4, \"WinFileTime\", {\"type\": \"uint64\"}],\n [\"LastStart\", 12, \"WinFileTime\", {\"type\": \"uint64\"}],\n [\"LastStop\", 20, \"WinFileTime\", {\"type\": \"uint64\"}],\n [\"TaskState\", 28, \"uint32\"],\n [\"LastErrorCode\", 32, \"uint32\"],\n [\"LastSuccessfulRun\", 36, \"WinFileTime\", {\"type\": \"uint64\"}],\n]]]\n''')\n\nLET _TaskCache(OSPath) = SELECT to_dict(item={\n  SELECT OSPath.Basename AS _key,\n    if(condition= OSPath.Basename =~ \"DynamicInfo\",\n       then=_ParseDynamicInfo(Data=Data.value),\n    else= if(condition= OSPath.Basename =~ \"Actions\",\n       then=_ParseActions(Data=Data.value),\n    else=Data.value)) AS _value\n  FROM glob(accessor=\"registry\", globs='*', root=OSPath)\n}) + dict(OSPath=OSPath) AS Details\nFROM glob(accessor=\"registry\", globs='*', root=OSPath)\n"
+    "LET _ParseActions(Data)  = parse_binary(accessor=\"data\",\n            filename=Data, struct=\"Header\",\n            profile='''\n[[\"Header\", 0, [\n [\"__Ver\", 0, \"uint16\"],\n [\"__UserLen\", 2, \"uint32\"],\n [\"User\", 6, \"String\", {length: \"x=\u003ex.__UserLen\", encoding: \"utf16\"}],\n [\"__ActionType\", \"x=\u003e6 + x.__UserLen\", \"uint16\"],\n [\"ActionType\", \"x=\u003e6 + x.__UserLen\", \"Enumeration\", {\n    type: \"uint32\",\n    choices: {\n      \"26214\": \"BinaryAction\",\n      \"30583\": \"ComHanlder\",\n      \"34952\": \"Email\",\n      \"39321\": \"MessageBox\",\n    }\n }],\n [\"Action\", \"x=\u003e6 + x.__UserLen + 2\", \"Union\", {\n   selector: \"x=\u003ex.__ActionType\",\n   choices: {\n     \"26214\": BinaryAction,\n     \"30583\": ComHandler,\n   }\n }],\n]],\n[\"ComHandler\", 0, [\n [\"ClassID\", 4, \"GUID\"],\n [\"__DataLen\", 20, uint32],\n [\"Data\", 24, \"String\", {\n   \"length\": \"x=\u003ex.__DataLen\",\n   \"encoding\": \"utf16\",\n }]\n]],\n[\"GUID\", 16, [\n [\"__D1\", 0, \"uint32\"],\n [\"__D2\", 4, \"uint16\"],\n [\"__D3\", 6, \"uint16\"],\n [\"__D4\", 8, \"String\", {\"term\": \"\", \"length\": 2}],\n [\"__D5\", 10, \"String\", {\"term\": \"\", \"length\": 6}],\n [\"Value\", 0, \"Value\", {\n    \"value\": \"x=\u003eformat(format='{%08x-%04x-%04x-%02x-%02x}', args=[x.__D1, x.__D2, x.__D3, x.__D4, x.__D5])\"\n}]\n]],\n[\"BinaryAction\", 0, [\n [\"__BinLen\", 4, \"uint32\"],\n [\"Binary\", 8, \"String\", {length: \"x=\u003ex.__BinLen\", encoding: \"utf16\"}],\n]]]\n''')\n\nLET _ParseDynamicInfo(Data) = parse_binary(accessor=\"data\",\n            filename=Data, struct=\"Header\",\n            profile='''\n[[\"Header\", 0, [\n [\"__Ver\", 0, \"uint16\"],\n [\"Created\", 4, \"WinFileTime\", {\"type\": \"uint64\"}],\n [\"LastStart\", 12, \"WinFileTime\", {\"type\": \"uint64\"}],\n [\"LastStop\", 20, \"WinFileTime\", {\"type\": \"uint64\"}],\n [\"TaskState\", 28, \"uint32\"],\n [\"LastErrorCode\", 32, \"uint32\"],\n [\"LastSuccessfulRun\", 36, \"WinFileTime\", {\"type\": \"uint64\"}],\n]]]\n''')\n\nLET _TaskCacheEnrichBinaries(Details) =\n   Details + dict(BinaryInfo=GetDetails(\n       OSPath=ExpandPath(Path=Details.Actions.Action.Binary)))\n\nLET _TaskCache(OSPath) = SELECT _TaskCacheEnrichBinaries(\nDetails=to_dict(item={\n  SELECT OSPath.Basename AS _key,\n    if(condition= OSPath.Basename =~ \"DynamicInfo\",\n       then=_ParseDynamicInfo(Data=Data.value),\n    else= if(condition= OSPath.Basename =~ \"Actions\",\n       then=_ParseActions(Data=Data.value),\n    else=Data.value)) AS _value\n  FROM glob(accessor=\"registry\", globs='*', root=OSPath)\n}) + dict(OSPath=OSPath)) AS Details\nFROM glob(accessor=\"registry\", globs='*', root=OSPath)\n"
    ]
   },
   {
@@ -5670,6 +5635,14 @@
    "Filter": "x=\u003eIsDir"
   },
   {
+   "Description": "StartMenuInternet shell open command",
+   "Category": "Autoruns",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Clients\\StartMenuInternet\\*\\shell\\*\\command\\@",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003edict(Command=x.Data,\n        Type=x.OSPath[-3],\n        Details=GetDetails(OSPath=ExpandPath(Path=x.Data)))\n"
+  },
+  {
    "Description": "Exploit Guards MitigationOptions",
    "Category": "System Info",
    "Author": "@bmcdermott-r7 Blake McDermott",
@@ -5681,5 +5654,41 @@
    "Preamble": [
     "LET ParseMitigationOptions(H) = RemoveNullDictValue(D=dict(\n DEP=\n   (H[-1:] = \"1\" \u0026\u0026 \"Always On\") ||\n   (H[-1:] = \"2\" \u0026\u0026 \"Always On - enable ATL thunk emulation\"),\n SEHOP=(H[-2:-1] = \"1\"),\n ASLR=\n    (H[-3:-2] = \"1\" \u0026\u0026 \"Enable force relocate.\") ||\n    (H[-3:-2] = \"2\" \u0026\u0026 \"Force relocate off.\") ||\n    (H[-3:-2] = \"3\" \u0026\u0026 \"Force relocate always on.\"),\n `Heap terminate`=\n    (H[-4:-3] = \"1\" \u0026\u0026 \"Always On.\") ||\n    (H[-4:-3] = \"2\" \u0026\u0026 \"Always Off.\"),\n `Bottom ASLR`=\n    (H[-5:-4] = \"1\" \u0026\u0026 \"Always On.\") ||\n    (H[-5:-4] = \"2\" \u0026\u0026 \"Always Off.\"),\n `HEASLR`=\n    (H[-6:-5] = \"1\" \u0026\u0026 \"Always On.\") ||\n    (H[-6:-5] = \"2\" \u0026\u0026 \"Always Off.\"),\n `Strict handle checks`=\n    (H[-7:-6] = \"1\" \u0026\u0026 \"Always On.\") ||\n    (H[-7:-6] = \"2\" \u0026\u0026 \"Always Off.\"),\n `Win32k system call disable policy`=\n    (H[-8:-7] = \"1\" \u0026\u0026 \"Always On.\") ||\n    (H[-8:-7] = \"2\" \u0026\u0026 \"Always Off.\"),\n `Extension point disable policy`=\n    (H[-9:-8] = \"1\" \u0026\u0026 \"Always On.\") ||\n    (H[-9:-8] = \"2\" \u0026\u0026 \"Always Off.\"),\n `Dynamic code policy (probably).`=\n    (H[-10:-9] = \"1\" \u0026\u0026 \"Always On.\") ||\n    (H[-10:-9] = \"2\" \u0026\u0026 \"Always Off.\") ||\n    (H[-10:-9] = \"3\" \u0026\u0026 \"Always On with optout.\"),\n `Control Flow Guard (CFG)`=\n    (H[-11:-10] = \"1\" \u0026\u0026 \"Enable\") ||\n    (H[-11:-10] = \"2\" \u0026\u0026 \"Disable\"),\n `Binary signature policy.`=\n    (H[-12:-11] = \"1\" \u0026\u0026 \"Microsoft signed only.\") ||\n    (H[-12:-11] = \"2\" \u0026\u0026 \"Disable?\"),\n `Font loading prevention.`=\n    (H[-13:-12] = \"1\" \u0026\u0026 \"Enable\") ||\n    (H[-13:-12] = \"2\" \u0026\u0026 \"Disable\") ||\n    (H[-13:-12] = \"3\" \u0026\u0026 \"Enable with Audit\"),\n `Image load policy (remote images).`=\n    (H[-14:-13] = \"1\" \u0026\u0026 \"Always On\") ||\n    (H[-14:-13] = \"2\" \u0026\u0026 \"Always Off\") ||\n    (H[-14:-13] = \"3\" \u0026\u0026 \"Reserved\"),\n `Image load policy (low mandatory label).`=\n    (H[-15:-14] = \"1\" \u0026\u0026 \"Always On\") ||\n    (H[-15:-14] = \"2\" \u0026\u0026 \"Always Off\") ||\n    (H[-15:-14] = \"3\" \u0026\u0026 \"Reserved\")))\n"
    ]
+  },
+  {
+   "Description": "TypeLib win64",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Classes\\TypeLib\\*\\*\\*\\win64\\@",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +\n   dict(ClassPath=x.Data)\n",
+   "Preamble": [
+    "LET _NormalizeClassDLL(OSPath) = if( condition= OSPath.Basename =~ \"^[1-9]+$\", then= OSPath.Dirname, else=OSPath)",
+    "LET NormalizeClassDLL(OSPath) = _NormalizeClassDLL( OSPath=pathspec(parse=OSPath, path_type=\"windows\"))"
+   ]
+  },
+  {
+   "Description": "TypeLib win32",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Classes\\TypeLib\\*\\*\\*\\win32\\@",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +\n  dict(ClassPath=x.Data)\n"
+  },
+  {
+   "Description": "Wow6432 TypeLib win64",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Classes\\Wow6432Node\\TypeLib\\*\\*\\*\\win64\\@",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +\n  dict(ClassPath=x.Data)\n"
+  },
+  {
+   "Description": "Wow6432 TypeLib win32",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Classes\\Wow6432Node\\TypeLib\\*\\*\\*\\win32\\@",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +\n dict(ClassPath=x.Data)\n"
   }
  ]

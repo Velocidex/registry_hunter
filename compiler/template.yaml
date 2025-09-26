@@ -67,7 +67,7 @@ parameters:
 
 - name: CollectionPolicy
   description: |
-    Extract targets will be collected using this policy.
+    Extracted targets will be collected using this policy.
   type: choices
   choices:
     - ExcludeSigned
@@ -130,9 +130,16 @@ export: |
 
     LET DoNotUpload <= dict(ShouldUpload=FALSE)
 
+    // Upload the file if ShouldUpload marks it ready for upload.
+    LET MaybeUpload(OSPath, Details) = if(
+      condition=Details.Stat AND Details.ShouldUpload,
+      then=Details + dict(Upload=upload(file=OSPath)),
+      else=Details)
+
     // Determine if we should upload the file based on signature.
     LET ShouldUpload(Details) = if(
-      condition=MaxFileSize > 0 AND Details.Stat.Size > MaxFileSize,
+      condition=NOT Details.Stat.Size OR (
+           MaxFileSize > 0 AND Details.Stat.Size > MaxFileSize ),
       then= Details + DoNotUpload,
       else=if(
        // What to do about binaries? If they have an issuer name then
@@ -148,13 +155,10 @@ export: |
        else=Details))
 
     // Hash the file if it is not too large
-    LET MaybeHash(OSPath) = if(
-      condition=stat(filename=OSPath).Size < MaxHashSize,
-      then=hash(path=OSPath),
-      else=log(message="Skipped hashing %v", args=OSPath, dedup=-1) && dict())
-
-    LET MaybeUpload(OSPath, Details) = if(condition=Details.ShouldUpload,
-      then=Details + dict(Upload=upload(file=OSPath)),
+    LET MaybeHash(OSPath, Details) = if(
+      condition=Details.Stat AND Details.Stat.Size < MaxHashSize,
+      then=Details + dict(Hashes=hash(path=OSPath),
+                          Magic=magic(path=OSPath)),
       else=Details)
 
     // Calculate the details column with hashes and magic.
@@ -162,13 +166,12 @@ export: |
     then=dict(),
     else=MaybeUpload(OSPath=OSPath, Details=MaybeBinary(
        OSPath=OSPath,
-       Details=dict(Hashes=MaybeHash(OSPath=OSPath),
-                    Stat=stat(filename=OSPath),
-                    Magic=magic(path=OSPath)))))
+       Details=MaybeHash(OSPath=OSPath,
+           Details=dict(filename=OSPath, Stat=OSPath && stat(filename=OSPath))))))
 
     LET GetDetails(OSPath) = cache(
        func= _GetDetails(OSPath=OSPath),
-       name="GetDetails", key=OSPath.String)
+       name="GetDetails", key=str(str=OSPath))
 
     -- This contains the metadata for Glob rules.
     LET _MD <= parse_json_array(data=gunzip(string=base64decode(string="{{.Metadata }}")))
@@ -255,13 +258,16 @@ export: |
     LET _Env = SELECT _value FROM items(item= {
        SELECT * FROM environ()
     })
-    LET Env <= _Env[0]._value
+
+    LET _VQLEnv = SELECT dict(key=_key, value=_value) AS Items
+    FROM items(item=_Env[0]._value)
+    WHERE _key AND NOT _key =~ "VELOCIRAPTOR"
 
     LET _api_remapping <= (
         dict(type="impersonation",
             os="windows",
             hostname="RegistryMapper",
-            env=Env),
+            env=_VQLEnv.Items),
         -- By default remap the entire "registry" accessor for API access.
         dict(type="mount",
           `from`=dict(accessor="registry", prefix='/', path_type='registry'),

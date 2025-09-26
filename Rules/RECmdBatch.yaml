@@ -1853,16 +1853,6 @@ Rules:
   Author: Troy Larson
   Glob: Classes\SystemFileAssociations\*\ShellEx\ContextMenuHandlers\ShellImagePreview\@
   Root: HKEY_LOCAL_MACHINE\Software
-- Description: TypeLib win32
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\TypeLib\*\*\*\win32\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: TypeLib win64
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\TypeLib\*\*\*\win64\@
-  Root: HKEY_LOCAL_MACHINE\Software
 - Description: Wow6432 shell Open Command
   Category: ASEP Classes
   Author: Troy Larson
@@ -2027,31 +2017,6 @@ Rules:
   Category: ASEP Classes
   Author: Troy Larson
   Glob: Classes\Wow6432Node\Interface\*\TypeLib\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 TypeLib win32
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\TypeLib\*\*\*\win32\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 TypeLib win64
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\TypeLib\*\*\*\win64\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: StartMenuInternet shell open command
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Clients\StartMenuInternet\*\shell\open\command\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: StartMenuInternet shell naom command
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Clients\StartMenuInternet\*\shell\naom\command\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: StartMenuInternet Shell RunAs Command
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Clients\StartMenuInternet\*\Shell\RunAs\Command\@
   Root: HKEY_LOCAL_MACHINE\Software
 - Description: Chrome Extensions
   Category: ASEP
