@@ -6,6 +6,7 @@
     "Mtime": "2014-11-20T23:22:38Z",
     "Details": {
       "Program": "UEME_CTLSESSION",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -17,6 +18,7 @@
     "Mtime": "2014-11-20T23:22:38Z",
     "Details": {
       "Program": "UEME_CTLSESSION",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -28,6 +30,7 @@
     "Mtime": "2014-11-20T23:22:38Z",
     "Details": {
       "Program": "UEME_CTLSESSION",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -39,6 +42,7 @@
     "Mtime": "2014-11-20T23:22:38Z",
     "Details": {
       "Program": "UEME_CTLSESSION",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -50,6 +54,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": ".Postbox.3.0.10",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-06-17T12:58:47Z"
     }
@@ -61,6 +66,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": ".Postbox.3.0.11",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-12-08T13:22:11Z"
     }
@@ -72,6 +78,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": ".Postbox.3.0.9",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-21T17:00:24Z"
     }
@@ -83,6 +90,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Spotify.Console",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -94,6 +102,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Spotify.Main",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -105,6 +114,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Skype.Desktop.Application",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -116,6 +126,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "TrueCryptFoundation.TrueCrypt",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-30T16:31:39Z"
     }
@@ -127,6 +138,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "UEME_CTLSESSION",
+      "Details": {},
       "NumberOfExecutions": 97,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -138,6 +150,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "UEME_CTLCUACount:ctor",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -149,6 +162,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "VMware.Workstation.vmui",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-25T15:29:27Z"
     }
@@ -160,6 +174,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "VisualStudio.12.0",
+      "Details": {},
       "NumberOfExecutions": 18,
       "LastExecutionTime": "2014-12-08T14:57:14Z"
     }
@@ -171,6 +186,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Windows.UI.Search",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-23T19:59:47Z"
     }
@@ -182,6 +198,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "AMD.CCC",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -193,6 +210,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "BinaryFortressSoftware.ClipboardFusion.Main",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -204,6 +222,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "BinaryFortressSoftware.DisplayFusion.Main",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -215,6 +234,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Components_14_1_Project_Converter_14_1",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-06T18:39:15Z"
     }
@@ -226,6 +246,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Components_14_2_Project_Converter_14_2",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -237,6 +258,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Chrome",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -248,6 +270,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "GPSoftware.DirectoryOpus",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-03T16:12:35Z"
     }
@@ -259,6 +282,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Malwarebytes.ToastNotification",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-03T16:52:42Z"
     }
@@ -270,6 +294,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.Windows.PhotoViewer",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -281,6 +306,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.Windows.RemoteDesktop",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -292,6 +318,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.Windows.WindowsInstaller",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -303,6 +330,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.Windows.ControlPanel",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -314,6 +342,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.Windows.Defender",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-17T17:10:07Z"
     }
@@ -325,6 +354,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.Windows.Explorer",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -336,6 +366,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.AutoGenerated.{06698AB5-9A05-A0DF-CACA-B6C97CD2C7AB}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -347,6 +378,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.AutoGenerated.{8ABD94FB-E7D6-84A6-A997-C918EDDE0AE5}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -358,6 +390,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.AutoGenerated.{9220ADAC-8C64-1B01-862A-66E3DD8551F0}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -369,6 +402,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.AutoGenerated.{923DD477-5846-686B-A659-0FCCD73851A8}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -380,6 +414,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.AutoGenerated.{9BCCF62F-83DE-0967-9AD2-BCF078C9605A}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:45:43Z"
     }
@@ -391,6 +426,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.AutoGenerated.{9D370CC6-4543-6914-59BE-4B891BF373DD}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -402,6 +438,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.AutoGenerated.{B68A1194-2659-CEDF-D8D1-063CFDA1A54C}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-15T12:47:31Z"
     }
@@ -413,6 +450,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.AutoGenerated.{E21A80D1-68F5-4864-3619-1A98D87151DD}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -424,6 +462,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{0555E41E-DC9B-57FC-9332-F8FD438E14C1}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -435,6 +474,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{148BF98C-FB56-576E-A5B4-06AEE1EA897D}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -446,6 +486,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{251B0E48-533B-55D3-AE75-5F2F3A2F1F2F}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -457,6 +498,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{28406D6C-AB5B-5DF1-9C2D-E2250B0347BD}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -468,6 +510,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{4FC2E73A-087A-5437-BA9C-8322F186D2AB}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -479,6 +522,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{5649206A-5DA1-591E-BC81-6531E193AF20}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -490,6 +534,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{56ADECCA-93E9-5DA0-97D3-2DD22F0D088B}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -501,6 +546,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{664219E1-C765-5BA7-84B8-B62A50792823}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -512,6 +558,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{66A49B55-012D-11E4-825A-AC220B2A5A56}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -523,6 +570,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{66A49D42-012D-11E4-825A-AC220B2A5A56}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -534,6 +582,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{66A49D5F-012D-11E4-825A-AC220B2A5A56}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -545,6 +594,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{830A7686-D3CA-512E-A568-937A04EB0A3E}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -556,6 +606,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{9974EC87-8978-556E-B38D-971D35C15935}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -567,6 +618,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{9C6229C7-A2F2-5915-ABB7-EDFAF4F63390}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -578,6 +630,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{A37A1168-E78C-57AA-9F2C-23AFDB2B2607}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -589,6 +642,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{A67A0F41-C5DB-5554-B0A9-97619AA239B5}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -600,6 +654,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{AD974DB8-1BB6-11E4-825E-AC220B2A5A56}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -611,6 +666,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{B3552F09-B625-574C-BD2A-C25C9878F80F}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -622,6 +678,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{B88CAAD9-65BD-516C-B866-34B09E1D12AB}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -633,6 +690,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{D2631648-424F-5FAB-9F2E-5FA35B33B1E9}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -644,6 +702,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{D744919C-EB00-595C-A4ED-19C803963A3B}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -655,6 +714,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{ED6C6107-53AA-53D7-9D8B-4ACBDF49BE3A}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -666,6 +726,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{EFA7A59E-E4DA-5811-9029-2B2204EAFDB4}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -677,6 +738,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.DSUI.Device.{F3633C23-9F36-5524-A8D6-F4BC886A2E08}",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -688,6 +750,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "Microsoft.InternetExplorer.Default",
+      "Details": {},
       "NumberOfExecutions": 2,
       "LastExecutionTime": "2014-12-08T13:35:46Z"
     }
@@ -699,6 +762,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "TSVN.TSVN.1\\TortoiseProc.exe813abd57dca0ad33c67c0eae4266d93d",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -710,6 +774,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "TSVN.TSVN.1\\TortoiseProc.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -721,6 +786,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "TSVN.TSVN.1\\TortoiseProc.execf75aaed832366d3c99d14939e4f8cd9",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -732,6 +798,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\20140924101127_xwf_Backup\\WinHex.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -743,6 +810,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\20141113084945_xwf_Backup\\xwforensics.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -754,6 +822,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\PROGRA~2\\DEVEXP~1.1\\COMPON~1\\DEVEXP~4.EXE",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -765,6 +834,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\3.1.38\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -776,6 +846,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\3.1.40\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -787,6 +858,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\3.1.43\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -798,6 +870,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\3.1.45\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -809,6 +882,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\3.1.46\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -820,6 +894,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\3.1.47\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -831,6 +906,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\3.1.48\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -842,6 +918,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\3.1.49\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -853,6 +930,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\3.1.51\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -864,6 +942,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\4.0.34\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -875,6 +954,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\4.0.35\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -886,6 +966,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\PostSharp\\4.0.36\\bin.Release\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -897,6 +978,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\Package Cache\\33E4DC67B8B270ECAB6D01EF36CA34E8F89E0664\\packages\\EmulatorWP81\\MobileTools_EmulatorWP81.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -908,6 +990,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\Package Cache\\5B09520F2D14EA8C19E4E32E5B53C38609F1E098\\packages\\EmulatorWP81\\MobileTools_EmulatorWP81.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -919,6 +1002,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\Package Cache\\{166a69f6-6512-47ea-a342-17d954fc059a}\\MobileTools_EmulatorWP81.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -930,6 +1014,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\Package Cache\\{940596e5-652a-4970-8a5a-492e73ed0fbb}\\MobileTools_EmulatorWP81.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -941,6 +1026,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\Garmin\\Core Update Service\\APP-express-windows-3.2.5.0\\GarminExpressInstaller.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -952,6 +1038,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProgramData\\Infragistics\\14.2\\Infragistics_Ultimate_20142.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -963,6 +1050,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\SBE\\bin\\SBECmd.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-21T19:29:37Z"
     }
@@ -974,6 +1062,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\SBE\\bin\\Debug\\SBE.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -985,6 +1074,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\SBE\\bin\\x86\\Release\\SBE.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -996,6 +1086,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\SBE\\bin\\x86\\Debug\\SBE.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1007,6 +1098,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\SBE\\bin\\x86\\Debug\\SBECmd.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1018,6 +1110,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\ShellBagsExplorer\\bin\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1029,6 +1122,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\ShellBagsExplorer\\bin\\Debug\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-07T16:13:17Z"
     }
@@ -1040,6 +1134,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\ShellBagsExplorer\\bin\\x86\\Release\\ShellBagsExplorer.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1051,6 +1146,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\ShellBagsExplorer\\bin\\x86\\Release\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1062,6 +1158,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\ShellBagsExplorer\\bin\\x86\\Debug\\ShellBagsExplorer.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1073,6 +1170,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ShellBagsExplorer\\ShellBagsExplorer\\bin\\x86\\Debug\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-07T16:13:35Z"
     }
@@ -1084,6 +1182,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\TwitterParse\\TwitterParserGUI\\bin\\x86\\Release\\TwitterParserGUI.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1095,6 +1194,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\TwitterParse\\TwitterParserGUI\\bin\\x86\\Debug\\TwitterParserGUI.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1106,6 +1206,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\XWFManager\\XWFManager\\trunk\\XWFRT\\bin\\Debug\\XWFRT.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1117,6 +1218,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\XWFManager\\XWFManager\\trunk\\XWFManager\\bin\\Release\\XWFIM.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1128,6 +1230,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\XWFManager\\XWFManager\\trunk\\XWFManager\\bin\\Debug\\XWFIM.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1139,6 +1242,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\XWFManager\\XWFManager\\trunk\\XWFManager\\bin\\Debug\\XWFIM.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1150,6 +1254,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\XWFManager\\XWFManager\\trunk\\XWFManager\\bin\\x86\\Debug\\CygXWFIM.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1161,6 +1266,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ConsoleApplication5\\ConsoleApplication5\\bin\\Debug\\ConsoleApplication5.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1172,6 +1278,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ConsoleApplication6\\ConsoleApplication6\\bin\\Non SA\\ConsoleApplication6.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-17T13:31:17Z"
     }
@@ -1183,6 +1290,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ConsoleApplication6\\ConsoleApplication6\\bin\\ConsoleApplication6_SA.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-18T18:21:06Z"
     }
@@ -1194,6 +1302,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ConsoleApplication6\\ConsoleApplication6\\bin\\Debug\\ConsoleApplication6.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1205,6 +1314,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ConsoleApplication6\\ConsoleApplication6\\bin\\Debug\\ConsoleApplication6.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-18T18:20:40Z"
     }
@@ -1216,6 +1326,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ConsoleApplication8\\ConsoleApplication8\\bin\\Debug\\ConsoleApplication8.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1227,6 +1338,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ErdelyDump2\\bin\\Debug\\ErdelyDump2.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1238,6 +1350,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\ErdelyDump2\\bin\\Debug\\ErdelyDump2.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-26T14:06:42Z"
     }
@@ -1249,6 +1362,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\GOON2\\ErdelyDump\\bin\\Debug\\ErdelyDump.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1260,6 +1374,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\GOON2\\GOON2\\bin\\Release\\GOON2.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1271,6 +1386,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\GOON2\\GOON2\\bin\\Debug\\GOON2.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1282,6 +1398,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\GOON2\\GOON2\\bin\\Debug\\GOON2.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1293,6 +1410,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\GigaRoundUpImport\\GigaRoundUpImport\\bin\\Debug\\GigaRoundUpImport.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1304,6 +1422,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\Hasher\\trunk\\Hasher2\\bin\\Debug\\Hasher.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1315,6 +1434,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\Hasher\\trunk\\Hasher3\\bin\\Debug\\Hasher3.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1326,6 +1446,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\Installer\\Installer\\bin\\Debug\\Installer.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1337,6 +1458,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\osTriage2\\trunk\\osTriage2\\CopyDLLs.bat",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-18T19:47:41Z"
     }
@@ -1348,6 +1470,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\osTriage2\\trunk\\osTriage2\\bin\\Release\\osTriage2.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1359,6 +1482,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\osTriage2\\trunk\\osTriage2\\bin\\Debug\\Plugins\\__tmp\\e87fc476-7ac0-4df3-b757-76df0768e379\\osTriageHelperApp.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1370,6 +1494,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\osTriage2\\trunk\\osTriage2\\bin\\Debug\\Plugins\\__tmp\\f7445b4a-9341-4dfe-b702-b9fef8573023\\osTriageHelperApp.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1381,6 +1506,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\osTriage2\\trunk\\osTriage2\\bin\\Debug\\osTriage2.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1392,6 +1518,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\osTriage2\\trunk\\osTriage2\\bin\\Debug\\osTriage2.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1403,6 +1530,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\timeapp\\timeapp\\bin\\Release\\timeapp.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1414,6 +1542,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\timeapp\\timeapp\\bin\\Debug\\timeapp.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1425,6 +1554,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\eMule Parser\\eMule Parser\\bin\\Debug\\eMule Parser.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1436,6 +1566,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\eMule Parser\\eMule Parser\\bin\\Debug\\eMuleParser.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1447,6 +1578,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\eMule Parser\\eMule Parser\\bin\\Debug\\eMuleParser.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-17T19:35:42Z"
     }
@@ -1458,6 +1590,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\ProjectWorkingFolder\\eMule Parser\\eMule Parser\\bin\\eMuleParser.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-17T19:35:34Z"
     }
@@ -1469,6 +1602,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Roaming\\Spotify\\Spotify_new.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1480,6 +1614,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Roaming\\Spotify\\spotify.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T15:45:26Z"
     }
@@ -1491,6 +1626,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Roaming\\uTorrent\\uTorrent.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-14T13:03:25Z"
     }
@@ -1502,6 +1638,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\130584616774056497.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1513,6 +1650,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\13058461684854937108.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1524,6 +1662,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\130584618851795821.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1535,6 +1674,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\13058461892098759081.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1546,6 +1686,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\7zO263D.tmp\\autoruns.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1557,6 +1698,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\7zO7DFF.tmp\\evtx_view.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1568,6 +1710,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\7zO933D.tmp\\Infragistics_20141_Platform.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1579,6 +1722,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\7zO933D.tmp\\Infragistics_Ultimate_20141.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1590,6 +1734,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\7zOA01C.tmp\\Infragistics_Ultimate_20142.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1601,6 +1746,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\7zOA01C.tmp\\IgniteUI_20142_PlatformInstaller.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1612,6 +1758,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\7zOBFE3.tmp\\SkypeLogView.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1623,6 +1770,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\RFS1C7.tmp\\rfwipeout.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1634,6 +1782,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\RFSAA9E.tmp\\rfwipeout.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1645,6 +1794,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\RFSD315.tmp\\rfwipeout.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1656,6 +1806,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\RFSE7D5.tmp\\rfwipeout.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1667,6 +1818,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\RFSECF1.tmp\\rfwipeout.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1678,6 +1830,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\Red Gate\\ReflectorInstaller_8.4.0.39.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1689,6 +1842,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\Red Gate\\SmartAssembly_6.9.0.114.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1700,6 +1854,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SendRpt.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1711,6 +1866,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupPowerGREP462EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1722,6 +1878,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupPowerGREP4EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1733,6 +1890,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupRegexBuddy410EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1744,6 +1902,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupRegexBuddy411EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1755,6 +1914,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupRegexBuddy420EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1766,6 +1926,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupRegexMagic202EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1777,6 +1938,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupRegexMagic210EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1788,6 +1950,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupEditPadPro731EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1799,6 +1962,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupEditPadPro732EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1810,6 +1974,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupEditPadPro734EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1821,6 +1986,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SetupEditPadPro735EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1832,6 +1998,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\SkypeSetup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1843,6 +2010,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\TeamViewer\\Version9\\TeamViewer_.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1854,6 +2022,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\4.5.0.10\\3cd433af26ed4c60ace2d937bd9d9ba1\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1865,6 +2034,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\4.5.0.10\\6d13efe6d0cb41a4a5b95cc92a566387\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1876,6 +2046,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\4.5.0.10\\af519f5678f148328e6849165a15fde3\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1887,6 +2058,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\4.5.0.10\\e7b7cb42b88e436382f328c135ba6065\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1898,6 +2070,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\4.5.0.10\\ea0b9503bafc446cbd1bc1dad6488e0d\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1909,6 +2082,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.5\\1a28e8346b7240308cc8a233cb753eec\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1920,6 +2094,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.5\\2766188d8c2c40d39cdb1edf4892b03e\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1931,6 +2106,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.5\\39f4565ce2fe4154b13649b8f316429a\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1942,6 +2118,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.5\\59bc33387ca745669cc98010db2d4a2b\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1953,6 +2130,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.5\\97c057e7a8ef4a8a8392f004bb21a451\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1964,6 +2142,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.5\\b4da8eb3427a44e88620c0d378dce2e3\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1975,6 +2154,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.5\\dabea20ae2504eb1a75e635b95787fc5\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1986,6 +2166,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.5\\f7ccacfbdda74ed69a514f5f8c143921\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -1997,6 +2178,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.5\\fe6cc0541219458791f600aaa48fb0f5\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2008,6 +2190,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\1ae7a2c59968404a9091a4a30a336c9b\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2019,6 +2202,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\2ae399fc90fd4b18a235919392c944d0\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2030,6 +2214,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\3541e51eb9f64baa9211af84c2d694f8\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2041,6 +2226,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\3922d35483674a4d92609caadb1462cb\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2052,6 +2238,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\393e46a4637b475fb21a19cb1d9b2ec5\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2063,6 +2250,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\40a1df1d7d4e4a43b34a0fa0784c138d\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2074,6 +2262,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\494593291e544741a6e768d101a8eb33\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2085,6 +2274,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\4e561e027e3748a48d928765e452ebe5\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2096,6 +2286,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\4f287a4f492a4ac2b4967848551e9723\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2107,6 +2298,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\5f720af78192412f9117fdd426c5cbaa\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2118,6 +2310,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\6c64ce6f736248bdbe4584f347e8c7f9\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2129,6 +2322,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\8150d37d9547414bb06e9352e0666c91\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2140,6 +2334,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\9127d43ed73247b69b122170ba3cc5c7\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2151,6 +2346,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\9c2af221df074c56a4384b7c8b1714ff\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2162,6 +2358,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\a16aa89a7f7245688c25ccfcd08e875e\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2173,6 +2370,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\a2a270b818b24870bf14a206ccd116f2\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2184,6 +2382,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\AppLifeLauncher\\5.0.0.6\\b862bf2d625f4f19aeebec2c5041ae7e\\Kjs.AppLife.Update.Engine.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2195,6 +2394,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\Directory Opus Updates\\DOpusInstall-x64-b0005-0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2206,6 +2406,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\Directory Opus Updates\\DOpusInstall-x64-b0006-0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2217,6 +2418,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\Directory Opus Updates\\DOpusInstall-x64-b0008-0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2228,6 +2430,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\Garmin\\Express\\GarminExpressInstaller.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2239,6 +2442,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\JetPackages\\JetBrains.Platform.Installer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2250,6 +2454,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\JetPackages\\b253ed98-e816-44ad-b6a0-f73caed1822d\\JetBrains.Platform.Installer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2261,6 +2466,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\_ir_sf_temp_0\\irsetup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2272,6 +2478,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\_ir_sf_temp_1\\irsetup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2283,6 +2490,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\nsn2247.tmp\\TvUpdateInfo.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2294,6 +2502,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\nssBE8D.tmp\\PIPInstaller_PLT-G_.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2305,6 +2514,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\procexp64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2316,6 +2526,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\ueupdate0\\ue_english.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2327,6 +2538,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\vlc-2.1.5-win32.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2338,6 +2550,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\dtemp-188df960280372609-60.dop\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2349,6 +2562,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\is-LIFA3.tmp\\Offercast2801_ARS_.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2360,6 +2574,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\{33245805-3B0D-4471-8881-2E476332D075}\\redgate.installerwizard.ui.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2371,6 +2586,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\{A61129BC-C2BC-4B21-823E-9333F3E7E2DD}\\redgate.installerwizard.ui.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2382,6 +2598,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Temp\\~nsu.tmp\\Au_.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2393,6 +2610,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\VMware\\vmware-download-04BC\\cdstmp_ws-windows_10.0.4_2249910\\VMware-workstation-10.0.4-2249910.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2404,6 +2622,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Amazon Music\\Amazon Music.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-24T14:10:17Z"
     }
@@ -2415,6 +2634,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Citrix\\GoToMeeting\\1350\\g2mui.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2426,6 +2646,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Citrix\\GoToMeeting\\1350\\g2mlauncher.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2437,6 +2658,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Citrix\\GoToMeeting\\1468\\g2mui.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2448,6 +2670,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Citrix\\GoToMeeting\\1468\\g2mlauncher.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2459,6 +2682,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Citrix\\GoToMeeting\\1865\\g2mui.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2470,6 +2694,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Citrix\\Launcher\\CitrixOnlineLauncher.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2481,6 +2706,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\JDownloader v2.0\\JDownloader2.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2492,6 +2718,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\JetBrains\\Installations\\ReSharperPlatformVs12\\JetBrains.Platform.Installer.Bootstrap.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2503,6 +2730,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\JetBrains\\Installations\\ReSharperPlatformVs12_000\\JetBrains.Platform.Installer.Bootstrap.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2514,6 +2742,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\JetBrains\\Installations\\ReSharperPlatformVs12_000\\JetBrains.Platform.Installer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2525,6 +2754,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Microsoft\\VisualStudio\\12.0\\Extensions\\xszz2zbj.3ut\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2536,6 +2766,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Microsoft\\VisualStudio\\12.0\\Extensions\\z5ow3uze.g0o\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2547,6 +2778,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Microsoft\\VisualStudio\\12.0\\Extensions\\hh41qxo3.5lr\\PostSharp.HQ.v3.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2558,6 +2790,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\8R5B6I2F\\CuteWriter.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-10T20:42:35Z"
     }
@@ -2569,6 +2802,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\Q0IU04UY\\ClassicShellSetup_4_1_0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T14:23:20Z"
     }
@@ -2580,6 +2814,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\Q0IU04UY\\ue_english.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-06-27T19:11:53Z"
     }
@@ -2591,6 +2826,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\IBDKAGU3\\ChromeSetup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T14:23:03Z"
     }
@@ -2602,6 +2838,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Documents\\Navicat\\SQLite\\Updater\\Updater.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2613,6 +2850,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\288\\2\\evtx_view.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2624,6 +2862,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\New folder\\SkypeLogView.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2635,6 +2874,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\OzCode_0.9.4325.6716_75877.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-29T18:31:28Z"
     }
@@ -2646,6 +2886,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\OzCode_1.0.4423.3818_76321.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-06-24T15:19:07Z"
     }
@@ -2657,6 +2898,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\PeStudio841\\PeStudio.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2668,6 +2910,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\RoboForm-Setup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-18T22:36:56Z"
     }
@@ -2679,6 +2922,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ReSharperAndToolsPacked01EAP 7.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-18T22:34:08Z"
     }
@@ -2690,6 +2934,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ReSharperAndToolsPacked01Eap1.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2701,6 +2946,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ReSharperAndToolsPacked1EAP 2.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-24T01:07:48Z"
     }
@@ -2712,6 +2958,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ReSharperAndToolsPacked1EAP 3_1.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-30T12:58:46Z"
     }
@@ -2723,6 +2970,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ReSharperAndToolsPacked1EAP 4.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-06T18:42:46Z"
     }
@@ -2734,6 +2982,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ReSharperAndToolsBootstrapper01.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2745,6 +2994,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ReSharperAndToolsBootstrapper01_EAP8.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-24T20:39:12Z"
     }
@@ -2756,6 +3006,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SpotifySetup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T15:33:50Z"
     }
@@ -2767,6 +3018,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SumatraPDF-2.5.2-install.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2778,6 +3030,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SumatraPDF-3.0-install.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2789,6 +3042,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SerialWizard_0.6.x\\SerialWizard.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2800,6 +3054,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupPowerGREP462EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-23T20:19:48Z"
     }
@@ -2811,6 +3066,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupPowerGREP4EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-21T20:09:55Z"
     }
@@ -2822,6 +3078,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupRST.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T14:45:37Z"
     }
@@ -2833,6 +3090,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupRegexBuddy410EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-21T20:09:55Z"
     }
@@ -2844,6 +3102,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupRegexBuddy411EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-29T19:39:38Z"
     }
@@ -2855,6 +3114,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupRegexBuddy420EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-23T20:19:08Z"
     }
@@ -2866,6 +3126,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupRegexMagic210EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-23T20:20:04Z"
     }
@@ -2877,6 +3138,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupChipset.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T14:46:56Z"
     }
@@ -2888,6 +3150,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupEditPadPro731EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T15:03:00Z"
     }
@@ -2899,6 +3162,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupEditPadPro735EricPeterson.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-17T16:45:54Z"
     }
@@ -2910,6 +3174,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SetupImgBurn_2.5.8.0.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2921,6 +3186,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ShellBags Explorer\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2932,6 +3198,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-09T14:46:09Z"
     }
@@ -2943,6 +3210,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SkypeSetup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2954,6 +3222,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SkypeSetupFull.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:26:10Z"
     }
@@ -2965,6 +3234,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\TeamViewer_Setup_en.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-06-17T12:42:16Z"
     }
@@ -2976,6 +3246,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\TimeLord\\Application Files\\TimeLord_0_1_5_6\\TimeLord.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -2987,6 +3258,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\VS2013.3.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-07T20:01:08Z"
     }
@@ -2998,6 +3270,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\VS2013.4.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-17T13:56:51Z"
     }
@@ -3009,6 +3282,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\VSIsoShell.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3020,6 +3294,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\VMware-workstation-full-10.0.3-1895310.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-22T13:04:14Z"
     }
@@ -3031,6 +3306,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\XMLSpyProf2014_x64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-07T15:45:06Z"
     }
@@ -3042,6 +3318,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\XMLSpyProf2015_x64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3053,6 +3330,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ANJPv3_PE_201405.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-27T19:38:18Z"
     }
@@ -3064,6 +3342,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Arsenal_Image_Mounter-MountTool_v1.0.015\\Arsenal_Image_Mounter-MountTool_v1.0.015\\ArsenalImageMounterMountTool.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3075,6 +3354,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Citrix Online Launcher.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3086,6 +3366,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ClipboardFusionSetup-3.0.5.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T15:01:45Z"
     }
@@ -3097,6 +3378,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DOpusInstall64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T14:31:15Z"
     }
@@ -3108,6 +3390,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DotNETToolbelt.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:26:13Z"
     }
@@ -3119,6 +3402,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DropboxInstaller.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T16:04:12Z"
     }
@@ -3130,6 +3414,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DevExpressUniversalTrial-20141106.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-24T13:49:45Z"
     }
@@ -3141,6 +3426,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DevExpressCodeRush-14.1.8.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-24T20:18:41Z"
     }
@@ -3152,6 +3438,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DevExpressCodeRush-14.2.3.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-12-08T13:24:51Z"
     }
@@ -3163,6 +3450,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DevExpressComponents-13.2.9.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:48:47Z"
     }
@@ -3174,6 +3462,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DevExpressComponents-14.1.4.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-02T20:13:04Z"
     }
@@ -3185,6 +3474,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DevExpressComponents-14.1.6.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3196,6 +3486,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DevExpressComponents-14.1.7.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-15T12:47:36Z"
     }
@@ -3207,6 +3498,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DevExpressComponents-14.1.8.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-06T18:35:57Z"
     }
@@ -3218,6 +3510,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DevExpressComponents-14.2.3.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-12-08T13:21:45Z"
     }
@@ -3229,6 +3522,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DisplayFusionSetup-6.0.0-Beta6.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T14:56:58Z"
     }
@@ -3240,6 +3534,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Fences_2.12_setup_sd.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T14:54:48Z"
     }
@@ -3251,6 +3546,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\GarminExpressInstaller.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-23T14:27:23Z"
     }
@@ -3262,6 +3558,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\GitHubSetup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3273,6 +3570,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\IPWorksSSLV9NETEdition.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:18:44Z"
     }
@@ -3284,6 +3582,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\IPWorksV9NETEdition.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:20:39Z"
     }
@@ -3295,6 +3594,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\IPWorksZipV9NETEdition.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:22:32Z"
     }
@@ -3306,6 +3606,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\osTriage2\\osTriage2.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3317,6 +3618,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\postbox-3.0.9-win32.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3328,6 +3630,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\pal_install_r109860_a3000.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3339,6 +3642,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\snagit.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3350,6 +3654,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\setup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-17T21:20:24Z"
     }
@@ -3361,6 +3666,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\sipro-3.3.6.143.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:59:08Z"
     }
@@ -3372,6 +3678,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\uTorrent.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3383,6 +3690,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ue_english.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T17:22:59Z"
     }
@@ -3394,6 +3702,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\vlc-2.1.3-win32.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T15:31:25Z"
     }
@@ -3405,6 +3714,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\winrar-x64-511.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3416,6 +3726,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ccsetup417.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3427,6 +3738,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ccsetup419.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-03T16:14:49Z"
     }
@@ -3438,6 +3750,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\dd\\pinentry.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3449,6 +3762,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\eMule0.50a-Installer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3460,6 +3774,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\e\\HashSample\\bin\\Release\\HashSample.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3471,6 +3786,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\e\\HashSample\\bin\\Debug\\HashSample.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3482,6 +3798,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\en_visual_studio_professional_2013_with_update_2_x86_web_installer_4238044.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T15:31:40Z"
     }
@@ -3493,6 +3810,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\installer_jdownloader_one.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-22T14:27:57Z"
     }
@@ -3504,6 +3822,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\installer_jdownloader_two.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3515,6 +3834,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\temp\\New Folder\\mplayer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3526,6 +3846,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\temp\\RamCapture64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3537,6 +3858,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\temp\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3548,6 +3870,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\temp\\XWFRT.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3559,6 +3882,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\temp\\eMuleParser.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3570,6 +3894,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\xwf1\\xwforensics.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-29T15:08:38Z"
     }
@@ -3581,6 +3906,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\xwf\\MPlayer\\mplayer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3592,6 +3918,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\xwf\\winhex.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3603,6 +3930,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\xwf\\xwforensics.exe",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-11-26T23:40:47Z"
     }
@@ -3614,6 +3942,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\xwf\\xwforensics64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-19T20:51:52Z"
     }
@@ -3625,6 +3954,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\eMTP\\eMTP_0.2.7.6_64bit.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-17T13:22:42Z"
     }
@@ -3636,6 +3966,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\{145D904C-12A1-4371-9134-89F37796CE27}\\redgate.installerwizard.ui.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3647,6 +3978,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "C:\\{8129084C-C201-4546-8310-07D41A8FFC8F}\\redgate.installerwizard.ui.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3658,6 +3990,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Convert.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-04T17:29:10Z"
     }
@@ -3669,6 +4002,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\ProcessExplorer\\procexp.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-20T22:28:53Z"
     }
@@ -3680,6 +4014,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\TrueCrypt Setup 7.1a.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3691,6 +4026,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\Yaru\\yaru.exe",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-11-25T18:39:08Z"
     }
@@ -3702,6 +4038,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\ZoomIt.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3713,6 +4050,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\DCode.exe",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-12-03T03:31:19Z"
     }
@@ -3724,6 +4062,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\FTK Imager\\FTK Imager.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3735,6 +4074,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\GOON2\\GOON2.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-17T16:14:32Z"
     }
@@ -3746,6 +4086,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\GOON\\GOON.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3757,6 +4098,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\Hasher\\hasher.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-25T19:46:21Z"
     }
@@ -3768,6 +4110,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\timeapp.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-24T15:11:49Z"
     }
@@ -3779,6 +4122,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!Software\\xwfim\\XWFIM.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-16T15:48:31Z"
     }
@@ -3790,6 +4134,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\!DfirPermalinks\\XWFRT.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3801,6 +4146,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\GnuPG\\pinentry.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3812,6 +4158,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\Installer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3823,6 +4170,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\Kitty\\WinSCP.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3834,6 +4182,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\Kitty\\kscp.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3845,6 +4194,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\Kitty\\kitty.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-17T13:04:32Z"
     }
@@ -3856,6 +4206,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\Kitty\\kitty_portable.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-20T23:13:41Z"
     }
@@ -3867,6 +4218,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\osTriageInstaller.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3878,6 +4230,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\temp\\osTriage2RunToExtract.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3889,6 +4242,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\temp\\betas\\SBECmd.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3900,6 +4254,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\temp\\eMuleParser.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3911,6 +4266,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox (Personal)\\emule\\ConsoleApplication8\\ConsoleApplication8\\bin\\Debug\\ConsoleApplication8.vshost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3922,6 +4278,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox\\!Software\\MozBackup\\MozBackup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3933,6 +4290,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox\\!Software\\xwfim\\XWFIM.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-15T17:29:41Z"
     }
@@ -3944,6 +4302,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Dropbox\\osTriageInstaller.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3955,6 +4314,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Forensics\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-11-26T18:04:46Z"
     }
@@ -3966,6 +4326,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Forensics\\Arsenal_Image_Mounter-MountTool_v1.0.015\\ArsenalImageMounterControl.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3977,6 +4338,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Forensics\\Arsenal_Image_Mounter-MountTool_v1.0.015\\ArsenalImageMounterMountTool.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-17T14:31:05Z"
     }
@@ -3988,6 +4350,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Forensics\\rrv2.8\\rr.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -3999,6 +4362,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Forensics\\regripper\\rr.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4010,6 +4374,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\Forensics\\eMuleParser.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-18T16:59:05Z"
     }
@@ -4021,6 +4386,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\LINQPad4\\LINQPad.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-26T14:53:20Z"
     }
@@ -4032,6 +4398,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4043,6 +4410,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\ShellBagsExplorer\\ShellBagsExplorer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4054,6 +4422,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\TZWORKS\\bin\\regripper\\rr.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4065,6 +4434,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\USBDeview64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4076,6 +4446,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\WebBrowserPassView.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4087,6 +4458,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\XWFRT.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4098,6 +4470,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\BrowsingHistoryView.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4109,6 +4482,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\BrowsingHistoryView64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4120,6 +4494,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\GOON\\GOON.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4131,6 +4506,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\Installer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4142,6 +4518,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\MyLastSearch.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4153,6 +4530,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\netpass64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4164,6 +4542,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\osTriage2 BETA 2002.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4175,6 +4554,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\osTriage2002 BETA.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4186,6 +4566,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\osTriage2RunToExtract.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4197,6 +4578,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\osTriage2\\Plugins\\__tmp\\d4279181-73f2-4881-9fe6-9ffdf4005e00\\osTriageHelperApp.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4208,6 +4590,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\osTriage2\\osTriage2.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4219,6 +4602,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\cports64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4230,6 +4614,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\mspass.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4241,6 +4626,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\mtd4949\\Work product\\ThunderbirdPortable\\App\\Thunderbird\\thunderbird.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4252,6 +4638,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\mtd4949\\Work product\\ThunderbirdPortable_24.5.0_English.paf.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4263,6 +4650,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D:\\temp\\mailpv.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4274,6 +4662,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "D\u0000:\u0000\\\u0000t\u0000e\u0000m\u0000p\u0000\\\u0000C\u0000o\u0000n\u0000v\u0000e\u0000r\u0000t\u0000 \u0000\u001f\u0004\u003e\u0004;\u00048\u0004\u003c\u0004\u003e\u0004@\u0004Q\u00048\u00047\u0004\u003c\u0004 \u0000M\u0000a\u0000c\u0000 \u0000C\u0000y\u0000r\u0000i\u0000l\u0000l\u0000i\u0000c\u0000.\u0000e\u0000x\u0000e\u0000",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4285,6 +4674,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "F:\\EverythingSearch\\Everything.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4296,6 +4686,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "F:\\xwfim\\XWFIM.exe",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-12-08T13:26:52Z"
     }
@@ -4307,6 +4698,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "I:\\DirectSolution\\ThunderbirdPortable\\App\\Thunderbird\\thunderbird.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4318,6 +4710,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "I:\\DirectSolution\\ThunderbirdPortable_24.5.0_English.paf.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4329,6 +4722,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "I:\\osTriage2\\osTriage2.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-28T23:08:15Z"
     }
@@ -4340,6 +4734,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "I:\\xwfportable\\xwforensics.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4351,6 +4746,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "J:\\SanDiskSecureAccessV2_win.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-03T13:45:00Z"
     }
@@ -4362,6 +4758,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "J:\\xwfim\\XWFIM.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4373,6 +4770,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "K:\\TACTICAL Examiner\\f-response-tacex.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4384,6 +4782,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\OptionalFeatures.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4395,6 +4794,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\OpenWith.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4406,6 +4806,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\SystemPropertiesRemote.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4417,6 +4818,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-16T16:37:19Z"
     }
@@ -4428,6 +4830,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\CompMgmtLauncher.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T15:18:05Z"
     }
@@ -4439,6 +4842,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\notepad.exe",
+      "Details": {},
       "NumberOfExecutions": 2,
       "LastExecutionTime": "2014-12-03T03:49:56Z"
     }
@@ -4450,6 +4854,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\oobe\\FirstLogonAnim.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4461,6 +4866,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\rundll32.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-22T20:04:42Z"
     }
@@ -4472,6 +4878,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\taskhost.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4483,6 +4890,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\wuauclt.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-13T15:40:29Z"
     }
@@ -4494,6 +4902,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\calc.exe",
+      "Details": {},
       "NumberOfExecutions": 2,
       "LastExecutionTime": "2014-11-26T17:49:02Z"
     }
@@ -4505,6 +4914,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\cmd.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-21T19:29:12Z"
     }
@@ -4516,6 +4926,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\dccw.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-22T15:43:37Z"
     }
@@ -4527,6 +4938,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\mstsc.exe",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-11-28T20:16:44Z"
     }
@@ -4538,6 +4950,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\msiexec.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-11T20:22:51Z"
     }
@@ -4549,6 +4962,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\mmc.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T14:45:34Z"
     }
@@ -4560,6 +4974,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\7-Zip\\7zFM.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-17T20:00:59Z"
     }
@@ -4571,6 +4986,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\7-Zip\\7zG.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4582,6 +4998,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\PremiumSoft\\Navicat for SQLite\\navicat.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-18T20:26:26Z"
     }
@@ -4593,6 +5010,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Red Gate\\SmartAssembly 6\\SmartAssembly.exe",
+      "Details": {},
       "NumberOfExecutions": 18,
       "LastExecutionTime": "2014-11-28T20:12:18Z"
     }
@@ -4604,6 +5022,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Red Gate\\ANTS Memory Profiler 8\\RedGate.MemoryProfiler.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T23:03:57Z"
     }
@@ -4615,6 +5034,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\WinRAR\\WinRAR.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4626,6 +5046,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Windows NT\\Accessories\\WORDPAD.EXE",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-16T02:20:35Z"
     }
@@ -4637,6 +5058,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Windows Mail\\wab.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4648,6 +5070,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Altova\\XMLSpy2014\\XMLSpy.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-04T20:25:17Z"
     }
@@ -4659,6 +5082,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Altova\\XMLSpy2015\\XMLSpy.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-07T22:59:08Z"
     }
@@ -4670,6 +5094,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\CCleaner\\CCleaner64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-03T16:14:15Z"
     }
@@ -4681,6 +5106,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Common Files\\logishrd\\WUApp64.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4692,6 +5118,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\GPSoftware\\Directory Opus\\dopusrt.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-13T15:40:30Z"
     }
@@ -4703,6 +5130,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Just Great Software\\PowerGREP4\\PowerGREP4.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-23T20:19:17Z"
     }
@@ -4714,6 +5142,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Just Great Software\\RegexBuddy4\\RegexBuddy4.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-30T18:48:22Z"
     }
@@ -4725,6 +5154,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Just Great Software\\RegexMagic 2\\RegexMagic2.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-23T20:19:33Z"
     }
@@ -4736,6 +5166,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{6D809377-6AF0-444B-8957-A3773F02200E}\\Just Great Software\\EditPad Pro 7\\EditPadPro7.exe",
+      "Details": {},
       "NumberOfExecutions": 8,
       "LastExecutionTime": "2014-11-26T17:08:51Z"
     }
@@ -4747,6 +5178,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Paltalk Messenger\\paltalk.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-02T17:00:15Z"
     }
@@ -4758,6 +5190,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Red Gate\\.NET Reflector\\Desktop 8.3\\Reflector.exe",
+      "Details": {},
       "NumberOfExecutions": 2,
       "LastExecutionTime": "2014-12-08T13:52:00Z"
     }
@@ -4769,6 +5202,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Stardock\\Fences\\Fences.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4780,6 +5214,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\SumatraPDF\\SumatraPDF.exe",
+      "Details": {},
       "NumberOfExecutions": 2,
       "LastExecutionTime": "2014-12-08T13:38:58Z"
     }
@@ -4791,6 +5226,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Sanderson Forensics\\SkypeAlyzer\\SkypeAlyzer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-28T22:21:09Z"
     }
@@ -4802,6 +5238,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Siber Systems\\AI RoboForm\\Chrome\\rf-chrome-nm-host.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4813,6 +5250,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Siber Systems\\AI RoboForm\\robotaskbaricon.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4824,6 +5262,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Siber Systems\\AI RoboForm\\identities.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4835,6 +5274,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Skype\\Phone\\Skype.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-12-08T13:22:17Z"
     }
@@ -4846,6 +5286,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\SmartWhois\\sw.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-03T16:39:24Z"
     }
@@ -4857,6 +5298,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\SmartWhois\\swsetup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4868,6 +5310,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Tableau\\Tableau Firmware Update\\tabup.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T21:31:43Z"
     }
@@ -4879,6 +5322,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\TeamViewer\\TeamViewer.exe",
+      "Details": {},
       "NumberOfExecutions": 2,
       "LastExecutionTime": "2014-11-28T16:52:31Z"
     }
@@ -4890,6 +5334,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\TeamViewer\\Version9\\TeamViewer.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-25T17:42:43Z"
     }
@@ -4901,6 +5346,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\TeamViewer\\Version9\\TeamViewer_Service.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4912,6 +5358,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\TechSmith\\Snagit 12\\Snagit32.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-26T17:57:33Z"
     }
@@ -4923,6 +5370,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\TechSmith\\Snagit 12\\SnagitEditor.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4934,6 +5382,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\TechSmith\\Snagit 12\\TscHelp.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4945,6 +5394,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\VMware\\VMware Workstation\\vmware-shell-ext-thunker.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4956,6 +5406,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\VideoLAN\\VLC\\vlc.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-04T15:53:56Z"
     }
@@ -4967,6 +5418,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\AppLife Update\\MakeUpdate\\Kjs.AppLife.Update.MakeUpdate.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 7,
       "LastExecutionTime": "2014-11-28T19:19:57Z"
     }
@@ -4978,6 +5430,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Acro Software\\CutePDF Writer\\CPWSave.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -4989,6 +5442,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Beyond Compare 4\\BCompare.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-25T20:15:54Z"
     }
@@ -5000,6 +5454,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Common Files\\Microsoft Shared\\MSEnv\\VSLauncher.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T21:50:51Z"
     }
@@ -5011,6 +5466,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\DU Meter\\DUMeter.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-18T17:47:02Z"
     }
@@ -5022,6 +5478,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\DevExpress 13.2\\Components\\Tools\\Components\\ProjectConverter.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:47:58Z"
     }
@@ -5033,6 +5490,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\DevExpress 13.2\\Components\\DevExpressComponents-13.2.9.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5044,6 +5502,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\DevExpress 14.1\\CodeRush\\DevExpressCodeRush-14.1.8.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5055,6 +5514,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\DevExpress 14.1\\Components\\Tools\\ToolboxCreator.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5066,6 +5526,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\DevExpress 14.1\\Components\\DevExpressComponents-14.1.8.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5077,6 +5538,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Event Log Explorer\\elex.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T20:10:38Z"
     }
@@ -5088,6 +5550,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\F-Response\\F-Response TACTICAL\\tac-manager.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-29T21:34:19Z"
     }
@@ -5099,6 +5562,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Fookes Software\\Aid4Mail3\\Aid4Mail.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-18T18:38:16Z"
     }
@@ -5110,6 +5574,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\GUMA45F.tmp\\GoogleUpdate.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5121,6 +5586,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Google\\Update\\GoogleUpdate.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5132,6 +5598,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Google\\Chrome\\Application\\35.0.1916.153\\delegate_execute.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-16T19:59:57Z"
     }
@@ -5143,6 +5610,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Google\\Chrome\\Application\\37.0.2062.120\\delegate_execute.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-04T20:04:18Z"
     }
@@ -5154,6 +5622,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Google\\Chrome\\Application\\38.0.2125.111\\delegate_execute.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-18T22:45:09Z"
     }
@@ -5165,6 +5634,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Google\\Chrome\\Application\\chrome.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5176,6 +5646,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Gurock Software\\SmartInspect Professional\\SmartInspectConsole.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-04T20:35:22Z"
     }
@@ -5187,6 +5658,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Garmin\\Express\\Express.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5198,6 +5670,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\IDM Computer Solutions\\UltraEdit\\Uedit32.exe",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-25T18:51:01Z"
     }
@@ -5209,6 +5682,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\IDM Computer Solutions\\UltraEdit\\update.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5220,6 +5694,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Infragistics\\2014.1\\Version Utility\\Infragistics.VersionUtility.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-25T15:49:37Z"
     }
@@ -5231,6 +5706,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Infragistics\\2014.2\\Version Utility\\Infragistics.VersionUtility.UI.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5242,6 +5718,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\ImgBurn\\ImgBurn.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-22T14:49:28Z"
     }
@@ -5253,6 +5730,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Mandiant\\Highlighter\\Highlighter.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T19:59:48Z"
     }
@@ -5264,6 +5742,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Microsoft Office\\Office15\\POWERPNT.EXE",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-24T13:37:41Z"
     }
@@ -5275,6 +5754,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Microsoft Office\\Office15\\WINWORD.EXE",
+      "Details": {},
       "NumberOfExecutions": 5,
       "LastExecutionTime": "2014-11-26T17:59:52Z"
     }
@@ -5286,6 +5766,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Microsoft Office\\Office15\\EXCEL.EXE",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-19T15:08:04Z"
     }
@@ -5297,6 +5778,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Microsoft Office\\Office15\\FIRSTRUN.EXE",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5308,6 +5790,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Microsoft Visual Studio 12.0\\Common7\\IDE\\VSIXInstaller.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5319,6 +5802,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\Microsoft Visual Studio 12.0\\Common7\\IDE\\devenv.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-09T20:13:29Z"
     }
@@ -5330,6 +5814,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\\eMule\\emule.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-22T02:35:14Z"
     }
@@ -5341,6 +5826,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{D65231B0-B2F1-4857-A4CE-A8E7C6EA7D27}\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-19T12:41:53Z"
     }
@@ -5352,6 +5838,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{D65231B0-B2F1-4857-A4CE-A8E7C6EA7D27}\\Macromed\\Flash\\FlashUtil32_15_0_0_152_Plugin.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5363,6 +5850,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{D65231B0-B2F1-4857-A4CE-A8E7C6EA7D27}\\notepad.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5374,6 +5862,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{D65231B0-B2F1-4857-A4CE-A8E7C6EA7D27}\\cmd.exe",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5385,6 +5874,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "{F38BF404-1D43-42F2-9305-67DE0B28FC23}\\regedit.exe",
+      "Details": {},
       "NumberOfExecutions": 2,
       "LastExecutionTime": "2014-11-25T17:58:15Z"
     }
@@ -5396,6 +5886,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "time..tion_442f396fd370c98e_232c78396b76f37c",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5407,6 +5898,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "gith..tion_317444273a93ac29_332ef02226686101",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5418,6 +5910,7 @@
     "Mtime": "2014-12-08T15:16:44Z",
     "Details": {
       "Program": "hubs..tion_aec5b07adc78d00c_c30febcd8d43d2e2",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5429,6 +5922,7 @@
     "Mtime": "2014-11-20T23:22:38Z",
     "Details": {
       "Program": "UEME_CTLSESSION",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5440,6 +5934,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "UEME_CTLSESSION",
+      "Details": {},
       "NumberOfExecutions": 81,
       "LastExecutionTime": "1704-06-21T02:29:51Z"
     }
@@ -5451,6 +5946,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "UEME_CTLCUACount:ctor",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
@@ -5462,6 +5958,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\Navicat for SQLite.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-18T20:26:26Z"
     }
@@ -5473,6 +5970,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\Postbox.lnk",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-12-08T13:22:11Z"
     }
@@ -5484,6 +5982,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\PowerGREP 4.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-23T20:19:17Z"
     }
@@ -5495,6 +5994,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\RegexBuddy 4.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-30T18:48:22Z"
     }
@@ -5506,6 +6006,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\RegexMagic.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-23T20:19:33Z"
     }
@@ -5517,6 +6018,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\Skype.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-12-08T13:22:17Z"
     }
@@ -5528,6 +6030,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\SmartWhois.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-03T16:39:24Z"
     }
@@ -5539,6 +6042,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\TrueCrypt.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-30T16:31:39Z"
     }
@@ -5550,6 +6054,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\TeamViewer 10.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-25T19:53:41Z"
     }
@@ -5561,6 +6066,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\TeamViewer 9.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-25T17:42:43Z"
     }
@@ -5572,6 +6078,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\UltraEdit.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-25T18:51:01Z"
     }
@@ -5583,6 +6090,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\VLC media player.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T16:04:59Z"
     }
@@ -5594,6 +6102,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\VMware Workstation.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-25T15:29:27Z"
     }
@@ -5605,6 +6114,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\Altova XMLSpy 2014 (x64).lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-04T20:25:17Z"
     }
@@ -5616,6 +6126,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\Altova XMLSpy 2015 (x64).lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-07T22:59:08Z"
     }
@@ -5627,6 +6138,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\Beyond Compare 4.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-25T20:15:54Z"
     }
@@ -5638,6 +6150,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\CCleaner.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-03T16:14:15Z"
     }
@@ -5649,6 +6162,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\Directory Opus.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-03T16:12:35Z"
     }
@@ -5660,6 +6174,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\EditPad Pro 7.lnk",
+      "Details": {},
       "NumberOfExecutions": 5,
       "LastExecutionTime": "2014-11-26T17:08:51Z"
     }
@@ -5671,6 +6186,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\ImgBurn.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-22T14:49:28Z"
     }
@@ -5682,6 +6198,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\Malwarebytes Anti-Malware.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-03T16:52:42Z"
     }
@@ -5693,6 +6210,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\Public\\Desktop\\eMule.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-22T01:28:03Z"
     }
@@ -5704,6 +6222,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Roaming\\ClassicShell\\Pinned\\SmartAssembly 6.lnk",
+      "Details": {},
       "NumberOfExecutions": 18,
       "LastExecutionTime": "2014-11-28T20:12:18Z"
     }
@@ -5715,6 +6234,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Roaming\\ClassicShell\\Pinned\\Visual Studio 2013.lnk",
+      "Details": {},
       "NumberOfExecutions": 18,
       "LastExecutionTime": "2014-12-08T14:57:14Z"
     }
@@ -5726,6 +6246,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Roaming\\ClassicShell\\Pinned\\CopyDLLs.bat - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-17T00:00:53Z"
     }
@@ -5737,6 +6258,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\AppData\\Roaming\\ClassicShell\\Pinned\\Make Update.lnk",
+      "Details": {},
       "NumberOfExecutions": 7,
       "LastExecutionTime": "2014-11-28T19:19:57Z"
     }
@@ -5748,6 +6270,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Paltalk Messenger.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-02T17:00:15Z"
     }
@@ -5759,6 +6282,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Spotify.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T15:45:26Z"
     }
@@ -5770,6 +6294,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ShellBagsExplorer.exe - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-11-26T18:04:46Z"
     }
@@ -5781,6 +6306,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\SmartInspect Professional Console.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-04T20:35:22Z"
     }
@@ -5792,6 +6318,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Tableau Firmware Update.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T21:31:43Z"
     }
@@ -5803,6 +6330,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\X-Ways Forensics 32-bit.lnk",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-11-26T23:40:47Z"
     }
@@ -5814,6 +6342,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\X-Ways Forensics 64-bit.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-19T20:51:52Z"
     }
@@ -5825,6 +6354,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\X-Ways Forensics manual.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-12T18:50:59Z"
     }
@@ -5836,6 +6366,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\XWFIM.exe - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-03T14:11:23Z"
     }
@@ -5847,6 +6378,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\XWFIM.lnk",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-12-08T13:26:52Z"
     }
@@ -5858,6 +6390,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\ArsenalImageMounterMountTool.exe - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-17T14:31:05Z"
     }
@@ -5869,6 +6402,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Aid4Mail.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-18T18:38:16Z"
     }
@@ -5880,6 +6414,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Amazon Music.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-24T14:10:17Z"
     }
@@ -5891,6 +6426,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Convert.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-04T17:29:10Z"
     }
@@ -5902,6 +6438,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\CopyDLLs.bat - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-18T19:47:41Z"
     }
@@ -5913,6 +6450,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\DCode.lnk",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-12-03T03:31:19Z"
     }
@@ -5924,6 +6462,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Event Log Explorer.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T20:10:38Z"
     }
@@ -5935,6 +6474,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Hasher.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-25T19:46:21Z"
     }
@@ -5946,6 +6486,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\Kitty.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-20T23:13:41Z"
     }
@@ -5957,6 +6498,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\LINQPad.exe - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-27T18:01:46Z"
     }
@@ -5968,6 +6510,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\LINQPad.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-26T14:53:20Z"
     }
@@ -5979,6 +6522,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\procexp.exe - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-20T22:28:53Z"
     }
@@ -5990,6 +6534,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\yaru.exe - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 3,
       "LastExecutionTime": "2014-11-25T18:39:08Z"
     }
@@ -6001,6 +6546,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\eMTP_0.2.7.6_64bit.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-17T13:22:42Z"
     }
@@ -6012,6 +6558,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\eMuleParser.exe - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-18T16:59:05Z"
     }
@@ -6023,6 +6570,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\hasher.exe - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-30T14:34:11Z"
     }
@@ -6034,6 +6582,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\kitty.exe - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-16T18:42:37Z"
     }
@@ -6045,6 +6594,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\kitty_portable.exe - Shortcut.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-03T14:42:54Z"
     }
@@ -6056,6 +6606,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "C:\\Users\\eric\\Desktop\\�Torrent.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-14T13:03:25Z"
     }
@@ -6067,6 +6618,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\7-Zip\\7-Zip File Manager.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T14:28:44Z"
     }
@@ -6078,6 +6630,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Red Gate\\.NET Reflector 8.3.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-12-08T13:51:21Z"
     }
@@ -6089,6 +6642,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Red Gate\\.NET Reflector 8.4.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-12-08T13:52:00Z"
     }
@@ -6100,6 +6654,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Red Gate\\SmartAssembly 6.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:35:27Z"
     }
@@ -6111,6 +6666,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Red Gate\\ANTS Memory Profiler 8.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T23:03:57Z"
     }
@@ -6122,6 +6678,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\StartUp\\Snagit 12.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-26T17:57:33Z"
     }
@@ -6133,6 +6690,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\System Tools\\Windows PowerShell.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-16T16:37:19Z"
     }
@@ -6144,6 +6702,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Search.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-23T19:59:47Z"
     }
@@ -6155,6 +6714,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\SkypeAlyzer\\SkypeAlyzer.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-28T22:21:09Z"
     }
@@ -6166,6 +6726,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\TeamViewer 10.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-28T16:52:31Z"
     }
@@ -6177,6 +6738,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\TechSmith\\Snagit 12.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-10T20:06:21Z"
     }
@@ -6188,6 +6750,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Administrative Tools\\Windows PowerShell (x86).lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-08-19T12:41:53Z"
     }
@@ -6199,6 +6762,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\DU Meter\\DU Meter.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-18T17:47:02Z"
     }
@@ -6210,6 +6774,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\DevExpress 13.2\\Project Converter 13.2.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:47:58Z"
     }
@@ -6221,6 +6786,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\DevExpress 14.1\\Project Converter 14.1.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-06T18:39:15Z"
     }
@@ -6232,6 +6798,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\F-Response TACTICAL\\F-Response TACTICAL Manager.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-29T21:34:19Z"
     }
@@ -6243,6 +6810,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Infragistics\\2014.1\\Version Utility 2014.1.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-07-25T15:49:37Z"
     }
@@ -6254,6 +6822,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Infragistics\\2014.1\\Windows Forms\\Utilities\\Create Visual Studio Toolbox Tab for Windows Forms CLR4.0 2014.1.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-05-20T18:45:43Z"
     }
@@ -6265,6 +6834,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Infragistics\\2014.2\\Windows Forms\\Utilities\\Create Visual Studio Toolbox Tab for Windows Forms CLR4.0 2014.2.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-15T12:47:31Z"
     }
@@ -6276,6 +6846,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Microsoft Office 2013\\Word 2013.lnk",
+      "Details": {},
       "NumberOfExecutions": 1,
       "LastExecutionTime": "2014-11-26T15:25:41Z"
     }
@@ -6287,6 +6858,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\Microsoft Office 2013\\Excel 2013.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-11-07T20:57:13Z"
     }
@@ -6298,6 +6870,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8}\\eMule\\eMule.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-09-22T02:35:14Z"
     }
@@ -6309,6 +6882,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{9E3995AB-1F9C-4F13-B827-48B24B6C7174}\\TaskBar\\Internet Explorer.lnk",
+      "Details": {},
       "NumberOfExecutions": 2,
       "LastExecutionTime": "2014-12-08T13:35:46Z"
     }
@@ -6320,6 +6894,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{A77F5D77-2E2B-44C3-A6A2-ABA601054A51}\\System Tools\\Windows.Defender.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-17T17:10:07Z"
     }
@@ -6331,6 +6906,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{A77F5D77-2E2B-44C3-A6A2-ABA601054A51}\\Accessories\\Notepad.lnk",
+      "Details": {},
       "NumberOfExecutions": 2,
       "LastExecutionTime": "2014-12-03T03:49:56Z"
     }
@@ -6342,6 +6918,7 @@
     "Mtime": "2014-12-08T14:57:14Z",
     "Details": {
       "Program": "{A77F5D77-2E2B-44C3-A6A2-ABA601054A51}\\Mandiant\\Highlighter\\Highlighter.lnk",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "2014-10-16T19:59:48Z"
     }
@@ -6353,6 +6930,7 @@
     "Mtime": "2014-11-20T23:22:38Z",
     "Details": {
       "Program": "UEME_CTLSESSION",
+      "Details": {},
       "NumberOfExecutions": 0,
       "LastExecutionTime": "1601-01-01T00:00:00Z"
     }
