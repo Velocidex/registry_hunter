@@ -76,6 +76,16 @@ parameters:
     - None
   default: HashOnly
 
+- name: MaxFileSize
+  type: int
+  description: |
+    The max size in bytes of the individual files to upload (Default 100mb).
+
+- name: MaxHashSize
+  type: int
+  description: |
+    The max size in bytes of the individual files to hash (default 100mb).
+
 - name: RemappingStrategy
   description: |
      In order to present a unified view of all registry hives we remap various hives
@@ -88,6 +98,11 @@ parameters:
    - API And NTUser.dat
    - Raw Hives
    - None
+
+- name: TrustedPathRegex
+  type: regex
+  default: ^C:\\Windows\\
+  description: Do not hash or upload any files matching this regex.
 
 - name: RootDrive
   default: C:/
@@ -112,13 +127,16 @@ export: |
     LET RootFilter <= S.RootFilter || "."
     LET NTFS_CACHE_TIME <= S.NTFS_CACHE_TIME || 1000000
     LET CollectionPolicy <= S.CollectionPolicy || "ExcludeSigned"
+    LET RemappingStrategy <= S.RemappingStrategy || "API And NTUser.dat"
 
     LET CollectionPolicy <= if(condition=RemappingStrategy =~ "API",
       then= CollectionPolicy,
       else=log(message="CollectionPolicy set to None as RemappingStrategy strategy is not API based") && "None")
 
-    LET MaxFileSize <= S.MaxFileSize || 0
+    LET MaxFileSize <= S.MaxFileSize || 100000000
     LET MaxHashSize <= S.MaxHashSize || 100000000
+
+    LET _ <= log(message="MaxFileSize %v, MaxHashSize %v", args=[ MaxFileSize, MaxHashSize])
 
     // In ExcludeSigned and HashOnly we dont upload signed binaries.
     LET ShouldUploadSignedBinary <= dict(
@@ -156,21 +174,25 @@ export: |
 
     // Hash the file if it is not too large
     LET MaybeHash(OSPath, Details) = if(
-      condition=Details.Stat AND Details.Stat.Size < MaxHashSize,
+      condition=Details.Stat AND Details.Stat.Size < MaxHashSize
+                AND NOT OSPath =~ TrustedPathRegex,
       then=Details + dict(Hashes=hash(path=OSPath),
                           Magic=magic(path=OSPath)),
       else=Details)
 
     // Calculate the details column with hashes and magic.
-    LET _GetDetails(OSPath) = if(condition= CollectionPolicy =~ "None",
+    LET _GetDetails(OSPath) = if(
+    condition= CollectionPolicy =~ "None" OR NOT OSPath.Components,
     then=dict(),
     else=MaybeUpload(OSPath=OSPath, Details=MaybeBinary(
-       OSPath=OSPath,
-       Details=MaybeHash(OSPath=OSPath,
-           Details=dict(filename=OSPath, Stat=OSPath && stat(filename=OSPath))))))
+      OSPath=OSPath,
+      Details=MaybeHash(OSPath=OSPath,
+           Details=dict(filename=OSPath, Stat=OSPath &&
+              log(message="Checking file %v", args=OSPath, dedup= -1) &&
+              stat(filename=OSPath))))))
 
-    LET GetDetails(OSPath) = cache(
-       func= _GetDetails(OSPath=OSPath),
+    LET GetDetails(OSPath) = cache(period=10000,
+       func= _GetDetails(OSPath=pathspec(parse=OSPath, path_type="windows")),
        name="GetDetails", key=str(str=OSPath))
 
     -- This contains the metadata for Glob rules.
@@ -373,6 +395,18 @@ export: |
     -- This contains the queries for Full Query Rules - they skip the glob and just run arbitrary VQL.
     LET FullQueries <= parse_json_array(data=gunzip(string=base64decode(string="{{ .QueriesJSON }}")))
 
+    LET _ExpandedTransforms <= dict(
+        `^\\\\SystemRoot\\\\`="%SystemRoot%\\",
+        `^system32\\\\`="%SystemRoot%\\System32\\",
+        `^{.+}.+`="\\$0",
+        `^C:\\\\Program Files[^\\\\]*\\\\[^ ]+`='"$0"',
+        `^%[^ ]+%[^ ]+`='"$0"'
+      )
+
+    // Extract the binary from the command line
+    LET ExpandPath(Path) = lowcase(string=commandline_split(
+    command=expand(path=regex_transform(source=Path,
+      map=_ExpandedTransforms)))[0])
 
 sources:
 - name: Remapping
@@ -517,3 +551,8 @@ sources:
         SELECT * FROM query(query=Query, inherit=TRUE)
       })
     })
+
+
+column_types:
+- name: Details
+  type: json/1

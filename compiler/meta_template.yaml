@@ -1,4 +1,13 @@
 name: MetaArtifact
+description: |
+  A psudo artifact for Windows.Registry.Hunter.
+
+  This is used to run the verifier on the rules to catch any syntax
+  errors.
+
+imports:
+- Windows.Registry.Hunter
+
 sources:
 {{- range .Rules }}
 {{- if .Query }}
@@ -6,4 +15,16 @@ sources:
   query: |
 {{ Indent .Query 4 }}
 {{- end -}}
+{{- end }}
+
+- name: Details
+  query: |
+{{- range .Rules }}
+{{- if .Details }}
+
+    // Details of {{ .Description }}
+{{- $name := regexReplaceAll "[^a-zA-Z]" .Description "_" }}
+{{ Indent (.Details | replace "x=>" ( printf "LET %s(x) =" $name) ) 4 }}
 {{- end -}}
+{{- end -}}
+     SELECT * FROM info()

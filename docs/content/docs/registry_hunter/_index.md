@@ -1,6 +1,7 @@
 ---
 title: "Velociraptor Registry Hunter"
 date: 2024-04-01
+IconClass: fa-solid fa-desktop
 weight: 10
 ---
 

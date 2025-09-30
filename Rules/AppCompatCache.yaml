@@ -92,7 +92,7 @@ Rules:
         struct="HeaderWin8")
 
     LET AppCompatCache(Blob) = SELECT LastMod, Path,
-        Execution, GetDetails(OSPath=Path) AS Details
+        Execution, GetDetails(OSPath=ExpandPath(Path=Path)) AS Details
     FROM foreach(
       row=if(
         condition=AppCompatCacheWin10(Blob=Blob).HeaderSize IN (52, 48),

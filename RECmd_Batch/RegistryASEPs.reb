@@ -217,158 +217,6 @@ Keys:
         Recursive: false
         Comment:
     -
-        Description: Services AutoRun
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: AutoRun
-        Recursive: true
-        Comment:
-    -
-        Description: Services BootFlags
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: BootFlags
-        Recursive: true
-        Comment:
-    -
-        Description: Services DelayedAutoStart
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: DelayedAutoStart
-        Recursive: true
-        Comment:
-    -
-        Description: Services DependOnService
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: DependOnService
-        Recursive: true
-        Comment:
-    -
-        Description: Services Description
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: Description
-        Recursive: true
-        Comment:
-    -
-        Description: Services DisplayName
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: DisplayName
-        Recursive: true
-        Comment:
-    -
-        Description: Services ErrorControl
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: ErrorControl
-        Recursive: true
-        Comment:
-    -
-        Description: Services Group
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: Group
-        Recursive: true
-        Comment:
-    -
-        Description: Services ImagePath
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: ImagePath
-        Recursive: true
-        Comment:
-    -
-        Description: Services Library
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: Library
-        Recursive: true
-        Comment:
-    -
-        Description: Services ObjectName
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: ObjectName
-        Recursive: true
-        Comment:
-    -
-        Description: Services ProviderPath
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: ProviderPath
-        Recursive: true
-        Comment:
-    -
-        Description: Services ProxyDllFile
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: ProxyDllFile
-        Recursive: true
-        Comment:
-    -
-        Description: Services RequiredPrivileges
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: RequiredPrivileges
-        Recursive: true
-        Comment:
-    -
-        Description: Services ServiceDll
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: ServiceDll
-        Recursive: true
-        Comment:
-    -
-        Description: Services ServiceMain
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: ServiceMain
-        Recursive: true
-        Comment:
-    -
-        Description: Services ServiceSidType
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: ServiceSidType
-        Recursive: true
-        Comment:
-    -
-        Description: Services Start
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: Start
-        Recursive: true
-        Comment:
-    -
-        Description: Services Type
-        HiveType: SYSTEM
-        Category: ASEP
-        KeyPath: ControlSet*\Services\*
-        ValueName: Type
-        Recursive: true
-        Comment:
-    -
         Description: WinSock2 AppId_Catalog AppFullPath
         HiveType: SYSTEM
         Category: ASEP
@@ -600,66 +448,10 @@ Keys:
         Recursive: false
         Comment:
     -
-        Description: CLSID InprocServer32
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\CLSID\*\InprocServer32
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: CLSID InprocServer32
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\CLSID\*\InprocServer32
-        ValueName: Assembly
-        Recursive: false
-        Comment:
-    -
-        Description: CLSID Instance CLSID
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\CLSID\*\Instance
-        ValueName: CLSID
-        Recursive: true
-        Comment:
-    -
-        Description: CLSID Instance FriendlyName
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\CLSID\*\Instance
-        ValueName: FriendlyName
-        Recursive: true
-        Comment:
-    -
-        Description: CLSID LocalServer32
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\CLSID\*\LocalServer32
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: CLSID LocalServer32
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\CLSID\*\LocalServer32
-        ValueName: Assembly
-        Recursive: false
-        Comment:
-    -
         Description: CLSID PersistentHandler
         HiveType: Software
         Category: ASEP
         KeyPath: Classes\CLSID\*\PersistentHandler
-        Recursive: false
-        Comment:
-    -
-        Description: CLSID TypeLib
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\CLSID\*\TypeLib
-        ValueName: (default)
         Recursive: false
         Comment:
     -
@@ -746,22 +538,6 @@ Keys:
         HiveType: Software
         Category: ASEP Classes
         KeyPath: Classes\htmlfile\shell\open\command
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: Interface ProxyStubClsid32
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\Interface\*\ProxyStubClsid32
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: Interface TypeLib
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\Interface\*\TypeLib
         ValueName: (default)
         Recursive: false
         Comment:
@@ -925,54 +701,6 @@ Keys:
         Recursive: false
         Comment:
     -
-        Description: Wow6432 CLSID InprocServer32
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\Wow6432Node\CLSID\*\InprocServer32
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: Wow6432 CLSID InprocServer32
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\Wow6432Node\CLSID\*\InprocServer32
-        ValueName: Assembly
-        Recursive: false
-        Comment:
-    -
-        Description: Wow6432 CLSID Instance CLSID
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\Wow6432Node\CLSID\*\Instance
-        ValueName: CLSID
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 CLSID Instance FriendlyName
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\Wow6432Node\CLSID\*\Instance
-        ValueName: FriendlyName
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 CLSID LocalServer32
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\Wow6432Node\CLSID\*\LocalServer32
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: Wow6432 CLSID LocalServer32
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Classes\Wow6432Node\CLSID\*\LocalServer32
-        ValueName: Assembly
-        Recursive: false
-        Comment:
-    -
         Description: Wow6432 CLSID PersistentHandler
         HiveType: Software
         Category: ASEP
@@ -1055,22 +783,6 @@ Keys:
         HiveType: Software
         Category: ASEP Classes
         KeyPath: Classes\Wow6432Node\Folder\shellex\PropertySheetHandlers\*
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: Wow6432 Interface ProxyStubClsid32
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\Wow6432Node\Interface\*\ProxyStubClsid32
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: Wow6432 Interface TypeLib
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\Wow6432Node\Interface\*\TypeLib
         ValueName: (default)
         Recursive: false
         Comment:
@@ -3450,22 +3162,6 @@ Keys:
         Category: ASEP
         KeyPath: Directory\Background\ShellEx\ContextMenuHandlers
         ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: CLSID InprocServer32
-        HiveType: usrclass
-        Category: ASEP
-        KeyPath: CLSID\*\InprocServer32
-        ValueName: (default)
-        Recursive: false
-        Comment:
-    -
-        Description: CLSID InprocServer32
-        HiveType: usrclass
-        Category: ASEP
-        KeyPath: CLSID\*\InprocServer32
-        ValueName: Assembly
         Recursive: false
         Comment:
     -

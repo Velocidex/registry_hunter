@@ -72,6 +72,11 @@ Preamble:
       `8`="APPCOMMAND_VOLUME_MUTE",
       `10`="APPCOMMAND_VOLUME_UP")
 
+  - |
+    LET EnrichAmCacheWithDetails(Details) = if(condition=Details.LowerCaseLongPath,
+    then=Details + GetDetails(OSPath=Details.LowerCaseLongPath),
+    else=Details)
+
 Rules:
 - Description: Parse AmCache InventoryApplicationFile
   Author: M. Cohen
@@ -81,7 +86,7 @@ Rules:
   Glob: Root\\InventoryApplication*\\*
   Filter: x=>true
   Details: |
-    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
+    x=>EnrichAmCacheWithDetails(Details=FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.'))
 
 - Description: Parse AmCache DriverBinary
   Author: M. Cohen
@@ -91,7 +96,7 @@ Rules:
   Glob: Root\\InventoryDriverBinary\\*
   Filter: x=>IsDir
   Details: |
-    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.') + dict(Driver=OSPath.Basename)
+    x=>EnrichAmCacheWithDetails(Details=FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.'))
 
 - Description: Parse AmCache InventoryApplicationShortcut
   Author: M. Cohen
@@ -100,8 +105,14 @@ Rules:
   Root: Amcache
   Glob: Root\\InventoryApplicationShortcut\\*
   Filter: x=>true
+  Preamble:
+    - |
+      LET EnrichAmCacheShortcut(Details) = if(condition=Details.ShortcutPath,
+      then=Details + GetDetails(OSPath=ExpandPath(Path=Details.ShortcutPath)),
+      else=Details)
+
   Details: |
-    x=>FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')
+    x=>EnrichAmCacheShortcut(Details=FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.'))
 
 - Description: Active Setup Installed Components
   Category: ASEP
@@ -350,7 +361,8 @@ Rules:
   Glob: "/*/Software/Classes/ActivatableClasses/Package/*/DebugInformation/*"
   Details: |
     x=>dict(Application=x.OSPath[-1],
-            DebugPath=GetValue(OSPath=OSPath + "DebugPath"))
+            DebugPath=GetValue(OSPath=OSPath + "DebugPath")) +
+       GetDetails(OSPath=GetValue(OSPath=OSPath + "DebugPath"))
 
 - Description: Get shell open command settings for various file types
   Author: M. Cohen
@@ -366,7 +378,8 @@ Rules:
   Details: |
     x=>dict(Application=x.OSPath[3],
             Key=OSPath,
-            Command=GetValue(OSPath=OSPath))
+            Command=GetValue(OSPath=OSPath)) +
+            GetDetails(OSPath=ExpandPath(Path=GetValue(OSPath=OSPath)))
 
 - Description: Automount settings
   Reference: |
