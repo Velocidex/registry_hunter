@@ -2544,20 +2544,6 @@
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
-   "Description": "Wow6432 TypeLib win32",
-   "Category": "ASEP Classes",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\TypeLib\\*\\*\\*\\win32\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 TypeLib win64",
-   "Category": "ASEP Classes",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\TypeLib\\*\\*\\*\\win64\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
    "Description": "Chrome Extensions",
    "Category": "ASEP",
    "Author": "Troy Larson",

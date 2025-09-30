@@ -59,19 +59,6 @@ Preamble:
        WHERE _value
     })
 
-  - LET _ExpandedTransforms <= dict(
-        `^\\\\SystemRoot\\\\`="%SystemRoot%\\",
-        `^C:\\\\Program Files.+`='"$0"',
-        `^%[^ ]+%.+`='"$0"'
-      )
-
-  # Try to parse the path into something resembling the binary.
-  # Sometimes we see things like "\SystemRoot\System32\..." which
-  # should be expanded into "%SystemRoot%\System32"
-  - LET ExpandPath(Path) = commandline_split(
-    command=expand(path=regex_transform(source=Path,
-      map=_ExpandedTransforms)))[0]
-
 Rules:
 - Description: Interface Properties (IPv4)
   Category: System Info
@@ -289,9 +276,10 @@ Rules:
 
   Details: |
     x=>dict(Program=rot13(string=x.OSPath.Basename),
-            Details=GetDetails(OSPath=rot13(string=x.OSPath.Basename)),
-            NumberOfExecutions=_ExtractUserAssist(OSPath=x.Data).NumberOfExecutions,
-            LastExecutionTime=_ExtractUserAssist(OSPath=x.Data).LastExecution)
+            NumberOfExecutions=_ExtractUserAssist(Data=x.Data).NumberOfExecutions,
+            LastExecutionTime=_ExtractUserAssist(Data=x.Data).LastExecution) +
+      GetDetails(OSPath=ExpandPath(Path=rot13(string=x.OSPath.Basename)))
+
 
 - Author: Andrew Rathbun, Mike Cohen
   Description: "RADAR: Displays applications that were running at one point in time on this system"
@@ -446,11 +434,11 @@ Rules:
 
   Details: |
     x=>dict(
-     DefaultMRU=RDPMRU(OSPath=OSPath).Server,
+     DefaultMRU=RDPMRU(OSPath=x.OSPath).Server,
      Servers={
       SELECT OSPath.Basename AS Server, Mtime,
         FetchKeyValues(OSPath=OSPath) AS Details
-      FROM glob(accessor="registry", globs='*', root=OSPath + "Servers")
+      FROM glob(accessor="registry", globs='*', root=x.OSPath + "Servers")
     })
 
 - Author: Andrew Rathbun, Mike Cohen
@@ -628,8 +616,8 @@ Rules:
   Glob: Clients\StartMenuInternet\*\shell\*\command\@
   Details: |
     x=>dict(Command=x.Data,
-            Type=x.OSPath[-3],
-            Details=GetDetails(OSPath=ExpandPath(Path=x.Data)))
+            Type=x.OSPath[-3]) +
+      GetDetails(OSPath=ExpandPath(Path=x.Data))
 
 
 - Description: Exploit Guards MitigationOptions
@@ -700,11 +688,10 @@ Rules:
             HexValue=format(format="%#015x", args=x.Data),
             Parsed=ParseMitigationOptions(H=format(format="%#015x", args=x.Data)))
 
-
 - Description: TypeLib win64
   Category: ASEP Classes
   Author: Troy Larson and Mike Cohen
-  Glob: Classes\TypeLib\*\*\*\win64\@
+  Glob: Classes\TypeLib\*\*\*\{win32,win64}\@
   Root: HKEY_LOCAL_MACHINE\Software
   Preamble:
     # Sometimes the path ends with an ordinal number for the exported
@@ -713,36 +700,113 @@ Rules:
       condition= OSPath.Basename =~ "^[1-9]+$",
       then= OSPath.Dirname, else=OSPath)
 
-    - LET NormalizeClassDLL(OSPath) = _NormalizeClassDLL(
-       OSPath=pathspec(parse=OSPath, path_type="windows"))
+    - LET ClassDLLCache <= dict()
+    - |
+      LET CacheClassPaths(CLSID, OSPath) = set(item= ClassDLLCache,
+         field=CLSID, value=OSPath) && OSPath
+
+    - |
+      LET NormalizeClassDLL(CLSID, OSPath) = CacheClassPaths(CLSID=CLSID,
+      OSPath=_NormalizeClassDLL(OSPath=pathspec(parse=OSPath, path_type="windows")))
 
   Details: |
-    x=>GetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +
-       dict(ClassPath=x.Data)
+    x=>GetDetails(OSPath=NormalizeClassDLL(
+          CLSID=x.OSPath[-5], OSPath=expand(path=x.Data))) +
+       dict(CLSID=x.OSPath[-5], ClassDLLPath=x.Data)
 
-- Description: TypeLib win32
+- Description: Interface TypeLib
+  Comment: Resolves the ClassID to Path from TypeLib win64
   Category: ASEP Classes
   Author: Troy Larson and Mike Cohen
-  Glob: Classes\TypeLib\*\*\*\win32\@
-  Root: HKEY_LOCAL_MACHINE\Software
-  Details: |
-    x=>GetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +
-      dict(ClassPath=x.Data)
+  Query: |
+    SELECT Description, Category, OSPath, Mtime,
+           GetDetails(OSPath=get(item=ClassDLLCache, field=Data.value)) +
+           dict(ClassName=Data.value,
+                Filename=get(item=ClassDLLCache, field=Data.value)) AS Details
+      FROM glob(
+        globs="/Classes/Interface/*/TypeLib/@",
+        root="HKEY_LOCAL_MACHINE\\Software", accessor="registry")
 
-- Description: Wow6432 TypeLib win64
+- Description: CLSID InprocServer32
   Category: ASEP Classes
   Author: Troy Larson and Mike Cohen
-  Glob: Classes\Wow6432Node\TypeLib\*\*\*\win64\@
+  Glob: Classes\CLSID\*\InprocServer32\@
   Root: HKEY_LOCAL_MACHINE\Software
   Details: |
-    x=>GetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +
-      dict(ClassPath=x.Data)
+    x=>GetDetails(OSPath=NormalizeClassDLL(
+          CLSID=x.OSPath[-3], OSPath=expand(path=x.Data))) +
+       dict(CLSID=x.OSPath[-3], ClassDLLPath=x.Data)
 
-- Description: Wow6432 TypeLib win32
+- Description: TypeLib win32 USRCLASS
   Category: ASEP Classes
   Author: Troy Larson and Mike Cohen
-  Glob: Classes\Wow6432Node\TypeLib\*\*\*\win32\@
+  Glob: '*/Software/Classes\TypeLib\*\*\*\{win32,win64}\@'
+  Root: HKEY_USERS
+  Details: |
+    x=>GetDetails(OSPath=NormalizeClassDLL(
+          CLSID=x.OSPath[-5], OSPath=expand(path=x.Data))) +
+       dict(CLSID=x.OSPath[-5], ClassDLLPath=x.Data)
+
+- Description: Wow6432 TypeLib
+  Category: ASEP Classes
+  Author: Troy Larson and Mike Cohen
+  Glob: Classes\Wow6432Node\TypeLib\*\*\*\{win32,win64}\@
   Root: HKEY_LOCAL_MACHINE\Software
   Details: |
-    x=>GetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +
-     dict(ClassPath=x.Data)
+    x=>GetDetails(OSPath=NormalizeClassDLL(
+          CLSID=x.OSPath[-5], OSPath=expand(path=x.Data))) +
+       dict(CLSID=x.OSPath[-5], ClassDLLPath=x.Data)
+
+- Description: Wow6432Node CLSID InprocServer32
+  Category: ASEP Classes
+  Author: Troy Larson and Mike Cohen
+  Glob: '*/Software/Classes/Wow6432Node/CLSID/*/InprocServer32/@'
+  Root: HKEY_USERS
+  Details: |
+    x=>GetDetails(OSPath=NormalizeClassDLL(
+          CLSID=x.OSPath[-3], OSPath=expand(path=x.Data))) +
+       dict(CLSID=x.OSPath[-3], ClassDLLPath=x.Data)
+
+- Description: CLSID LocalServer32
+  Category: ASEP Classes
+  Author: Troy Larson and Mike Cohen
+  Glob: Classes\CLSID\*\LocalServer32\@
+  Root: HKEY_LOCAL_MACHINE\Software
+  Details: |
+    x=>GetDetails(OSPath=NormalizeClassDLL(
+          CLSID=x.OSPath[-3], OSPath=expand(path=x.Data))) +
+       dict(CLSID=x.OSPath[-3], ClassDLLPath=x.Data)
+
+- Description: CLSID Instance
+  Category: ASEP Classes
+  Author: Troy Larson and Mike Cohen
+  Glob: Classes\CLSID\*\Instance
+  Root: HKEY_LOCAL_MACHINE\Software
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Description: System Event Log Providers
+  Category: Event Logs
+  Glob: ControlSet001\Control\WMI\Autologger\EventLog-System\*
+  Root: HKEY_LOCAL_MACHINE\System
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(Provider=x.OSPath.Basename) + FetchKeyValues(OSPath=x.OSPath)
+
+- Description: Event Logs Logging Status
+  Category: Event Logs
+  Author: Andrew Rathbun and Mike Cohen
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows\CurrentVersion\WINEVT\Channels\*
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath) + dict(Provider=x.OSPath[-1])
+
+- Description: Application Event Log Providers
+  Category: Event Logs
+  Author: Andrew Rathbun and Mike Cohen
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: ControlSet001\Control\WMI\Autologger\EventLog-Application\*
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath) + dict(ProviderGUID=x.OSPath[-1])

@@ -28,10 +28,24 @@
 
 let all_data = [];
 
+function trimHash(input) {
+  if(input.startsWith("#")) {
+      return input.slice(1)
+  };
+  return input;
+}
+
 $.ajax({
     url: {{ .Get 0 }},
 }).done(function( data ) {
   all_data = data;
+  let input = document.getElementById('myInput');
+  if(input) {
+      input.value = trimHash(decodeURI(window.location.hash));
+      doSearch();
+      return;
+  };
+
   DrawResults(data);
 });
 
@@ -108,6 +122,8 @@ function doSearch() {
   let input = document.getElementById('myInput');
   let filter = input.value.toUpperCase();
 
+  window.location.hash = encodeURI(input.value);
+
   let result = [];
   for(let i=0;i<all_data.length; i++) {
       let item = all_data[i];
@@ -126,6 +142,10 @@ function DrawResults(data) {
     $(".search_results").empty();
     $("span.total-count").text("Total " + data.length);
 
+    data = data.sort(function(a,b) {
+        return a.Description < b.Description ? -1 : 1;
+    });
+
     let most_results = data.length;
     if(most_results > 50) {
         most_results = 50;
@@ -136,8 +156,13 @@ function DrawResults(data) {
       let template = $(`
 <div class="panel panel-default color">
   <div class="panel-heading color">
-    <a class="title" target="new" href=""><h3 class="panel-title color " ></h3></a>
+    <h3 class="panel-title color " >
+    <a class="new-tab" href="#" title="NewPage" target="_blank">
+       <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+    <a class="title" target="new" href=""></a>
     <div class="author pull-right"></div>
+    </h3>
   </div>
   <div class="panel-body color">
     <div class="border color">
@@ -151,6 +176,10 @@ function DrawResults(data) {
 </div>`);
 
       template.find(".title").append(item.Description);
+      let link = new URL(window.location.href);
+      link.hash = encodeURI(item.Description);
+      template.find("a.new-tab").attr("href", link);
+
       template.find(".author").append(item.Author);
       template.find(".description").append(item.Comment);
       template.find(".title").attr("href", item.link).click(function() {

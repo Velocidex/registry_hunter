@@ -3067,42 +3067,7 @@ Keys:
 # Services plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.Services
 # https://www.forensafe.com/blogs/windowsservices.html
 
-# --------------------
-# EVENT LOGS
-# --------------------
-
-    -
-        Description: Event Logs Logging Status
-        HiveType: SOFTWARE
-        Category: Event Logs
-        KeyPath: Microsoft\Windows\CurrentVersion\WINEVT\Channels
-        ValueName: Enabled
-        Recursive: true
-        Comment: "Displays the status of Windows Event Log Channels (Key Path) on this system, 0 = Disabled, 1 - Enabled"
-        Details: x=>ExtractValueFromComment(x=x)
-
-# https://www.ibm.com/mysupport/s/question/0D50z000062kolQ/how-to-monitor-custom-event-log?language=en_US
-# SYSTEM\\ControlSet00*\Services\EventLog\* will display the Provider GUID for each Event Log channel listed here. This recursive key is not enabled here
-
-    -
-        Description: Application Event Log Providers
-        HiveType: SYSTEM
-        Category: Event Logs
-        KeyPath: ControlSet001\Control\WMI\Autologger\EventLog-Application
-        Recursive: true
-        Comment: "Displays the status of Providers within the Application Event Log on this system, 0 = Disabled, 1 - Enabled"
-        Details: x=>ExtractValueFromComment(x=x)
-
 # ETW plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.ETW
-
-    -
-        Description: System Event Log Providers
-        HiveType: SYSTEM
-        Category: Event Logs
-        KeyPath: ControlSet001\Control\WMI\Autologger\EventLog-System
-        Recursive: true
-        Comment: "Displays the status of Providers within the Application Event Log on this system, 0 = Disabled, 1 - Enabled"
-        Details: x=>ExtractValueFromComment(x=x)
 
 # ETW plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.ETW
 

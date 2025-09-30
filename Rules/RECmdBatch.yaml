@@ -895,30 +895,6 @@ Rules:
   Comment: Displays the user's specified storage location for Dropbox
   Glob: Microsoft\Windows\CurrentVersion\Explorer\SyncRootManager\Dropbox*\UserSyncRoots\**
   Root: HKEY_LOCAL_MACHINE\Software
-- Description: Event Logs Logging Status
-  Category: Event Logs
-  Author: Andrew Rathbun
-  Comment: Displays the status of Windows Event Log Channels (Key Path) on this system,
-    0 = Disabled, 1 - Enabled
-  Glob: Microsoft\Windows\CurrentVersion\WINEVT\Channels\**\Enabled
-  Root: HKEY_LOCAL_MACHINE\Software
-  Details: x=>ExtractValueFromComment(x=x)
-- Description: Application Event Log Providers
-  Category: Event Logs
-  Author: Andrew Rathbun
-  Comment: Displays the status of Providers within the Application Event Log on this
-    system, 0 = Disabled, 1 - Enabled
-  Glob: ControlSet001\Control\WMI\Autologger\EventLog-Application\**
-  Root: HKEY_LOCAL_MACHINE\System
-  Details: x=>ExtractValueFromComment(x=x)
-- Description: System Event Log Providers
-  Category: Event Logs
-  Author: Andrew Rathbun
-  Comment: Displays the status of Providers within the Application Event Log on this
-    system, 0 = Disabled, 1 - Enabled
-  Glob: ControlSet001\Control\WMI\Autologger\EventLog-System\**
-  Root: HKEY_LOCAL_MACHINE\System
-  Details: x=>ExtractValueFromComment(x=x)
 - Description: Microsoft Office
   Category: Microsoft Office
   Author: Andrew Rathbun
@@ -1478,101 +1454,6 @@ Rules:
   Author: Troy Larson
   Glob: ControlSet*\Control\WOW\KnownDLLs
   Root: HKEY_LOCAL_MACHINE\System
-- Description: Services AutoRun
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\AutoRun
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services BootFlags
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\BootFlags
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services DelayedAutoStart
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\DelayedAutoStart
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services DependOnService
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\DependOnService
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services Description
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\Description
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services DisplayName
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\DisplayName
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services ErrorControl
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\ErrorControl
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services Group
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\Group
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services ImagePath
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\ImagePath
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services Library
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\Library
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services ObjectName
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\ObjectName
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services ProviderPath
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\ProviderPath
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services ProxyDllFile
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\ProxyDllFile
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services RequiredPrivileges
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\RequiredPrivileges
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services ServiceDll
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\ServiceDll
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services ServiceMain
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\ServiceMain
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services ServiceSidType
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\ServiceSidType
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services Start
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\Start
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Services Type
-  Category: ASEP
-  Author: Troy Larson
-  Glob: ControlSet*\Services\*\**\Type
-  Root: HKEY_LOCAL_MACHINE\System
 - Description: WinSock2 AppId_Catalog AppFullPath
   Category: ASEP
   Author: Troy Larson
@@ -1718,45 +1599,10 @@ Rules:
   Author: Troy Larson
   Glob: Classes\*\ShellEx\PropertySheetHandlers\@
   Root: HKEY_LOCAL_MACHINE\Software
-- Description: CLSID InprocServer32
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\CLSID\*\InprocServer32\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: CLSID InprocServer32
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\CLSID\*\InprocServer32\Assembly
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: CLSID Instance CLSID
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\CLSID\*\Instance\**\CLSID
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: CLSID Instance FriendlyName
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\CLSID\*\Instance\**\FriendlyName
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: CLSID LocalServer32
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\CLSID\*\LocalServer32\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: CLSID LocalServer32
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\CLSID\*\LocalServer32\Assembly
-  Root: HKEY_LOCAL_MACHINE\Software
 - Description: CLSID PersistentHandler
   Category: ASEP
   Author: Troy Larson
   Glob: Classes\CLSID\*\PersistentHandler
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: CLSID TypeLib
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\CLSID\*\TypeLib\@
   Root: HKEY_LOCAL_MACHINE\Software
 - Description: cmdfile shell open command
   Category: ASEP
@@ -1812,16 +1658,6 @@ Rules:
   Category: ASEP Classes
   Author: Troy Larson
   Glob: Classes\htmlfile\shell\open\command\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Interface ProxyStubClsid32
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\Interface\*\ProxyStubClsid32\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Interface TypeLib
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\Interface\*\TypeLib\@
   Root: HKEY_LOCAL_MACHINE\Software
 - Description: Protocols Filter
   Category: ASEP Classes
@@ -1923,36 +1759,6 @@ Rules:
   Author: Troy Larson
   Glob: Classes\Wow6432Node\*\ShellEx\PropertySheetHandlers\@
   Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 CLSID InprocServer32
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\CLSID\*\InprocServer32\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 CLSID InprocServer32
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\CLSID\*\InprocServer32\Assembly
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 CLSID Instance CLSID
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\CLSID\*\Instance\**\CLSID
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 CLSID Instance FriendlyName
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\CLSID\*\Instance\**\FriendlyName
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 CLSID LocalServer32
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\CLSID\*\LocalServer32\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 CLSID LocalServer32
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\CLSID\*\LocalServer32\Assembly
-  Root: HKEY_LOCAL_MACHINE\Software
 - Description: Wow6432 CLSID PersistentHandler
   Category: ASEP
   Author: Troy Larson
@@ -2007,16 +1813,6 @@ Rules:
   Category: ASEP Classes
   Author: Troy Larson
   Glob: Classes\Wow6432Node\Folder\shellex\PropertySheetHandlers\*\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Interface ProxyStubClsid32
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\Interface\*\ProxyStubClsid32\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Interface TypeLib
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\Interface\*\TypeLib\@
   Root: HKEY_LOCAL_MACHINE\Software
 - Description: Chrome Extensions
   Category: ASEP
@@ -3580,16 +3376,6 @@ Rules:
   Category: ASEP
   Author: Troy Larson
   Glob: '*\Software\ClassesDirectory\Background\ShellEx\ContextMenuHandlers\@'
-  Root: HKEY_USERS
-- Description: CLSID InprocServer32
-  Category: ASEP
-  Author: Troy Larson
-  Glob: '*\Software\ClassesCLSID\*\InprocServer32\@'
-  Root: HKEY_USERS
-- Description: CLSID InprocServer32
-  Category: ASEP
-  Author: Troy Larson
-  Glob: '*\Software\ClassesCLSID\*\InprocServer32\Assembly'
   Root: HKEY_USERS
 - Description: CLSID LocalServer32
   Category: ASEP
