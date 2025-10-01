@@ -1529,11 +1529,6 @@ Rules:
   Author: Troy Larson
   Glob: Classes\.exe\PersistentHandler\@
   Root: HKEY_LOCAL_MACHINE\Software
-- Description: shell Open Command
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\*\shell\**\DelegateExecute
-  Root: HKEY_LOCAL_MACHINE\Software
 - Description: shell Runas command
   Category: ASEP Classes
   Author: Troy Larson
@@ -1688,11 +1683,6 @@ Rules:
   Category: ASEP Classes
   Author: Troy Larson
   Glob: Classes\SystemFileAssociations\*\ShellEx\ContextMenuHandlers\ShellImagePreview\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 shell Open Command
-  Category: ASEP Classes
-  Author: Troy Larson
-  Glob: Classes\Wow6432Node\*\shell\**\DelegateExecute
   Root: HKEY_LOCAL_MACHINE\Software
 - Description: Wow6432 shell Runas command
   Category: ASEP Classes
@@ -2164,71 +2154,6 @@ Rules:
   Author: Troy Larson
   Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\**
   Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Actions
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Author
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Description
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\DynamicInfo
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Hash
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Path
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Schema
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\SecurityDescriptor
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Source
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Triggers
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\URI
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Version
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Schedule TaskCache Tree
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\**\Id
-  Root: HKEY_LOCAL_MACHINE\Software
 - Description: SilentProcessExit
   Category: ASEP
   Author: Troy Larson
@@ -2329,21 +2254,6 @@ Rules:
   Category: ASEP
   Author: Troy Larson
   Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\AlternateShells\AvailableShells
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Winlogon GPExtensions
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Winlogon GPExtensions
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\DisplayName
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Winlogon GPExtensions
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\dllname
   Root: HKEY_LOCAL_MACHINE\Software
 - Description: Winlogon Notify
   Category: ASEP
@@ -2686,71 +2596,6 @@ Rules:
   Author: Troy Larson
   Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\**
   Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Actions
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Author
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Description
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\DynamicInfo
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Hash
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Path
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Schema
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\SecurityDescriptor
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Source
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Triggers
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\URI
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tasks
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**\Version
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Schedule TaskCache Tree
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\**\Id
-  Root: HKEY_LOCAL_MACHINE\Software
 - Description: Wow6432 SilentProcessExit
   Category: ASEP
   Author: Troy Larson
@@ -2851,21 +2696,6 @@ Rules:
   Category: ASEP
   Author: Troy Larson
   Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\AlternateShells\AvailableShells
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Winlogon GPExtensions
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\@
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Winlogon GPExtensions
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\DisplayName
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Winlogon GPExtensions
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\**\dllname
   Root: HKEY_LOCAL_MACHINE\Software
 - Description: Wow6432 Winlogon Notify
   Category: ASEP

@@ -96,7 +96,8 @@ Rules:
   Glob: Root\\InventoryDriverBinary\\*
   Filter: x=>IsDir
   Details: |
-    x=>EnrichAmCacheWithDetails(Details=FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.'))
+    x=>EnrichAmCacheWithDetails(Details=FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')) +
+      GetDetails(OSPath=x.OSPath[-1])
 
 - Description: Parse AmCache InventoryApplicationShortcut
   Author: M. Cohen
