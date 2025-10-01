@@ -156,8 +156,9 @@ export: |
 
     // Determine if we should upload the file based on signature.
     LET ShouldUpload(Details) = if(
-      condition=NOT Details.Stat.Size OR (
-           MaxFileSize > 0 AND Details.Stat.Size > MaxFileSize ),
+      condition= OSPath =~ TrustedPathRegex OR
+                 NOT Details.Stat.Size OR
+                 ( MaxFileSize > 0 AND Details.Stat.Size > MaxFileSize ),
       then= Details + DoNotUpload,
       else=if(
        // What to do about binaries? If they have an issuer name then

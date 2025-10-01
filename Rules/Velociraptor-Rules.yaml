@@ -454,27 +454,23 @@ Rules:
   Description: "Run (NTUSER)"
   Category: Autoruns
   Root: HKEY_USERS
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Run*'
-  Filter: x=>IsDir AND Details
+  Glob: '*\Software\Microsoft\Windows\CurrentVersion\{Run,RunOnce}\*'
+  Filter: x=>true
   Details: |
-    x=>FetchKeyValues(OSPath=x.OSPath)
+    x=>dict(Name=x.OSPath.Basename, RawTarget=x.Data,
+          CommandImage=ExpandPath(Path=Data.value)) +
+       GetDetails(OSPath=ExpandPath(Path=x.Data))
 
 - Author: Andrew Rathbun, Mike Cohen
   Description: "Run (SYSTEM)"
   Category: Autoruns
   Root: HKEY_LOCAL_MACHINE\Software
-  Glob: 'Microsoft\Windows\CurrentVersion\Run*'
-  Filter: x=>IsDir AND Details
-  Preamble:
-  - LET EnumerateRunKey(OSPath) = SELECT Name,
-        Data.value AS RawTarget,
-        ExpandPath(Path=Data.value) AS CommandImage,
-        GetDetails(OSPath=ExpandPath(Path=Data.value)) AS Details
-    FROM glob(accessor="registry", globs="*", root=OSPath)
-    WHERE NOT IsDir
-
+  Glob: 'Microsoft\Windows\CurrentVersion\{Run,RunOnce}\*'
+  Filter: x=>true
   Details: |
-    x=>EnumerateRunKey(OSPath=x.OSPath)
+    x=>dict(Name=x.OSPath.Basename, RawTarget=x.Data,
+          CommandImage=ExpandPath(Path=Data.value)) +
+       GetDetails(OSPath=ExpandPath(Path=x.Data))
 
 - Author: Andrew Rathbun, Mike Cohen
   Description: Scheduled Tasks (TaskCache)
@@ -810,3 +806,63 @@ Rules:
   Filter: x=>IsDir
   Details: |
     x=>FetchKeyValues(OSPath=x.OSPath) + dict(ProviderGUID=x.OSPath[-1])
+
+# Reference: https://binarydefense.com/resources/blog/diving-into-hidden-scheduled-tasks
+# TODO: Implement parsing for the actions value
+- Description: Schedule TaskCache Tasks
+  Category: ASEP
+  Author: Troy Larson and Mike Cohen
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**
+  Root: HKEY_LOCAL_MACHINE\Software
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Description: Wow6432 Schedule TaskCache Tasks
+  Category: ASEP
+  Author: Troy Larson and Mike Cohen
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\**
+  Root: HKEY_LOCAL_MACHINE\Software
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Description: Schedule TaskCache Tree
+  Category: ASEP
+  Author: Troy Larson and Mike Cohen
+  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\**
+  Root: HKEY_LOCAL_MACHINE\Software
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Description: Winlogon GPExtensions
+  Category: ASEP
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\*
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath) +
+      GetDetails(OSPath=ExpandPath(Path=GetValue(OSPath=OSPath + "DllName")))
+
+- Description: Wow6432 Winlogon GPExtensions
+  Category: ASEP
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\*
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValues(OSPath=x.OSPath) +
+      GetDetails(OSPath=ExpandPath(Path=GetValue(OSPath=OSPath + "DllName")))
+
+
+- Description: shell Open Command
+  Category: ASEP
+  Root: HKEY_LOCAL_MACHINE\Software
+  Query: |
+    SELECT Description, Category, OSPath, Mtime,
+           GetDetails(OSPath=get(item=ClassDLLCache, field=Data.value)) +
+           dict(ClassName=Data.value,
+                Filename=get(item=ClassDLLCache, field=Data.value)) AS Details
+      FROM glob(
+        globs="Classes\\*\\shell\\*\\command\\DelegateExecute",
+        root="HKEY_LOCAL_MACHINE\\Software", accessor="registry")

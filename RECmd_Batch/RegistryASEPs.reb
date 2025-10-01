@@ -337,14 +337,6 @@ Keys:
         Recursive: false
         Comment:
     -
-        Description: shell Open Command
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\*\shell
-        ValueName: DelegateExecute
-        Recursive: true
-        Comment:
-    -
         Description: shell Runas command
         HiveType: Software
         Category: ASEP Classes
@@ -588,14 +580,6 @@ Keys:
         KeyPath: Classes\SystemFileAssociations\*\ShellEx\ContextMenuHandlers\ShellImagePreview
         ValueName: (default)
         Recursive: false
-        Comment:
-    -
-        Description: Wow6432 shell Open Command
-        HiveType: Software
-        Category: ASEP Classes
-        KeyPath: Classes\Wow6432Node\*\shell
-        ValueName: DelegateExecute
-        Recursive: true
         Comment:
     -
         Description: Wow6432 shell Runas command
@@ -1314,110 +1298,6 @@ Keys:
         Recursive: true
         Comment:
     -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Actions
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Author
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Description
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: DynamicInfo
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Hash
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Path
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Schema
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: SecurityDescriptor
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Source
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Triggers
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: URI
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Version
-        Recursive: true
-        Comment:
-    -
-        Description: Schedule TaskCache Tree
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree
-        ValueName: Id
-        Recursive: true
-        Comment:
-    -
         Description: SilentProcessExit
         HiveType: Software
         Category: ASEP
@@ -1570,30 +1450,6 @@ Keys:
         Category: ASEP
         KeyPath: Microsoft\Windows NT\CurrentVersion\Winlogon\AlternateShells\AvailableShells
         Recursive: false
-        Comment:
-    -
-        Description: Winlogon GPExtensions
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions
-        ValueName: (default)
-        Recursive: true
-        Comment:
-    -
-        Description: Winlogon GPExtensions
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions
-        ValueName: DisplayName
-        Recursive: true
-        Comment:
-    -
-        Description: Winlogon GPExtensions
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions
-        ValueName: dllname
-        Recursive: true
         Comment:
     -
         Description: Winlogon Notify
@@ -2110,110 +1966,6 @@ Keys:
         Recursive: true
         Comment:
     -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Actions
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Author
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Description
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: DynamicInfo
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Hash
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Path
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Schema
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: SecurityDescriptor
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Source
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Triggers
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: URI
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tasks
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-        ValueName: Version
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Schedule TaskCache Tree
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree
-        ValueName: Id
-        Recursive: true
-        Comment:
-    -
         Description: Wow6432 SilentProcessExit
         HiveType: Software
         Category: ASEP
@@ -2366,30 +2118,6 @@ Keys:
         Category: ASEP
         KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\AlternateShells\AvailableShells
         Recursive: false
-        Comment:
-    -
-        Description: Wow6432 Winlogon GPExtensions
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions
-        ValueName: (default)
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Winlogon GPExtensions
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions
-        ValueName: DisplayName
-        Recursive: true
-        Comment:
-    -
-        Description: Wow6432 Winlogon GPExtensions
-        HiveType: Software
-        Category: ASEP
-        KeyPath: Wow6432Node\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions
-        ValueName: dllname
-        Recursive: true
         Comment:
     -
         Description: Wow6432 Winlogon Notify
