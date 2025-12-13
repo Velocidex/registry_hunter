@@ -480,7 +480,7 @@ sources:
 
          -- Adjust the Description Regex to focus on specific rules.
          SELECT Description, count() AS Count,
-                OSPath AS Key, Mtime, Details FROM source()
+                OSPath AS Key, Mtime, Details FROM source(source="Results")
          WHERE Category = '''{{ $val }}''' AND Description =~ "."
          GROUP BY Description
 
