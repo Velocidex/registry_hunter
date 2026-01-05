@@ -1,6 +1,6 @@
 [
   {
-    "Description": "WordWheelQuery: User Searches",
+    "Description": "WordWheelQuery",
     "Category": "User Activity",
     "OSPath": "HKEY_USERS\\user1\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\WordWheelQuery",
     "Mtime": "2014-10-05T20:08:26Z",

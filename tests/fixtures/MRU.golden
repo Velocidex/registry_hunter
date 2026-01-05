@@ -80,7 +80,7 @@
     }
   },
   {
-    "Description": "RunMRU: Tracks commands from the Run box in the Start menu, lower MRU # (Value Data3) = more recent",
+    "Description": "RunMRU",
     "Category": "Program Execution",
     "OSPath": "HKEY_USERS\\user1\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU",
     "Mtime": "2014-05-20T14:26:30Z",

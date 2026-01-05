@@ -4625,7 +4625,7 @@
    "Filter": "x=\u003etrue"
   },
   {
-   "Description": "Gets contents of user's Applets key",
+   "Description": "Regedit.exe Last Key Viewed",
    "Category": "System Info",
    "Author": "M. Cohen",
    "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Applets",
