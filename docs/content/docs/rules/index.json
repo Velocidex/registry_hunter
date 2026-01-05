@@ -1,18 +1,20 @@
 [
   {
-   "Description": "AppCompatCache: AKA ShimCache, data is only written to this value at reboot by winlogon.exe",
+   "Description": "AppCompatCache",
    "Category": "Program Execution",
+   "Comment": "AKA ShimCache, data is only written to this value at reboot by winlogon.exe",
    "Glob": "ControlSet*\\Control\\Session Manager\\AppCompatCache\\AppCompatCache",
    "Root": "HKEY_LOCAL_MACHINE\\System",
    "Details": "x=\u003eAppCompatCache(Blob=read_file(accessor=\"registry\", filename=OSPath))\n",
    "Filter": "x=\u003etrue",
    "Preamble": [
-    "LET AppCompatCacheParser \u003c= '''[\n[\"HeaderWin10\", \"x=\u003ex.HeaderSize\", [\n  [\"HeaderSize\", 0, \"unsigned int\"],\n  [\"Entries\", \"x=\u003ex.HeaderSize\", Array, {\n      type: \"Entry\",\n      sentinel: \"x=\u003ex.Size = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n[\"HeaderWin8\", 128, [\n  [\"Entries\", 128, Array, {\n      type: \"EntryWin8\",\n      sentinel: \"x=\u003ex.EntrySize = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n\n[\"EntryWin8\", \"x=\u003ex.EntrySize + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"EntrySize\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14 + 10\", \"WinFileTime\"]\n]],\n\n[\"Entry\", \"x=\u003ex.Size + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"Size\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14\", \"WinFileTime\"],\n  [\"DataSize\", \"x=\u003ex.PathSize + 14 + 8\", \"uint32\"],\n  [\"Data\", \"x=\u003ex.PathSize + 14 + 8 + 4\" , \"String\", {\n      length: \"x=\u003ex.DataSize\",\n  }],\n\n  # The last byte of the Data block is 1 for execution\n  [\"Execution\", \"x=\u003ex.PathSize + 14 + 8 + 4 + x.DataSize - 4\", \"uint32\"]\n]],\n\n# This is the Win7 parser but we dont use it right now.\n[\"HeaderWin7x64\", 128, [\n  [\"Signature\", 0, \"uint32\"],\n  [\"Entries\", 128, \"Array\", {\n      count: 10000,\n      sentinel: \"x=\u003ex.PathSize = 0\",\n      type: EntryWin7x64,\n  }]\n]],\n[\"EntryWin7x64\", 48, [\n  [\"PathSize\", 0, \"uint16\"],\n  [\"PathOffset\", 8, \"uint32\"],\n  [\"Path\", \"x=\u003ex.PathOffset - x.StartOf\", \"String\", {\n      encoding: \"utf16\",\n      length: \"x=\u003ex.PathSize\",\n  }],\n  [\"LastMod\", 16, \"WinFileTime\"]\n]]\n\n]'''\n\nLET AppCompatCacheWin10(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin10\")\n\nLET AppCompatCacheWin8(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin8\")\n\nLET AppCompatCache(Blob) = SELECT LastMod, Path,\n    Execution, GetDetails(OSPath=Path) AS Details\nFROM foreach(\n  row=if(\n    condition=AppCompatCacheWin10(Blob=Blob).HeaderSize IN (52, 48),\n    then=AppCompatCacheWin10(Blob=Blob).Entries,\n    else=AppCompatCacheWin8(Blob=Blob).Entries))\n"
+    "LET AppCompatCacheParser \u003c= '''[\n[\"HeaderWin10\", \"x=\u003ex.HeaderSize\", [\n  [\"HeaderSize\", 0, \"unsigned int\"],\n  [\"Entries\", \"x=\u003ex.HeaderSize\", Array, {\n      type: \"Entry\",\n      sentinel: \"x=\u003ex.Size = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n[\"HeaderWin8\", 128, [\n  [\"Entries\", 128, Array, {\n      type: \"EntryWin8\",\n      sentinel: \"x=\u003ex.EntrySize = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n\n[\"EntryWin8\", \"x=\u003ex.EntrySize + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"EntrySize\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14 + 10\", \"WinFileTime\"]\n]],\n\n[\"Entry\", \"x=\u003ex.Size + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"Size\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14\", \"WinFileTime\"],\n  [\"DataSize\", \"x=\u003ex.PathSize + 14 + 8\", \"uint32\"],\n  [\"Data\", \"x=\u003ex.PathSize + 14 + 8 + 4\" , \"String\", {\n      length: \"x=\u003ex.DataSize\",\n  }],\n\n  # The last byte of the Data block is 1 for execution\n  [\"Execution\", \"x=\u003ex.PathSize + 14 + 8 + 4 + x.DataSize - 4\", \"uint32\"]\n]],\n\n# This is the Win7 parser but we dont use it right now.\n[\"HeaderWin7x64\", 128, [\n  [\"Signature\", 0, \"uint32\"],\n  [\"Entries\", 128, \"Array\", {\n      count: 10000,\n      sentinel: \"x=\u003ex.PathSize = 0\",\n      type: EntryWin7x64,\n  }]\n]],\n[\"EntryWin7x64\", 48, [\n  [\"PathSize\", 0, \"uint16\"],\n  [\"PathOffset\", 8, \"uint32\"],\n  [\"Path\", \"x=\u003ex.PathOffset - x.StartOf\", \"String\", {\n      encoding: \"utf16\",\n      length: \"x=\u003ex.PathSize\",\n  }],\n  [\"LastMod\", 16, \"WinFileTime\"]\n]]\n\n]'''\n\nLET AppCompatCacheWin10(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin10\")\n\nLET AppCompatCacheWin8(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin8\")\n\nLET AppCompatCache(Blob) = SELECT LastMod, Path,\n    Execution, GetDetails(OSPath=ExpandPath(Path=Path)) AS Details\nFROM foreach(\n  row=if(\n    condition=AppCompatCacheWin10(Blob=Blob).HeaderSize IN (52, 48),\n    then=AppCompatCacheWin10(Blob=Blob).Entries,\n    else=AppCompatCacheWin8(Blob=Blob).Entries))\n"
    ]
   },
   {
-   "Description": "AppCompatFlags: Displays programs that are configured to run in Compatibility Mode in Windows",
+   "Description": "AppCompatFlags",
    "Category": "Program Execution",
+   "Comment": "Displays programs that are configured to run in Compatibility Mode in Windows",
    "Glob": "*\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags",
    "Root": "HKEY_USERS",
    "Details": "x=\u003edict(Programs=AppCompatFlagsPrograms(OSPath=x.OSPath).Program)\n",
@@ -1034,33 +1036,6 @@
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
-   "Description": "Event Logs Logging Status",
-   "Category": "Event Logs",
-   "Author": "Andrew Rathbun",
-   "Comment": "Displays the status of Windows Event Log Channels (Key Path) on this system, 0 = Disabled, 1 - Enabled",
-   "Glob": "Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\**\\Enabled",
-   "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003eExtractValueFromComment(x=x)"
-  },
-  {
-   "Description": "Application Event Log Providers",
-   "Category": "Event Logs",
-   "Author": "Andrew Rathbun",
-   "Comment": "Displays the status of Providers within the Application Event Log on this system, 0 = Disabled, 1 - Enabled",
-   "Glob": "ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application\\**",
-   "Root": "HKEY_LOCAL_MACHINE\\System",
-   "Details": "x=\u003eExtractValueFromComment(x=x)"
-  },
-  {
-   "Description": "System Event Log Providers",
-   "Category": "Event Logs",
-   "Author": "Andrew Rathbun",
-   "Comment": "Displays the status of Providers within the Application Event Log on this system, 0 = Disabled, 1 - Enabled",
-   "Glob": "ControlSet001\\Control\\WMI\\Autologger\\EventLog-System\\**",
-   "Root": "HKEY_LOCAL_MACHINE\\System",
-   "Details": "x=\u003eExtractValueFromComment(x=x)"
-  },
-  {
    "Description": "Microsoft Office",
    "Category": "Microsoft Office",
    "Author": "Andrew Rathbun",
@@ -1788,139 +1763,6 @@
    "Root": "HKEY_LOCAL_MACHINE\\System"
   },
   {
-   "Description": "Services AutoRun",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\AutoRun",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services BootFlags",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\BootFlags",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services DelayedAutoStart",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\DelayedAutoStart",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services DependOnService",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\DependOnService",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services Description",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\Description",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services DisplayName",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\DisplayName",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services ErrorControl",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\ErrorControl",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services Group",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\Group",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services ImagePath",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\ImagePath",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services Library",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\Library",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services ObjectName",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\ObjectName",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services ProviderPath",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\ProviderPath",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services ProxyDllFile",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\ProxyDllFile",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services RequiredPrivileges",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\RequiredPrivileges",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services ServiceDll",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\ServiceDll",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services ServiceMain",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\ServiceMain",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services ServiceSidType",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\ServiceSidType",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services Start",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\Start",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
-   "Description": "Services Type",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "ControlSet*\\Services\\*\\**\\Type",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
-  },
-  {
    "Description": "WinSock2 AppId_Catalog AppFullPath",
    "Category": "ASEP",
    "Author": "Troy Larson",
@@ -2026,13 +1868,6 @@
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
-   "Description": "shell Open Command",
-   "Category": "ASEP Classes",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\*\\shell\\**\\DelegateExecute",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
    "Description": "shell Runas command",
    "Category": "ASEP Classes",
    "Author": "Troy Larson",
@@ -2124,59 +1959,10 @@
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
-   "Description": "CLSID InprocServer32",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\CLSID\\*\\InprocServer32\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "CLSID InprocServer32",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\CLSID\\*\\InprocServer32\\Assembly",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "CLSID Instance CLSID",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\CLSID\\*\\Instance\\**\\CLSID",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "CLSID Instance FriendlyName",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\CLSID\\*\\Instance\\**\\FriendlyName",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "CLSID LocalServer32",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\CLSID\\*\\LocalServer32\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "CLSID LocalServer32",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\CLSID\\*\\LocalServer32\\Assembly",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
    "Description": "CLSID PersistentHandler",
    "Category": "ASEP",
    "Author": "Troy Larson",
    "Glob": "Classes\\CLSID\\*\\PersistentHandler",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "CLSID TypeLib",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\CLSID\\*\\TypeLib\\@",
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
@@ -2257,20 +2043,6 @@
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
-   "Description": "Interface ProxyStubClsid32",
-   "Category": "ASEP Classes",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Interface\\*\\ProxyStubClsid32\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Interface TypeLib",
-   "Category": "ASEP Classes",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Interface\\*\\TypeLib\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
    "Description": "Protocols Filter",
    "Category": "ASEP Classes",
    "Author": "Troy Larson",
@@ -2310,13 +2082,6 @@
    "Category": "ASEP Classes",
    "Author": "Troy Larson",
    "Glob": "Classes\\SystemFileAssociations\\*\\ShellEx\\ContextMenuHandlers\\ShellImagePreview\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 shell Open Command",
-   "Category": "ASEP Classes",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\*\\shell\\**\\DelegateExecute",
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
@@ -2411,48 +2176,6 @@
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
-   "Description": "Wow6432 CLSID InprocServer32",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\CLSID\\*\\InprocServer32\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 CLSID InprocServer32",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\CLSID\\*\\InprocServer32\\Assembly",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 CLSID Instance CLSID",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\CLSID\\*\\Instance\\**\\CLSID",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 CLSID Instance FriendlyName",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\CLSID\\*\\Instance\\**\\FriendlyName",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 CLSID LocalServer32",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\CLSID\\*\\LocalServer32\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 CLSID LocalServer32",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\CLSID\\*\\LocalServer32\\Assembly",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
    "Description": "Wow6432 CLSID PersistentHandler",
    "Category": "ASEP",
    "Author": "Troy Larson",
@@ -2527,20 +2250,6 @@
    "Category": "ASEP Classes",
    "Author": "Troy Larson",
    "Glob": "Classes\\Wow6432Node\\Folder\\shellex\\PropertySheetHandlers\\*\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Interface ProxyStubClsid32",
-   "Category": "ASEP Classes",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\Interface\\*\\ProxyStubClsid32\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Interface TypeLib",
-   "Category": "ASEP Classes",
-   "Author": "Troy Larson",
-   "Glob": "Classes\\Wow6432Node\\Interface\\*\\TypeLib\\@",
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
@@ -3034,97 +2743,6 @@
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Actions",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Author",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Description",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\DynamicInfo",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Hash",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Path",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Schema",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\SecurityDescriptor",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Source",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Triggers",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\URI",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Version",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Schedule TaskCache Tree",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\**\\Id",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
    "Description": "SilentProcessExit",
    "Category": "ASEP",
    "Author": "Troy Larson",
@@ -3263,27 +2881,6 @@
    "Category": "ASEP",
    "Author": "Troy Larson",
    "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\AlternateShells\\AvailableShells",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Winlogon GPExtensions",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\GPExtensions\\**\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Winlogon GPExtensions",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\GPExtensions\\**\\DisplayName",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Winlogon GPExtensions",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\GPExtensions\\**\\dllname",
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
@@ -3763,97 +3360,6 @@
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Actions",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Author",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Description",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\DynamicInfo",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Hash",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Path",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Schema",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\SecurityDescriptor",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Source",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Triggers",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\URI",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tasks",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**\\Version",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Schedule TaskCache Tree",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\**\\Id",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
    "Description": "Wow6432 SilentProcessExit",
    "Category": "ASEP",
    "Author": "Troy Larson",
@@ -3992,27 +3498,6 @@
    "Category": "ASEP",
    "Author": "Troy Larson",
    "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\AlternateShells\\AvailableShells",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Winlogon GPExtensions",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\GPExtensions\\**\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Winlogon GPExtensions",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\GPExtensions\\**\\DisplayName",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Winlogon GPExtensions",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\GPExtensions\\**\\dllname",
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
@@ -4730,20 +4215,6 @@
    "Root": "HKEY_USERS"
   },
   {
-   "Description": "CLSID InprocServer32",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "*\\Software\\ClassesCLSID\\*\\InprocServer32\\@",
-   "Root": "HKEY_USERS"
-  },
-  {
-   "Description": "CLSID InprocServer32",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "*\\Software\\ClassesCLSID\\*\\InprocServer32\\Assembly",
-   "Root": "HKEY_USERS"
-  },
-  {
    "Description": "CLSID LocalServer32",
    "Category": "ASEP",
    "Author": "Troy Larson",
@@ -4918,7 +4389,7 @@
    "Reference": "https://github.com/keydet89/RegRipper4.0/blob/main/plugins/amcache.pl",
    "Glob": "Root\\InventoryApplication*\\*",
    "Root": "Amcache",
-   "Details": "x=\u003eFetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')\n",
+   "Details": "x=\u003eEnrichAmCacheWithDetails(Details=FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.'))\n",
    "Filter": "x=\u003etrue"
   },
   {
@@ -4928,7 +4399,7 @@
    "Reference": "https://github.com/keydet89/RegRipper4.0/blob/main/plugins/amcache.pl",
    "Glob": "Root\\InventoryDriverBinary\\*",
    "Root": "Amcache",
-   "Details": "x=\u003eFetchKeyValuesWithRegex(OSPath=OSPath, Regex='.') + dict(Driver=OSPath.Basename)\n",
+   "Details": "x=\u003eEnrichAmCacheWithDetails(Details=FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')) +\n  GetDetails(OSPath=x.OSPath[-1])\n",
    "Filter": "x=\u003eIsDir"
   },
   {
@@ -4938,8 +4409,11 @@
    "Reference": "https://github.com/keydet89/RegRipper4.0/blob/main/plugins/amcache.pl",
    "Glob": "Root\\InventoryApplicationShortcut\\*",
    "Root": "Amcache",
-   "Details": "x=\u003eFetchKeyValuesWithRegex(OSPath=OSPath, Regex='.')\n",
-   "Filter": "x=\u003etrue"
+   "Details": "x=\u003eEnrichAmCacheShortcut(Details=FetchKeyValuesWithRegex(OSPath=OSPath, Regex='.'))\n",
+   "Filter": "x=\u003etrue",
+   "Preamble": [
+    "LET EnrichAmCacheShortcut(Details) = if(condition=Details.ShortcutPath,\nthen=Details + GetDetails(OSPath=ExpandPath(Path=Details.ShortcutPath)),\nelse=Details)\n"
+   ]
   },
   {
    "Description": "Active Setup Installed Components",
@@ -5230,7 +4704,7 @@
    "Reference": "https://github.com/keydet89/RegRipper4.0/blob/main/plugins/appx.pl\nhttps://oddvar.moe/2018/09/06/persistence-using-universal-windows-platform-apps-appx/\n",
    "Glob": "*\\Software\\Classes\\ActivatableClasses\\Package\\*\\DebugInformation\\*",
    "Root": "HKEY_USERS",
-   "Details": "x=\u003edict(Application=x.OSPath[-1],\n        DebugPath=GetValue(OSPath=OSPath + \"DebugPath\"))\n",
+   "Details": "x=\u003edict(Application=x.OSPath[-1],\n        DebugPath=GetValue(OSPath=OSPath + \"DebugPath\")) +\n   GetDetails(OSPath=GetValue(OSPath=OSPath + \"DebugPath\"))\n",
    "Filter": "x=\u003etrue"
   },
   {
@@ -5241,7 +4715,7 @@
    "Comment": "Malware can persist by taking over the default actions when a user\ndouble-clicks a particular file type.\n",
    "Glob": "Classes\\*\\shell\\open\\command\\@",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003edict(Application=x.OSPath[3],\n        Key=OSPath,\n        Command=GetValue(OSPath=OSPath))\n"
+   "Details": "x=\u003edict(Application=x.OSPath[3],\n        Key=OSPath,\n        Command=GetValue(OSPath=OSPath)) +\n        GetDetails(OSPath=ExpandPath(Path=GetValue(OSPath=OSPath)))\n"
   },
   {
    "Description": "Get shell open command settings for various file types",
@@ -5251,7 +4725,7 @@
    "Comment": "Malware can persist by taking over the default actions when a user\ndouble-clicks a particular file type.\n",
    "Glob": "Classes\\*\\shell\\edit\\command\\@",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003edict(Application=x.OSPath[3],\n        Key=OSPath,\n        Command=GetValue(OSPath=OSPath))\n"
+   "Details": "x=\u003edict(Application=x.OSPath[3],\n        Key=OSPath,\n        Command=GetValue(OSPath=OSPath)) +\n        GetDetails(OSPath=ExpandPath(Path=GetValue(OSPath=OSPath)))\n"
   },
   {
    "Description": "Automount settings",
@@ -5279,19 +4753,14 @@
    "Filter": "x=\u003eIsDir"
   },
   {
-   "Description": "Regedit.exe Last Run",
-   "Category": "Executables",
-   "Author": "Troyla",
+   "Description": "Registry Editor Usage",
+   "Category": "User Activity",
+   "Author": "Andrew Rathbun, Mike Cohen",
+   "Comment": "Displays the last registry key accessed by the user in RegEdit",
    "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Regedit",
    "Root": "HKEY_USERS",
-   "Details": "x=\u003ex.Mtime"
-  },
-  {
-   "Description": "Regedit.exe Last Key Viewed",
-   "Category": "Executables",
-   "Author": "Troyla",
-   "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Regedit\\LastKey",
-   "Root": "HKEY_USERS"
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath)",
+   "Filter": "x=\u003eIsDir"
   },
   {
    "Description": "WinLogon: Displays the details of the last user logged in to this system",
@@ -5302,7 +4771,7 @@
    "Filter": "x=\u003etrue"
   },
   {
-   "Description": "LogonUI: Displays the last logged on SAM user",
+   "Description": "LogonUI: Displays the last logged users",
    "Category": "System Info",
    "Glob": "Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
@@ -5336,11 +4805,20 @@
    ]
   },
   {
+   "Description": "ConsentStore (Global)",
+   "Category": "User Activity",
+   "Author": "Andrew Rathbun and Mike Cohen",
+   "Glob": "Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003edict(\n  Value=GetValue(OSPath=x.OSPath + \"Value\"),\n  LastUsedTimeStart=FILETIME(t=GetValue(OSPath=x.OSPath + \"/NonPackaged/LastUsedTimeStart\") || GetValue(OSPath=x.OSPath + \"LastUsedTimeStart\")),\n  LastUsedTimeStop=FILETIME(t=GetValue(OSPath=x.OSPath + \"/NonPackaged/LastUsedTimeStop\") || GetValue(OSPath=x.OSPath + \"LastUsedTimeStop\"))\n)\n",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
    "Description": "Microphone",
    "Category": "Devices",
    "Glob": "Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\microphone",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003edict(\n  LastUsedTimeStart=FILETIME(t=GetValue(OSPath=x.OSPath + \"LastUsedTimeStart\")),\n  LastUsedTimeStop=FILETIME(t=GetValue(OSPath=x.OSPath + \"LastUsedTimeStop\"))\n)\n",
+   "Details": "x=\u003edict(\n  Value=GetValue(OSPath=x.OSPath + \"Value\"),\n  LastUsedTimeStart=FILETIME(t=GetValue(OSPath=x.OSPath + \"LastUsedTimeStart\")),\n  LastUsedTimeStop=FILETIME(t=GetValue(OSPath=x.OSPath + \"LastUsedTimeStop\"))\n)\n",
    "Filter": "x=\u003eIsDir"
   },
   {
@@ -5360,9 +4838,10 @@
    "Details": "x=\u003edict(Program=x.OSPath.Basename, LastExecutionTime=FILETIME(t=x.Data))\n"
   },
   {
-   "Description": "RunMRU: Tracks commands from the Run box in the Start menu, lower MRU # (Value Data3) = more recent",
+   "Description": "RunMRU",
    "Category": "Program Execution",
    "Author": "Andrew Rathbun",
+   "Comment": "Tracks commands from the Run box in the Start menu, lower MRU # (Value Data3) = more recent",
    "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU",
    "Root": "HKEY_USERS",
    "Details": "x=\u003edict(MRU=CalculateMRU(OSPath=x.OSPath).value,\n        All=FetchKeyValues(OSPath=x.OSPath))\n",
@@ -5402,20 +4881,22 @@
    "Filter": "x=\u003eIsDir"
   },
   {
-   "Description": "UserAssist: GUI-based programs launched from the desktop",
+   "Description": "UserAssist",
    "Category": "Program Execution",
    "Author": "Andrew Rathbun, Mike Cohen",
+   "Comment": "GUI-based programs launched from the desktop",
    "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\*\\Count\\*",
    "Root": "HKEY_USERS",
-   "Details": "x=\u003edict(Program=rot13(string=x.OSPath.Basename),\n        Details=GetDetails(OSPath=rot13(string=x.OSPath.Basename)),\n        NumberOfExecutions=_ExtractUserAssist(OSPath=x.Data).NumberOfExecutions,\n        LastExecutionTime=_ExtractUserAssist(OSPath=x.Data).LastExecution)\n",
+   "Details": "x=\u003edict(Program=rot13(string=x.OSPath.Basename),\n        NumberOfExecutions=_ExtractUserAssist(Data=x.Data).NumberOfExecutions,\n        LastExecutionTime=_ExtractUserAssist(Data=x.Data).LastExecution) +\n  GetDetails(OSPath=ExpandPath(Path=rot13(string=x.OSPath.Basename)))\n",
    "Preamble": [
     "LET userAssistProfile = '''\n  [\n    [\"Header\", 0, [\n      [\"NumberOfExecutions\", 4, \"uint32\"],\n      [\"LastExecution\", 60, \"WinFileTime\", {\"type\":\"uint64\"}]\n    ]]\n  ]\n'''\n\nLET _ExtractUserAssist(Data) = parse_binary(accessor=\"data\",\n                  filename=Data,\n                  profile=userAssistProfile, struct=\"Header\")\n"
    ]
   },
   {
-   "Description": "RADAR: Displays applications that were running at one point in time on this system",
+   "Description": "RADAR",
    "Category": "Program Execution",
    "Author": "Andrew Rathbun, Mike Cohen",
+   "Comment": "Displays applications that were running at one point in time on this system",
    "Glob": "Microsoft\\RADAR\\HeapLeakDetection\\DiagnosedApplications",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
    "Details": "x=\u003edict(Programs=_RADAR(OSPath=x.OSPath))\n",
@@ -5425,9 +4906,10 @@
    ]
   },
   {
-   "Description": "WordWheelQuery: User Searches",
+   "Description": "WordWheelQuery",
    "Category": "User Activity",
    "Author": "Andrew Rathbun, Mike Cohen",
+   "Comment": "User Searches",
    "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\WordWheelQuery",
    "Root": "HKEY_USERS",
    "Details": "x=\u003edict(MRU=CalculateMRUEx(OSPath=x.OSPath).value)\n",
@@ -5544,7 +5026,7 @@
    "Author": "Andrew Rathbun, Mike Cohen",
    "Glob": "*\\Software\\Microsoft\\Terminal Server Client",
    "Root": "HKEY_USERS",
-   "Details": "x=\u003edict(\n DefaultMRU=RDPMRU(OSPath=OSPath).Server,\n Servers={\n  SELECT OSPath.Basename AS Server, Mtime,\n    FetchKeyValues(OSPath=OSPath) AS Details\n  FROM glob(accessor=\"registry\", globs='*', root=OSPath + \"Servers\")\n})\n",
+   "Details": "x=\u003edict(\n DefaultMRU=RDPMRU(OSPath=x.OSPath).Server,\n Servers={\n  SELECT OSPath.Basename AS Server, Mtime,\n    FetchKeyValues(OSPath=OSPath) AS Details\n  FROM glob(accessor=\"registry\", globs='*', root=x.OSPath + \"Servers\")\n})\n",
    "Filter": "x=\u003eIsDir",
    "Preamble": [
     "LET RDPMRU(OSPath) = SELECT Data.value AS Server\nFROM glob(accessor=\"registry\", globs='*', root=OSPath + \"Default\")\nWHERE OSPath.Basename =~ \"MRU\"\n"
@@ -5560,25 +5042,50 @@
    "Filter": "x=\u003eIsDir AND Details"
   },
   {
+   "Description": "LogonBanner",
+   "Category": "System Info",
+   "Author": "Andrew Rathbun, Mike Cohen",
+   "Comment": "Legal text caption",
+   "Glob": "Microsoft\\Windows\\CurrentVersion\\Policies\\System",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eFetchKeyValuesWithRegex(OSPath=x.OSPath, Regex=\"legal.+\")\n",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
    "Description": "Run (NTUSER)",
    "Category": "Autoruns",
    "Author": "Andrew Rathbun, Mike Cohen",
-   "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Run*",
+   "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\*",
    "Root": "HKEY_USERS",
-   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath)\n",
-   "Filter": "x=\u003eIsDir AND Details"
+   "Details": "x=\u003edict(Name=x.OSPath.Basename, RawTarget=x.Data,\n      CommandImage=ExpandPath(Path=Data.value)) +\n   GetDetails(OSPath=ExpandPath(Path=x.Data))\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "Run (NTUSER)",
+   "Category": "Autoruns",
+   "Author": "Andrew Rathbun, Mike Cohen",
+   "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\*",
+   "Root": "HKEY_USERS",
+   "Details": "x=\u003edict(Name=x.OSPath.Basename, RawTarget=x.Data,\n      CommandImage=ExpandPath(Path=Data.value)) +\n   GetDetails(OSPath=ExpandPath(Path=x.Data))\n",
+   "Filter": "x=\u003etrue"
   },
   {
    "Description": "Run (SYSTEM)",
    "Category": "Autoruns",
    "Author": "Andrew Rathbun, Mike Cohen",
-   "Glob": "Microsoft\\Windows\\CurrentVersion\\Run*",
+   "Glob": "Microsoft\\Windows\\CurrentVersion\\Run\\*",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003eEnumerateRunKey(OSPath=x.OSPath)\n",
-   "Filter": "x=\u003eIsDir AND Details",
-   "Preamble": [
-    "LET EnumerateRunKey(OSPath) = SELECT Name, Data.value AS RawTarget, ExpandPath(Path=Data.value) AS CommandImage, GetDetails(OSPath=ExpandPath(Path=Data.value)) AS Details FROM glob(accessor=\"registry\", globs=\"*\", root=OSPath) WHERE NOT IsDir"
-   ]
+   "Details": "x=\u003edict(Name=x.OSPath.Basename, RawTarget=x.Data,\n      CommandImage=ExpandPath(Path=Data.value)) +\n   GetDetails(OSPath=ExpandPath(Path=x.Data))\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "Run (SYSTEM)",
+   "Category": "Autoruns",
+   "Author": "Andrew Rathbun, Mike Cohen",
+   "Glob": "Microsoft\\Windows\\CurrentVersion\\RunOnce\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003edict(Name=x.OSPath.Basename, RawTarget=x.Data,\n      CommandImage=ExpandPath(Path=Data.value)) +\n   GetDetails(OSPath=ExpandPath(Path=x.Data))\n",
+   "Filter": "x=\u003etrue"
   },
   {
    "Description": "Scheduled Tasks (TaskCache)",
@@ -5605,6 +5112,24 @@
    ]
   },
   {
+   "Description": "Processor Information",
+   "Category": "System Info",
+   "Glob": "ControlSet*\\Control\\Session Manager\\Environmen*",
+   "Root": "HKEY_LOCAL_MACHINE\\System",
+   "Details": "x=\u003eFetchKeyValuesWithRegex(OSPath=x.OSPath, Regex=\"PROCESSOR_\")",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
+   "Description": "SpecialAccounts",
+   "Category": "User Accounts",
+   "Author": "Andrew Rathbun and Mike Cohen",
+   "Comment": "Hides Accounts from being visible on Logon Screen and Start Menu, 0 = Hide User Account, 1 = Show User Account, 65536 (0x10000) = Hide User Accounts Starting with e.g. J with this value would hide all accounts starting with J",
+   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath)",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
    "Description": "Environment Variables",
    "Category": "System Info",
    "Glob": "ControlSet*\\Control\\Session Manager\\Environment",
@@ -5626,7 +5151,7 @@
    "Author": "Troy Larson and Mike Cohen",
    "Glob": "Clients\\StartMenuInternet\\*\\shell\\*\\command\\@",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003edict(Command=x.Data,\n        Type=x.OSPath[-3],\n        Details=GetDetails(OSPath=ExpandPath(Path=x.Data)))\n"
+   "Details": "x=\u003edict(Command=x.Data,\n        Type=x.OSPath[-3]) +\n  GetDetails(OSPath=ExpandPath(Path=x.Data))\n"
   },
   {
    "Description": "Exploit Guards MitigationOptions",
@@ -5645,36 +5170,197 @@
    "Description": "TypeLib win64",
    "Category": "ASEP Classes",
    "Author": "Troy Larson and Mike Cohen",
-   "Glob": "Classes\\TypeLib\\*\\*\\*\\win64\\@",
+   "Glob": "Classes\\TypeLib\\*\\*\\*\\win32\\@",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003eGetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +\n   dict(ClassPath=x.Data)\n",
+   "Details": "x=\u003eGetDetails(OSPath=NormalizeClassDLL(\n      CLSID=x.OSPath[-5], OSPath=expand(path=x.Data))) +\n   dict(CLSID=x.OSPath[-5], ClassDLLPath=x.Data)\n",
    "Preamble": [
     "LET _NormalizeClassDLL(OSPath) = if( condition= OSPath.Basename =~ \"^[1-9]+$\", then= OSPath.Dirname, else=OSPath)",
-    "LET NormalizeClassDLL(OSPath) = _NormalizeClassDLL( OSPath=pathspec(parse=OSPath, path_type=\"windows\"))"
+    "LET ClassDLLCache \u003c= dict()",
+    "LET CacheClassPaths(CLSID, OSPath) = set(item= ClassDLLCache,\n   field=CLSID, value=OSPath) \u0026\u0026 OSPath\n",
+    "LET NormalizeClassDLL(CLSID, OSPath) = CacheClassPaths(CLSID=CLSID,\nOSPath=_NormalizeClassDLL(OSPath=pathspec(parse=OSPath, path_type=\"windows\")))\n"
    ]
   },
   {
-   "Description": "TypeLib win32",
+   "Description": "TypeLib win64",
    "Category": "ASEP Classes",
    "Author": "Troy Larson and Mike Cohen",
-   "Glob": "Classes\\TypeLib\\*\\*\\*\\win32\\@",
+   "Glob": "Classes\\TypeLib\\*\\*\\*\\win64\\@",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003eGetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +\n  dict(ClassPath=x.Data)\n"
+   "Details": "x=\u003eGetDetails(OSPath=NormalizeClassDLL(\n      CLSID=x.OSPath[-5], OSPath=expand(path=x.Data))) +\n   dict(CLSID=x.OSPath[-5], ClassDLLPath=x.Data)\n",
+   "Preamble": [
+    "LET _NormalizeClassDLL(OSPath) = if( condition= OSPath.Basename =~ \"^[1-9]+$\", then= OSPath.Dirname, else=OSPath)",
+    "LET ClassDLLCache \u003c= dict()",
+    "LET CacheClassPaths(CLSID, OSPath) = set(item= ClassDLLCache,\n   field=CLSID, value=OSPath) \u0026\u0026 OSPath\n",
+    "LET NormalizeClassDLL(CLSID, OSPath) = CacheClassPaths(CLSID=CLSID,\nOSPath=_NormalizeClassDLL(OSPath=pathspec(parse=OSPath, path_type=\"windows\")))\n"
+   ]
   },
   {
-   "Description": "Wow6432 TypeLib win64",
+   "Description": "Interface TypeLib",
    "Category": "ASEP Classes",
    "Author": "Troy Larson and Mike Cohen",
-   "Glob": "Classes\\Wow6432Node\\TypeLib\\*\\*\\*\\win64\\@",
-   "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003eGetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +\n  dict(ClassPath=x.Data)\n"
+   "Comment": "Resolves the ClassID to Path from TypeLib win64",
+   "Glob": "",
+   "Root": "",
+   "Query": "SELECT Description, Category, OSPath, Mtime,\n       GetDetails(OSPath=get(item=ClassDLLCache, field=Data.value)) +\n       dict(ClassName=Data.value,\n            Filename=get(item=ClassDLLCache, field=Data.value)) AS Details\n  FROM glob(\n    globs=\"/Classes/Interface/*/TypeLib/@\",\n    root=\"HKEY_LOCAL_MACHINE\\\\Software\", accessor=\"registry\")\n"
   },
   {
-   "Description": "Wow6432 TypeLib win32",
+   "Description": "CLSID InprocServer32",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Classes\\CLSID\\*\\InprocServer32\\@",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=NormalizeClassDLL(\n      CLSID=x.OSPath[-3], OSPath=expand(path=x.Data))) +\n   dict(CLSID=x.OSPath[-3], ClassDLLPath=x.Data)\n"
+  },
+  {
+   "Description": "TypeLib win32 USRCLASS",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "*\\Software\\Classes\\TypeLib\\*\\*\\*\\win32\\@",
+   "Root": "HKEY_USERS",
+   "Details": "x=\u003eGetDetails(OSPath=NormalizeClassDLL(\n      CLSID=x.OSPath[-5], OSPath=expand(path=x.Data))) +\n   dict(CLSID=x.OSPath[-5], ClassDLLPath=x.Data)\n"
+  },
+  {
+   "Description": "TypeLib win32 USRCLASS",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "*\\Software\\Classes\\TypeLib\\*\\*\\*\\win64\\@",
+   "Root": "HKEY_USERS",
+   "Details": "x=\u003eGetDetails(OSPath=NormalizeClassDLL(\n      CLSID=x.OSPath[-5], OSPath=expand(path=x.Data))) +\n   dict(CLSID=x.OSPath[-5], ClassDLLPath=x.Data)\n"
+  },
+  {
+   "Description": "Wow6432 TypeLib",
    "Category": "ASEP Classes",
    "Author": "Troy Larson and Mike Cohen",
    "Glob": "Classes\\Wow6432Node\\TypeLib\\*\\*\\*\\win32\\@",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
-   "Details": "x=\u003eGetDetails(OSPath=ExpandPath(Path=NormalizeClassDLL(OSPath=x.Data))) +\n dict(ClassPath=x.Data)\n"
+   "Details": "x=\u003eGetDetails(OSPath=NormalizeClassDLL(\n      CLSID=x.OSPath[-5], OSPath=expand(path=x.Data))) +\n   dict(CLSID=x.OSPath[-5], ClassDLLPath=x.Data)\n"
+  },
+  {
+   "Description": "Wow6432 TypeLib",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Classes\\Wow6432Node\\TypeLib\\*\\*\\*\\win64\\@",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=NormalizeClassDLL(\n      CLSID=x.OSPath[-5], OSPath=expand(path=x.Data))) +\n   dict(CLSID=x.OSPath[-5], ClassDLLPath=x.Data)\n"
+  },
+  {
+   "Description": "Wow6432Node CLSID InprocServer32",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "*\\Software\\Classes\\Wow6432Node\\CLSID\\*\\InprocServer32\\@",
+   "Root": "HKEY_USERS",
+   "Details": "x=\u003eGetDetails(OSPath=NormalizeClassDLL(\n      CLSID=x.OSPath[-3], OSPath=expand(path=x.Data))) +\n   dict(CLSID=x.OSPath[-3], ClassDLLPath=x.Data)\n"
+  },
+  {
+   "Description": "CLSID LocalServer32",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Classes\\CLSID\\*\\LocalServer32\\@",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=NormalizeClassDLL(\n      CLSID=x.OSPath[-3], OSPath=expand(path=x.Data))) +\n   dict(CLSID=x.OSPath[-3], ClassDLLPath=x.Data)\n"
+  },
+  {
+   "Description": "CLSID Instance",
+   "Category": "ASEP Classes",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Classes\\CLSID\\*\\Instance",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath)\n"
+  },
+  {
+   "Description": "System Event Log Providers",
+   "Category": "Event Logs",
+   "Glob": "ControlSet001\\Control\\WMI\\Autologger\\EventLog-System\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\System",
+   "Details": "x=\u003edict(Provider=x.OSPath.Basename) + FetchKeyValues(OSPath=x.OSPath)\n",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
+   "Description": "Event Logs Logging Status",
+   "Category": "Event Logs",
+   "Author": "Andrew Rathbun and Mike Cohen",
+   "Glob": "Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath) + dict(Provider=x.OSPath[-1])\n",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
+   "Description": "Application Event Log Providers",
+   "Category": "Event Logs",
+   "Author": "Andrew Rathbun and Mike Cohen",
+   "Glob": "ControlSet001\\Control\\WMI\\Autologger\\EventLog-Application\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\System",
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath) + dict(ProviderGUID=x.OSPath[-1])\n",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
+   "Description": "Schedule TaskCache Tasks",
+   "Category": "ASEP",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath)\n",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
+   "Description": "Wow6432 Schedule TaskCache Tasks",
+   "Category": "ASEP",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\**",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath)\n",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
+   "Description": "Schedule TaskCache Tree",
+   "Category": "ASEP",
+   "Author": "Troy Larson and Mike Cohen",
+   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\**",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath)\n",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
+   "Description": "Winlogon GPExtensions",
+   "Category": "ASEP",
+   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\GPExtensions\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath) +\n  GetDetails(OSPath=ExpandPath(Path=GetValue(OSPath=OSPath + \"DllName\")))\n",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
+   "Description": "Wow6432 Winlogon GPExtensions",
+   "Category": "ASEP",
+   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\GPExtensions\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath) +\n  GetDetails(OSPath=ExpandPath(Path=GetValue(OSPath=OSPath + \"DllName\")))\n",
+   "Filter": "x=\u003eIsDir"
+  },
+  {
+   "Description": "shell Open Command",
+   "Category": "ASEP",
+   "Glob": "",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Query": "SELECT Description, Category, OSPath, Mtime,\n       GetDetails(OSPath=get(item=ClassDLLCache, field=Data.value)) +\n       dict(ClassName=Data.value,\n            Filename=get(item=ClassDLLCache, field=Data.value)) AS Details\n  FROM glob(\n    globs=\"Classes\\\\*\\\\shell\\\\*\\\\command\\\\DelegateExecute\",\n    root=\"HKEY_LOCAL_MACHINE\\\\Software\", accessor=\"registry\")\n"
+  },
+  {
+   "Description": "Enabled input Locale",
+   "Category": "User Activity",
+   "Author": "Guzzy (blog.guzzy.dk) | SagaLabs",
+   "Comment": "Useful for RDP session attribution.",
+   "Glob": "Microsoft\\Input\\Locales\\loc_*\\InputMethods\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eFetchKeyValues(OSPath=x.OSPath)",
+   "Filter": "x=\u003ex.IsDir AND GetValue(OSPath=x.OSPath + \"Enabled\")"
+  },
+  {
+   "Description": "Enabled input Locale",
+   "Category": "User Activity",
+   "Author": "Guzzy (blog.guzzy.dk) | SagaLabs",
+   "Comment": "Useful for RDP session attribution.",
+   "Glob": "*\\Control Panel\\International\\User Profile\\*",
+   "Root": "HKEY_USERS",
+   "Details": "x=\u003edict(Locale=x.OSPath.Basename, UserSid=x.OSPath[-5])",
+   "Filter": "x=\u003ex.IsDir"
   }
  ]

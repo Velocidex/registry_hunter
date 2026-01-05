@@ -101,7 +101,7 @@ parameters:
 
 - name: TrustedPathRegex
   type: regex
-  default: ^C:\\Windows\\
+  default: ^C:\\\\Windows\\\\
   description: Do not hash or upload any files matching this regex.
 
 - name: RootDrive

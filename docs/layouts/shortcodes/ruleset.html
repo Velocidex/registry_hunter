@@ -130,7 +130,7 @@ function doSearch() {
       if (matchItem(filter, item)) {
           result.push(item);
       };
-      if (result.length > 50) {
+      if (result.length > 500) {
           break;
       }
   };
@@ -147,8 +147,8 @@ function DrawResults(data) {
     });
 
     let most_results = data.length;
-    if(most_results > 50) {
-        most_results = 50;
+    if(most_results > 500) {
+        most_results = 500;
     }
 
   for(let i=0;i<most_results; i++) {

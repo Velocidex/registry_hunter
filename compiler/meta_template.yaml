@@ -24,7 +24,7 @@ sources:
 
     // Details of {{ .Description }}
 {{- $name := regexReplaceAll "[^a-zA-Z]" .Description "_" }}
-{{ Indent (.Details | replace "x=>" ( printf "LET %s(x) =" $name) ) 4 }}
+{{ Indent (.Details | replace "x=>" ( printf "LET __%s(x) =" $name) ) 4 }}
 {{- end -}}
 {{- end -}}
      SELECT * FROM info()

@@ -1,5 +1,6 @@
 Rules:
-- Description: "AppCompatCache: AKA ShimCache, data is only written to this value at reboot by winlogon.exe"
+- Description: "AppCompatCache"
+  Comment: "AKA ShimCache, data is only written to this value at reboot by winlogon.exe"
   Category: Program Execution
   Root: HKEY_LOCAL_MACHINE\System
   Glob: ControlSet*\Control\Session Manager\AppCompatCache\AppCompatCache
@@ -102,7 +103,8 @@ Rules:
   Details: |
     x=>AppCompatCache(Blob=read_file(accessor="registry", filename=OSPath))
 
-- Description: "AppCompatFlags: Displays programs that are configured to run in Compatibility Mode in Windows"
+- Description: "AppCompatFlags"
+  Comment: "Displays programs that are configured to run in Compatibility Mode in Windows"
   Root: HKEY_USERS
   Category: Program Execution
   Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags'
