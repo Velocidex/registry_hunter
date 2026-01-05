@@ -30,7 +30,7 @@ jobs:
 
     - name: Build artifacts
       run: |
-        make all recmd artifact
+        make all
 
     - name: Run Velociraptor
       run: |
