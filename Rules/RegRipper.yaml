@@ -255,7 +255,7 @@ Rules:
   Details: |
     x=>AppKeyExtract(OSPath=x.OSPath)
 
-- Description: Gets contents of user's Applets key
+- Description: Regedit.exe Last Key Viewed
   Author: M. Cohen
   Category: System Info
   Root: HKEY_USERS

@@ -86,18 +86,14 @@ Rules:
   Filter: x=>IsDir
 
 
-- Author: Troyla
-  Description: Regedit.exe Last Run
-  Category: Executables
+- Author: Andrew Rathbun, Mike Cohen
+  Description: Registry Editor Usage
+  Category: User Activity
+  Comment: Displays the last registry key accessed by the user in RegEdit
   Glob: '*\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit'
   Root: HKEY_USERS
-  Details: x=>x.Mtime
-
-- Author: Troyla
-  Description: Regedit.exe Last Key Viewed
-  Category: Executables
-  Glob: '*\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit\LastKey'
-  Root: HKEY_USERS
+  Filter: x=>IsDir
+  Details: x=>FetchKeyValues(OSPath=x.OSPath)
 
 - Description: "WinLogon: Displays the details of the last user logged in to this system"
   Category: System Info
@@ -108,7 +104,7 @@ Rules:
 
   Root: HKEY_LOCAL_MACHINE\Software
 
-- Description: "LogonUI: Displays the last logged on SAM user"
+- Description: "LogonUI: Displays the last logged users"
   Category: System Info
   Root: HKEY_LOCAL_MACHINE\Software
   Glob: Microsoft\Windows\CurrentVersion\Authentication\LogonUI
@@ -155,6 +151,19 @@ Rules:
   Details: |
     x=>ParseFirewallRule(X=x.Data) + dict(RuleName=x.OSPath.Basename)
 
+- Description: ConsentStore (Global)
+  Category: User Activity
+  Author: Andrew Rathbun and Mike Cohen
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*
+  Filter: x=>IsDir
+  Details: |
+    x=>dict(
+      Value=GetValue(OSPath=x.OSPath + "Value"),
+      LastUsedTimeStart=FILETIME(t=GetValue(OSPath=x.OSPath + "/NonPackaged/LastUsedTimeStart") || GetValue(OSPath=x.OSPath + "LastUsedTimeStart")),
+      LastUsedTimeStop=FILETIME(t=GetValue(OSPath=x.OSPath + "/NonPackaged/LastUsedTimeStop") || GetValue(OSPath=x.OSPath + "LastUsedTimeStop"))
+    )
+
 - Description: Microphone
   Category: Devices
   Root: HKEY_LOCAL_MACHINE\Software
@@ -162,6 +171,7 @@ Rules:
   Filter: x=>IsDir
   Details: |
     x=>dict(
+      Value=GetValue(OSPath=x.OSPath + "Value"),
       LastUsedTimeStart=FILETIME(t=GetValue(OSPath=x.OSPath + "LastUsedTimeStart")),
       LastUsedTimeStop=FILETIME(t=GetValue(OSPath=x.OSPath + "LastUsedTimeStop"))
     )
@@ -186,7 +196,8 @@ Rules:
     x=>dict(Program=x.OSPath.Basename, LastExecutionTime=FILETIME(t=x.Data))
 
 - Author: Andrew Rathbun
-  Description: "RunMRU: Tracks commands from the Run box in the Start menu, lower MRU # (Value Data3) = more recent"
+  Description: "RunMRU"
+  Comment: "Tracks commands from the Run box in the Start menu, lower MRU # (Value Data3) = more recent"
   Category: Program Execution
   Root: HKEY_USERS
   Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU'
@@ -255,7 +266,8 @@ Rules:
             Username=ResolveSID(SID=x.OSPath.Basename))
 
 - Author: Andrew Rathbun, Mike Cohen
-  Description: "UserAssist: GUI-based programs launched from the desktop"
+  Description: "UserAssist"
+  Comment: "GUI-based programs launched from the desktop"
   Category: Program Execution
   Root: HKEY_USERS
   Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\*\Count\*'
@@ -282,7 +294,8 @@ Rules:
 
 
 - Author: Andrew Rathbun, Mike Cohen
-  Description: "RADAR: Displays applications that were running at one point in time on this system"
+  Description: "RADAR"
+  Comment: "Displays applications that were running at one point in time on this system"
   Category: Program Execution
   Root: HKEY_LOCAL_MACHINE\Software
   Glob: 'Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications'
@@ -297,7 +310,8 @@ Rules:
     x=>dict(Programs=_RADAR(OSPath=x.OSPath))
 
 - Author: Andrew Rathbun, Mike Cohen
-  Description: "WordWheelQuery: User Searches"
+  Description: "WordWheelQuery"
+  Comment: "User Searches"
   Category: User Activity
   Root: HKEY_USERS
   Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery'
@@ -451,6 +465,16 @@ Rules:
     x=>FetchKeyValues(OSPath=x.OSPath)
 
 - Author: Andrew Rathbun, Mike Cohen
+  Description: "LogonBanner"
+  Comment: Legal text caption
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: 'Microsoft\Windows\CurrentVersion\Policies\System'
+  Filter: x=>IsDir
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="legal.+")
+
+- Author: Andrew Rathbun, Mike Cohen
   Description: "Run (NTUSER)"
   Category: Autoruns
   Root: HKEY_USERS
@@ -590,6 +614,24 @@ Rules:
 
   Details: |
     x=>_ServicesInfo(OSPath=x.OSPath)
+
+- Description: Processor Information
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: ControlSet*\Control\Session Manager\Environmen*
+  Filter: x=>IsDir
+  Details: x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="PROCESSOR_")
+
+- Description: SpecialAccounts
+  Author: Andrew Rathbun and Mike Cohen
+  Comment: Hides Accounts from being visible on Logon Screen and Start Menu, 0 = Hide
+    User Account, 1 = Show User Account, 65536 (0x10000) = Hide User Accounts Starting
+      with e.g. J with this value would hide all accounts starting with J
+  Category: User Accounts
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList
+  Filter: x=>IsDir
+  Details: x=>FetchKeyValues(OSPath=x.OSPath)
 
 - Description: Environment Variables
   Category: System Info
@@ -866,3 +908,23 @@ Rules:
       FROM glob(
         globs="Classes\\*\\shell\\*\\command\\DelegateExecute",
         root="HKEY_LOCAL_MACHINE\\Software", accessor="registry")
+
+- Description: Enabled input Locale
+  Author: Guzzy (blog.guzzy.dk) | SagaLabs
+  Comment: Useful for RDP session attribution.
+  Category: User Activity
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Input\Locales\loc_*\InputMethods\*
+  Filter: x=>x.IsDir AND GetValue(OSPath=x.OSPath + "Enabled")
+  Details:
+    x=>FetchKeyValues(OSPath=x.OSPath)
+
+- Description: Enabled input Locale
+  Author: Guzzy (blog.guzzy.dk) | SagaLabs
+  Comment: Useful for RDP session attribution.
+  Category: User Activity
+  Root: HKEY_USERS
+  Glob: '*\Control Panel\International\User Profile\*'
+  Filter: x=>x.IsDir
+  Details:
+    x=>dict(Locale=x.OSPath.Basename, UserSid=x.OSPath[-5])

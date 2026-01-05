@@ -29,7 +29,7 @@ jobs:
 
       - name: Prepare
         run: |
-          make all recmd artifact
+          make all
           cp output/*.zip docs/static/
 
       - name: Build

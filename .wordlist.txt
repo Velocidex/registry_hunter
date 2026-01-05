@@ -21,3 +21,10 @@ misconfiguration
 
 Github
 Goto
+HKEY
+JSON
+RuleFilter
+VM
+pre
+repo
+ruleset

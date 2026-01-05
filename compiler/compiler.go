@@ -22,8 +22,8 @@ import (
 
 var (
 	// The following roots refer to the virtual hives that are mounted
-	// on the remap config. Rules may not specific different roots
-	// from these.
+	// on the remap config. Rules may not specify different roots from
+	// these.
 	allowedRoots = []string{
 		// Rules that do not glob can have an empty root glob.
 		"",
@@ -173,6 +173,8 @@ func (self *Compiler) LoadRules(filename string) error {
 				self.PreambleVerses = append(self.PreambleVerses, r.Preamble...)
 			}
 			self.categories[r.Category] = true
+			parts := strings.Split(r.Description, ":")
+			self.md[parts[0]] = r
 			self.rules = append(self.rules, r)
 		}
 	}
