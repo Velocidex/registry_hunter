@@ -496,6 +496,17 @@ Rules:
           CommandImage=ExpandPath(Path=Data.value)) +
        GetDetails(OSPath=ExpandPath(Path=x.Data))
 
+- Author: Andrew Rathbun, Mike Cohen, Reece394
+  Description: "Run (SYSTEM)"
+  Category: Autoruns
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: 'WOW6432Node\Microsoft\Windows\CurrentVersion\{Run,RunOnce}\*'
+  Filter: x=>true
+  Details: |
+    x=>dict(Name=x.OSPath.Basename, RawTarget=x.Data,
+          CommandImage=ExpandPath(Path=Data.value)) +
+       GetDetails(OSPath=ExpandPath(Path=x.Data))
+
 - Author: Andrew Rathbun, Mike Cohen
   Description: Scheduled Tasks (TaskCache)
   Category: Autoruns
