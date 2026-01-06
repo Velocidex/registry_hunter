@@ -1,0 +1,110 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  Developing new rules
+  #
+
+This page shows how to develop new rules to the Registry Hunter. I
+will work through an example in which I add a new rule.
+
+  Example: Keyboard locales
+  #
+
+This artifact was described by Guzzy (blog.guzzy.dk) | SagaLabs in
+[Hunting Keyboard locales with
+Velociraptor)(https://blog.guzzy.dk/posts/hunting_keyboard_velociraptor/)
+with an initial
+PR
+
+  Setting up a development environment
+  #
+
+To develop registry rules I will need a Windows VM. I also prefer to
+use a development VM (I chose Linux) to actually build the artifact."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://registry-hunter.velocidex.com/docs/registry_hunter/develop/"><meta property="og:site_name" content="Velociraptor Registry Hunting"><meta property="og:title" content="Developing"><meta property="og:description" content="Developing new rules # This page shows how to develop new rules to the Registry Hunter. I will work through an example in which I add a new rule.
+Example: Keyboard locales # This artifact was described by Guzzy (blog.guzzy.dk) | SagaLabs in [Hunting Keyboard locales with Velociraptor)(https://blog.guzzy.dk/posts/hunting_keyboard_velociraptor/) with an initial PR
+Setting up a development environment # To develop registry rules I will need a Windows VM. I also prefer to use a development VM (I chose Linux) to actually build the artifact."><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><title>&lt;span class="icon">
+&lt;i class="fa-solid fa-desktop">&lt;/i>
+&lt;/span>
+Developing
+| Velociraptor Registry Hunting</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=http://registry-hunter.velocidex.com/docs/registry_hunter/develop/><link rel=stylesheet href=/book.min.f4bc2b0f80cbd784c51fa6123079c0ec4d90946148cb1cc5e0279ca61d81a19d.css integrity="sha256-9LwrD4DL14TFH6YSMHnA7E2QlGFIyxzF4Cecph2BoZ0=" crossorigin=anonymous><link rel=alternate type=application/rss+xml href=http://registry-hunter.velocidex.com/docs/registry_hunter/develop/index.xml title="Velociraptor Registry Hunting"><script src=/js/jquery-3.3.1.min.js?1703133391></script><link href=https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css?1703133392 rel=stylesheet><link href=/css/theme.css rel=stylesheet><link href=//cdn.datatables.net/2.3.0/css/dataTables.dataTables.min.css rel=stylesheet><script src=//cdn.datatables.net/2.3.0/js/dataTables.min.js></script><link href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/yaml.min.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.7.13/featherlight.min.js integrity="sha512-0UbR6HN0dY8fWN9T7fF658896tsPgnbRREHCNq46J9/JSn8GonXDZmqtTc3qS879GM0zV49b9LPhdc/maKP8Kg==" crossorigin=anonymous referrerpolicy=no-referrer></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.7.13/featherlight.min.css integrity="sha512-56GJrpSgHk6Mc9Fltt+bQKcICJoEpxtvozXPA5n5OT0rfWiqGlJmJCI/vl16kctf/0XbBloh03vl7OF2xFnR8g==" crossorigin=anonymous referrerpolicy=no-referrer><script>$(document).ready(function(){$(".json-renderer").each(function(){try{data=JSON.parse($(this).text()),$(this).jsonViewer(data,{collapsed:!0,rootCollapsable:!1})}catch{}}),$(".datatable").each(function(){new DataTable(this,{paging:!0})}),$(".scroll-datatable").each(function(){let e=$(this),t=new DataTable(this,{paging:!1,scrollY:200})})})</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Velociraptor Registry Hunting</span></a></h2><ul><li><a href=/docs/registry_hunter/><span class=icon><i class="fa-solid fa-desktop"></i>
+</span>Velociraptor Registry Hunter</a><ul><li><a href=/docs/registry_hunter/develop/ class=active><span class=icon><i class="fa-solid fa-desktop"></i>
+</span>Developing</a><ul></ul></li></ul></li><li><a href=/docs/rules/><span class=icon><i class="fa-solid fa-book"></i>
+</span>Rules</a><ul></ul></li><li><a href=/docs/github/><span class=icon><i class="fa-brands fa-github"></i>
+</span>Github</a><ul></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3><span class=icon><i class="fa-solid fa-desktop"></i>
+</span>Developing</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#example-keyboard-locales>Example: Keyboard locales</a><ul><li><a href=#setting-up-a-development-environment>Setting up a development environment</a></li><li><a href=#writing-the-actual-rule>Writing the actual rule</a></li><li><a href=#user-specific>User Specific</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=developing-new-rules>Developing new rules
+<a class=anchor href=#developing-new-rules>#</a></h1><p>This page shows how to develop new rules to the Registry Hunter. I
+will work through an example in which I add a new rule.</p><h2 id=example-keyboard-locales>Example: Keyboard locales
+<a class=anchor href=#example-keyboard-locales>#</a></h2><p>This artifact was described by <code>Guzzy (blog.guzzy.dk) | SagaLabs</code> in
+[Hunting Keyboard locales with
+Velociraptor)(https://blog.guzzy.dk/posts/hunting_keyboard_velociraptor/)
+with an initial
+<a href=https://github.com/Velocidex/velociraptor-docs/pull/1165/changes>PR</a></p><h3 id=setting-up-a-development-environment>Setting up a development environment
+<a class=anchor href=#setting-up-a-development-environment>#</a></h3><p>To develop registry rules I will need a Windows VM. I also prefer to
+use a development VM (I chose Linux) to actually build the artifact.</p><h4 id=on-the-linux-development-system>On the Linux Development system
+<a class=anchor href=#on-the-linux-development-system>#</a></h4><ol><li><p>On my Linux Development system I check out the <a href=https://github.com/Velocidex/registry_hunter>Registry Hunter Github repo</a>.</p></li><li><p>I set up a shared directory mounted on <code>/shared/</code></p></li><li><p>Create a directory in the shared folder <code>/shared/artifacts_definitions/</code></p></li><li><p>Within the repository, build the artifact and copy it into the shared folder:</p></li></ol><pre tabindex=0><code>$ make build artifact &amp;&amp; cp output/Windows.Registry.Hunter.yaml /shared/artifacts_definitions/
+go build -o reghunter ./bin/
+./reghunter compile --output output/Windows.Registry.Hunter.yaml --meta output/Windows.Registry.Hunter.Meta.yaml Rules/*.yaml
+Loading 2 rules from Rules/AppCompatCache.yaml
+Loading 2 rules from Rules/Detections.yaml
+Loading 586 rules from Rules/RECmdBatch.yaml
+Loading 25 rules from Rules/RegRipper.yaml
+Loading 60 rules from Rules/Velociraptor-Rules.yaml
+</code></pre><p>Now I can rebuild the artifact frequent including my new Rule and the
+new artifact will appear in the shared directory.</p><h4 id=on-the-windows-test-vm>On the Windows Test VM
+<a class=anchor href=#on-the-windows-test-vm>#</a></h4><ol><li><p>I start an <a href=https://docs.velociraptor.app/docs/deployment/#instant-velociraptor>Instant
+Velociraptor</a>
+instance. This brings a local Velociraptor server I can use to run
+notebooks on Windows.</p></li><li><p>Next I create a shared directory between the test VM and my
+development environment. I will map this directory as the <code>F:</code>
+drive.</p></li><li><p>I create a new notebook and add a new VQL cell with the following query:</p></li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span>LET ColumnTypes<span style=color:#f92672>&lt;=</span>dict(<span style=color:#f92672>`</span>Details<span style=color:#f92672>`=</span><span style=color:#e6db74>&#39;json/1&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>LET _ <span style=color:#f92672>&lt;=</span> <span style=color:#66d9ef>SELECT</span> artifact_set(definition<span style=color:#f92672>=</span>read_file(filename<span style=color:#f92672>=</span>OSPath)).name <span style=color:#66d9ef>AS</span> Name
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> glob(globs<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;F:/artifacts_definitions/*Hunter*yaml&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> <span style=color:#f92672>*</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> Artifact.Windows.Registry.Hunter(CollectionPolicy<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;HashOnly&#34;</span>,
+</span></span><span style=display:flex><span>                                      RuleFilter<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Locale&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>WHERE</span> _Source <span style=color:#f92672>=~</span> <span style=color:#e6db74>&#34;Results&#34;</span>
+</span></span></code></pre></div><ol><li><p>The first query declares the <code>Details</code> column as a JSON object with
+the first level open - this is used by the GUI to present it in a
+more readable way.</p></li><li><p>Next I search the shared directory for the Registry Hunter
+artifact, read the data an use <code>artifact_set()</code> to import the
+artifact into Velociraptor.</p></li><li><p>Finally I call the new artifact with the RuleFilter only selecting
+the one rule I am currently working on.</p></li></ol><h3 id=writing-the-actual-rule>Writing the actual rule
+<a class=anchor href=#writing-the-actual-rule>#</a></h3><p>Reading the above blog post describes the system input locales are
+configured under the key
+<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Input\Locales</code> This is
+<a href=https://blog.guzzy.dk/images/locales.png>depicted in the blog post</a>:</p><p><figure id=47f99fa605220488ed905d2ad931d40f><div data-featherlight=#47f99fa605220488ed905d2ad931d40f class=figure><img src=locales.png alt="Locales in the registry"></div><figcaption>Locales in the registry</figcaption></figure></p><p>I will add the rule to the <code>Velociraptor-Rules.yaml</code> ruleset. Starting
+off with the description of the rule, author etc.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>Description</span>: <span style=color:#ae81ff>Enabled input Locale</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Author</span>: <span style=color:#ae81ff>Guzzy (blog.guzzy.dk) | SagaLabs</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Comment</span>: <span style=color:#ae81ff>Useful for RDP session attribution.</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Category</span>: <span style=color:#ae81ff>User Activity</span>
+</span></span></code></pre></div><p>The key I am interested in is under the <code>HKLM\Software</code> hive and can be found using the following glob expression</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>  <span style=color:#f92672>Root</span>: <span style=color:#ae81ff>HKEY_LOCAL_MACHINE\Software</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Glob</span>: <span style=color:#ae81ff>Microsoft\Input\Locales\loc_*\InputMethods\*</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Filter</span>: <span style=color:#ae81ff>x=&gt;x.IsDir</span>
+</span></span></code></pre></div><p>I am only interested in Registry Keys under the <code>InputMethods</code> key so
+I filter by directories (In the Velociraptor abstraction, a registry
+key appears as a directory)</p><p>Under each key I will show all the values in the <code>Details</code> column. The
+<code>Details</code> column consists of a VQL lambda function which is evaluated
+on each key found by the above <code>Glob</code>. This allows us to enrich the
+<code>Details</code> column in an arbitrary way, cross correlate with other keys
+etc. Basically anything can be done by the VQL function here.</p><p>There are some pre-defined VQL functions that make it easy to do
+common things. In this case I will use the <code>FetchKeyValues()</code> function
+that just fetches all the values under the key as a dictionary.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>  <span style=color:#f92672>Details</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>x=&gt;FetchKeyValues(OSPath=x.OSPath)</span>
+</span></span></code></pre></div><p><figure id=c3cb86dd7fae9ef9cc69c9170350dfe6><div data-featherlight=#c3cb86dd7fae9ef9cc69c9170350dfe6 class=figure><img src=enumerating_locales.png alt="Enumerating the locales"></div><figcaption>Enumerating the locales</figcaption></figure></p><p>The system has many locales installed, but only a few are enabled. We
+are typically not interested in the locales which are not enabled, so
+we can modify the Filter to exclude those registry keys that have a
+value <code>Enabled = 1</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>  <span style=color:#f92672>Filter</span>: <span style=color:#ae81ff>x=&gt;x.IsDir AND GetValue(OSPath=x.OSPath + &#34;Enabled&#34;)</span>
+</span></span></code></pre></div><p><figure id=1f332bc24282243706eb57630e2c732b><div data-featherlight=#1f332bc24282243706eb57630e2c732b class=figure><img src=enabled_locales.png alt="Only showing the enabled locales"></div><figcaption>Only showing the enabled locales</figcaption></figure></p><h3 id=user-specific>User Specific
+<a class=anchor href=#user-specific>#</a></h3><p>In the article it is also mentioned that user-specific user keyboard
+layouts are also stored as a registry key found in <code>HKEY_USERS\&lt;User SID>\Control Panel\International\User Profile</code>.</p><p>We will search the user&rsquo;s hive for these keys and present the name of
+the locale with the user&rsquo;s Sid:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>- <span style=color:#f92672>Description</span>: <span style=color:#ae81ff>Enabled input Locale</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Author</span>: <span style=color:#ae81ff>Guzzy (blog.guzzy.dk) | SagaLabs</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Comment</span>: <span style=color:#ae81ff>Useful for RDP session attribution.</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Category</span>: <span style=color:#ae81ff>User Activity</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Root</span>: <span style=color:#ae81ff>HKEY_USERS</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Glob</span>: <span style=color:#e6db74>&#39;*\Control Panel\International\User Profile\*&#39;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Filter</span>: <span style=color:#ae81ff>x=&gt;x.IsDir</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>Details</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>x=&gt;dict(Locale=x.OSPath.Basename, UserSid=x.OSPath[-5])</span>
+</span></span></code></pre></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#example-keyboard-locales>Example: Keyboard locales</a><ul><li><a href=#setting-up-a-development-environment>Setting up a development environment</a></li><li><a href=#writing-the-actual-rule>Writing the actual rule</a></li><li><a href=#user-specific>User Specific</a></li></ul></li></ul></nav></div></aside></main></body></html>
