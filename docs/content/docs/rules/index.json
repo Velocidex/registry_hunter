@@ -42,6 +42,20 @@
    "Query": "SELECT OSPath, Data.value AS Value\nFROM glob(globs=[\n'''HKEY_LOCAL_MACHINE\\System\\ControlSet*\\Control\\Session Manager\\Environment\\DOTNET_STARTUP_HOOKS''',\n'''HKEY_USERS\\*\\Environment\\DOTNET_STARTUP_HOOKS'''], accessor=\"registry\")\nWHERE Value\n"
   },
   {
+   "Description": "WinRM Lateral Movement",
+   "Category": "Threat Hunting",
+   "Author": "Mike Cohen",
+   "Reference": "https://pgerlings.me/winrmclientlist/",
+   "Comment": "The value WSManSafeClientList keeps a list of clients used in WinRM lateral movemnt ",
+   "Glob": "Microsoft\\Windows\\CurrentVersion\\WSMAN\\SafeClientList\\WSManSafeClientList",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003edict(ClientList=ParseClientList(Value=x.Data))\n",
+   "Filter": "x=\u003etrue",
+   "Preamble": [
+    "LET WSManSafeClientListProfile \u003c= '''[\n [ClientList, 0, [\n   [ClientList, 0, Array, {\n     type: \"IP\",\n     count: \"x=\u003e len(list=Value) / 16\"\n    }],\n ]],\n [\"IP\", 16, [\n   [\"__RawIPV6\", 0, Array, {\n     count: 8,\n     type: uint16b,\n    }],\n   [\"__Pad1\", 4, uint32],\n   [\"__Pad2\", 8, uint64],\n   [\"__IPv6\", 0, Value, {\n     value: \"x=\u003eip(parse=format(format='%x:' * 7 + '%x', args=x.__RawIPV6.ContentsOf))\"\n    }],\n   [\"__IPV4int\", 0, uint32b],\n   [\"__IPv4\", 0, Value, {\n     value: \"x=\u003eip(netaddr4_be=x.__IPV4int)\"\n   }],\n   [\"IP\", 0, Value, {\n     value: \"x=\u003eif(condition=x.__Pad1 or x.__Pad2, then=x.__IPv6, else=x.__IPv4)\"\n   }],\n   [\"__Raw\", 0, Array, {\n     count: 16,\n     type: uint8,\n   }],\n   [\"Raw\", 0, Value, {\n     value: \"x=\u003eformat(format='%x' * 16, args=x.__Raw.ContentsOf)\"\n   }]\n ]]\n]\n'''\n\nLET ParseClientList(Value) = parse_binary(accessor=\"data\",\n   filename=Value, profile=WSManSafeClientListProfile,\n   struct=\"ClientList\").ClientList.ContentsOf\n"
+   ]
+  },
+  {
    "Description": "Windows Boot Volume",
    "Category": "System Info",
    "Author": "Andrew Rathbun",

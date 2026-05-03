@@ -30,3 +30,55 @@ Rules:
     '''HKEY_LOCAL_MACHINE\System\ControlSet*\Control\Session Manager\Environment\DOTNET_STARTUP_HOOKS''',
     '''HKEY_USERS\*\Environment\DOTNET_STARTUP_HOOKS'''], accessor="registry")
     WHERE Value
+
+- Description: WinRM Lateral Movement - WSManSafeClientList
+  Category: Threat Hunting
+  Author: Mike Cohen
+  Comment: "The value WSManSafeClientList keeps a list of clients used in WinRM lateral movemnt "
+  Reference: https://pgerlings.me/winrmclientlist/
+  Preamble:
+  - |
+    LET WSManSafeClientListProfile <= '''[
+     [ClientList, 0, [
+       [ClientList, 0, Array, {
+         type: "IP",
+         count: "x=> len(list=Value) / 16"
+        }],
+     ]],
+     ["IP", 16, [
+       ["__RawIPV6", 0, Array, {
+         count: 8,
+         type: uint16b,
+        }],
+       ["__Pad1", 4, uint32],
+       ["__Pad2", 8, uint64],
+       ["__IPv6", 0, Value, {
+         value: "x=>ip(parse=format(format='%x:' * 7 + '%x', args=x.__RawIPV6.ContentsOf))"
+        }],
+       ["__IPV4int", 0, uint32b],
+       ["__IPv4", 0, Value, {
+         value: "x=>ip(netaddr4_be=x.__IPV4int)"
+       }],
+       ["IP", 0, Value, {
+         value: "x=>if(condition=x.__Pad1 or x.__Pad2, then=x.__IPv6, else=x.__IPv4)"
+       }],
+       ["__Raw", 0, Array, {
+         count: 16,
+         type: uint8,
+       }],
+       ["Raw", 0, Value, {
+         value: "x=>format(format='%x' * 16, args=x.__Raw.ContentsOf)"
+       }]
+     ]]
+    ]
+    '''
+
+    LET ParseClientList(Value) = parse_binary(accessor="data",
+       filename=Value, profile=WSManSafeClientListProfile,
+       struct="ClientList").ClientList.ContentsOf
+
+  Root: HKEY_LOCAL_MACHINE\Software
+  Glob: Microsoft\Windows\CurrentVersion\WSMAN\SafeClientList\WSManSafeClientList
+  Filter: x=>true
+  Details: |
+    x=>dict(ClientList=ParseClientList(Value=x.Data))
