@@ -105,7 +105,8 @@ Rules:
                 accessor="registry")
     }, query={
       SELECT Description, Category, OSPath, Mtime,
-      Details + dict(Execution= Execution) AS Details
+        x.AppCompatCache(Blob=read_file(accessor="registry", filename=OSPath)) 
+          + dict(Execution= Execution) AS Details
       FROM AppCompatCache(Blob=read_file(accessor="registry",
                           filename=OSPath, length=1000000))
     })
