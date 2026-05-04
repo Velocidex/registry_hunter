@@ -354,6 +354,9 @@ Rules:
       }
     )
   Filter: x=>IsDir
+
+## Review the below.
+
 - Description: MountPoints2
   Category: Devices
   Author: Andrew Rathbun
@@ -2079,36 +2082,6 @@ Rules:
   Author: Troy Larson
   Glob: Microsoft\Windows NT\CurrentVersion\AeDebug\**\UserDebuggerHotKey
   Root: HKEY_LOCAL_MACHINE\Software
-- Description: AppCompatFlags Custom
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom\**
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: AppCompatFlags InstalledSDB
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseDescription
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: AppCompatFlags InstalledSDB
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseInstallTimeStamp
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: AppCompatFlags InstalledSDB
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabasePath
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: AppCompatFlags InstalledSDB
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseType
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: AppCompatFlags Layers
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Microsoft\Windows NT\Current Version\AppCompatFlags\Layers
-  Root: HKEY_LOCAL_MACHINE\Software
 - Description: Drivers
   Category: ASEP
   Author: Troy Larson
@@ -2520,36 +2493,6 @@ Rules:
   Category: ASEP
   Author: Troy Larson
   Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AeDebug\**\UserDebuggerHotKey
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom\**
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 AppCompatFlags InstalledSDB
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseDescription
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 AppCompatFlags InstalledSDB
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseInstallTimeStamp
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 AppCompatFlags InstalledSDB
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabasePath
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 AppCompatFlags InstalledSDB
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB\**\DatabaseType
-  Root: HKEY_LOCAL_MACHINE\Software
-- Description: Wow6432 AppCompatFlags Layers
-  Category: ASEP
-  Author: Troy Larson
-  Glob: Wow6432Node\Microsoft\Windows NT\Current Version\AppCompatFlags\Layers
   Root: HKEY_LOCAL_MACHINE\Software
 - Description: Wow6432 Drivers
   Category: ASEP

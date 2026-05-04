@@ -3,25 +3,84 @@
    "Description": "AppCompatCache",
    "Category": "Program Execution",
    "Comment": "AKA ShimCache, data is only written to this value at reboot by winlogon.exe",
-   "Glob": "ControlSet*\\Control\\Session Manager\\AppCompatCache\\AppCompatCache",
-   "Root": "HKEY_LOCAL_MACHINE\\System",
-   "Details": "x=\u003eAppCompatCache(Blob=read_file(accessor=\"registry\", filename=OSPath))\n",
-   "Filter": "x=\u003etrue",
+   "Glob": "",
+   "Root": "",
    "Preamble": [
-    "LET AppCompatCacheParser \u003c= '''[\n[\"HeaderWin10\", \"x=\u003ex.HeaderSize\", [\n  [\"HeaderSize\", 0, \"unsigned int\"],\n  [\"Entries\", \"x=\u003ex.HeaderSize\", Array, {\n      type: \"Entry\",\n      sentinel: \"x=\u003ex.Size = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n[\"HeaderWin8\", 128, [\n  [\"Entries\", 128, Array, {\n      type: \"EntryWin8\",\n      sentinel: \"x=\u003ex.EntrySize = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n\n[\"EntryWin8\", \"x=\u003ex.EntrySize + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"EntrySize\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14 + 10\", \"WinFileTime\"]\n]],\n\n[\"Entry\", \"x=\u003ex.Size + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"Size\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14\", \"WinFileTime\"],\n  [\"DataSize\", \"x=\u003ex.PathSize + 14 + 8\", \"uint32\"],\n  [\"Data\", \"x=\u003ex.PathSize + 14 + 8 + 4\" , \"String\", {\n      length: \"x=\u003ex.DataSize\",\n  }],\n\n  # The last byte of the Data block is 1 for execution\n  [\"Execution\", \"x=\u003ex.PathSize + 14 + 8 + 4 + x.DataSize - 4\", \"uint32\"]\n]],\n\n# This is the Win7 parser but we dont use it right now.\n[\"HeaderWin7x64\", 128, [\n  [\"Signature\", 0, \"uint32\"],\n  [\"Entries\", 128, \"Array\", {\n      count: 10000,\n      sentinel: \"x=\u003ex.PathSize = 0\",\n      type: EntryWin7x64,\n  }]\n]],\n[\"EntryWin7x64\", 48, [\n  [\"PathSize\", 0, \"uint16\"],\n  [\"PathOffset\", 8, \"uint32\"],\n  [\"Path\", \"x=\u003ex.PathOffset - x.StartOf\", \"String\", {\n      encoding: \"utf16\",\n      length: \"x=\u003ex.PathSize\",\n  }],\n  [\"LastMod\", 16, \"WinFileTime\"]\n]]\n\n]'''\n\nLET AppCompatCacheWin10(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin10\")\n\nLET AppCompatCacheWin8(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin8\")\n\nLET AppCompatCache(Blob) = SELECT LastMod, Path,\n    Execution, GetDetails(OSPath=ExpandPath(Path=Path)) AS Details\nFROM foreach(\n  row=if(\n    condition=AppCompatCacheWin10(Blob=Blob).HeaderSize IN (52, 48),\n    then=AppCompatCacheWin10(Blob=Blob).Entries,\n    else=AppCompatCacheWin8(Blob=Blob).Entries))\n"
-   ]
+    "LET AppCompatCacheParser \u003c= '''[\n[\"HeaderWin10\", \"x=\u003ex.HeaderSize\", [\n  [\"HeaderSize\", 0, \"unsigned int\"],\n  [\"Entries\", \"x=\u003ex.HeaderSize\", Array, {\n      type: \"Entry\",\n      sentinel: \"x=\u003ex.Size = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n[\"HeaderWin8\", 128, [\n  [\"Entries\", 128, Array, {\n      type: \"EntryWin8\",\n      sentinel: \"x=\u003ex.EntrySize = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n\n[\"EntryWin8\", \"x=\u003ex.EntrySize + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"EntrySize\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14 + 10\", \"WinFileTime\"]\n]],\n\n[\"Entry\", \"x=\u003ex.Size + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"Size\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14\", \"WinFileTime\"],\n  [\"DataSize\", \"x=\u003ex.PathSize + 14 + 8\", \"uint32\"],\n  [\"Data\", \"x=\u003ex.PathSize + 14 + 8 + 4\" , \"String\", {\n      length: \"x=\u003ex.DataSize\",\n  }],\n\n  # The last byte of the Data block is 1 for execution\n  [\"Execution\", \"x=\u003ex.PathSize + 14 + 8 + 4 + x.DataSize - 4\", \"uint32\"]\n]],\n\n# This is the Win7 parser but we dont use it right now.\n[\"HeaderWin7x64\", 128, [\n  [\"Signature\", 0, \"uint32\"],\n  [\"Entries\", 128, \"Array\", {\n      count: 10000,\n      sentinel: \"x=\u003ex.PathSize = 0\",\n      type: EntryWin7x64,\n  }]\n]],\n[\"EntryWin7x64\", 48, [\n  [\"PathSize\", 0, \"uint16\"],\n  [\"PathOffset\", 8, \"uint32\"],\n  [\"Path\", \"x=\u003ex.PathOffset - x.StartOf\", \"String\", {\n      encoding: \"utf16\",\n      length: \"x=\u003ex.PathSize\",\n  }],\n  [\"LastMod\", 16, \"WinFileTime\"]\n]]\n\n]'''\n\nLET AppCompatCacheWin10(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin10\")\n\nLET AppCompatCacheWin8(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin8\")\n\nLET AppCompatCache(Blob) = SELECT LastMod, Path, Execution,\n    GetDetails(OSPath=ExpandPath(Path=Path)) AS Details\nFROM foreach(\n  row=if(\n    condition=AppCompatCacheWin10(Blob=Blob).HeaderSize IN (52, 48),\n    then=AppCompatCacheWin10(Blob=Blob).Entries,\n    else=AppCompatCacheWin8(Blob=Blob).Entries))\n"
+   ],
+   "Query": "SELECT * FROM foreach(row={\n  SELECT *\n  FROM glob(globs='''ControlSet*\\Control\\Session Manager\\AppCompatCache\\AppCompatCache''',\n            root='''HKEY_LOCAL_MACHINE\\System''',\n            accessor=\"registry\")\n}, query={\n  SELECT Description, Category, OSPath, Mtime,\n  Details + dict(Execution= Execution) AS Details\n  FROM AppCompatCache(Blob=read_file(accessor=\"registry\",\n                      filename=OSPath, length=1000000))\n})\n"
   },
   {
-   "Description": "AppCompatFlags",
+   "Description": "AppCompatFlags Users",
    "Category": "Program Execution",
    "Comment": "Displays programs that are configured to run in Compatibility Mode in Windows",
-   "Glob": "*\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags",
+   "Glob": "*\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Compatibility Assistant\\Store\\*",
    "Root": "HKEY_USERS",
-   "Details": "x=\u003edict(Programs=AppCompatFlagsPrograms(OSPath=x.OSPath).Program)\n",
-   "Filter": "x=\u003eIsDir",
-   "Preamble": [
-    "LET AppCompatFlagsPrograms(OSPath) = SELECT OSPath.Basename AS Program\n   FROM glob(globs='Compatibility Assistant/{Store,Persisted}/*',\n             accessor=\"registry\", root=OSPath)\n"
-   ]
+   "Details": "x=\u003eGetDetails(OSPath=x.OSPath.Basename)\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "AppCompatFlags Users",
+   "Category": "Program Execution",
+   "Comment": "Displays programs that are configured to run in Compatibility Mode in Windows",
+   "Glob": "*\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Compatibility Assistant\\Persisted\\*",
+   "Root": "HKEY_USERS",
+   "Details": "x=\u003eGetDetails(OSPath=x.OSPath.Basename)\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "AppCompatFlags LocalMachine",
+   "Category": "Program Execution",
+   "Comment": "Displays programs that are configured to run in Compatibility Mode in Windows",
+   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers\\**",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=x.OSPath.Basename)\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "AppCompatFlags LocalMachine",
+   "Category": "Program Execution",
+   "Comment": "Displays programs that are configured to run in Compatibility Mode in Windows",
+   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\**",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=x.OSPath.Basename)\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "AppCompatFlags LocalMachine",
+   "Category": "Program Execution",
+   "Comment": "Displays programs that are configured to run in Compatibility Mode in Windows",
+   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Custom\\**",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=x.OSPath.Basename)\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "AppCompatFlags LocalMachine Wow64",
+   "Category": "Program Execution",
+   "Comment": "Displays programs that are configured to run in Compatibility Mode in Windows",
+   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers\\**",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=x.OSPath.Basename)\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "AppCompatFlags LocalMachine Wow64",
+   "Category": "Program Execution",
+   "Comment": "Displays programs that are configured to run in Compatibility Mode in Windows",
+   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\**",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=x.OSPath.Basename)\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "AppCompatFlags LocalMachine Wow64",
+   "Category": "Program Execution",
+   "Comment": "Displays programs that are configured to run in Compatibility Mode in Windows",
+   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Custom\\**",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003eGetDetails(OSPath=x.OSPath.Basename)\n",
+   "Filter": "x=\u003etrue"
   },
   {
    "Description": "Rclone",
@@ -42,7 +101,7 @@
    "Query": "SELECT OSPath, Data.value AS Value\nFROM glob(globs=[\n'''HKEY_LOCAL_MACHINE\\System\\ControlSet*\\Control\\Session Manager\\Environment\\DOTNET_STARTUP_HOOKS''',\n'''HKEY_USERS\\*\\Environment\\DOTNET_STARTUP_HOOKS'''], accessor=\"registry\")\nWHERE Value\n"
   },
   {
-   "Description": "WinRM Lateral Movement",
+   "Description": "WinRM Lateral Movement - WSManSafeClientList",
    "Category": "Threat Hunting",
    "Author": "Mike Cohen",
    "Reference": "https://pgerlings.me/winrmclientlist/",
@@ -2652,48 +2711,6 @@
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
-   "Description": "AppCompatFlags Custom",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Custom\\**",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "AppCompatFlags InstalledSDB",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\**\\DatabaseDescription",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "AppCompatFlags InstalledSDB",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\**\\DatabaseInstallTimeStamp",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "AppCompatFlags InstalledSDB",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\**\\DatabasePath",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "AppCompatFlags InstalledSDB",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\**\\DatabaseType",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "AppCompatFlags Layers",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Microsoft\\Windows NT\\Current Version\\AppCompatFlags\\Layers",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
    "Description": "Drivers",
    "Category": "ASEP",
    "Author": "Troy Larson",
@@ -3266,48 +3283,6 @@
    "Category": "ASEP",
    "Author": "Troy Larson",
    "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AeDebug\\**\\UserDebuggerHotKey",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Custom",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Custom\\**",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 AppCompatFlags InstalledSDB",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\**\\DatabaseDescription",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 AppCompatFlags InstalledSDB",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\**\\DatabaseInstallTimeStamp",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 AppCompatFlags InstalledSDB",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\**\\DatabasePath",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 AppCompatFlags InstalledSDB",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\**\\DatabaseType",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
-  },
-  {
-   "Description": "Wow6432 AppCompatFlags Layers",
-   "Category": "ASEP",
-   "Author": "Troy Larson",
-   "Glob": "Wow6432Node\\Microsoft\\Windows NT\\Current Version\\AppCompatFlags\\Layers",
    "Root": "HKEY_LOCAL_MACHINE\\Software"
   },
   {
@@ -5097,6 +5072,24 @@
    "Category": "Autoruns",
    "Author": "Andrew Rathbun, Mike Cohen",
    "Glob": "Microsoft\\Windows\\CurrentVersion\\RunOnce\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003edict(Name=x.OSPath.Basename, RawTarget=x.Data,\n      CommandImage=ExpandPath(Path=Data.value)) +\n   GetDetails(OSPath=ExpandPath(Path=x.Data))\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "Run (SYSTEM)",
+   "Category": "Autoruns",
+   "Author": "Andrew Rathbun, Mike Cohen, Reece394",
+   "Glob": "WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003edict(Name=x.OSPath.Basename, RawTarget=x.Data,\n      CommandImage=ExpandPath(Path=Data.value)) +\n   GetDetails(OSPath=ExpandPath(Path=x.Data))\n",
+   "Filter": "x=\u003etrue"
+  },
+  {
+   "Description": "Run (SYSTEM)",
+   "Category": "Autoruns",
+   "Author": "Andrew Rathbun, Mike Cohen, Reece394",
+   "Glob": "WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\*",
    "Root": "HKEY_LOCAL_MACHINE\\Software",
    "Details": "x=\u003edict(Name=x.OSPath.Basename, RawTarget=x.Data,\n      CommandImage=ExpandPath(Path=Data.value)) +\n   GetDetails(OSPath=ExpandPath(Path=x.Data))\n",
    "Filter": "x=\u003etrue"

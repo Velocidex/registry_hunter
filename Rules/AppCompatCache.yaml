@@ -2,9 +2,6 @@ Rules:
 - Description: "AppCompatCache"
   Comment: "AKA ShimCache, data is only written to this value at reboot by winlogon.exe"
   Category: Program Execution
-  Root: HKEY_LOCAL_MACHINE\System
-  Glob: ControlSet*\Control\Session Manager\AppCompatCache\AppCompatCache
-  Filter: x=>true
   Preamble:
   - |
     LET AppCompatCacheParser <= '''[
@@ -92,8 +89,7 @@ Rules:
         profile=AppCompatCacheParser,
         struct="HeaderWin8")
 
-    LET AppCompatCache(Blob) = SELECT LastMod, Path,
-        x.Execution as Execution,
+    LET AppCompatCache(Blob) = SELECT LastMod, Path, Execution,
         GetDetails(OSPath=ExpandPath(Path=Path)) AS Details
     FROM foreach(
       row=if(
@@ -101,20 +97,42 @@ Rules:
         then=AppCompatCacheWin10(Blob=Blob).Entries,
         else=AppCompatCacheWin8(Blob=Blob).Entries))
 
-  Details: |
-    x=>AppCompatCache(Blob=read_file(accessor="registry", filename=OSPath))
+  Query: |
+    SELECT * FROM foreach(row={
+      SELECT *
+      FROM glob(globs='''ControlSet*\Control\Session Manager\AppCompatCache\AppCompatCache''',
+                root='''HKEY_LOCAL_MACHINE\System''',
+                accessor="registry")
+    }, query={
+      SELECT Description, Category, OSPath, Mtime,
+      Details + dict(Execution= Execution) AS Details
+      FROM AppCompatCache(Blob=read_file(accessor="registry",
+                          filename=OSPath, length=1000000))
+    })
 
-- Description: "AppCompatFlags"
+- Description: "AppCompatFlags Users"
   Comment: "Displays programs that are configured to run in Compatibility Mode in Windows"
   Root: HKEY_USERS
   Category: Program Execution
-  Glob: '*\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags'
-  Filter: x=>IsDir
-  Preamble:
-    - |
-      LET AppCompatFlagsPrograms(OSPath) = SELECT OSPath.Basename AS Program
-         FROM glob(globs='Compatibility Assistant/{Store,Persisted}/*',
-                   accessor="registry", root=OSPath)
-
+  Glob: "*/Software/Microsoft/Windows NT/CurrentVersion/AppCompatFlags/Compatibility Assistant/{Store,Persisted}/*"
+  Filter: x=>true
   Details: |
-    x=>dict(Programs=AppCompatFlagsPrograms(OSPath=x.OSPath).Program)
+    x=>GetDetails(OSPath=x.OSPath.Basename)
+
+- Description: "AppCompatFlags LocalMachine"
+  Comment: "Displays programs that are configured to run in Compatibility Mode in Windows"
+  Root: HKEY_LOCAL_MACHINE\Software
+  Category: Program Execution
+  Glob: Microsoft\Windows NT\CurrentVersion\AppCompatFlags\{Layers,InstalledSDB,Custom}\**
+  Filter: x=>true
+  Details: |
+    x=>GetDetails(OSPath=x.OSPath.Basename)
+
+- Description: "AppCompatFlags LocalMachine Wow64"
+  Comment: "Displays programs that are configured to run in Compatibility Mode in Windows"
+  Root: HKEY_LOCAL_MACHINE\Software
+  Category: Program Execution
+  Glob: Wow6432Node\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\{Layers,InstalledSDB,Custom}\**
+  Filter: x=>true
+  Details: |
+    x=>GetDetails(OSPath=x.OSPath.Basename)

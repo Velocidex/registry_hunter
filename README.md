@@ -137,7 +137,14 @@ notebook directly on Windows and develop/test my artifacts.
 On the development system:
 
 ```
-$ make && cp output/Windows.Registry.Hunter.yaml  /shared/reghunter/
+$ make verify
+```
+
+This builds the artifact then runs the velociraptor artifact verifier
+over the output. It will flag any errors with the produced VQL.
+
+```
+$ make && cp output/Windows.Registry.Hunter.yaml /shared/reghunter/
 ```
 
 This builds the artifacts and copies onto a shared directory which I
@@ -169,3 +176,15 @@ Installed Components`. The above query:
 
 Iterating is now very quick - I just rebuild the artifact in my dev
 system, and refresh the cell in the test system.
+
+### Command line only development
+
+It is possible to cycle through the development on the command line
+only:
+
+```bash
+velociraptor.exe -v --definitions f:\reghunter\ -r Windows.Registry.Hunter --RuleFilter "Active Setup Installed Components"
+```
+
+This will output the results in raw JSON which is usually enough to be
+able to see quickly if the rules work.

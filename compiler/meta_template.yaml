@@ -8,6 +8,9 @@ description: |
 imports:
 - Windows.Registry.Hunter
 
+required_permissions:
+- FILESYSTEM_WRITE
+
 sources:
 {{- range .Rules }}
 {{- if .Query }}

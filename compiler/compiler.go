@@ -157,6 +157,11 @@ func (self *Compiler) LoadRules(filename string) error {
 			if r.Query != "" {
 				self.queries = append(self.queries, r)
 				self.rules = append(self.rules, r)
+
+				if len(r.Preamble) > 0 {
+					self.PreambleVerses = append(
+						self.PreambleVerses, r.Preamble...)
+				}
 				continue
 			}
 

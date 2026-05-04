@@ -118,6 +118,13 @@ parameters:
   type: bool
   description: Add more logging.
 
+- name: BaselineDBPath
+  description: |
+    If provided we create a BaselineDB on this path.
+
+required_permissions:
+- FILESYSTEM_WRITE
+
 implied_permissions:
 - IMPERSONATION
 
@@ -545,13 +552,37 @@ sources:
     FROM Result
     WHERE eval(func=Metadata.Filter || "x=>NOT IsDir")
 
-    SELECT * FROM chain(
+    LET Results = SELECT * FROM chain(
     a=GlobRules,
     b={
       SELECT * FROM foreach(row=AllFullQueries, query={
         SELECT * FROM query(query=Query, inherit=TRUE)
       })
     })
+
+    LET ExecutionVersion <= timestamp(epoch=now()).String
+    LET _ <= if(condition=BaselineDBPath,
+       then=cache(lambda="x=>ExecutionVersion",
+                  filename=BaselineDBPath,
+                  period=100000,
+                  max_size=10000000))
+
+    // Get a canonical string of the key to compare the baseline.
+    LET GetCanonical(OSPath, Details) = hash(path=OSPath.String +
+       serialize(item=Details), accessor="data",
+       hashselect="SHA256").SHA256
+
+    LET ResultsWithBaseline = SELECT *,
+       cache(key=GetCanonical(OSPath=OSPath, Details=S.Details)) AS Baseline
+    FROM Results
+
+    // Only show the items that are different from the last baseline
+    // execution.
+    WHERE Baseline = ExecutionVersion
+
+    SELECT * FROM if(condition=BaselineDBPath,
+       then=ResultsWithBaseline,
+       else=Results)
 
 
 column_types:
