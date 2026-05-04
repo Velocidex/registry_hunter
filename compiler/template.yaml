@@ -136,10 +136,6 @@ export: |
     LET CollectionPolicy <= S.CollectionPolicy || "ExcludeSigned"
     LET RemappingStrategy <= S.RemappingStrategy || "API And NTUser.dat"
 
-    LET CollectionPolicy <= if(condition=RemappingStrategy =~ "API",
-      then= CollectionPolicy,
-      else=log(message="CollectionPolicy set to None as RemappingStrategy strategy is not API based") && "None")
-
     LET MaxFileSize <= S.MaxFileSize || 100000000
     LET MaxHashSize <= S.MaxHashSize || 100000000
 
@@ -185,12 +181,12 @@ export: |
       condition=Details.Stat AND Details.Stat.Size < MaxHashSize
                 AND NOT OSPath =~ TrustedPathRegex,
       then=Details + dict(Hashes=hash(path=OSPath),
-                          Magic=magic(path=OSPath)),
+                          Magic=magic(path=OSPath, accessor="auto")),
       else=Details)
 
     // Calculate the details column with hashes and magic.
     LET _GetDetails(OSPath) = if(
-    condition= CollectionPolicy =~ "None" OR NOT OSPath.Components,
+    condition= NOT OSPath.Components,
     then=dict(),
     else=MaybeUpload(OSPath=OSPath, Details=MaybeBinary(
       OSPath=OSPath,
@@ -408,13 +404,14 @@ export: |
         `^system32\\\\`="%SystemRoot%\\System32\\",
         `^{.+}.+`="\\$0",
         `^C:\\\\Program Files[^\\\\]*\\\\[^ ]+`='"$0"',
-        `^%[^ ]+%[^ ]+`='"$0"'
+        `^%[^ ]+%[^ ]+`='"$0"',
+        `^c:`="C:"
       )
 
     // Extract the binary from the command line
-    LET ExpandPath(Path) = lowcase(string=commandline_split(
-    command=expand(path=regex_transform(source=Path,
-      map=_ExpandedTransforms)))[0])
+    LET ExpandPath(Path) = commandline_split(
+    command=expand(path=regex_transform(source=lowcase(string=Path),
+      map=_ExpandedTransforms)))[0]
 
 sources:
 - name: Remapping
