@@ -28,7 +28,11 @@
         "URI": "\\Microsoft\\Windows\\PushToInstall\\Registration",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{011EC92E-E5B8-49B5-B4B6-0190A9A9012D}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\sc.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -56,7 +60,11 @@
         "URI": "\\Microsoft\\Windows\\Windows Error Reporting\\QueueReporting",
         "Version": "1.5",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{0736BD74-EAC9-4D86-AC4C-5E9FB5FDA1D4}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\wermgr.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -139,7 +147,11 @@
         "URI": "\\Microsoft\\Windows\\Speech\\SpeechModelDownloadTask",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{0BB1DDC3-E074-4E71-B1F8-4DDEBC83F151}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\speech_onecore\\common\\speechmodeldownload.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -194,7 +206,11 @@
         "Triggers": "FwAAAAAAAAAAo8A9iKLAPQAAAAAAAAAAAKPAPYiiwD3//////////34RAkJISEhIthbi6khISEgaAAAASEhISEwAbwBjAGEAbABTAGUAcgB2AGkAYwBlAAAASEhISEhIAAAAAEhISEgASEhISEhISABISEhISEhIBQAAAEhISEgMAAAASEhISAEBAAAAAAAFEwAAAEhISEgAAAAASEhISCwAAABISEhItAAAAHBDAQCA9AMA/////woAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABISEhI//8AAAAAAAAAo8A9iKLAPQAAAAAAAAAAAKPAPYiiwD3//////////wgHAAD/////gFEBAAAAAAAAAAAAAI8ycwGEiD3AgIg9AAAAALCBiD0AAAAASEhISA==",
         "URI": "Microsoft\\Windows\\AppID\\VerifiedPublisherCertStoreCheck",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{0D79F712-AA30-483C-95A2-97C57DE0CB41}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\appidcertstorecheck.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -250,7 +266,11 @@
         "URI": "\\Microsoft\\Windows\\Device Information\\Device User",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{112501E9-517F-4493-983E-A7778C806B48}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\devicecensus.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -277,7 +297,11 @@
         "Triggers": "FwAAAAAAAAAAADIdHMI+BP//////////AAAyHRzCPgQAAAAAAAAAAAghQgJISEhI9VsDpEhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEhYAAAASEhISAAAAAD/////gPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZXBvcwAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAA=",
         "URI": "\\Microsoft\\Windows\\StateRepository\\MaintenanceTasks",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{115BCB5E-FF67-4C0C-8C7B-DE5B4DFC00EE}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\rundll32.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -302,7 +326,11 @@
         "URI": "\\Microsoft\\Windows\\PushToInstall\\LoginCheck",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{198CE19F-2376-488C-9789-5BF30DA7342B}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\sc.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -331,7 +359,11 @@
         "URI": "\\Microsoft\\Windows\\UpdateOrchestrator\\Schedule Scan Static Task",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{1D353FDB-4A01-49DF-9EE2-6B6EA60A60E4}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\usoclient.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -359,7 +391,11 @@
         "URI": "\\Microsoft\\Windows\\Customer Experience Improvement Program\\Consolidator",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{1DF18A71-95FD-442C-82AD-7D1301AC899F}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\wsqmcons.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -417,7 +453,11 @@
         "URI": "\\Microsoft\\Windows\\UpdateOrchestrator\\Report policies",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{1EE61EBB-8FEF-4E54-A7CD-E216C994ADC6}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\usoclient.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -442,7 +482,11 @@
         "Triggers": "FwAAAAAAAAAALQc/wCsHPwAAAAAAAAAAAC0HP8ArBz///////////wCRAENISEhInB5WukhISEgiAAAASEhISEkAbgB0AGUAcgBhAGMAdABpAHYAZQBVAHMAZQByAHMAAABISEhISEgAAAAASEhISABISEhISEhIAEhISEhISEgFAAAASEhISAwAAABISEhIAQEAAAAAAAUEAAAASEhISAAAAABISEhILAAAAEhISEgAAAAA/////yAcAAD/////BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEhISEiqqgAAAAAAAAAtBz/AKwc/AAAAAAAAAAAALQc/wCsHP///////////AAAAAP////8AAAAAAAAAAAAAAAAAjzJzAU5UDexOVA0AAAAAAAAAAAAAAABISEhIAUhISEhISEh3dwAAAAAAAAAtBz/AKwc/AAAAAAAAAAAALQc/wCsHP///////////AAAAAP////8AAAAAAAAAAAAAAAAAjzJzAQB2AGUAZABEAGEAdABhAAAAAABISEhIBwAAAHMAAAABSEhISEhISA==",
         "URI": "\\Microsoft\\Windows\\Workplace Join\\Recovery-Check",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{1FBE9C18-5C51-472F-B6B9-250CCB060149}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\dsregcmd.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -500,7 +544,11 @@
         "Triggers": "FwAAAAAAAAAACQc/mAgHPwAAAAAAAAAAAAkHP5gIBz///////////wghQkNISEhIc6Nl30hISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgsAAAASEhISAAAAAD/////AAAAAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISP//AAAAAAAAAAkHP5gIBz8AAAAAAAAAAAAJBz+YCAc///////////94AAAA/////wAAAAAAAAAAAAAAAACPMnMAM30QwDN9EAAAAADYNH0QAAAAAEhISEhmZgAAAAAAAAAJBz+YCAc/AAAAAAAAAAAACQc/mAgHP///////////AAAAAP////8AAAAAAAAAAAAAAAAAjzJzAQBlAG4AYwBlAEgAbwBzAAAAAABISEhIdRC8oz4ehwIAAAAAAAAAAA==",
         "URI": "\\Microsoft\\Windows\\SpacePort\\SpaceManagerTask",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{21642C32-E1A1-4BAF-867E-C5478F0F56C6}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\spaceman.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -558,7 +606,11 @@
         "URI": "\\Microsoft\\Windows\\Server Manager\\ServerManager",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{243E7C02-BF8F-4E23-8850-E15425668A69}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\servermanagerlauncher.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -584,7 +636,11 @@
         "Triggers": "FwAAAAAAAAAABnUNHMI+BP//////////AAZ1DRzCPgQAAAAAAAAAAAghQkJISEhIt/JmAkhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgAAAAASEhISA==",
         "URI": "\\Microsoft\\Windows\\Plug and Play\\Sysprep Generalize Drivers",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{261E5217-A347-4E64-853E-B160412713AA}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\drvinst.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -637,7 +693,11 @@
         "Triggers": "FwAAAAAAAAAAcqnNKAIAAAAAAAAAAAAAAHKpzSgCAAD//////////zghAkNISEhITpW+n0hISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgsAAAASEhISAAAAAD/////gPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISP//AAAAAAAAAHKpzSgCAAAAAAAAAAAAAAByqc0oAgAA//////////8AAAAA/////wAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAADAAAAAAAAAEhISEg=",
         "URI": "\\Microsoft\\Windows\\Server Initial Configuration Task",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{274BEF09-8724-49AD-882C-C0098CD431B4}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\srvinitconfig.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -666,7 +726,11 @@
         "URI": "\\Microsoft\\Windows\\Application Experience\\ProgramDataUpdater",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{28724CD3-D507-42C9-A507-6717F4369204}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\compattelrunner.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -804,7 +868,11 @@
         "Triggers": "FwAAAAAAAAAAKAgVHMI+BP//////////ACgIFRzCPgQAAAAAAAAAAFghQkNISEhIYXYM0khISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEhYAAAASEhISFgCAAAQDgAAgPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAA=",
         "URI": "\\Microsoft\\Windows\\Windows Defender\\Windows Defender Cleanup",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{2E31033E-F119-4CE5-AEDD-CDF0355EE2B2}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "windows",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -886,7 +954,11 @@
         "Triggers": "FwAAAAAAAAAAADIdHMI+BP//////////AAAyHRzCPgQAAAAAAAAAAMCRQEJISEhIDj51tkhISEgSAAAASEhISEEAbABsAFUAcwBlAHIAcwAAAEhISEhISAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABQQAAABISEhIAAAAAEhISEhYAAAASEhISFgCAAAQDgAAhAMAAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAA=",
         "URI": "microsoft\\windows\\applicationdata\\appuriverifierdaily",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{343D869C-2104-4DC4-A3B2-A0CF67F5B322}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\apphostregistrationverifier.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -940,7 +1012,11 @@
         "Triggers": "FwAAAAAAAAAAHgc/sB0HPwAAAAAAAAAAAB4HP7AdBz///////////0gQwkNISEhINYB7jkhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgsAAAASEhISAAAAAD/////IBwAAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISKqqAAAAAAAAAB4HP7AdBz8AAAAAAAAAAAAeBz+wHQc///////////9YAgAA/////wAAAAAAAAAAAAAAAACPMnMAfFQNbHxUDQAAAAAAAAAAAAAAAEhISEgBSEhISEhISGZmAAAAAAAAAB4HP7AdBz8AAAAAAAAAAAAeBz+wHQc///////////8AAAAA/////wAAAAAAAAAAAAAAAACPMnMBAGkALgBpAG0AbQBlAHIAAAAAAEhISEh1ILyjOgGVAgAAAAAAAAAA",
         "URI": "\\Microsoft\\Windows\\DirectX\\DirectXDatabaseUpdater",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{377722D1-ABF8-457A-9302-8F6BA5DA487D}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\directxdatabaseupdater.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -966,7 +1042,11 @@
         "URI": "Microsoft\\Windows\\Location\\Notifications",
         "Version": "1.3",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{37D08EC2-654E-4F01-9CE3-2DB20912B30E}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\locationnotificationwindows.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1084,7 +1164,11 @@
         "Triggers": "FwAAAAAAAAAA7hMVUO0TFQAAAAAAAAAAAO4TFVDtExX//////////wgQwgJISEhIRFSZ60hISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgsAAAASEhISAAAAAD/////gPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISMzMAAAAAAAAAO4TFVDtExUAAAAAAAAAAADuExVQ7RMV//////////8AAAAA/////wAAAAAAAAAAAAAAAACOMnMBAAAAAAAAAPkDAAAAAAAASAAAADAANgA2ADgAOABmADQAMAAtAGUAMABhAGYALQA0AGUAZgBhAC0AOABhADgAOQAtADIANgAxADcAYgBkADkAOQAzAGQANwAxAEhISEjTAAAAAAAAADwAUQB1AGUAcgB5AEwAaQBzAHQAPgA8AFEAdQBlAHIAeQAgAEkAZAA9ACIAMAAiACAAUABhAHQAaAA9ACIAUwB5AHMAdABlAG0AIgA+ADwAUwBlAGwAZQBjAHQAIABQAGEAdABoAD0AIgBTAHkAcwB0AGUAbQAiAD4AKgAvAFMAeQBzAHQAZQBtAC8AUAByAG8AdgBpAGQAZQByAFsAQABOAGEAbQBlAD0AJwBTAGUAcgB2AGkAYwBlACAAQwBvAG4AdAByAG8AbAAgAE0AYQBuAGEAZwBlAHIAJwBdACAAYQBuAGQAIAAqAC8AUwB5AHMAdABlAG0ALwBFAHYAZQBuAHQASQBEAD0AJwA3ADAANAAwACcAIABhAG4AZAAgACoALwBFAHYAZQBuAHQARABhAHQAYQAvAEQAYQB0AGEAWwBAAE4AYQBtAGUAPQAnAHAAYQByAGEAbQA0ACcAXQA9ACcAQgBGAEUAJwA8AC8AUwBlAGwAZQBjAHQAPgA8AC8AUQB1AGUAcgB5AD4APAAvAFEAdQBlAHIAeQBMAGkAcwB0AD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
         "URI": "\\Microsoft\\Windows\\Windows Filtering Platform\\BfeOnServiceStartTypeChange",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{3DF383DA-314D-4281-9515-B05F60AA677F}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\rundll32.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1141,7 +1225,11 @@
         "Triggers": "FwAAAAAAAAAAKAgVHMI+BP//////////ACgIFRzCPgQAAAAAAAAAAEgRAkJISEhIJAPc7EhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgAAAAASEhISA==",
         "URI": "Microsoft\\Windows\\AppID\\PolicyConverter",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{41634B9D-725F-4CB1-BB38-7F4FA39C8A98}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\appidpolicyconverter.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1168,7 +1256,11 @@
         "Triggers": "FwAAAAAAAAAAADIdHMI+BP//////////AAAyHRzCPgQAAAAAAAAAAHghQkNISEhINVfw1khISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEhYAAAASEhISAAAAAD/////gPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=",
         "URI": "Microsoft\\Windows\\Defrag\\ScheduledDefrag",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{4276254A-E8F4-4793-B5AC-ECDEDCC5F851}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\defrag.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1194,7 +1286,11 @@
         "Triggers": "FwAAAAAAAAAABnUNHMI+BP//////////AAZ1DRzCPgQAAAAAAAAAACiFQENISEhI3VjIrkhISEgQAAAASEhISEEAbgB5AFUAcwBlAHIAAAAAAAAASEhISABISEhISEhIAEhISEhISEgEAAAASEhISBAAAABISEhIAQIAAAAAAAUgAAAAIQIAAAAAAABISEhILAAAAEhISEgAAAAA/////4D0AwD/////BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEhISEg=",
         "URI": "\\Microsoft\\Windows\\NetTrace\\GatherNetworkInfo",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{44DCF386-7C5B-48C8-907F-77B080831E55}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\gathernetworkinfo.vbs",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1253,7 +1349,11 @@
         "URI": "\\Microsoft\\Windows\\UpdateOrchestrator\\USO_UxBroker",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{48AB66F7-9D2D-4AC3-AF17-CF5408E37D0B}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\musnotification.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1364,7 +1464,11 @@
         "URI": "\\Microsoft\\Windows\\Device Information\\Device",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{55DB236C-E5B5-4057-A44D-B9AF792CBD50}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\devicecensus.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1449,7 +1553,11 @@
         "Triggers": "FwAAAAAAAAAAHgc/sB0HPwAAAAAAAAAAAB4HP7AdBz///////////8CRQEJISEhIAhPNAUhISEgSAAAASEhISEEAbABsAFUAcwBlAHIAcwAAAEhISEhISAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABQQAAABISEhIAAAAAEhISEgsAAAASEhISFgCAAAQDgAAhAMAAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISGZmAAAAAAAAAB4HP7AdBz8AAAAAAAAAAAAeBz+wHQc///////////88AAAA/////wAAAAAAAAAAAAAAAACOMnMBAHIAYQB0AGkAbwBuAFYAHAAAAEQAZQBsAGEAeQBlAGQAVAByAGkAZwBnAGUAcgB1CLyjLHyHQQAAAAAAAAAA",
         "URI": "microsoft\\windows\\applicationdata\\appuriverifierinstall",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{58D28222-3563-4068-B4C1-66A8F9DB968C}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\apphostregistrationverifier.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1505,7 +1613,11 @@
         "Triggers": "FwAAAAAAAAAAADIdHMI+BP//////////AAAyHRzCPgQAAAAAAAAAAFghQkNISEhI30BrJEhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEhYAAAASEhISFgCAAAQDgAAgPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcyBEZQAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAA=",
         "URI": "\\Microsoft\\Windows\\Windows Defender\\Windows Defender Cache Maintenance",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{5D2EA567-E5BD-4888-881D-E8C527F002DE}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "windows",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1559,7 +1671,11 @@
         "Triggers": "FwAAAAAAAAAAKAgVHMI+BP//////////ACgIFRzCPgQAAAAAAAAAAHghQkJISEhI6q5koEhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEhYAAAASEhISAAAAAD/////gPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=",
         "URI": "Microsoft\\Windows\\ApplicationData\\DsSvcCleanup",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{5FCA0050-704D-4965-80D4-BC37A8BBAA91}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\dstokenclean.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1582,7 +1698,11 @@
         "Triggers": "FwAAAAAAAAAA8PIbHMI+BP//////////APDyGxzCPgQAAAAAAAAAAHojAgNISEhIW7KDHkhISEgOAAAASEhISEEAdQB0AGgAbwByAAAASEgAAAAASEhISABISEhISEhIAEhISEhISEgFAAAASEhISAwAAABISEhIAQEAAAAAAAUSAAAASEhISAAAAABISEhIWAAAAEhISEgAAAAA/////wgHAAD/////BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEUATQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "URI": "\\Microsoft\\Windows\\SharedPC\\Account Cleanup",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{680FADD9-3CBD-4D3A-A646-5B6409B9B164}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\rundll32.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1608,7 +1728,11 @@
         "Triggers": "FwAAAAAAAAAAADIdHMI+BP//////////AAAyHRzCPgQAAAAAAAAAACghQkNISEhIJIHjh0hISEgOAAAASEhISEEAdQB0AGgAbwByAAAASEgAAAAASEhISABISEhISEhIAEhISEhISEgFAAAASEhISAwAAABISEhIAQEAAAAAAAUSAAAASEhISAAAAABISEhIWAAAAEhISEgAAAAA/////xAOAAD/////BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEkAQwAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAA",
         "URI": "Microsoft\\Windows\\Time Zone\\SynchronizeTimeZone",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{6856E85A-4923-45F8-ACDD-8AAD202F5BB6}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\tzsync.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1662,7 +1786,11 @@
         "URI": "\\Microsoft\\Windows\\Software Inventory Logging\\Collection",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{6D138ACC-146C-4A3F-A33C-EA5D126F52B0}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\cmd.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1721,7 +1849,11 @@
         "URI": "\\Microsoft\\Windows\\Application Experience\\StartupAppTask",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{7120B1E1-B9B3-4260-983D-44F4B70A0983}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\rundll32.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1775,7 +1907,11 @@
         "Triggers": "FwAAAAAAAAAAADIdHMI+BP//////////AAAyHRzCPgQAAAAAAAAAAPghQkNISEhIr0OaMUhISEgaAAAASEhISEwAbwBjAGEAbABTAGUAcgB2AGkAYwBlAAAASEhISEhIAAAAAEhISEgASEhISEhISABISEhISEhIBQAAAEhISEgMAAAASEhISAEBAAAAAAAFEwAAAEhISEgAAAAASEhISFgAAABISEhIAAAAAP////+A9AMA/////wcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
         "URI": "Microsoft\\Windows\\Time Synchronization\\SynchronizeTime",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{71FC8ABD-CC18-48DB-BE94-F0B82DA85E5D}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\sc.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1864,7 +2000,11 @@
         "URI": "\\Microsoft\\Windows\\Application Experience\\Microsoft Compatibility Appraiser",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{78660B2E-30ED-4848-A53D-8021F83854B1}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\compattelrunner.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1950,7 +2090,11 @@
         "Triggers": "FwAAAAAAAAAAShQVuEgUFQAAAAAAAAAAAEoUFbhIFBX//////////0IhQkJISEhIYwPd/UhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgsAAAASEhISFgCAACAM+EBgPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISP//AAAAAAAAAEoUFbhIFBUAAAAAAAAAAABKFBW4SBQV//////////8IBwAA/////wAAAAAAAAAAAAAAAACOMnMBb2NoayBTUU0gYW5kIGV2GAAAAEEAdQB0AG8AYwBoAGsAUAByAG8AeAB5AEhISEg=",
         "URI": "Microsoft\\Windows\\Autochk\\Proxy",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{7C30AB14-4AD2-4F18-B734-DE648D9468F5}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\rundll32.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -1977,7 +2121,11 @@
         "Triggers": "FwAAAAAAAAAAADIdHMI+BP//////////AAAyHRzCPgQAAAAAAAAAAHghQkJISEhI5N46A0hISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEhYAAAASEhISAAAAAD/////gPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASQBDAAAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=",
         "URI": "Microsoft\\Windows\\ApplicationData\\CleanupTemporaryState",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{7C74C966-B799-4CD2-8C25-A24D0BF0A4CA}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\rundll32.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2031,7 +2179,11 @@
         "URI": "\\Microsoft\\Windows\\Server Manager\\CleanupOldPerfLogs",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{7EFD047A-8E80-492B-AA8E-DFC30158D60F}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\cscript.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2146,7 +2298,11 @@
         "URI": "\\MicrosoftEdgeUpdateTaskMachineCore1da01862014496b",
         "Version": "1.3.177.11",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{8E603D91-44EB-4AA6-B9C8-2A8D9B1209FD}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "c:\\program files (x86)\\microsoft\\edgeupdate\\microsoftedgeupdate.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2202,7 +2358,11 @@
         "Triggers": "FwAAAAAAAAAAUrCU4wIAAAAAAAAAAAAAAFKwlOMCAAD//////////0ggQkJISEhINeDT80hISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgsAAAASEhISFgCAAAQDgAAgPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISN3dAAAAAAAAAAcKAAAAEwCAh/DzNQLaAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAGqmAEAAAA8AAAAze0AAAAAAABISEhId3cAAAAAAAAAUrCU4wIAAAAAAAAAAAAAAFKwlOMCAAD//////////wAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAdABwAHIAbwB2AGkAZAAAAAAASEhISAIAAAAxACkAAUhISEhISEh3dwAAAAAAAABSsJTjAgAAAAAAAAAAAAAAUrCU4wIAAP//////////AAAAAP////8AAAAAAAAAAAAAAAAAAAAAAP///wAAAAAAAAAAAAAAAAAAAABISEhIBAAAAAAAAAABSEhISEhISGZmAAAAAAAAAFKwlOMCAAAAAAAAAAAAAABSsJTjAgAA//////////8AAAAA/////wAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAEhISEh1CLyjOAyWDAEAAAAAAAAAAQ==",
         "URI": "\\Microsoft\\Windows\\WindowsUpdate\\Scheduled Start",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{8FA800CC-6AEB-4634-880B-3BFD0A550683}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\windows\\system32\\sc.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2226,7 +2386,11 @@
         "Triggers": "FwAAAAAAAAABBwEAAAABAAAgc4XJodQBAAcBAAAAAQD//////////3ghQkJISEhIjNhugkhISEgOAAAASEhISEEAdQB0AGgAbwByAAAASEgAAAAASEhISABISEhISEhIAEhISEhISEgFAAAASEhISAwAAABISEhIAQEAAAAAAAUSAAAASEhISAAAAABISEhILAAAAEhISEhYAgAAEA4AAID0AwD/////BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEhISEjd3QAAAAAAAAEHAQAAAAEAACBzhcmh1AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGA1AQAAAAAA/////wAAAAAAAAAAAAAAAAABVEoBAAAAIBwAAHIaAAAAAAAASEhISA==",
         "URI": "\\Microsoft\\Windows\\UpdateOrchestrator\\Schedule Scan",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{8FBDB61A-AF83-454B-BCB0-99CF75F7D686}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\usoclient.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2254,7 +2418,11 @@
         "URI": "Microsoft\\Windows\\DiskDiagnostic\\Microsoft-Windows-DiskDiagnosticResolver",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{904779B2-9B74-4BB4-ACA4-B90F8180861A}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\dfdwiz.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2313,7 +2481,11 @@
         "URI": "\\Microsoft\\Windows\\PLA\\Server Manager Performance Monitor",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{91B1E4F0-8148-4664-8904-EA5D10E49090}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\rundll32.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2340,7 +2512,11 @@
         "Triggers": "FwAAAAAAAAAAjns9HMI+BP//////////AI57PRzCPgQAAAAAAAAAAH6hQENISEhIynIj/EhISEgoAAAASEhISEEAdQB0AGgAZQBuAHQAaQBjAGEAdABlAGQAIABVAHMAZQByAHMAAAAAAAAASEhISABISEhISEhIAEhISEhISEgEAAAASEhISBAAAABISEhIAQIAAAAAAAUgAAAAIQIAAAAAAABISEhIWAAAAEhISEgAAAAA/////4QDAAD/////BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEkAQwAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA",
         "URI": "Microsoft\\Windows\\DiskCleanup\\SilentCleanup",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{91FA06AE-CBCB-4FDE-83EC-7C6F24A776AA}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\cleanmgr.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2515,7 +2691,11 @@
         "Triggers": "FwAAAAAAAAAAQgc/2EAHPwAAAAAAAAAAAEIHP9hABz///////////wghQkNISEhIjEAjDEhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgsAAAASEhISAAAAAD/////YFQAAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISP//AAAAAAAAAEIHP9hABz8AAAAAAAAAAABCBz/YQAc///////////94AAAA/////wAAAAAAAAAAAAAAAACPMnMAAAAAAAAAAExNRU1IAAAAAAAAAEhISEhmZgAAAAAAAABCBz/YQAc/AAAAAAAAAAAAQgc/2EAHP///////////AAAAAP////8AAAAAAAAAAAAAAAAAjzJzAQAAAAAAAAAAAAAAAAAAAAAAAABISEhIdQi8oz4ehwIAAAAAAAAAAA==",
         "URI": "\\Microsoft\\Windows\\SpacePort\\SpaceAgentTask",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{9B2F5095-5AF6-4760-90FC-8AA40903BAB0}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\spaceagent.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2603,7 +2783,11 @@
         "Triggers": "FwAAAAAAAAAAjns9HMI+BP//////////AI57PRzCPgQAAAAAAAAAADghQgNISEhIYS7rL0hISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEhYAAAASEhISAAAAAD/////kH4AAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATwBOAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=",
         "URI": "Microsoft\\Windows\\MUI\\LPRemove",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{9F16FDB3-BB43-43BA-9731-48A803F9DEA8}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\lpremove.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2629,7 +2813,11 @@
         "Triggers": "FwAAAAAAAAAALVkVHMI+BP//////////AC1ZFRzCPgQAAAAAAAAAAAghAkJISEhIV0NJ60hISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgAAAAASEhISA==",
         "URI": "Microsoft\\Windows\\UPnP\\UPnPHostConfig",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{A8FFC4D9-68FA-4299-8EEB-329DC5795331}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "sc.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2834,7 +3022,11 @@
         "URI": "\\Microsoft\\Windows\\Software Inventory Logging\\Configuration",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{B4BE303F-ADA3-4568-90A4-CEAA61167DBA}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\cmd.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2891,7 +3083,11 @@
         "Triggers": "FwAAAAAAAAAAKAgVHMI+BP//////////ACgIFRzCPgQAAAAAAAAAAAgFAkJISEhI7meO+EhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgAAAAASEhISA==",
         "URI": "Microsoft\\Windows\\Bluetooth\\UninstallDeviceTask",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{B61F00B9-E5FE-4AD4-91D7-0E7B20E0381D}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "bthudtask.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2946,7 +3142,11 @@
         "Triggers": "FwAAAAAAAAAAJgc/uCQHPwAAAAAAAAAAACYHP7gkBz///////////4ghAkNISEhI4g6MWEhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgsAAAASEhISAAAAAD/////LAEAAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISKqqAAAAAAAAACYHP7gkBz8AAAAAAAAAAAAmBz+4JAc///////////88AAAA/////wAAAAAAAAAAAAAAAACPMnMBUlQN/FJUDQAAAAAAAAAAAAAAAEhISEgBSEhISEhISMzMAAAAAAAAACYHP7gkBz8AAAAAAAAAAAAmBz+4JAc///////////8AAAAA/////xAOAACAUQEAgFEBAACPMnMBAAAAxwEaRWUqAenCoDKQAAAAAEhISEgGAQAAAAAAADwAUQB1AGUAcgB5AEwAaQBzAHQAPgA8AFEAdQBlAHIAeQAgAEkAZAA9ACIAMAAiACAAUABhAHQAaAA9ACIATQBpAGMAcgBvAHMAbwBmAHQALQBXAGkAbgBkAG8AdwBzAC0AVQBzAGUAcgAgAEQAZQB2AGkAYwBlACAAUgBlAGcAaQBzAHQAcgBhAHQAaQBvAG4ALwBBAGQAbQBpAG4AIgA+ADwAUwBlAGwAZQBjAHQAIABQAGEAdABoAD0AIgBNAGkAYwByAG8AcwBvAGYAdAAtAFcAaQBuAGQAbwB3AHMALQBVAHMAZQByACAARABlAHYAaQBjAGUAIABSAGUAZwBpAHMAdAByAGEAdABpAG8AbgAvAEEAZABtAGkAbgAiAD4AKgBbAFMAeQBzAHQAZQBtAFsAUAByAG8AdgBpAGQAZQByAFsAQABOAGEAbQBlAD0AJwBNAGkAYwByAG8AcwBvAGYAdAAtAFcAaQBuAGQAbwB3AHMALQBVAHMAZQByACAARABlAHYAaQBjAGUAIABSAGUAZwBpAHMAdAByAGEAdABpAG8AbgAnAF0AIABhAG4AZAAgAEUAdgBlAG4AdABJAEQAPQA0ADAAOQA2AF0AXQA8AC8AUwBlAGwAZQBjAHQAPgA8AC8AUQB1AGUAcgB5AD4APAAvAFEAdQBlAHIAeQBMAGkAcwB0AD4AAABISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
         "URI": "\\Microsoft\\Windows\\Workplace Join\\Automatic-Device-Join",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{BC3C6ECE-1563-4E42-89DC-80DC9F08A23F}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\dsregcmd.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -2970,7 +3170,11 @@
         "Triggers": "FwAAAAAAAAAAKAgVHMI+BP//////////ACgIFRzCPgQAAAAAAAAAAFghQkNISEhIn4Ew+khISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEhYAAAASEhISFgCAAAQDgAAgPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASQBDAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAAA=",
         "URI": "\\Microsoft\\Windows\\Windows Defender\\Windows Defender Verification",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{BD4560A9-1E31-4F57-A014-45E544413BF6}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "windows",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3058,7 +3262,11 @@
         "Triggers": "FwAAAAAAAAABBwEAAAABAABo8FK7580BAAcBAAAAAQD//////////0ghAkNISEhIPquUIUhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgAAAAASEhISN3dAAAAAAAAAQcBAAAAAQAAaPBSu+fNAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQDgAAAAAAAD/////AAAAAAAAAAAAAAAAAAEycwEAAAAAAAAAmAgHPwAAAABISEhI",
         "URI": "\\Microsoft\\Windows\\Storage Tiers Management\\Storage Tiers Optimization",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{CC61BBBB-9EF2-4C0B-B623-E2DFCE21039D}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\defrag.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3112,7 +3320,11 @@
         "URI": "\\MicrosoftEdgeUpdateTaskMachineUA",
         "Version": "1.3.177.11",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{CE66FA54-3E57-45A5-9634-FB2D16D9783C}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "c:\\program files (x86)\\microsoft\\edgeupdate\\microsoftedgeupdate.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3170,7 +3382,11 @@
         "Triggers": "FwAAAAAAAAAAygY/UMkGPwAAAAAAAAAAAAcIAAAAFQD//////////2ghAkJISEhIAYCw/0hISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgsAAAASEhISAAAAAD/////EA4AAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISN3dAAAAAAAAAQcIAAAAFQAAgI9SpNvQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAcAAAAAAAD/////AAAAAAAAAAAAAAAAAAEycwEAAAAAAAAAUMkGPwAAAABISEhI//8AAAAAAAAAygY/UMkGPwAAAAAAAAAAAMoGP1DJBj///////////wAAAAD/////AAAAAAAAAAAAAAAAAI8ycwGmqAncvz4ECNOiDjE2NjgAAAAASEhISA==",
         "URI": "\\Microsoft\\Windows\\Network Controller\\SDN Diagnostics Task",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{CF47F7C6-44AF-4D17-9A5E-6C1E02565958}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\sdndiagnosticstask.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3227,7 +3443,11 @@
         "URI": "Microsoft\\Windows\\Location\\WindowsActionDialog",
         "Version": "1.3",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{D0B77E86-C658-4D0B-8024-F708A21A540E}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\windowsactiondialog.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3334,7 +3554,11 @@
         "Triggers": "FwAAAAAAAAAA////////////////////AP////////8AAAAAAAAAAEChQENISEhI3j1ja0hISEgWAAAASEhISEwAbwBjAGEAbABBAGQAbQBpAG4AAABISAAAAABISEhIAEhISEhISEgASEhISEhISAQAAABISEhIEAAAAEhISEgBAgAAAAAABSAAAAAgAgAAAAAAAEhISEhYAAAASEhISAAAAAD/////PAAAAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAA=",
         "URI": "Microsoft\\Windows\\PI\\SecureBootEncodeUEFI",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{D4BA1E87-E90D-40ED-9346-0A012940251C}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\securebootencodeuefi.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3449,7 +3673,11 @@
         "Triggers": "FwAAAAAAAAAAFwc/qBYHPwAAAAAAAAAAABcHP6gWBz///////////0gQwkNISEhIY6TfRkhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgAAAAASEhISP//AAAAAAAAABcHP6gWBz8AAAAAAAAAAAAXBz+oFgc///////////88AAAA/////wAAAAAAAAAAAAAAAACPMnMBAG8AbQBwAG8AbgBlAG4AAAAAAEhISEhmZgAAAAAAAAAXBz+oFgc/AAAAAAAAAAAAFwc/qBYHP///////////AAAAAP////8AAAAAAAAAAAAAAAAAjzJzAQBvAHcAcwAAAFcASQBOAAAAAABISEhIdYC8oykWxkEAAAAAAAAAAGZmAAAAAAAAABcHP6gWBz8AAAAAAAAAAAAXBz+oFgc///////////8AAAAA/////wAAAAAAAAAAAAAAAACPMnMBAAAAAAAAAAAAAAAAAAAAAAAAAEhISEh1iLyjKRbGQQAAAAAAAAAA",
         "URI": "\\Microsoft\\Windows\\DirectX\\DXGIAdapterCache",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{D9006B7E-7118-46F2-84A8-28AB3013F883}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\dxgiadaptercache.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3509,7 +3737,11 @@
         "URI": "\\Microsoft\\Windows\\Application Experience\\PcaPatchDbTask",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{DB66AD61-AB2A-4E5E-937D-76BA98880B01}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\rundll32.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3623,7 +3855,11 @@
         "URI": "Microsoft\\Windows\\DiskDiagnostic\\Microsoft-Windows-DiskDiagnosticDataCollector",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{DDEC0C2A-949D-4385-8032-159BE5441E16}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\rundll32.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3650,7 +3886,11 @@
         "URI": "Microsoft\\Windows\\Windows Media Sharing\\UpdateLibrary",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{DE001D7C-AF7A-493D-9FD0-C6887B959C06}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "windows media player\\wmpnscfg.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3702,7 +3942,11 @@
         "Triggers": "FwAAAAAAAAAALVkVHMI+BP//////////AC1ZFRzCPgQAAAAAAAAAADohQkNISEhIalN2J0hISEgOAAAASEhISFMAeQBzAHQAZQBtAAAASEgAAAAASEhISABISEhISEhIAEhISEhISEgFAAAASEhISAwAAABISEhIAQEAAAAAAAUSAAAASEhISAAAAABISEhIWAAAAEhISEgAAAAA/////xAOAAD/////BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAA",
         "URI": "\\Microsoft\\Windows\\DiskFootprint\\Diagnostics",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{DEC62625-AD24-444E-9FF6-2A12A40FA547}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\disksnapshot.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3761,7 +4005,11 @@
         "URI": "\\Microsoft\\Windows\\UpdateOrchestrator\\UUS Failover Task",
         "Version": "1.0",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{E0C349B7-9DDE-4125-BCD0-5383F168D9B1}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\failover.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3785,7 +4033,11 @@
         "Triggers": "FwAAAAAAAAAA5gY/cOUGPwAAAAAAAAAAAOYGP3DlBj///////////zIhwgJISEhIs7eR9UhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEhYAAAASEhISIQDAAD/////AAAAAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASQBDAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAACqqgAAAAAAAADmBj9w5QY/AAAAAAAAAAAA5gY/cOUGP///////////EA4AAP////8AAAAAAAAAAAAAAAAAjzJzAZRUDWSUVA0AAAAAAAAAAAAAAABISEhIAUhISEhISEg=",
         "URI": "\\Microsoft\\Windows\\AppxDeploymentClient\\Pre-staged app cleanup",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{E2AD17FE-7A20-478E-97AB-98393C8CF3EB}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\rundll32.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3893,7 +4145,11 @@
         "Triggers": "FwAAAAAAAAAAADIdHMI+BP//////////AAAyHRzCPgQAAAAAAAAAAFghQkNISEhId2LVLkhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEhYAAAASEhISFgCAAAQDgAAgPQDAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAA=",
         "URI": "\\Microsoft\\Windows\\Windows Defender\\Windows Defender Scheduled Scan",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{E65DC0F8-03FC-4503-B00D-BDF67AF1E3D6}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "windows",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -3974,7 +4230,11 @@
         "Triggers": "FwAAAAAAAAAAh8A9aIbAPQAAAAAAAAAAAIfAPWiGwD3//////////wghwgJISEhIvHCDVkhISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgAAAAASEhISGZmAAAAAAAAAIfAPWiGwD0AAAAAAAAAAACHwD1ohsA9//////////8AAAAA/////wAAAAAAAAAAAAAAAACPMnMBAAAAxwEaRWUqAenCoDKQAAAAAEhISEh1CLyjLA2OCgAAAAAAAAAA",
         "URI": "\\Microsoft\\Windows\\Chkdsk\\SyspartRepair",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{E87914F4-6261-47C0-B4F8-81295AD543E7}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\bcdboot.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {
@@ -4032,7 +4292,11 @@
         "Triggers": "FwAAAAAAAAAA3wY/aN4GPwAAAAAAAAAAAN8GP2jeBj///////////0ghggJISEhIIouC0khISEgYAAAASEhISEwAbwBjAGEAbABTAHkAcwB0AGUAbQAAAAAAAABISEhIAEhISEhISEgASEhISEhISAUAAABISEhIDAAAAEhISEgBAQAAAAAABRIAAABISEhIAAAAAEhISEgsAAAASEhISAAAAAD/////AAAAAP////8HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhISP//AAAAAAAAAN8GP2jeBj8AAAAAAAAAAADfBj9o3gY///////////8AAAAA/////wAAAAAAAAAAAAAAAACPMnMAAAAAAAABAAAAAAAAAAAAAAAAAEhISEg=",
         "URI": "\\Microsoft\\Windows\\Clip\\License Validation",
         "OSPath": "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{EDED15D5-4348-4710-B5C2-E69BDBB09163}",
-        "BinaryInfo": {}
+        "BinaryInfo": {
+          "filename": "C:\\Windows\\system32\\clipup.exe",
+          "Stat": false,
+          "ShouldUpload": false
+        }
       },
       {
         "Actions": {

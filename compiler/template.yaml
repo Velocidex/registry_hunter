@@ -122,6 +122,15 @@ parameters:
   description: |
     If provided we create a BaselineDB on this path.
 
+- name: Environment
+  description: A set of custom environment variables to expand
+  type: csv
+  default: |
+    Name,Value
+    SystemRoot,C:\Windows
+    WinDir,C:\Windows
+    System32,C:\Windows\System32
+
 required_permissions:
 - FILESYSTEM_WRITE
 
@@ -138,8 +147,6 @@ export: |
 
     LET MaxFileSize <= S.MaxFileSize || 100000000
     LET MaxHashSize <= S.MaxHashSize || 100000000
-
-    LET _ <= log(message="MaxFileSize %v, MaxHashSize %v", args=[ MaxFileSize, MaxHashSize])
 
     // In ExcludeSigned and HashOnly we dont upload signed binaries.
     LET ShouldUploadSignedBinary <= dict(
@@ -416,6 +423,9 @@ export: |
 sources:
 - name: Remapping
   query: |
+    LET _ <= log(message="MaxFileSize %v, MaxHashSize %v",
+                 args=[ MaxFileSize, MaxHashSize])
+
     SELECT * FROM RemapRules
 
   notebook:
@@ -510,6 +520,11 @@ sources:
     })
 
     LET ShouldLog <= NOT DEBUG
+
+    // Add any environment variables
+    LET _ <= SELECT set(item=_ExpandedTransforms,
+      field=format(format="%%%s%%", args=Name), value=Value)
+    FROM foreach(row=S.Environment)
 
     LET Cache <= memoize(query={
        SELECT Glob, Category, Description,

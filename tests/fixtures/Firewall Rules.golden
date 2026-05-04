@@ -16,6 +16,9 @@
       "Name": "@FirewallAPI.dll,-37003",
       "Desc": "@FirewallAPI.dll,-37004",
       "EmbedCtxt": "@FirewallAPI.dll,-37002",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "AllJoyn-Router-In-TCP"
     }
   },
@@ -35,6 +38,9 @@
       "Name": "@FirewallAPI.dll,-37007",
       "Desc": "@FirewallAPI.dll,-37008",
       "EmbedCtxt": "@FirewallAPI.dll,-37002",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "AllJoyn-Router-In-UDP"
     }
   },
@@ -54,6 +60,9 @@
       "Name": "@FirewallAPI.dll,-37005",
       "Desc": "@FirewallAPI.dll,-37006",
       "EmbedCtxt": "@FirewallAPI.dll,-37002",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "AllJoyn-Router-Out-TCP"
     }
   },
@@ -73,6 +82,9 @@
       "Name": "@FirewallAPI.dll,-37009",
       "Desc": "@FirewallAPI.dll,-37010",
       "EmbedCtxt": "@FirewallAPI.dll,-37002",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "AllJoyn-Router-Out-UDP"
     }
   },
@@ -92,6 +104,9 @@
       "Name": "@%systemroot%\\system32\\firewallapi.dll,-3401",
       "Desc": "@%systemroot%\\system32\\firewallapi.dll,-3402",
       "EmbedCtxt": "@%systemroot%\\system32\\firewallapi.dll,-3400",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "ComPlusNetworkAccess-DCOM-In"
     }
   },
@@ -111,6 +126,9 @@
       "Name": "@%systemroot%\\system32\\firewallapi.dll,-3406",
       "Desc": "@%systemroot%\\system32\\firewallapi.dll,-3407",
       "EmbedCtxt": "@%systemroot%\\system32\\firewallapi.dll,-3405",
+      "filename": "C:\\Windows\\system32\\dllhost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "ComPlusRemoteAdministration-DCOM-In"
     }
   },
@@ -131,6 +149,9 @@
       "Name": "@FirewallAPI.dll,-25301",
       "Desc": "@FirewallAPI.dll,-25303",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-DHCP-In"
     }
   },
@@ -151,6 +172,9 @@
       "Name": "@FirewallAPI.dll,-25302",
       "Desc": "@FirewallAPI.dll,-25303",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-DHCP-Out"
     }
   },
@@ -171,6 +195,9 @@
       "Name": "@FirewallAPI.dll,-25304",
       "Desc": "@FirewallAPI.dll,-25306",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-DHCPV6-In"
     }
   },
@@ -191,6 +218,9 @@
       "Name": "@FirewallAPI.dll,-25305",
       "Desc": "@FirewallAPI.dll,-25306",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-DHCPV6-Out"
     }
   },
@@ -210,6 +240,9 @@
       "Name": "@FirewallAPI.dll,-25405",
       "Desc": "@FirewallAPI.dll,-25406",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-DNS-Out-UDP"
     }
   },
@@ -230,6 +263,9 @@
       "Name": "@FirewallAPI.dll,-27001",
       "Desc": "@FirewallAPI.dll,-27005",
       "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-Diag-ICMP4-EchoRequest-In"
     }
   },
@@ -249,6 +285,9 @@
       "Name": "@FirewallAPI.dll,-27001",
       "Desc": "@FirewallAPI.dll,-27005",
       "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-Diag-ICMP4-EchoRequest-In-NoScope"
     }
   },
@@ -269,6 +308,9 @@
       "Name": "@FirewallAPI.dll,-27002",
       "Desc": "@FirewallAPI.dll,-27005",
       "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-Diag-ICMP4-EchoRequest-Out"
     }
   },
@@ -288,6 +330,9 @@
       "Name": "@FirewallAPI.dll,-27002",
       "Desc": "@FirewallAPI.dll,-27005",
       "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-Diag-ICMP4-EchoRequest-Out-NoScope"
     }
   },
@@ -308,6 +353,9 @@
       "Name": "@FirewallAPI.dll,-27003",
       "Desc": "@FirewallAPI.dll,-27005",
       "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-Diag-ICMP6-EchoRequest-In"
     }
   },
@@ -327,6 +375,9 @@
       "Name": "@FirewallAPI.dll,-27003",
       "Desc": "@FirewallAPI.dll,-27005",
       "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-Diag-ICMP6-EchoRequest-In-NoScope"
     }
   },
@@ -347,6 +398,9 @@
       "Name": "@FirewallAPI.dll,-27004",
       "Desc": "@FirewallAPI.dll,-27005",
       "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-Diag-ICMP6-EchoRequest-Out"
     }
   },
@@ -366,6 +420,9 @@
       "Name": "@FirewallAPI.dll,-27004",
       "Desc": "@FirewallAPI.dll,-27005",
       "EmbedCtxt": "@FirewallAPI.dll,-27000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-Diag-ICMP6-EchoRequest-Out-NoScope"
     }
   },
@@ -384,6 +441,9 @@
       "Name": "@FirewallAPI.dll,-25407",
       "Desc": "@FirewallAPI.dll,-25408",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "C:\\Windows\\system32\\lsass.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-GP-LSASS-Out-TCP"
     }
   },
@@ -403,6 +463,9 @@
       "Name": "@FirewallAPI.dll,-25401",
       "Desc": "@FirewallAPI.dll,-25401",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-GP-NP-Out-TCP"
     }
   },
@@ -422,6 +485,9 @@
       "Name": "@FirewallAPI.dll,-25403",
       "Desc": "@FirewallAPI.dll,-25404",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-GP-Out-TCP"
     }
   },
@@ -440,6 +506,9 @@
       "Name": "@FirewallAPI.dll,-25251",
       "Desc": "@FirewallAPI.dll,-25257",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP4-DUFRAG-In"
     }
   },
@@ -459,6 +528,9 @@
       "Desc": "@FirewallAPI.dll,-25112",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
       "Edge": "TRUE",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-DU-In"
     }
   },
@@ -478,6 +550,9 @@
       "Name": "@FirewallAPI.dll,-25082",
       "Desc": "@FirewallAPI.dll,-25088",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-LD-In"
     }
   },
@@ -497,6 +572,9 @@
       "Name": "@FirewallAPI.dll,-25083",
       "Desc": "@FirewallAPI.dll,-25088",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-LD-Out"
     }
   },
@@ -516,6 +594,9 @@
       "Name": "@FirewallAPI.dll,-25061",
       "Desc": "@FirewallAPI.dll,-25067",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-LQ-In"
     }
   },
@@ -535,6 +616,9 @@
       "Name": "@FirewallAPI.dll,-25062",
       "Desc": "@FirewallAPI.dll,-25067",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-LQ-Out"
     }
   },
@@ -554,6 +638,9 @@
       "Name": "@FirewallAPI.dll,-25068",
       "Desc": "@FirewallAPI.dll,-25074",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-LR-In"
     }
   },
@@ -573,6 +660,9 @@
       "Name": "@FirewallAPI.dll,-25069",
       "Desc": "@FirewallAPI.dll,-25074",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-LR-Out"
     }
   },
@@ -592,6 +682,9 @@
       "Name": "@FirewallAPI.dll,-25075",
       "Desc": "@FirewallAPI.dll,-25081",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-LR2-In"
     }
   },
@@ -611,6 +704,9 @@
       "Name": "@FirewallAPI.dll,-25076",
       "Desc": "@FirewallAPI.dll,-25081",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-LR2-Out"
     }
   },
@@ -630,6 +726,9 @@
       "Desc": "@FirewallAPI.dll,-25032",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
       "Edge": "TRUE",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-NDA-In"
     }
   },
@@ -648,6 +747,9 @@
       "Name": "@FirewallAPI.dll,-25027",
       "Desc": "@FirewallAPI.dll,-25032",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-NDA-Out"
     }
   },
@@ -667,6 +769,9 @@
       "Desc": "@FirewallAPI.dll,-25025",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
       "Edge": "TRUE",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-NDS-In"
     }
   },
@@ -685,6 +790,9 @@
       "Name": "@FirewallAPI.dll,-25020",
       "Desc": "@FirewallAPI.dll,-25025",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-NDS-Out"
     }
   },
@@ -704,6 +812,9 @@
       "Desc": "@FirewallAPI.dll,-25118",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
       "Edge": "TRUE",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-PP-In"
     }
   },
@@ -722,6 +833,9 @@
       "Name": "@FirewallAPI.dll,-25117",
       "Desc": "@FirewallAPI.dll,-25118",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-PP-Out"
     }
   },
@@ -741,6 +855,9 @@
       "Desc": "@FirewallAPI.dll,-25007",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
       "Edge": "TRUE",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-PTB-In"
     }
   },
@@ -759,6 +876,9 @@
       "Name": "@FirewallAPI.dll,-25002",
       "Desc": "@FirewallAPI.dll,-25007",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-PTB-Out"
     }
   },
@@ -778,6 +898,9 @@
       "Name": "@FirewallAPI.dll,-25012",
       "Desc": "@FirewallAPI.dll,-25018",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-RA-In"
     }
   },
@@ -798,6 +921,9 @@
       "Name": "@FirewallAPI.dll,-25013",
       "Desc": "@FirewallAPI.dll,-25018",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-RA-Out"
     }
   },
@@ -816,6 +942,9 @@
       "Name": "@FirewallAPI.dll,-25009",
       "Desc": "@FirewallAPI.dll,-25011",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-RS-In"
     }
   },
@@ -835,6 +964,9 @@
       "Name": "@FirewallAPI.dll,-25008",
       "Desc": "@FirewallAPI.dll,-25011",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-RS-Out"
     }
   },
@@ -854,6 +986,9 @@
       "Desc": "@FirewallAPI.dll,-25115",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
       "Edge": "TRUE",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-TE-In"
     }
   },
@@ -872,6 +1007,9 @@
       "Name": "@FirewallAPI.dll,-25114",
       "Desc": "@FirewallAPI.dll,-25115",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-ICMP6-TE-Out"
     }
   },
@@ -889,6 +1027,9 @@
       "Name": "@FirewallAPI.dll,-25376",
       "Desc": "@FirewallAPI.dll,-25382",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-IGMP-In"
     }
   },
@@ -906,6 +1047,9 @@
       "Name": "@FirewallAPI.dll,-25377",
       "Desc": "@FirewallAPI.dll,-25382",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-IGMP-Out"
     }
   },
@@ -924,6 +1068,9 @@
       "Name": "@FirewallAPI.dll,-25426",
       "Desc": "@FirewallAPI.dll,-25428",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-IPHTTPS-In"
     }
   },
@@ -943,6 +1090,9 @@
       "Name": "@FirewallAPI.dll,-25427",
       "Desc": "@FirewallAPI.dll,-25429",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-IPHTTPS-Out"
     }
   },
@@ -960,6 +1110,9 @@
       "Name": "@FirewallAPI.dll,-25351",
       "Desc": "@FirewallAPI.dll,-25357",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-IPv6-In"
     }
   },
@@ -977,6 +1130,9 @@
       "Name": "@FirewallAPI.dll,-25352",
       "Desc": "@FirewallAPI.dll,-25358",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-IPv6-Out"
     }
   },
@@ -996,6 +1152,9 @@
       "Name": "@FirewallAPI.dll,-25326",
       "Desc": "@FirewallAPI.dll,-25332",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-Teredo-In"
     }
   },
@@ -1014,6 +1173,9 @@
       "Name": "@FirewallAPI.dll,-25327",
       "Desc": "@FirewallAPI.dll,-25333",
       "EmbedCtxt": "@FirewallAPI.dll,-25000",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "CoreNet-Teredo-Out"
     }
   },
@@ -1035,6 +1197,9 @@
       "Name": "@FirewallAPI.dll,-37102",
       "Desc": "@FirewallAPI.dll,-37103",
       "EmbedCtxt": "@FirewallAPI.dll,-37101",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "DIAL-Protocol-Server-HTTPSTR-In-TCP-LocalSubnetScope"
     }
   },
@@ -1054,6 +1219,9 @@
       "Name": "@FirewallAPI.dll,-37102",
       "Desc": "@FirewallAPI.dll,-37103",
       "EmbedCtxt": "@FirewallAPI.dll,-37101",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "DIAL-Protocol-Server-In-TCP-NoScope"
     }
   },
@@ -1074,6 +1242,9 @@
       "Desc": "@%systemroot%\\system32\\dosvc.dll,-104",
       "EmbedCtxt": "@%systemroot%\\system32\\dosvc.dll,-100",
       "Edge": "TRUE",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "DeliveryOptimization-TCP-In"
     }
   },
@@ -1094,6 +1265,9 @@
       "Desc": "@%systemroot%\\system32\\dosvc.dll,-104",
       "EmbedCtxt": "@%systemroot%\\system32\\dosvc.dll,-100",
       "Edge": "TRUE",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "DeliveryOptimization-UDP-In"
     }
   },
@@ -1112,6 +1286,9 @@
       "Name": "@FirewallAPI.dll,-36802",
       "Desc": "@FirewallAPI.dll,-36803",
       "EmbedCtxt": "@FirewallAPI.dll,-36801",
+      "filename": "C:\\Windows\\system32\\netevtfwdr.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "EventForwarder-In-TCP"
     }
   },
@@ -1131,6 +1308,9 @@
       "Name": "@FirewallAPI.dll,-36804",
       "Desc": "@FirewallAPI.dll,-36805",
       "EmbedCtxt": "@FirewallAPI.dll,-36801",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "EventForwarder-RPCSS-In-TCP"
     }
   },
@@ -1149,6 +1329,9 @@
       "Name": "@FirewallAPI.dll,-28543",
       "Desc": "@FirewallAPI.dll,-28547",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-ICMP4-ERQ-In"
     }
   },
@@ -1167,6 +1350,9 @@
       "Name": "@FirewallAPI.dll,-28544",
       "Desc": "@FirewallAPI.dll,-28547",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-ICMP4-ERQ-Out"
     }
   },
@@ -1185,6 +1371,9 @@
       "Name": "@FirewallAPI.dll,-28545",
       "Desc": "@FirewallAPI.dll,-28547",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-ICMP6-ERQ-In"
     }
   },
@@ -1203,6 +1392,9 @@
       "Name": "@FirewallAPI.dll,-28546",
       "Desc": "@FirewallAPI.dll,-28547",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-ICMP6-ERQ-Out"
     }
   },
@@ -1224,6 +1416,9 @@
       "Name": "@FirewallAPI.dll,-28548",
       "Desc": "@FirewallAPI.dll,-28549",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-LLMNR-In-UDP"
     }
   },
@@ -1245,6 +1440,9 @@
       "Name": "@FirewallAPI.dll,-28550",
       "Desc": "@FirewallAPI.dll,-28551",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-LLMNR-Out-UDP"
     }
   },
@@ -1263,6 +1461,9 @@
       "Name": "@FirewallAPI.dll,-28527",
       "Desc": "@FirewallAPI.dll,-28530",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-NB_Datagram-In-UDP"
     }
   },
@@ -1281,6 +1482,9 @@
       "Name": "@FirewallAPI.dll,-28531",
       "Desc": "@FirewallAPI.dll,-28534",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-NB_Datagram-Out-UDP"
     }
   },
@@ -1299,6 +1503,9 @@
       "Name": "@FirewallAPI.dll,-28519",
       "Desc": "@FirewallAPI.dll,-28522",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-NB_Name-In-UDP"
     }
   },
@@ -1317,6 +1524,9 @@
       "Name": "@FirewallAPI.dll,-28523",
       "Desc": "@FirewallAPI.dll,-28526",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-NB_Name-Out-UDP"
     }
   },
@@ -1335,6 +1545,9 @@
       "Name": "@FirewallAPI.dll,-28503",
       "Desc": "@FirewallAPI.dll,-28506",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-NB_Session-In-TCP"
     }
   },
@@ -1353,6 +1566,9 @@
       "Name": "@FirewallAPI.dll,-28507",
       "Desc": "@FirewallAPI.dll,-28510",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-NB_Session-Out-TCP"
     }
   },
@@ -1372,6 +1588,9 @@
       "Name": "@FirewallAPI.dll,-28539",
       "Desc": "@FirewallAPI.dll,-28542",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-RPCSS-In-TCP"
     }
   },
@@ -1390,6 +1609,9 @@
       "Name": "@FirewallAPI.dll,-28511",
       "Desc": "@FirewallAPI.dll,-28514",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-SMB-In-TCP"
     }
   },
@@ -1408,6 +1630,9 @@
       "Name": "@FirewallAPI.dll,-28515",
       "Desc": "@FirewallAPI.dll,-28518",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-SMB-Out-TCP"
     }
   },
@@ -1427,6 +1652,9 @@
       "Desc": "@FirewallAPI.dll,-28654",
       "EmbedCtxt": "@FirewallAPI.dll,-28652",
       "LOM": "TRUE",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-SMBQ-In-UDP"
     }
   },
@@ -1445,6 +1673,9 @@
       "Name": "@FirewallAPI.dll,-28655",
       "Desc": "@FirewallAPI.dll,-28656",
       "EmbedCtxt": "@FirewallAPI.dll,-28652",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-SMBQ-Out-UDP"
     }
   },
@@ -1464,6 +1695,9 @@
       "Name": "@FirewallAPI.dll,-28535",
       "Desc": "@FirewallAPI.dll,-28538",
       "EmbedCtxt": "@FirewallAPI.dll,-28502",
+      "filename": "C:\\Windows\\system32\\spoolsv.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPS-SpoolSvc-In-TCP"
     }
   },
@@ -1482,6 +1716,9 @@
       "Name": "@FirewallAPI.dll,-28603",
       "Desc": "@FirewallAPI.dll,-28606",
       "EmbedCtxt": "@FirewallAPI.dll,-28602",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "FPSSMBD-iWARP-In-TCP"
     }
   },
@@ -1502,6 +1739,9 @@
       "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37303",
       "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37304",
       "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MDNS-In-UDP-Domain-Active"
     }
   },
@@ -1524,6 +1764,9 @@
       "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37303",
       "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37304",
       "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MDNS-In-UDP-Private-Active"
     }
   },
@@ -1546,6 +1789,9 @@
       "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37303",
       "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37304",
       "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MDNS-In-UDP-Public-Active"
     }
   },
@@ -1566,6 +1812,9 @@
       "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37305",
       "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37306",
       "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MDNS-Out-UDP-Domain-Active"
     }
   },
@@ -1588,6 +1837,9 @@
       "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37305",
       "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37306",
       "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MDNS-Out-UDP-Private-Active"
     }
   },
@@ -1610,6 +1862,9 @@
       "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-37305",
       "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-37306",
       "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-37302",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MDNS-Out-UDP-Public-Active"
     }
   },
@@ -1627,6 +1882,9 @@
       "Name": "@FirewallAPI.dll,-33503",
       "Desc": "@FirewallAPI.dll,-33506",
       "EmbedCtxt": "@FirewallAPI.dll,-33502",
+      "filename": "C:\\Windows\\system32\\msdtc.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MSDTC-In-TCP"
     }
   },
@@ -1646,6 +1904,9 @@
       "Name": "@FirewallAPI.dll,-33511",
       "Desc": "@FirewallAPI.dll,-33512",
       "EmbedCtxt": "@FirewallAPI.dll,-33502",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MSDTC-KTMRM-In-TCP"
     }
   },
@@ -1663,6 +1924,9 @@
       "Name": "@FirewallAPI.dll,-33507",
       "Desc": "@FirewallAPI.dll,-33510",
       "EmbedCtxt": "@FirewallAPI.dll,-33502",
+      "filename": "C:\\Windows\\system32\\msdtc.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MSDTC-Out-TCP"
     }
   },
@@ -1682,6 +1946,9 @@
       "Name": "@FirewallAPI.dll,-33513",
       "Desc": "@FirewallAPI.dll,-33514",
       "EmbedCtxt": "@FirewallAPI.dll,-33502",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MSDTC-RPCSS-In-TCP"
     }
   },
@@ -1699,6 +1966,9 @@
       "Name": "@FirewallAPI.dll,-37507",
       "Desc": "@FirewallAPI.dll,-37508",
       "EmbedCtxt": "@FirewallAPI.dll,-37502",
+      "filename": "C:\\Windows\\system32\\dmcertinst.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-DeviceManagement-CertificateInstall-TCP-Out"
     }
   },
@@ -1716,6 +1986,9 @@
       "Name": "@FirewallAPI.dll,-37503",
       "Desc": "@FirewallAPI.dll,-37504",
       "EmbedCtxt": "@FirewallAPI.dll,-37502",
+      "filename": "C:\\Windows\\system32\\omadmclient.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-DeviceManagement-OmaDmClient-TCP-Out"
     }
   },
@@ -1734,6 +2007,9 @@
       "Name": "@FirewallAPI.dll,-37509",
       "Desc": "@FirewallAPI.dll,-37510",
       "EmbedCtxt": "@FirewallAPI.dll,-37502",
+      "filename": "C:\\Windows\\system32\\deviceenroller.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-DeviceManagement-deviceenroller-TCP-Out"
     }
   },
@@ -1752,6 +2028,9 @@
       "Name": "@FirewallAPI.dll,-37505",
       "Desc": "@FirewallAPI.dll,-37506",
       "EmbedCtxt": "@FirewallAPI.dll,-37502",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-Enrollment-WinRT-TCP-Out"
     }
   },
@@ -1770,6 +2049,9 @@
       "Name": "@peerdistsh.dll,-10006",
       "Desc": "@peerdistsh.dll,-11006",
       "EmbedCtxt": "@peerdistsh.dll,-9003",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-PeerDist-HostedClient-Out"
     }
   },
@@ -1788,6 +2070,9 @@
       "Name": "@peerdistsh.dll,-10004",
       "Desc": "@peerdistsh.dll,-11004",
       "EmbedCtxt": "@peerdistsh.dll,-9002",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-PeerDist-HostedServer-In"
     }
   },
@@ -1806,6 +2091,9 @@
       "Name": "@peerdistsh.dll,-10005",
       "Desc": "@peerdistsh.dll,-11005",
       "EmbedCtxt": "@peerdistsh.dll,-9002",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-PeerDist-HostedServer-Out"
     }
   },
@@ -1824,6 +2112,9 @@
       "Name": "@peerdistsh.dll,-10000",
       "Desc": "@peerdistsh.dll,-11000",
       "EmbedCtxt": "@peerdistsh.dll,-9000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-PeerDist-HttpTrans-In"
     }
   },
@@ -1842,6 +2133,9 @@
       "Name": "@peerdistsh.dll,-10001",
       "Desc": "@peerdistsh.dll,-11001",
       "EmbedCtxt": "@peerdistsh.dll,-9000",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-PeerDist-HttpTrans-Out"
     }
   },
@@ -1863,6 +2157,9 @@
       "Name": "@peerdistsh.dll,-10002",
       "Desc": "@peerdistsh.dll,-11002",
       "EmbedCtxt": "@peerdistsh.dll,-9001",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-PeerDist-WSD-In"
     }
   },
@@ -1884,6 +2181,9 @@
       "Name": "@peerdistsh.dll,-10003",
       "Desc": "@peerdistsh.dll,-11003",
       "EmbedCtxt": "@peerdistsh.dll,-9001",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-PeerDist-WSD-Out"
     }
   },
@@ -1903,6 +2203,9 @@
       "Name": "@%windir%\\system32\\diagtrack.dll,-3001",
       "Desc": "@%windir%\\system32\\diagtrack.dll,-3003",
       "EmbedCtxt": "DiagTrack",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Microsoft-Windows-Unified-Telemetry-Client"
     }
   },
@@ -1921,6 +2224,9 @@
       "Name": "@FirewallAPI.dll,-29003",
       "Desc": "@FirewallAPI.dll,-29006",
       "EmbedCtxt": "@FirewallAPI.dll,-29002",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MsiScsi-In-TCP"
     }
   },
@@ -1939,6 +2245,9 @@
       "Name": "@FirewallAPI.dll,-29007",
       "Desc": "@FirewallAPI.dll,-29010",
       "EmbedCtxt": "@FirewallAPI.dll,-29002",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "MsiScsi-Out-TCP"
     }
   },
@@ -1960,6 +2269,9 @@
       "Name": "@FirewallAPI.dll,-32785",
       "Desc": "@FirewallAPI.dll,-32788",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-FDPHOST-In-UDP"
     }
   },
@@ -1981,6 +2293,9 @@
       "Name": "@FirewallAPI.dll,-32789",
       "Desc": "@FirewallAPI.dll,-32792",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-FDPHOST-Out-UDP"
     }
   },
@@ -2002,6 +2317,9 @@
       "Name": "@FirewallAPI.dll,-32809",
       "Desc": "@FirewallAPI.dll,-32810",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-FDRESPUB-WSD-In-UDP"
     }
   },
@@ -2023,6 +2341,9 @@
       "Name": "@FirewallAPI.dll,-32811",
       "Desc": "@FirewallAPI.dll,-32812",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-FDRESPUB-WSD-Out-UDP"
     }
   },
@@ -2044,6 +2365,9 @@
       "Name": "@FirewallAPI.dll,-32801",
       "Desc": "@FirewallAPI.dll,-32804",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-LLMNR-In-UDP"
     }
   },
@@ -2065,6 +2389,9 @@
       "Name": "@FirewallAPI.dll,-32805",
       "Desc": "@FirewallAPI.dll,-32808",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-LLMNR-Out-UDP"
     }
   },
@@ -2083,6 +2410,9 @@
       "Name": "@FirewallAPI.dll,-32777",
       "Desc": "@FirewallAPI.dll,-32780",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-NB_Datagram-In-UDP"
     }
   },
@@ -2101,6 +2431,9 @@
       "Name": "@FirewallAPI.dll,-32781",
       "Desc": "@FirewallAPI.dll,-32784",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-NB_Datagram-Out-UDP"
     }
   },
@@ -2119,6 +2452,9 @@
       "Name": "@FirewallAPI.dll,-32769",
       "Desc": "@FirewallAPI.dll,-32772",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-NB_Name-In-UDP"
     }
   },
@@ -2137,6 +2473,9 @@
       "Name": "@FirewallAPI.dll,-32773",
       "Desc": "@FirewallAPI.dll,-32776",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-NB_Name-Out-UDP"
     }
   },
@@ -2158,6 +2497,9 @@
       "Name": "@FirewallAPI.dll,-32753",
       "Desc": "@FirewallAPI.dll,-32756",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-SSDPSrv-In-UDP"
     }
   },
@@ -2179,6 +2521,9 @@
       "Name": "@FirewallAPI.dll,-32757",
       "Desc": "@FirewallAPI.dll,-32760",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-SSDPSrv-Out-UDP"
     }
   },
@@ -2200,6 +2545,9 @@
       "Name": "@FirewallAPI.dll,-32821",
       "Desc": "@FirewallAPI.dll,-32822",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-UPnP-Out-TCP"
     }
   },
@@ -2218,6 +2566,9 @@
       "Name": "@FirewallAPI.dll,-32761",
       "Desc": "@FirewallAPI.dll,-32764",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-UPnPHost-In-TCP"
     }
   },
@@ -2236,6 +2587,9 @@
       "Name": "@FirewallAPI.dll,-32765",
       "Desc": "@FirewallAPI.dll,-32768",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-UPnPHost-Out-TCP"
     }
   },
@@ -2254,6 +2608,9 @@
       "Name": "@FirewallAPI.dll,-32817",
       "Desc": "@FirewallAPI.dll,-32818",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-WSDEVNT-In-TCP"
     }
   },
@@ -2272,6 +2629,9 @@
       "Name": "@FirewallAPI.dll,-32819",
       "Desc": "@FirewallAPI.dll,-32820",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-WSDEVNT-Out-TCP"
     }
   },
@@ -2290,6 +2650,9 @@
       "Name": "@FirewallAPI.dll,-32813",
       "Desc": "@FirewallAPI.dll,-32814",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-WSDEVNTS-In-TCP"
     }
   },
@@ -2308,6 +2671,9 @@
       "Name": "@FirewallAPI.dll,-32815",
       "Desc": "@FirewallAPI.dll,-32816",
       "EmbedCtxt": "@FirewallAPI.dll,-32752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NETDIS-WSDEVNTS-Out-TCP"
     }
   },
@@ -2330,6 +2696,9 @@
       "Name": "@FirewallAPI.dll,-54002",
       "Desc": "@FirewallAPI.dll,-54003",
       "EmbedCtxt": "@FirewallAPI.dll,-54001",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NVS-FrameServer-In-TCP-NoScope"
     }
   },
@@ -2351,6 +2720,9 @@
       "Name": "@FirewallAPI.dll,-54006",
       "Desc": "@FirewallAPI.dll,-54007",
       "EmbedCtxt": "@FirewallAPI.dll,-54001",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NVS-FrameServer-In-UDP-NoScope"
     }
   },
@@ -2373,6 +2745,9 @@
       "Name": "@FirewallAPI.dll,-54004",
       "Desc": "@FirewallAPI.dll,-54005",
       "EmbedCtxt": "@FirewallAPI.dll,-54001",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "NVS-FrameServer-Out-TCP-NoScope"
     }
   },
@@ -2391,6 +2766,9 @@
       "Name": "@firewallapi.dll,-37682",
       "Desc": "@firewallapi.dll,-37683",
       "EmbedCtxt": "@firewallapi.dll,-37681",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Netlogon-NamedPipe-In"
     }
   },
@@ -2409,6 +2787,9 @@
       "Name": "@firewallapi.dll,-37684",
       "Desc": "@firewallapi.dll,-37685",
       "EmbedCtxt": "@firewallapi.dll,-37681",
+      "filename": "C:\\Windows\\system32\\lsass.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Netlogon-TCP-RPC-In"
     }
   },
@@ -2431,6 +2812,9 @@
       "Name": "@FirewallAPI.dll,-34755",
       "Desc": "@FirewallAPI.dll,-34756",
       "EmbedCtxt": "@FirewallAPI.dll,-34752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PerfLogsAlerts-DCOM-In-TCP"
     }
   },
@@ -2451,6 +2835,9 @@
       "Name": "@FirewallAPI.dll,-34755",
       "Desc": "@FirewallAPI.dll,-34756",
       "EmbedCtxt": "@FirewallAPI.dll,-34752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PerfLogsAlerts-DCOM-In-TCP-NoScope"
     }
   },
@@ -2471,6 +2858,9 @@
       "Name": "@FirewallAPI.dll,-34753",
       "Desc": "@FirewallAPI.dll,-34754",
       "EmbedCtxt": "@FirewallAPI.dll,-34752",
+      "filename": "C:\\Windows\\system32\\plasrv.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PerfLogsAlerts-PLASrv-In-TCP"
     }
   },
@@ -2489,6 +2879,9 @@
       "Name": "@FirewallAPI.dll,-34753",
       "Desc": "@FirewallAPI.dll,-34754",
       "EmbedCtxt": "@FirewallAPI.dll,-34752",
+      "filename": "C:\\Windows\\system32\\plasrv.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PerfLogsAlerts-PLASrv-In-TCP-NoScope"
     }
   },
@@ -2510,6 +2903,9 @@
       "Name": "@FirewallAPI.dll,-36002",
       "Desc": "@FirewallAPI.dll,-36003",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-HTTPSTR-In-TCP-LocalSubnetScope"
     }
   },
@@ -2529,6 +2925,9 @@
       "Name": "@FirewallAPI.dll,-36002",
       "Desc": "@FirewallAPI.dll,-36003",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-HTTPSTR-In-TCP-NoScope"
     }
   },
@@ -2550,6 +2949,9 @@
       "Name": "@FirewallAPI.dll,-36002",
       "Desc": "@FirewallAPI.dll,-36003",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-HTTPSTR-In-TCP-PlayToScope"
     }
   },
@@ -2571,6 +2973,9 @@
       "Name": "@FirewallAPI.dll,-36008",
       "Desc": "@FirewallAPI.dll,-36009",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\mdeserver.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-In-RTSP-LocalSubnetScope"
     }
   },
@@ -2590,6 +2995,9 @@
       "Name": "@FirewallAPI.dll,-36008",
       "Desc": "@FirewallAPI.dll,-36009",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\mdeserver.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-In-RTSP-NoScope"
     }
   },
@@ -2611,6 +3019,9 @@
       "Name": "@FirewallAPI.dll,-36008",
       "Desc": "@FirewallAPI.dll,-36009",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\mdeserver.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-In-RTSP-PlayToScope"
     }
   },
@@ -2631,6 +3042,9 @@
       "Name": "@FirewallAPI.dll,-36004",
       "Desc": "@FirewallAPI.dll,-36005",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\mdeserver.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-In-UDP-LocalSubnetScope"
     }
   },
@@ -2649,6 +3063,9 @@
       "Name": "@FirewallAPI.dll,-36004",
       "Desc": "@FirewallAPI.dll,-36005",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\mdeserver.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-In-UDP-NoScope"
     }
   },
@@ -2669,6 +3086,9 @@
       "Name": "@FirewallAPI.dll,-36004",
       "Desc": "@FirewallAPI.dll,-36005",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\mdeserver.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-In-UDP-PlayToScope"
     }
   },
@@ -2689,6 +3109,9 @@
       "Name": "@FirewallAPI.dll,-36006",
       "Desc": "@FirewallAPI.dll,-36007",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\mdeserver.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-Out-UDP-LocalSubnetScope"
     }
   },
@@ -2707,6 +3130,9 @@
       "Name": "@FirewallAPI.dll,-36006",
       "Desc": "@FirewallAPI.dll,-36007",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\mdeserver.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-Out-UDP-NoScope"
     }
   },
@@ -2727,6 +3153,9 @@
       "Name": "@FirewallAPI.dll,-36006",
       "Desc": "@FirewallAPI.dll,-36007",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\mdeserver.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-Out-UDP-PlayToScope"
     }
   },
@@ -2749,6 +3178,9 @@
       "Name": "@FirewallAPI.dll,-36014",
       "Desc": "@FirewallAPI.dll,-36015",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-QWave-In-TCP-PlayToScope"
     }
   },
@@ -2771,6 +3203,9 @@
       "Name": "@FirewallAPI.dll,-36010",
       "Desc": "@FirewallAPI.dll,-36011",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-QWave-In-UDP-PlayToScope"
     }
   },
@@ -2793,6 +3228,9 @@
       "Name": "@FirewallAPI.dll,-36016",
       "Desc": "@FirewallAPI.dll,-36017",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-QWave-Out-TCP-PlayToScope"
     }
   },
@@ -2815,6 +3253,9 @@
       "Name": "@FirewallAPI.dll,-36012",
       "Desc": "@FirewallAPI.dll,-36013",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-QWave-Out-UDP-PlayToScope"
     }
   },
@@ -2835,6 +3276,9 @@
       "Name": "@FirewallAPI.dll,-36104",
       "Desc": "@FirewallAPI.dll,-36105",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-SSDP-Discovery-PlayToScope"
     }
   },
@@ -2856,6 +3300,9 @@
       "Name": "@FirewallAPI.dll,-36106",
       "Desc": "@FirewallAPI.dll,-36107",
       "EmbedCtxt": "@FirewallAPI.dll,-36001",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "PlayTo-UPnP-Events-PlayToScope"
     }
   },
@@ -2873,6 +3320,9 @@
       "Name": "@FirewallAPI.dll,-33769",
       "Desc": "@FirewallAPI.dll,-33772",
       "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RRAS-GRE-In"
     }
   },
@@ -2890,6 +3340,9 @@
       "Name": "@FirewallAPI.dll,-33773",
       "Desc": "@FirewallAPI.dll,-33776",
       "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RRAS-GRE-Out"
     }
   },
@@ -2908,6 +3361,9 @@
       "Name": "@FirewallAPI.dll,-33753",
       "Desc": "@FirewallAPI.dll,-33756",
       "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RRAS-L2TP-In-UDP"
     }
   },
@@ -2926,6 +3382,9 @@
       "Name": "@FirewallAPI.dll,-33757",
       "Desc": "@FirewallAPI.dll,-33760",
       "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RRAS-L2TP-Out-UDP"
     }
   },
@@ -2944,6 +3403,9 @@
       "Name": "@FirewallAPI.dll,-33765",
       "Desc": "@FirewallAPI.dll,-33768",
       "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RRAS-PPTP-In-TCP"
     }
   },
@@ -2962,6 +3424,9 @@
       "Name": "@FirewallAPI.dll,-33761",
       "Desc": "@FirewallAPI.dll,-33764",
       "EmbedCtxt": "@FirewallAPI.dll,-33752",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RRAS-PPTP-Out-TCP"
     }
   },
@@ -2981,6 +3446,9 @@
       "Name": "@FirewallAPI.dll,-34506",
       "Desc": "@FirewallAPI.dll,-34507",
       "EmbedCtxt": "@FirewallAPI.dll,-34501",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RVM-RPCSS-In-TCP"
     }
   },
@@ -3000,6 +3468,9 @@
       "Name": "@FirewallAPI.dll,-34502",
       "Desc": "@FirewallAPI.dll,-34503",
       "EmbedCtxt": "@FirewallAPI.dll,-34501",
+      "filename": "C:\\Windows\\system32\\vds.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RVM-VDS-In-TCP"
     }
   },
@@ -3018,6 +3489,9 @@
       "Name": "@FirewallAPI.dll,-34504",
       "Desc": "@FirewallAPI.dll,-34505",
       "EmbedCtxt": "@FirewallAPI.dll,-34501",
+      "filename": "C:\\Windows\\system32\\vdsldr.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RVM-VDSLDR-In-TCP"
     }
   },
@@ -3036,6 +3510,9 @@
       "Name": "@FirewallAPI.dll,-28780",
       "Desc": "@FirewallAPI.dll,-28781",
       "EmbedCtxt": "@FirewallAPI.dll,-28782",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteDesktop-In-TCP-WS"
     }
   },
@@ -3054,6 +3531,9 @@
       "Name": "@FirewallAPI.dll,-28783",
       "Desc": "@FirewallAPI.dll,-28784",
       "EmbedCtxt": "@FirewallAPI.dll,-28782",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteDesktop-In-TCP-WSS"
     }
   },
@@ -3073,6 +3553,9 @@
       "EmbedCtxt": "@FirewallAPI.dll,-28752",
       "Edge": "TRUE",
       "Defer": "App",
+      "filename": "C:\\Windows\\system32\\rdpsa.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteDesktop-Shadow-In-TCP"
     }
   },
@@ -3092,6 +3575,9 @@
       "Name": "@FirewallAPI.dll,-28775",
       "Desc": "@FirewallAPI.dll,-28756",
       "EmbedCtxt": "@FirewallAPI.dll,-28752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteDesktop-UserMode-In-TCP"
     }
   },
@@ -3111,6 +3597,9 @@
       "Name": "@FirewallAPI.dll,-28776",
       "Desc": "@FirewallAPI.dll,-28777",
       "EmbedCtxt": "@FirewallAPI.dll,-28752",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteDesktop-UserMode-In-UDP"
     }
   },
@@ -3130,6 +3619,9 @@
       "Name": "@FirewallAPI.dll,-29253",
       "Desc": "@FirewallAPI.dll,-29256",
       "EmbedCtxt": "@FirewallAPI.dll,-29252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteEventLogSvc-In-TCP"
     }
   },
@@ -3148,6 +3640,9 @@
       "Name": "@FirewallAPI.dll,-29257",
       "Desc": "@FirewallAPI.dll,-29260",
       "EmbedCtxt": "@FirewallAPI.dll,-29252",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteEventLogSvc-NP-In-TCP"
     }
   },
@@ -3167,6 +3662,9 @@
       "Name": "@FirewallAPI.dll,-29265",
       "Desc": "@FirewallAPI.dll,-29268",
       "EmbedCtxt": "@FirewallAPI.dll,-29252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteEventLogSvc-RPCSS-In-TCP"
     }
   },
@@ -3186,6 +3684,9 @@
       "Name": "@FirewallAPI.dll,-30003",
       "Desc": "@FirewallAPI.dll,-30006",
       "EmbedCtxt": "@FirewallAPI.dll,-30002",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteFwAdmin-In-TCP"
     }
   },
@@ -3205,6 +3706,9 @@
       "Name": "@FirewallAPI.dll,-30007",
       "Desc": "@FirewallAPI.dll,-30010",
       "EmbedCtxt": "@FirewallAPI.dll,-30002",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteFwAdmin-RPCSS-In-TCP"
     }
   },
@@ -3223,6 +3727,9 @@
       "Name": "@FirewallAPI.dll,-29503",
       "Desc": "@FirewallAPI.dll,-29506",
       "EmbedCtxt": "@FirewallAPI.dll,-29502",
+      "filename": "C:\\Windows\\system32\\services.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteSvcAdmin-In-TCP"
     }
   },
@@ -3241,6 +3748,9 @@
       "Name": "@FirewallAPI.dll,-29507",
       "Desc": "@FirewallAPI.dll,-29510",
       "EmbedCtxt": "@FirewallAPI.dll,-29502",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteSvcAdmin-NP-In-TCP"
     }
   },
@@ -3260,6 +3770,9 @@
       "Name": "@FirewallAPI.dll,-29515",
       "Desc": "@FirewallAPI.dll,-29518",
       "EmbedCtxt": "@FirewallAPI.dll,-29502",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteSvcAdmin-RPCSS-In-TCP"
     }
   },
@@ -3279,6 +3792,9 @@
       "Name": "@FirewallAPI.dll,-33253",
       "Desc": "@FirewallAPI.dll,-33256",
       "EmbedCtxt": "@FirewallAPI.dll,-33252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteTask-In-TCP"
     }
   },
@@ -3298,6 +3814,9 @@
       "Name": "@FirewallAPI.dll,-33257",
       "Desc": "@FirewallAPI.dll,-33260",
       "EmbedCtxt": "@FirewallAPI.dll,-33252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "RemoteTask-RPCSS-In-TCP"
     }
   },
@@ -3316,6 +3835,9 @@
       "Name": "@%SystemRoot%\\system32\\firewallapi.dll,-36903",
       "Desc": "@%SystemRoot%\\system32\\firewallapi.dll,-36904",
       "EmbedCtxt": "@%SystemRoot%\\system32\\firewallapi.dll,-36902",
+      "filename": "C:\\Windows\\system32\\muxsvchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "SLBM-MUX-IN-TCP"
     }
   },
@@ -3338,6 +3860,9 @@
       "Name": "@firewallapi.dll,-50327",
       "Desc": "@firewallapi.dll,-50328",
       "EmbedCtxt": "@firewallapi.dll,-50323",
+      "filename": "C:\\Windows\\system32\\snmptrap.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "SNMPTRAP-In-UDP"
     }
   },
@@ -3358,6 +3883,9 @@
       "Name": "@firewallapi.dll,-50327",
       "Desc": "@firewallapi.dll,-50328",
       "EmbedCtxt": "@firewallapi.dll,-50323",
+      "filename": "C:\\Windows\\system32\\snmptrap.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "SNMPTRAP-In-UDP-NoScope"
     }
   },
@@ -3377,6 +3905,9 @@
       "Name": "@FirewallAPI.dll,-28003",
       "Desc": "@FirewallAPI.dll,-28006",
       "EmbedCtxt": "@FirewallAPI.dll,-28002",
+      "filename": "C:\\Windows\\system32\\sppextcomobj.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "SPPSVC-In-TCP"
     }
   },
@@ -3395,6 +3926,9 @@
       "Name": "@sstpsvc.dll,-35002",
       "Desc": "@sstpsvc.dll,-35003",
       "EmbedCtxt": "@sstpsvc.dll,-35001",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "SSTP-IN-TCP"
     }
   },
@@ -3417,6 +3951,9 @@
       "Name": "@FirewallAPI.dll,-36502",
       "Desc": "@FirewallAPI.dll,-36503",
       "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "TPMVSCMGR-RPCSS-In-TCP"
     }
   },
@@ -3437,6 +3974,9 @@
       "Name": "@FirewallAPI.dll,-36502",
       "Desc": "@FirewallAPI.dll,-36503",
       "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "TPMVSCMGR-RPCSS-In-TCP-NoScope"
     }
   },
@@ -3457,6 +3997,9 @@
       "Name": "@FirewallAPI.dll,-36504",
       "Desc": "@FirewallAPI.dll,-36505",
       "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "filename": "C:\\Windows\\system32\\rmttpmvscmgrsvr.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "TPMVSCMGR-Server-In-TCP"
     }
   },
@@ -3475,6 +4018,9 @@
       "Name": "@FirewallAPI.dll,-36504",
       "Desc": "@FirewallAPI.dll,-36505",
       "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "filename": "C:\\Windows\\system32\\rmttpmvscmgrsvr.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "TPMVSCMGR-Server-In-TCP-NoScope"
     }
   },
@@ -3495,6 +4041,9 @@
       "Name": "@FirewallAPI.dll,-36506",
       "Desc": "@FirewallAPI.dll,-36507",
       "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "filename": "C:\\Windows\\system32\\rmttpmvscmgrsvr.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "TPMVSCMGR-Server-Out-TCP"
     }
   },
@@ -3513,6 +4062,9 @@
       "Name": "@FirewallAPI.dll,-36506",
       "Desc": "@FirewallAPI.dll,-36507",
       "EmbedCtxt": "@FirewallAPI.dll,-36501",
+      "filename": "C:\\Windows\\system32\\rmttpmvscmgrsvr.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "TPMVSCMGR-Server-Out-TCP-NoScope"
     }
   },
@@ -3531,6 +4083,9 @@
       "Name": "@FirewallAPI.dll,-35001",
       "Desc": "@FirewallAPI.dll,-35002",
       "EmbedCtxt": "@FirewallAPI.dll,-30252",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WINRM-HTTP-Compat-In-TCP"
     }
   },
@@ -3550,6 +4105,9 @@
       "Name": "@FirewallAPI.dll,-30253",
       "Desc": "@FirewallAPI.dll,-30256",
       "EmbedCtxt": "@FirewallAPI.dll,-30267",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WINRM-HTTP-In-TCP"
     }
   },
@@ -3571,6 +4129,9 @@
       "Name": "@FirewallAPI.dll,-30253",
       "Desc": "@FirewallAPI.dll,-30256",
       "EmbedCtxt": "@FirewallAPI.dll,-30267",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WINRM-HTTP-In-TCP-PUBLIC"
     }
   },
@@ -3588,6 +4149,9 @@
       "Name": "@FirewallAPI.dll,-34256",
       "Desc": "@FirewallAPI.dll,-34257",
       "EmbedCtxt": "@FirewallAPI.dll,-34251",
+      "filename": "C:\\Windows\\system32\\wbem\\unsecapp.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMI-ASYNC-In-TCP"
     }
   },
@@ -3607,6 +4171,9 @@
       "Name": "@FirewallAPI.dll,-34252",
       "Desc": "@FirewallAPI.dll,-34253",
       "EmbedCtxt": "@FirewallAPI.dll,-34251",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMI-RPCSS-In-TCP"
     }
   },
@@ -3625,6 +4192,9 @@
       "Name": "@FirewallAPI.dll,-34254",
       "Desc": "@FirewallAPI.dll,-34255",
       "EmbedCtxt": "@FirewallAPI.dll,-34251",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMI-WINMGMT-In-TCP"
     }
   },
@@ -3643,6 +4213,9 @@
       "Name": "@FirewallAPI.dll,-34258",
       "Desc": "@FirewallAPI.dll,-34259",
       "EmbedCtxt": "@FirewallAPI.dll,-34251",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMI-WINMGMT-Out-TCP"
     }
   },
@@ -3660,6 +4233,9 @@
       "Name": "@FirewallAPI.dll,-31003",
       "Desc": "@FirewallAPI.dll,-31006",
       "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMP-In-UDP"
     }
   },
@@ -3677,6 +4253,9 @@
       "Name": "@FirewallAPI.dll,-31023",
       "Desc": "@FirewallAPI.dll,-31006",
       "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "filename": "%programfiles(x86)%\\windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMP-In-UDP-x86"
     }
   },
@@ -3694,6 +4273,9 @@
       "Name": "@FirewallAPI.dll,-31011",
       "Desc": "@FirewallAPI.dll,-31014",
       "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMP-Out-TCP"
     }
   },
@@ -3711,6 +4293,9 @@
       "Name": "@FirewallAPI.dll,-31025",
       "Desc": "@FirewallAPI.dll,-31014",
       "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "filename": "%programfiles(x86)%\\windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMP-Out-TCP-x86"
     }
   },
@@ -3728,6 +4313,9 @@
       "Name": "@FirewallAPI.dll,-31007",
       "Desc": "@FirewallAPI.dll,-31010",
       "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMP-Out-UDP"
     }
   },
@@ -3745,6 +4333,9 @@
       "Name": "@FirewallAPI.dll,-31024",
       "Desc": "@FirewallAPI.dll,-31010",
       "EmbedCtxt": "@FirewallAPI.dll,-31002",
+      "filename": "%programfiles(x86)%\\windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMP-Out-UDP-x86"
     }
   },
@@ -3766,6 +4357,9 @@
       "Name": "@FirewallAPI.dll,-31285",
       "Desc": "@FirewallAPI.dll,-31288",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-HTTPSTR-In-TCP"
     }
   },
@@ -3785,6 +4379,9 @@
       "Name": "@FirewallAPI.dll,-31285",
       "Desc": "@FirewallAPI.dll,-31288",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-HTTPSTR-In-TCP-NoScope"
     }
   },
@@ -3806,6 +4403,9 @@
       "Name": "@FirewallAPI.dll,-31289",
       "Desc": "@FirewallAPI.dll,-31292",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-HTTPSTR-Out-TCP"
     }
   },
@@ -3825,6 +4425,9 @@
       "Name": "@FirewallAPI.dll,-31289",
       "Desc": "@FirewallAPI.dll,-31292",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-HTTPSTR-Out-TCP-NoScope"
     }
   },
@@ -3845,6 +4448,9 @@
       "Name": "@FirewallAPI.dll,-31313",
       "Desc": "@FirewallAPI.dll,-31316",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-In-TCP"
     }
   },
@@ -3863,6 +4469,9 @@
       "Name": "@FirewallAPI.dll,-31313",
       "Desc": "@FirewallAPI.dll,-31316",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-In-TCP-NoScope"
     }
   },
@@ -3883,6 +4492,9 @@
       "Name": "@FirewallAPI.dll,-31305",
       "Desc": "@FirewallAPI.dll,-31308",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-In-UDP"
     }
   },
@@ -3901,6 +4513,9 @@
       "Name": "@FirewallAPI.dll,-31305",
       "Desc": "@FirewallAPI.dll,-31308",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-In-UDP-NoScope"
     }
   },
@@ -3921,6 +4536,9 @@
       "Name": "@FirewallAPI.dll,-31317",
       "Desc": "@FirewallAPI.dll,-31320",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-Out-TCP"
     }
   },
@@ -3939,6 +4557,9 @@
       "Name": "@FirewallAPI.dll,-31317",
       "Desc": "@FirewallAPI.dll,-31320",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-Out-TCP-NoScope"
     }
   },
@@ -3959,6 +4580,9 @@
       "Name": "@FirewallAPI.dll,-31309",
       "Desc": "@FirewallAPI.dll,-31312",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-Out-UDP"
     }
   },
@@ -3977,6 +4601,9 @@
       "Name": "@FirewallAPI.dll,-31309",
       "Desc": "@FirewallAPI.dll,-31312",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-Out-UDP-NoScope"
     }
   },
@@ -3999,6 +4626,9 @@
       "Name": "@FirewallAPI.dll,-31261",
       "Desc": "@FirewallAPI.dll,-31264",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-QWave-In-TCP"
     }
   },
@@ -4019,6 +4649,9 @@
       "Name": "@FirewallAPI.dll,-31261",
       "Desc": "@FirewallAPI.dll,-31264",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-QWave-In-TCP-NoScope"
     }
   },
@@ -4041,6 +4674,9 @@
       "Name": "@FirewallAPI.dll,-31253",
       "Desc": "@FirewallAPI.dll,-31256",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-QWave-In-UDP"
     }
   },
@@ -4061,6 +4697,9 @@
       "Name": "@FirewallAPI.dll,-31253",
       "Desc": "@FirewallAPI.dll,-31256",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-QWave-In-UDP-NoScope"
     }
   },
@@ -4083,6 +4722,9 @@
       "Name": "@FirewallAPI.dll,-31265",
       "Desc": "@FirewallAPI.dll,-31268",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-QWave-Out-TCP"
     }
   },
@@ -4103,6 +4745,9 @@
       "Name": "@FirewallAPI.dll,-31265",
       "Desc": "@FirewallAPI.dll,-31268",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-QWave-Out-TCP-NoScope"
     }
   },
@@ -4125,6 +4770,9 @@
       "Name": "@FirewallAPI.dll,-31257",
       "Desc": "@FirewallAPI.dll,-31260",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-QWave-Out-UDP"
     }
   },
@@ -4145,6 +4793,9 @@
       "Name": "@FirewallAPI.dll,-31257",
       "Desc": "@FirewallAPI.dll,-31260",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-QWave-Out-UDP-NoScope"
     }
   },
@@ -4166,6 +4817,9 @@
       "Name": "@FirewallAPI.dll,-31269",
       "Desc": "@FirewallAPI.dll,-31272",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-SSDPSrv-In-UDP"
     }
   },
@@ -4187,6 +4841,9 @@
       "Name": "@FirewallAPI.dll,-31273",
       "Desc": "@FirewallAPI.dll,-31276",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-SSDPSrv-Out-UDP"
     }
   },
@@ -4207,6 +4864,9 @@
       "Name": "@FirewallAPI.dll,-31321",
       "Desc": "@FirewallAPI.dll,-31322",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-UPnP-Out-TCP"
     }
   },
@@ -4227,6 +4887,9 @@
       "Name": "@FirewallAPI.dll,-31277",
       "Desc": "@FirewallAPI.dll,-31280",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-UPnPHost-In-TCP"
     }
   },
@@ -4246,6 +4909,9 @@
       "Name": "@FirewallAPI.dll,-31281",
       "Desc": "@FirewallAPI.dll,-31284",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-UPnPHost-Out-TCP"
     }
   },
@@ -4266,6 +4932,9 @@
       "Name": "@FirewallAPI.dll,-31293",
       "Desc": "@FirewallAPI.dll,-31296",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-WMP-In-UDP"
     }
   },
@@ -4284,6 +4953,9 @@
       "Name": "@FirewallAPI.dll,-31293",
       "Desc": "@FirewallAPI.dll,-31296",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-WMP-In-UDP-NoScope"
     }
   },
@@ -4304,6 +4976,9 @@
       "Name": "@FirewallAPI.dll,-31301",
       "Desc": "@FirewallAPI.dll,-31304",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-WMP-Out-TCP"
     }
   },
@@ -4322,6 +4997,9 @@
       "Name": "@FirewallAPI.dll,-31301",
       "Desc": "@FirewallAPI.dll,-31304",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-WMP-Out-TCP-NoScope"
     }
   },
@@ -4342,6 +5020,9 @@
       "Name": "@FirewallAPI.dll,-31297",
       "Desc": "@FirewallAPI.dll,-31300",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-WMP-Out-UDP"
     }
   },
@@ -4360,6 +5041,9 @@
       "Name": "@FirewallAPI.dll,-31297",
       "Desc": "@FirewallAPI.dll,-31300",
       "EmbedCtxt": "@FirewallAPI.dll,-31252",
+      "filename": "windows",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "WMPNSS-WMP-Out-UDP-NoScope"
     }
   },
@@ -4378,6 +5062,9 @@
       "Name": "@firewallapi.dll,-36753",
       "Desc": "@firewallapi.dll,-36754",
       "EmbedCtxt": "@firewallapi.dll,-36751",
+      "filename": "C:\\Windows\\system32\\wininit.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Wininit-Shutdown-In-Rule-TCP-RPC"
     }
   },
@@ -4396,6 +5083,9 @@
       "Name": "@firewallapi.dll,-36755",
       "Desc": "@firewallapi.dll,-36756",
       "EmbedCtxt": "@firewallapi.dll,-36751",
+      "filename": "C:\\Windows\\system32\\wininit.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "Wininit-Shutdown-In-Rule-TCP-RPC-EPMapper"
     }
   },
@@ -4415,6 +5105,9 @@
       "Name": "@%SystemRoot%\\system32\\icsvc.dll,-709",
       "Desc": "@%SystemRoot%\\system32\\icsvc.dll,-710",
       "EmbedCtxt": "@%SystemRoot%\\system32\\icsvc.dll,-700",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "vm-monitoring-dcom"
     }
   },
@@ -4432,6 +5125,9 @@
       "Name": "@%SystemRoot%\\system32\\icsvc.dll,-701",
       "Desc": "@%SystemRoot%\\system32\\icsvc.dll,-702",
       "EmbedCtxt": "@%SystemRoot%\\system32\\icsvc.dll,-700",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "vm-monitoring-icmpv4"
     }
   },
@@ -4449,6 +5145,9 @@
       "Name": "@%SystemRoot%\\system32\\icsvc.dll,-703",
       "Desc": "@%SystemRoot%\\system32\\icsvc.dll,-704",
       "EmbedCtxt": "@%SystemRoot%\\system32\\icsvc.dll,-700",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "vm-monitoring-icmpv6"
     }
   },
@@ -4467,6 +5166,9 @@
       "Name": "@%SystemRoot%\\system32\\icsvc.dll,-705",
       "Desc": "@%SystemRoot%\\system32\\icsvc.dll,-706",
       "EmbedCtxt": "@%SystemRoot%\\system32\\icsvc.dll,-700",
+      "filename": "system",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "vm-monitoring-nb-session"
     }
   },
@@ -4486,6 +5188,9 @@
       "Name": "@%SystemRoot%\\system32\\icsvc.dll,-707",
       "Desc": "@%SystemRoot%\\system32\\icsvc.dll,-708",
       "EmbedCtxt": "@%SystemRoot%\\system32\\icsvc.dll,-700",
+      "filename": "C:\\Windows\\system32\\svchost.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "vm-monitoring-rpc"
     }
   },
@@ -4819,6 +5524,9 @@
       "Name": "Microsoft Edge (mDNS-In)",
       "Desc": "Inbound rule for Microsoft Edge to allow mDNS traffic.",
       "EmbedCtxt": "Microsoft Edge",
+      "filename": "c:\\program files (x86)\\microsoft\\edge\\application\\msedge.exe",
+      "Stat": false,
+      "ShouldUpload": false,
       "RuleName": "{C0C56FAD-42D7-481C-862D-66130F1B2137}"
     }
   },
