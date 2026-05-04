@@ -31,7 +31,7 @@ const (
 	velociraptorBinaryPath = "./velociraptor"
 
 	// The produced artifact
-	artifactPath = "../output/Windows.Registry.Hunter.yaml"
+	artifactPath = "../output/"
 )
 
 type downloadSpec struct {
