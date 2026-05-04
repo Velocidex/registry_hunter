@@ -564,7 +564,7 @@ sources:
     LET _ <= if(condition=BaselineDBPath,
        then=cache(lambda="x=>ExecutionVersion",
                   filename=BaselineDBPath,
-                  period=100000,
+                  period=100000, name="Baseline",
                   max_size=10000000))
 
     // Get a canonical string of the key to compare the baseline.
@@ -573,7 +573,8 @@ sources:
        hashselect="SHA256").SHA256
 
     LET ResultsWithBaseline = SELECT *,
-       cache(key=GetCanonical(OSPath=OSPath, Details=S.Details)) AS Baseline
+       cache(key=GetCanonical(OSPath=OSPath, Details=S.Details),
+             name="Baseline") AS Baseline
     FROM Results
 
     // Only show the items that are different from the last baseline
