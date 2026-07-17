@@ -286,10 +286,11 @@ Rules:
                       filename=Data,
                       profile=userAssistProfile, struct="Header")
 
+
   Details: |
-    x=>dict(Program=rot13(string=x.OSPath.Basename),
+    x=> dict(filename= "placeholder",
             NumberOfExecutions=_ExtractUserAssist(Data=x.Data).NumberOfExecutions,
-            LastExecutionTime=_ExtractUserAssist(Data=x.Data).LastExecution) +
+            LastExecutionTime=_ExtractUserAssist(Data=x.Data).LastExecution || Null ) +
       GetDetails(OSPath=ExpandPath(Path=rot13(string=x.OSPath.Basename)))
 
 

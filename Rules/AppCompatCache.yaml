@@ -89,7 +89,7 @@ Rules:
         profile=AppCompatCacheParser,
         struct="HeaderWin8")
 
-    LET AppCompatCache(Blob) = SELECT LastMod, Path, Execution,
+    LET AppCompatCache(Blob) = SELECT LastMod, Path, S.Execution AS Execution,
         GetDetails(OSPath=ExpandPath(Path=Path)) AS Details
     FROM foreach(
       row=if(
