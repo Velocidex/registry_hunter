@@ -65,6 +65,19 @@ parameters:
   type: regex
   default: .
 
+- name: IocRegex
+  type: regex
+  default: .
+  description: "Return registry rows matching this regex in OSPath or Details."
+- name: ModifiedAfter
+  type: timestamp
+  default: 1600-01-01
+  description: "search for keys modified after this date. YYYY-MM-DDTmm:hh:ssZ"
+- name: ModifiedBefore
+  type: timestamp
+  default: 2200-01-01
+  description: "search for key modified before this date. YYYY-MM-DDTmm:hh:ssZ"
+
 - name: CollectionPolicy
   description: |
     Extracted targets will be collected using this policy.
@@ -596,6 +609,9 @@ sources:
     SELECT * FROM if(condition=BaselineDBPath,
        then=ResultsWithBaseline,
        else=Results)
+    WHERE ( OSPath =~ IocRegex OR Details =~ IocRegex )
+      AND Mtime > ModifiedAfter
+      AND Mtime < ModifiedBefore
 
 
 column_types:
