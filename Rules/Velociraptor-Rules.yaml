@@ -507,97 +507,186 @@ Rules:
           CommandImage=ExpandPath(Path=Data.value)) +
        GetDetails(OSPath=ExpandPath(Path=x.Data))
 
-- Author: Andrew Rathbun, Mike Cohen
+- Author: Andrew Rathbun, Mike Cohen, Abdelghafour Bouhdyd
   Description: Scheduled Tasks (TaskCache)
   Category: Autoruns
-  Root: HKEY_LOCAL_MACHINE\Software
-  Glob: Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
-  Filter: x=>IsDir AND Details
+  Comment: >-
+    One row per task, joining the Tree and Tasks keys. SDMissing and
+    TreeMissing flag tasks hidden from schtasks (e.g. Tarrask).
+    TaskMissing flags Tree entries without a Tasks key; Windows leaves
+    some of these behind with Index 0. XmlMissing is only set when the
+    Tasks directory exists under RootDrive.
   # https://cyber.wtf/2022/06/01/windows-registry-analysis-todays-episode-tasks/
+  # https://www.microsoft.com/en-us/security/blog/2022/04/12/tarrask-malware-uses-scheduled-tasks-for-defense-evasion/
   Preamble:
   - |
-    LET _ParseActions(Data)  = parse_binary(accessor="data",
-                filename=Data, struct="Header",
-                profile='''
-    [["Header", 0, [
-     ["__Ver", 0, "uint16"],
-     ["__UserLen", 2, "uint32"],
-     ["User", 6, "String", {length: "x=>x.__UserLen", encoding: "utf16"}],
-     ["__ActionType", "x=>6 + x.__UserLen", "uint16"],
-     ["ActionType", "x=>6 + x.__UserLen", "Enumeration", {
-        type: "uint32",
-        choices: {
-          "26214": "BinaryAction",
-          "30583": "ComHanlder",
-          "34952": "Email",
-          "39321": "MessageBox",
-        }
-     }],
-     ["Action", "x=>6 + x.__UserLen + 2", "Union", {
-       selector: "x=>x.__ActionType",
-       choices: {
-         "26214": BinaryAction,
-         "30583": ComHandler,
-       }
-     }],
+    LET _TaskCacheProfile <= '''[
+    ["Header", 0, [
+     ["Version", 0, "uint16"],
+     ["ContextSize", 2, "uint32"],
+     ["Context", 6, "String", {length: "x=>x.ContextSize", encoding: "utf16"}],
+     ["Actions", "x=>6 + x.ContextSize", "Array", {
+         type: "Action", count: 32,
+         sentinel: "x=>NOT x.Magic IN (0x6666, 0x7777)"}]
     ]],
-    ["ComHandler", 0, [
-     ["ClassID", 4, "GUID"],
-     ["__DataLen", 20, uint32],
-     ["Data", 24, "String", {
-       "length": "x=>x.__DataLen",
-       "encoding": "utf16",
-     }]
+
+    # Exec (0x6666) or ComHandler (0x7777). Exec actions in version 3
+    # blobs end with a 2 byte flags field, so peek at the next magic to
+    # also handle blobs without it.
+    ["Action", "x=>x.Size", [
+     ["Magic", 0, "uint16"],
+     ["IdSize", 2, "uint32"],
+     ["Id", 6, "String", {length: "x=>x.IdSize", encoding: "utf16"}],
+
+     ["CommandSize", "x=>6 + x.IdSize", "uint32"],
+     ["Command", "x=>10 + x.IdSize", "String", {
+         length: "x=>x.CommandSize", encoding: "utf16"}],
+     ["ArgumentsSize", "x=>10 + x.IdSize + x.CommandSize", "uint32"],
+     ["Arguments", "x=>14 + x.IdSize + x.CommandSize", "String", {
+         length: "x=>x.ArgumentsSize", encoding: "utf16"}],
+     ["WorkingDirectorySize", "x=>14 + x.IdSize + x.CommandSize + x.ArgumentsSize", "uint32"],
+     ["WorkingDirectory", "x=>18 + x.IdSize + x.CommandSize + x.ArgumentsSize", "String", {
+         length: "x=>x.WorkingDirectorySize", encoding: "utf16"}],
+     ["__ExecEnd", 0, "Value", {
+         value: "x=>18 + x.IdSize + x.CommandSize + x.ArgumentsSize + x.WorkingDirectorySize"}],
+     ["__NextMagic", "x=>x.__ExecEnd", "uint16"],
+
+     ["ClassId", "x=>6 + x.IdSize", "GUID"],
+     ["DataSize", "x=>22 + x.IdSize", "uint32"],
+     ["Data", "x=>26 + x.IdSize", "String", {
+         length: "x=>x.DataSize", encoding: "utf16"}],
+
+     ["Size", 0, "Value", {
+         value: "x=>if(condition=x.Magic = 0x7777, then=26 + x.IdSize + x.DataSize,
+                    else=if(condition=x.__NextMagic IN (0x6666, 0x7777),
+                    then=x.__ExecEnd, else=x.__ExecEnd + 2))"}]
     ]],
+
     ["GUID", 16, [
      ["__D1", 0, "uint32"],
      ["__D2", 4, "uint16"],
      ["__D3", 6, "uint16"],
-     ["__D4", 8, "String", {"term": "", "length": 2}],
-     ["__D5", 10, "String", {"term": "", "length": 6}],
+     ["__D4", 8, "String", {term: "", length: 2}],
+     ["__D5", 10, "String", {term: "", length: 6}],
      ["Value", 0, "Value", {
-        "value": "x=>format(format='{%08x-%04x-%04x-%02x-%02x}', args=[x.__D1, x.__D2, x.__D3, x.__D4, x.__D5])"
-    }]
+        value: "x=>format(format='{%08X-%04X-%04X-%02X-%02X}', args=[x.__D1, x.__D2, x.__D3, x.__D4, x.__D5])"
+     }]
     ]],
-    ["BinaryAction", 0, [
-     ["__BinLen", 4, "uint32"],
-     ["Binary", 8, "String", {length: "x=>x.__BinLen", encoding: "utf16"}],
-    ]]]
-    ''')
 
-    LET _ParseDynamicInfo(Data) = parse_binary(accessor="data",
-                filename=Data, struct="Header",
-                profile='''
-    [["Header", 0, [
-     ["__Ver", 0, "uint16"],
-     ["Created", 4, "WinFileTime", {"type": "uint64"}],
-     ["LastStart", 12, "WinFileTime", {"type": "uint64"}],
-     ["LastStop", 20, "WinFileTime", {"type": "uint64"}],
-     ["TaskState", 28, "uint32"],
-     ["LastErrorCode", 32, "uint32"],
-     ["LastSuccessfulRun", 36, "WinFileTime", {"type": "uint64"}],
-    ]]]
-    ''')
+    # LastSuccessfulRun is only present in the 36 byte form.
+    ["DynamicInfo", 0, [
+     ["Version", 0, "uint32"],
+     ["Created", 4, "WinFileTime"],
+     ["LastRun", 12, "WinFileTime"],
+     ["TaskState", 20, "uint32"],
+     ["LastResult", 24, "uint32"],
+     ["LastSuccessfulRun", 28, "WinFileTime"]
+    ]]
+    ]'''
 
-    LET _TaskCacheEnrichBinaries(Details) =
-       Details + dict(BinaryInfo=GetDetails(
-           OSPath=ExpandPath(Path=Details.Actions.Action.Binary)))
+    -- FILETIME 0 means never.
+    LET _TaskCacheTime(T) = if(condition=T.Unix > 0, then=T)
 
-    LET _TaskCache(OSPath) = SELECT _TaskCacheEnrichBinaries(
-    Details=to_dict(item={
-      SELECT OSPath.Basename AS _key,
-        if(condition= OSPath.Basename =~ "DynamicInfo",
-           then=_ParseDynamicInfo(Data=Data.value),
-        else= if(condition= OSPath.Basename =~ "Actions",
-           then=_ParseActions(Data=Data.value),
-        else=Data.value)) AS _value
-      FROM glob(accessor="registry", globs='*', root=OSPath)
-    }) + dict(OSPath=OSPath)) AS Details
-    FROM glob(accessor="registry", globs='*', root=OSPath)
+    LET _TaskCacheActions(Blob) = parse_binary(accessor="data",
+        filename=Blob, profile=_TaskCacheProfile, struct="Header")
 
+    LET _TaskCacheDecodeActions(Actions) = SELECT * FROM foreach(row=Actions,
+    query={
+      SELECT * FROM if(condition=Magic = 0x6666,
+      then={
+        SELECT "Exec" AS Type, Command, Arguments, WorkingDirectory,
+               GetDetails(OSPath=ExpandPath(Path=Command)) AS BinaryInfo
+        FROM scope()
+      }, else={
+        SELECT "ComHandler" AS Type, ClassId.Value AS ClassId, Data
+        FROM scope()
+      })
+    })
 
-  Details: |
-    x=>_TaskCache(OSPath=x.OSPath).Details
+    LET _TaskCacheDynamicInfo(Blob) = parse_binary(accessor="data",
+        filename=Blob, profile=_TaskCacheProfile, struct="DynamicInfo")
+
+    LET _TaskCacheDecodeDynamicInfo(Info) = dict(
+        Created=_TaskCacheTime(T=Info.Created),
+        LastRun=_TaskCacheTime(T=Info.LastRun),
+        LastSuccessfulRun=_TaskCacheTime(T=Info.LastSuccessfulRun),
+        TaskState=Info.TaskState,
+        LastResult=format(format="0x%08x", args=Info.LastResult))
+
+  Query: |
+    LET _TaskCacheKey <= '''HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache'''
+    LET _TaskCacheTasksDir <= RootDrive + "Windows/System32/Tasks"
+    -- Use the default accessor like GetDetails: DefaultAccessor (ntfs)
+    -- is not reachable once the registry remapping is applied.
+    LET _TaskCacheHaveXml <= stat(filename=_TaskCacheTasksDir).IsDir
+
+    -- Tree keys map the task name to its GUID. Folder keys have no Id.
+    LET _TaskCacheTree <= to_dict(item={
+      SELECT upcase(string=get(field="Id")) AS _key,
+             dict(TaskName=regex_replace(source=Key.OSPath.Path,
+                     re='''^.+?\\Tree\\''', replace='''\'''),
+                  SD=get(field="SD"), Index=get(field="Index"),
+                  OSPath=Key.OSPath, Mtime=Key.Mtime) AS _value
+      FROM read_reg_key(globs="Tree/**", root=_TaskCacheKey, accessor="registry")
+      WHERE get(field="Id")
+    })
+
+    LET _TaskCacheTasks <= to_dict(item={
+      SELECT upcase(string=OSPath.Basename) AS _key,
+             dict(OSPath=OSPath, Mtime=Mtime, Values=to_dict(item={
+               SELECT OSPath.Basename AS _key, Data.value AS _value
+               FROM glob(globs="*", root=OSPath, accessor="registry")
+               WHERE NOT IsDir
+             })) AS _value
+      FROM glob(globs="Tasks/*", root=_TaskCacheKey, accessor="registry")
+      WHERE IsDir
+    })
+
+    -- Boot, Logon, Plain and Maintenance hold an empty key per GUID. A
+    -- task can be in more than one, so collect them in a fixed order.
+    LET _TaskCacheTriggers <= to_dict(item={
+      SELECT Id AS _key, enumerate(items=Group) AS _value
+      FROM foreach(row=["Boot", "Logon", "Plain", "Maintenance"], query={
+        SELECT upcase(string=OSPath.Basename) AS Id, _value AS Group
+        FROM glob(globs=_value + "/*", root=_TaskCacheKey, accessor="registry")
+      })
+      GROUP BY Id
+    })
+
+    LET _TaskCacheIds = SELECT _key AS Id
+      FROM chain(a={ SELECT _key FROM items(item=_TaskCacheTree) },
+                 b={ SELECT _key FROM items(item=_TaskCacheTasks) })
+      GROUP BY _key
+
+    LET _TaskCacheJoined = SELECT Id,
+           get(item=_TaskCacheTree, field=Id) AS Tree,
+           get(item=_TaskCacheTasks, field=Id) AS Task
+      FROM _TaskCacheIds
+
+    LET _TaskCacheParsed = SELECT *, Task.Values || dict() AS Values,
+           if(condition=Task.Values.Actions,
+              then=_TaskCacheActions(Blob=Task.Values.Actions)) AS Header
+      FROM _TaskCacheJoined
+
+    SELECT Description, Category,
+           Task.OSPath || Tree.OSPath AS OSPath,
+           Task.Mtime || Tree.Mtime AS Mtime,
+           dict(TaskName=Tree.TaskName || Values.Path, Id=Id,
+                TriggerGroups=get(item=_TaskCacheTriggers, field=Id),
+                SDMissing=Tree AND NOT Tree.SD,
+                TreeMissing=NOT Tree,
+                TaskMissing=NOT Task,
+                XmlMissing=if(condition=_TaskCacheHaveXml AND Values.Path,
+                   then=NOT stat(filename=_TaskCacheTasksDir + Values.Path)),
+                Index=Tree.Index,
+                TreeMtime=Tree.Mtime) + Values +
+           dict(User=Header.Context,
+                Actions=if(condition=Values.Actions,
+                   then=_TaskCacheDecodeActions(Actions=Header.Actions)),
+                DynamicInfo=if(condition=Values.DynamicInfo,
+                   then=_TaskCacheDecodeDynamicInfo(
+                      Info=_TaskCacheDynamicInfo(Blob=Values.DynamicInfo)))) AS Details
+    FROM _TaskCacheParsed
 
 
 - Author: Andrew Rathbun, Mike Cohen
