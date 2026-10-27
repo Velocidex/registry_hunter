@@ -104,6 +104,14 @@ Rules:
 
   Root: HKEY_LOCAL_MACHINE\Software
 
+- Description: "LSA Protection: Displays the RunAsPPL (LSA Protected Process Light) configuration"
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: ControlSet*\Control\Lsa
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="RunAsPPL|RunAsPPLBoot")
+
 - Description: "LogonUI: Displays the last logged users"
   Category: System Info
   Root: HKEY_LOCAL_MACHINE\Software
