@@ -354,6 +354,31 @@ Rules:
       }
     )
   Filter: x=>IsDir
+- Description: Mounted Devices
+  Category: Devices
+  Author: Andrew Rathbun
+  Comment: Last Write Timestamp is for entire key, not each individual value.
+  Glob: MountedDevices\*
+  Root: HKEY_LOCAL_MACHINE\System
+  Details: |
+    x=>dict(
+      Name=x.OSPath.Basename,
+      Value=x.Data,
+      ValueDecoded=utf16(string=x.Data)
+    )
+  Filter: x=>true
+- Description: Windows Portable Devices
+  Category: Devices
+  Author: Andrew Rathbun
+  Comment: Displays list of USB devices previously connected to this system
+  Glob: Microsoft\Windows Portable Devices\Devices\*
+  Root: HKEY_LOCAL_MACHINE\Software
+  Details: 
+      x=>dict(
+        DeviceID=x.OSPath.Basename,
+        FriendlyName=GetRawValue(OSPath=x.OSPath + "/FriendlyName")
+      )
+  Filter: x=>x.IsDir
 
 ## Review the below.
 
@@ -363,18 +388,6 @@ Rules:
   Comment: Mount Points - NTUSER
   Glob: '*\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2\**'
   Root: HKEY_USERS
-- Description: Mounted Devices
-  Category: Devices
-  Author: Andrew Rathbun
-  Comment: Last Write Timestamp is for entire key, not each individual value
-  Glob: MountedDevices
-  Root: HKEY_LOCAL_MACHINE\System
-- Description: Windows Portable Devices
-  Category: Devices
-  Author: Andrew Rathbun
-  Comment: Displays list of USB devices previously connected to this system
-  Glob: Microsoft\Windows Portable Devices
-  Root: HKEY_LOCAL_MACHINE\Software
 - Description: SCSI
   Category: Devices
   Author: Andrew Rathbun

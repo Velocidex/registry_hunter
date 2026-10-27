@@ -8,7 +8,7 @@
    "Preamble": [
     "LET AppCompatCacheParser \u003c= '''[\n[\"HeaderWin10\", \"x=\u003ex.HeaderSize\", [\n  [\"HeaderSize\", 0, \"unsigned int\"],\n  [\"Entries\", \"x=\u003ex.HeaderSize\", Array, {\n      type: \"Entry\",\n      sentinel: \"x=\u003ex.Size = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n[\"HeaderWin8\", 128, [\n  [\"Entries\", 128, Array, {\n      type: \"EntryWin8\",\n      sentinel: \"x=\u003ex.EntrySize = 0\",\n      count: 10000,\n      max_count: 10000,\n  }]\n]],\n\n[\"EntryWin8\", \"x=\u003ex.EntrySize + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"EntrySize\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14 + 10\", \"WinFileTime\"]\n]],\n\n[\"Entry\", \"x=\u003ex.Size + 12\", [\n  [\"Signature\", 0, \"String\", {\n     length: 4,\n  }],\n  [\"Size\", 8, \"unsigned int\"],\n  [\"PathSize\", 12, \"uint16\"],\n  [\"Path\", 14, \"String\", {\n      length: \"x=\u003ex.PathSize\",\n      encoding: \"utf16\",\n  }],\n  [\"LastMod\", \"x=\u003ex.PathSize + 14\", \"WinFileTime\"],\n  [\"DataSize\", \"x=\u003ex.PathSize + 14 + 8\", \"uint32\"],\n  [\"Data\", \"x=\u003ex.PathSize + 14 + 8 + 4\" , \"String\", {\n      length: \"x=\u003ex.DataSize\",\n  }],\n\n  # The last byte of the Data block is 1 for execution\n  [\"Execution\", \"x=\u003ex.PathSize + 14 + 8 + 4 + x.DataSize - 4\", \"uint32\"]\n]],\n\n# This is the Win7 parser but we dont use it right now.\n[\"HeaderWin7x64\", 128, [\n  [\"Signature\", 0, \"uint32\"],\n  [\"Entries\", 128, \"Array\", {\n      count: 10000,\n      sentinel: \"x=\u003ex.PathSize = 0\",\n      type: EntryWin7x64,\n  }]\n]],\n[\"EntryWin7x64\", 48, [\n  [\"PathSize\", 0, \"uint16\"],\n  [\"PathOffset\", 8, \"uint32\"],\n  [\"Path\", \"x=\u003ex.PathOffset - x.StartOf\", \"String\", {\n      encoding: \"utf16\",\n      length: \"x=\u003ex.PathSize\",\n  }],\n  [\"LastMod\", 16, \"WinFileTime\"]\n]]\n\n]'''\n\nLET AppCompatCacheWin10(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin10\")\n\nLET AppCompatCacheWin8(Blob) = parse_binary(\n    accessor=\"data\",\n    filename=Blob,\n    profile=AppCompatCacheParser,\n    struct=\"HeaderWin8\")\n\nLET AppCompatCache(Blob) = SELECT LastMod, Path, Execution,\n    GetDetails(OSPath=ExpandPath(Path=Path)) AS Details\nFROM foreach(\n  row=if(\n    condition=AppCompatCacheWin10(Blob=Blob).HeaderSize IN (52, 48),\n    then=AppCompatCacheWin10(Blob=Blob).Entries,\n    else=AppCompatCacheWin8(Blob=Blob).Entries))\n"
    ],
-   "Query": "SELECT * FROM foreach(row={\n  SELECT *\n  FROM glob(globs='''ControlSet*\\Control\\Session Manager\\AppCompatCache\\AppCompatCache''',\n            root='''HKEY_LOCAL_MACHINE\\System''',\n            accessor=\"registry\")\n}, query={\n  SELECT Description, Category, OSPath, Mtime,\n  Details + dict(Execution= Execution) AS Details\n  FROM AppCompatCache(Blob=read_file(accessor=\"registry\",\n                      filename=OSPath, length=1000000))\n})\n"
+   "Query": "SELECT * FROM foreach(row={\n  SELECT *\n  FROM glob(globs='''ControlSet*\\Control\\Session Manager\\AppCompatCache\\AppCompatCache''',\n            root='''HKEY_LOCAL_MACHINE\\System''',\n            accessor=\"registry\")\n}, query={\n  SELECT Description, Category, OSPath, Mtime,\n    dict(filename=Path,LastMod=LastMod,Execution=Execution) + Details AS Details\n  FROM AppCompatCache(Blob=read_file(accessor=\"registry\",\n                      filename=OSPath, length=1000000))\n})\n"
   },
   {
    "Description": "AppCompatFlags Users",
@@ -396,28 +396,32 @@
    "Filter": "x=\u003eIsDir"
   },
   {
-   "Description": "MountPoints2",
-   "Category": "Devices",
-   "Author": "Andrew Rathbun",
-   "Comment": "Mount Points - NTUSER",
-   "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MountPoints2\\**",
-   "Root": "HKEY_USERS"
-  },
-  {
    "Description": "Mounted Devices",
    "Category": "Devices",
    "Author": "Andrew Rathbun",
-   "Comment": "Last Write Timestamp is for entire key, not each individual value",
-   "Glob": "MountedDevices",
-   "Root": "HKEY_LOCAL_MACHINE\\System"
+   "Comment": "Last Write Timestamp is for entire key, not each individual value.",
+   "Glob": "MountedDevices\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\System",
+   "Details": "x=\u003edict(\n  Name=x.OSPath.Basename,\n  Value=x.Data,\n  ValueDecoded=utf16(string=x.Data)\n)\n",
+   "Filter": "x=\u003etrue"
   },
   {
    "Description": "Windows Portable Devices",
    "Category": "Devices",
    "Author": "Andrew Rathbun",
    "Comment": "Displays list of USB devices previously connected to this system",
-   "Glob": "Microsoft\\Windows Portable Devices",
-   "Root": "HKEY_LOCAL_MACHINE\\Software"
+   "Glob": "Microsoft\\Windows Portable Devices\\Devices\\*",
+   "Root": "HKEY_LOCAL_MACHINE\\Software",
+   "Details": "x=\u003edict( DeviceID=x.OSPath.Basename, FriendlyName=GetRawValue(OSPath=x.OSPath + \"/FriendlyName\") )",
+   "Filter": "x=\u003ex.IsDir"
+  },
+  {
+   "Description": "MountPoints2",
+   "Category": "Devices",
+   "Author": "Andrew Rathbun",
+   "Comment": "Mount Points - NTUSER",
+   "Glob": "*\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MountPoints2\\**",
+   "Root": "HKEY_USERS"
   },
   {
    "Description": "SCSI",
