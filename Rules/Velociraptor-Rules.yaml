@@ -120,6 +120,14 @@ Rules:
   Details: |
     x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="LastLoggedOnUser|LastLoggedOnSAMUser|LastLoggedOnDisplayName|SelectedUserSID|LastLoggedOnUserSID") + dict(AllValues=FetchKeyValues(OSPath=x.OSPath))
 
+- Description: "WDigest: Displays whether WDigest credential caching (UseLogonCredential) is enabled"
+  Category: System Info
+  Root: HKEY_LOCAL_MACHINE\System
+  Glob: ControlSet*\Control\SecurityProviders\WDigest
+  Filter: x=>true
+  Details: |
+    x=>FetchKeyValuesWithRegex(OSPath=x.OSPath, Regex="UseLogonCredential")
+
 - Description: System Info (Current)
   Category: System Info
   Root: HKEY_LOCAL_MACHINE\Software
